@@ -1,0 +1,159 @@
+#+TITLE: Tanker
+
+* Framdrift
+- [0/1] *Skolespesifikt*
+  - [ ] [[file:00_faget.org][Programmering og modellering X]]
+- [0/7] *Kapitler*
+  - [ ] [[file:01_introduksjon.org][Introduksjon]]
+  - [ ] [[file:02_datamaskinen.org][Datamaskinen]]
+  - [ ] [[file:03_variabler-datatyper.org][Variabler og datatyper]]
+  - [ ] [[file:04_abstraksjon.org][Abstraksjon og funksjoner]]
+  - [ ] [[file:05_programflyt.org][Kontrollblokker og løkker]]
+  - [ ] [[file:06_plotting.org][Plotting]]
+  - [ ] [[file:07_filer.org][Arbeid med filer]]
+- [0/3] *Indeks, hjelp og oppgaver*
+  - [ ] [[file:index.org][Indeks]]
+  - [ ] [[file:syntaksark.org][Syntaks og eksempler]]
+  - [ ] [[file:prosjekter.org][Prosjektoppgaver]]
+
+* Mål
+** Hvem er det for?
+Skal dette være en «bok» kun for programmering og modellering-elever, eller for alle? Det er enkelt nok å lage noe /kun/ for elevene i promo ... mye vanskeligere om man trekker med alle. Det er dog ikke dét faget jeg ønsker å få noe til for.
+
+** Læremålene
+*** Grunnleggende programmering
+**** gjøre rede for overgangen mellom høynivåkode og lavnivåkode
+**** omgjøre problemstillinger til konkrete delproblemer, vurdere hvilke delproblemer som lar seg løse digitalt, og utforme løsninger for disse
+**** bruke grunnleggende programmering som variabler, datatyper, løkker, tester, plotting, tilfeldige tall, funksjoner og enkel brukerinteraksjon
+**** lage strukturerte og oversiktlige programmer med hensiktsmessige kommentarer
+
+*** Matematiske metoder
+**** lage programskisser og algoritmer med utgangspunkt i et matematisk problem
+**** bruke og utlede numeriske metoder for å derivere og integrere funksjoner
+**** bruke og utlede metoder for å finne nullpunkter til funksjoner
+**** bruke og utlede numeriske metoder til å løse differensiallikninger
+**** sammenligne noen analytiske og numeriske metoder
+
+*** Modellering
+**** utforme matematiske modeller med utgangspunkt i praktiske problemstillinger og vurdere modellene
+**** gjøre rede for modellbegrepet og drøfte ulemper og fordeler ved noen modeller
+**** sammenligne resultateer fra simuleringer med eksperimentelle data
+**** planlegge, utføre, drøfte og presentere et selvstendig arbeid knyttet til modellering
+
+* Oppbygning
+
+* Skisser
+** Tilfeldige tall
+*** Forventningsverdi maks av dobbelterning
+Finn gjennomsnittet av maksverdien til to terninger kastet.
+
+#+BEGIN_SRC ipython
+import random as rnd
+
+antall_kast = 100000
+antall_terninger = 2
+sum_maks = 0
+kast = 0
+
+while kast <= antall_kast:
+    kastene = [rnd.randint(1, 6) for _ in range(antall_terninger)]
+    sum_maks += max(kastene)
+    kast += 1
+
+print(sum_maks / kast)
+#+END_SRC
+
+** Myntkast
+*** Kast mynten
+Lag en funksjon som returnerer ~True~ dersom et kall av ~rnd.random()~ blir over 0.5.
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent
+import random as rnd
+
+
+def myntkast() -> bool:
+    """Returer True med sannsynlighet på 50 %,
+    False hvis ikke.
+    """
+    return rnd.random() > 0.5
+
+#+END_SRC
+
+*** Antall kron på rad
+I det følgende setter vi et myntkast til å være kron hvis ~myntkast()~ returnerer ~True~. (Vi kunne like så godt sagt det motsatte.)
+
+Lag en funksjon som starter et myntkast, og fortsetter å kaste så lenge den får kron. Funksjonen ~kronsekvens~ returnerer antall kron på rad, null hvis første kast blir mynt.
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent
+def kronsekvens() -> int:
+    """Kast en mynt og tell opp antall kron på rad.
+
+    Returner antallet.
+    """
+    antall = 0
+    while myntkast():
+        antall += 1
+    return antall
+#+END_SRC
+
+#+BEGIN_SRC ipython :session mynt :exports both :results org
+antall = kronsekvens()
+print(f"På dette forsøket fikk vi {antall} kron på rad.")
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+På dette forsøket fikk vi 2 kron på rad.
+#+END_SRC
+*** Antall forsøk før ti på rad
+Lag en funksjon, ~tiersekvens~, som teller antall ganger den må kalle ~kronsekvens~ før den får ti kron på rad.
+
+~tiersekvens~ skal returnerer antallet ganger.
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent 
+def tiersekvens() -> int:
+    """Returner antall forsøk før minst ti kron på rad."""
+    antall = 0
+    while kronsekvens() < 10:
+        antall += 1
+    return antall
+#+END_SRC
+
+#+BEGIN_SRC ipython :session mynt :exports both :results org :preamble "# -*- coding: utf-8 -*-"
+antall = tiersekvens()
+print(f"Denne gangen tok det {antall} forsøk for å få minst ti kron på rad.")
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+Denne gangen tok det 1360 forsøk for å få minst ti kron på rad.
+#+END_SRC
+
+*** Ti på rad tusen ganger
+Lag en funksjon, ~tusen_tiersekvenser~, som returnerer ei liste med resultatene av tusen kjøringer av ~tiersekvens~.
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent
+def tusen_tiersekvenser() -> list:
+    """Returner ei liste med resultatene av tusen kall på tiersekvens."""
+    antall = 1000
+    resultater = []
+    while antall > 0:
+        resultater.append(tiersekvens())
+    return resultater
+#+END_SRC
+
+*** Histogrammet
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+
+ax.hist(results, range=(0, 5000), edgecolor='black')
+ax.set_title("Forsøk på å få ti kron på rad.")
+ax.set_xlabel("Antall forsøk")
+ax.set_ylabel("Antall ganger det tok så x forsøk.")
+ax.hist(tusen_tiersekvenser())
+fig.savefig('mynt.png')
+
+#+END_SRC
+

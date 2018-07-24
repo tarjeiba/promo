@@ -1,0 +1,14 @@
+#+SETUPFILE: orgheader.org
+#+TITLE: Programmering og modellering
+
+  - [ ] [[file:01_introduksjon.org][Introduksjon]]
+  - [ ] [[file:02_datamaskinen.org][Datamaskinen]]
+  - [ ] [[file:03_variabler-datatyper.org][Variabler og datatyper]]
+  - [ ] [[file:04_abstraksjon.org][Abstraksjon og funksjoner]]
+  - [ ] [[file:05_programflyt.org][Kontrollblokker og løkker]]
+  - [ ] [[file:06_plotting.org][Plotting]]
+  - [ ] [[file:07_filer.org][Arbeid med filer]]
+
+
+Dette er en test
+[[popup:Dette er en lengre tekst i en popup][Til å trykke på]]

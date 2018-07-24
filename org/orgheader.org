@@ -1,0 +1,26 @@
+#+DATE: <2017-08-23 on>
+#+AUTHOR: Tarjei Bærland
+#+EMAIL: tabaa004@osloskolen.no
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t broken-links:nil c:nil
+#+OPTIONS: creator:nil d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:nil p:nil pri:nil
+#+OPTIONS: prop:nil stat:t tags:t tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t html-style:nil
+#+LANGUAGE: no
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.1 (Org mode 9.1.13)
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-scripts:t html-style:t
+#+OPTIONS: html5-fancy:nil tex:t
+#+HTML_DOCTYPE: xhtml-strict
+#+HTML_CONTAINER: div
+#+INFOJS_OPT: path:https://rawgit.com/tarjeiba/org-info-js-nb/master/org-info-src.js
+#+INFOJS_OPT: toc:nil ltoc:nil view:info mouse:underline buttons:nil
+#+INFOJS_OPT: up:https://orgmode.org/worg/
+#+INFOJS_OPT: home:https://orgmode.org
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.1 (<a href="http://orgmode.org">Org</a> mode 9.1.13)
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.1 (<a href="http://orgmode.org">Org</a> mode 9.1.13)
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+#+HTML_HEAD: <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+#+HTML_HEAD: <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+#+HTML_HEAD: <script type="text/javascript" src="js/popup.js"></script>
+#+PROPERTY: header-args ipython :session :results output org  :eval never-export :tangle yes
+

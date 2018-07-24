@@ -1,0 +1,29 @@
+#+SETUPFILE: orgheader.org
+#+TITLE: Programmering og modellering X ved Edvard Munch
+
+Følgende er en gjennomgang av mine, Tarjeis, forventninger til dere, elevene, gjennom faget Programmering og modellering X.
+
+* Mine mål
+I løpet av dette faget er mitt mål at dere skal
+- erverve grunnleggende programmeringsferdigheter;
+- lære problemløsningsstrategier for realfagsproblemer;
+
+* Mine forventninger
+
+* Datoer
+
+| Uke | Opplegg | Hjemme |
+|-----+---------+--------|
+|     |         |        |
+
+* Forutsetninger
+Dette faget baseres på Matematikk 1T. Det er /ikke/ egnet å ta faget ved siden av andre matematikkfag enn R1 og R2, dette er ikke et generelt programmeringsfag, men et realfagsrettet.
+
+* Arbeid
+** På skolen
+I all hovedsak vil tiden vi har sammen på skolen bli brukt til problemløsing av forskjellige oppgaver og caser.
+
+** Hjemme
+/Før/ skoleøkta hver uke, kreves det at dere har /prøvd/ hjemmearbeidet fra hjemme-kolonna i tabellen over.
+
+
