@@ -12,7 +12,8 @@
 #+OPTIONS: html5-fancy:nil tex:t
 #+HTML_DOCTYPE: xhtml-strict
 #+HTML_CONTAINER: div
-#+INFOJS_OPT: path:https://rawgit.com/tarjeiba/org-info-js-nb/master/org-info-src.js
+# #+INFOJS_OPT: path:https://rawgit.com/tarjeiba/org-info-js-nb/master/org-info-src.js
+#+INFOJS_OPT: path:c:/Users/tabaa004/Dropbox/home/repos/org-info-js-nb/org-info-src.js
 #+INFOJS_OPT: toc:nil ltoc:nil view:info mouse:underline buttons:nil
 #+INFOJS_OPT: up:https://orgmode.org/worg/
 #+INFOJS_OPT: home:https://orgmode.org

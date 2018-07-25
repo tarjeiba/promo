@@ -2,6 +2,10 @@
 #+PROPERTY: header-args :eval never-export :results silent
 #+TITLE: Programmering og modellering X
 
+#+BEGIN_EXPORT html
+<script type="text/javascript" language="JavaScript"> org_html_manager.set("BASE_URL_QUESTIONS", "https://github.com/tarjeiba/promo/issues/new/");</script>
+#+END_EXPORT
+
 * Introduksjon
 Prosessoren (CPU-en) i en rimelig datamaskin kan i dag gjennomføre over 10 milliarder desimaltallsoperasjoner hvert sekund. Hold en ball en meter over bakken. Fra du slipper ballen, til den treffer bakken, kan datamaskinen din fylle ut en gangetabell som går fra 1 til 45 000.
 
@@ -1784,4 +1788,11 @@ print(c(9))
 7
 11
 #+END_SRC
+
+* GjÃ¸remÃ¥l
+
+** TODO Fjerne html-eksport fra toppen av sida.
+[[file:~/repos/promo/org/promo.org]]
+
+20180725 22:46
 
