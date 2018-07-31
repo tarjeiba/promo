@@ -92,7 +92,25 @@ Prosjektene ser ut som følger:
 - partikler i boks :: Modeller en boks med gasspartikler.
 - selvvalgt :: Velg et eget prosjekt.
 
-* Bruk av nettsida                                                                  :noexport:
+* Bruk av nettsida
+Denne nettsida er bygd opp rund å skulle kunne være fullstendig tastaturnavigerbar.
+
+Du kan til enhver tid skrive «?» på tastaturet for å få opp en hjelpeside. /Bruk den./
+
+Jeg har med vilje ikke lagt inn noe kommentarfelt til hvert kapittel, men ønsker at du flittig bruker spørrefunksjonen som har tastatursnarvei «q». Du vil da tas til [[https://github.com][Github]], en sosial nettside for programmering, hvor denne sida ligger lagret. Still spørsmålet ditt der, så vil forhåpentligvis noen snarlig kunne hjelpe deg. Spesielt relevante spørsmål legger jeg lenke til ved de temaene det gjelder.
+
+Koden til hvert kapittel ligger tilgjengelig som egen fil under hver kapitteloverskrift. Jeg anbefaler dog at du kun bruker denne direkte om du virkelig står fast. Forsøk først å skrive av eventuell kode direkte fra nettsida, da dette gjør at du får en bedre forståelse av hva programmet gjør og hvordan det fungerer.
+
+#+BEGIN_QUOTE
+Hvorfor i all verden ser den så dårlig ut på mobil?
+-- ukjent elev, 2018
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+Jeg jobber med saken.
+-- Tarjei Bærland, 2018
+#+END_QUOTE
+
 * Matematikk og programmering
 ** Programmering
 Når vi programmerer, setter vi opp et sett med instrukser til datamaskinen. Disse instruksene er en trinnvis gjennomgang av hvordan maskinen skal løse et problem.
@@ -1660,7 +1678,6 @@ def glidelaas(liste1: list, liste2: list) -> list:
     return res
 #+END_SRC
 
-
 * Plotting
 ** Et enkelt linjeplot
 
@@ -1856,7 +1873,6 @@ Endre terningeksempelet over til å skrive en fjerde kolonne, «Sum», hvor verd
 ** Testing
 
 ** Bugs
-
 
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner

@@ -3,183 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-07-25 ons. 22:45 -->
+<!-- 2018-07-31 tir. 20:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programmering og modellering X</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Tarjei Bærland" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
-</style>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
@@ -244,7 +73,7 @@ for the JavaScript code in this tag.
 */
 
 <!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "3");
+org_html_manager.set("TOC_DEPTH", "1");
 org_html_manager.set("LINK_HOME", "");
 org_html_manager.set("LINK_UP", "");
 org_html_manager.set("LOCAL_TOC", "0");
@@ -333,116 +162,17 @@ for the JavaScript code in this tag.
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#orgc906a14">Introduksjon</a></li>
-<li><a href="#org6dcacc1">Matematikk og programmering</a>
-<ul>
-<li><a href="#org8d6f76c">Programmering</a></li>
-<li><a href="#org80b164f">Matematikk</a></li>
-</ul>
-</li>
-<li><a href="#orgbcbb7b8">Programmeringsspråk</a>
-<ul>
-<li><a href="#org584e3a2">Valg av språk</a></li>
-<li><a href="#org2db9b98">Ulike typer programmeringsspråk</a>
-<ul>
-<li><a href="#org3335af5">«Assembly»</a></li>
-<li><a href="#orgd31b0c6">C</a></li>
-<li><a href="#org1f5afec">Python</a></li>
-<li><a href="#orgc008a1a">Høynivå og lavnivå</a></li>
-<li><a href="#orge29b6e4">Imperative og deklarative kode</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org2c461e8">Basispython</a>
-<ul>
-<li><a href="#org2f2d2bd">Regnerekkefølge og kommandolinja</a></li>
-<li><a href="#org2bcc47a">Variabler</a>
-<ul>
-<li><a href="#orgdd437f8">Hva er et navn?</a></li>
-</ul>
-</li>
-<li><a href="#org69da22e">Interaksjon</a>
-<ul>
-<li><a href="#orgaa2495b">Printing</a></li>
-<li><a href="#org17aea81">Input</a></li>
-</ul>
-</li>
-<li><a href="#org658887b">Typer</a>
-<ul>
-<li><a href="#org4418031">Boolske verdier</a></li>
-<li><a href="#org51795de">Heltall</a></li>
-<li><a href="#orge2763e2">Lister</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org79fe566">Abstraksjon</a>
-<ul>
-<li><a href="#org7740024">Biblioteker</a>
-<ul>
-<li><a href="#org2882f4d">Et fysikkbibliotek</a></li>
-<li><a href="#orgb89f5ad">Vårt typiske importoppsett</a></li>
-</ul>
-</li>
-<li><a href="#orgc65bfe8">Funksjoner</a>
-<ul>
-<li><a href="#org6428122">Definisjon og kall</a></li>
-<li><a href="#org1bd0f31">Ord når vi snakker om funksjoner</a></li>
-</ul>
-</li>
-<li><a href="#org2e86a23">Skop</a></li>
-<li><a href="#org923bc5c">Klasser</a></li>
-<li><a href="#org4ca7006">Kjenn dine røtter</a></li>
-</ul>
-</li>
-<li><a href="#org1935a11">Programflyt</a>
-<ul>
-<li><a href="#orgef9f1bd">Logikk</a>
-<ul>
-<li><a href="#org2010b33">Sannhetsskjemaer</a></li>
-</ul>
-</li>
-<li><a href="#org97914dd">dersom &#x2026; så &#x2026;</a></li>
-<li><a href="#org66c5446">Mens vi venter</a></li>
-<li><a href="#org4264ff7">Collatz' formodning&#xa0;&#xa0;&#xa0;<span class="tag"><span class="prosjekt">prosjekt</span></span></a></li>
-<li><a href="#org8d1490b">Løpe gjennom ei liste</a>
-<ul>
-<li><a href="#orgea94be8"><code>for</code>-løkka</a></li>
-</ul>
-</li>
-<li><a href="#orge7c757f">Oppgaver</a>
-<ul>
-<li><a href="#org6dddb10">7-ern</a></li>
-<li><a href="#org5c19749"><code>def utvid</code></a></li>
-<li><a href="#orgeee4a53"><code>def muterende_utvid</code></a></li>
-<li><a href="#orgf0fe202"><code>def glidelaas</code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgac8989a">Plotting</a>
-<ul>
-<li><a href="#orgf285787">Et enkelt linjeplot</a></li>
-</ul>
-</li>
+<li><a href="#org3c7fafe">Bruk av nettsida</a></li>
+<li><a href="#org6dcacc1">Matematikk og programmering</a></li>
+<li><a href="#orgbcbb7b8">Programmeringsspråk</a></li>
+<li><a href="#org0a8d29b">Datamaskinen</a></li>
+<li><a href="#org2c461e8">Basispython</a></li>
+<li><a href="#org79fe566">Abstraksjon</a></li>
+<li><a href="#org1935a11">Programflyt</a></li>
+<li><a href="#orgac8989a">Plotting</a></li>
 <li><a href="#org6c93d3e">Filbehandling</a></li>
-<li><a href="#org240fd01">Tekstfiler</a>
-<ul>
-<li><a href="#orgdfc2ab5">Lese inn tekstfiler</a>
-<ul>
-<li><a href="#orgad23b81">Alternativ innlesing&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avansert">avansert</span></span></a></li>
-</ul>
-</li>
-<li><a href="#org8842166">Plotting av data</a></li>
-<li><a href="#org22f3dab">Skrive til tekstfiler</a></li>
-</ul>
-</li>
-<li><a href="#org36fd6bd">Testing og bugs</a>
-<ul>
-<li><a href="#orgc391548">Testing</a></li>
-<li><a href="#orge7227dd">Bugs</a></li>
-</ul>
-</li>
+<li><a href="#org240fd01">Tekstfiler</a></li>
+<li><a href="#org36fd6bd">Testing og bugs</a></li>
 </ul>
 </div>
 </div>
@@ -460,7 +190,7 @@ Datamaskiner endrer spillereglene <i>fullstendig</i>.
 </p>
 
 <p>
-Personlig tror jeg ikke det er essensielt at hver og en av oss må kunne programmere disse maskinene. Jeg tror dog det er viktig, og at det stadig blir viktigere, at vi veit hvilke <i>muligheter</i> programmeringen åpner for. Nesten uavhengig av hvilket fagfelt du jobber innenfor, er det oppgaver innenfor feltet som best lar seg løse med programmering.
+Personlig tror jeg ikke det er essensielt at hver og en av oss må kunne programmere disse maskinene. Jeg tror dog det er viktig, og at det stadig blir viktigere, at vi veit hvilke muligheter programmeringen åpner for. Nesten uavhengig av hvilket fagfelt du jobber innenfor, finnes det oppgaver som best lar seg løse med programmering.
 </p>
 
 <p>
@@ -474,6 +204,161 @@ Som spirende programmerer kommer du til å kjenne på både frustrasjon og irrit
 <p>
 Lykke til!
 </p>
+</div>
+
+<div id="outline-container-org5f4a5bd" class="outline-3">
+<h3 id="org5f4a5bd">Et første program</h3>
+<div class="outline-text-3" id="text-org5f4a5bd">
+<p>
+Før vi gjør noe annet, kan vi ha et kort førstemøte med Python. Om du er på en Windows-maskin med Python installert (er du elev i Osloskolen, skal det være tilfellet) kan du trykke på Windows-knappen på tastaturet, skrive «cmd» i feltet som kommer opp, trykke enter, og forhåpentligvis få opp noe à la følgende.
+</p>
+
+<p>
+<img src="figurer/cmd-vindu.png" alt="cmd-vindu.png"/>
+</p>
+
+<p>
+I det vinduet skal du nå kunne skrive «python» og trykke enter. Du bør få opp litt tekst og til slutt en linje som viser <code>&gt;&gt;&gt;</code>.
+</p>
+
+<p>
+Forsøk å skrive følgende linjer og trykk enter etter hver.
+</p>
+
+<pre class="example">
+&gt;&gt;&gt; print("Hei, verden!")
+</pre>
+
+<pre class="example">
+&gt;&gt;&gt; 2 + 2
+</pre>
+
+<pre class="example">
+&gt;&gt;&gt; 2 + 2 == 5
+</pre>
+
+<pre class="example">
+&gt;&gt;&gt; # print("Hei, verden!")
+</pre>
+
+<p>
+Du bør ha fått noe lignende det under tilbake.
+</p>
+
+<pre class="example">
+Hei, verden!
+4
+False
+
+</pre>
+
+<p>
+I så fall, godt jobba! Du har nå begynt å skrive litt Python. Vi kommer snart tilbake til hvordan jeg ønsker at du skal jobbe med kodesnuttene som står på denne sida mens du jobber deg gjennom temaene.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb5b682e" class="outline-3">
+<h3 id="orgb5b682e">Faget</h3>
+<div class="outline-text-3" id="text-orgb5b682e">
+<p>
+Denne sida er opprinnelig skrevet for faget <i>Programmering og modellering X</i> slik det fremstår ved skolestart høsten 2018. Vi har da følgende læremål å forholde oss til:
+</p>
+
+<p>
+<b>Grunnleggende programmering</b>
+</p>
+<ul class="org-ul">
+<li>gjøre rede for overgangen mellom høynivåkode og lavnivåkode</li>
+<li>omgjøre problemstillinger til konkrete delproblemer, vurdere hvilke delproblemer som lar seg løse digitalt, og utforme løsninger for disse</li>
+<li>bruke grunnleggende programmering som variabler, datatyper, løkker, tester, plotting, tilfeldige tall, funksjoner og enkel brukerinteraksjon</li>
+<li>lage strukturerte og oversiktlige programmer med hensiktsmessige kommentarer</li>
+</ul>
+
+<p>
+<b>Matematiske metoder</b>
+</p>
+<ul class="org-ul">
+<li>lage programskisser og algoritmer med utgansgpunkt i et matematisk problem</li>
+<li>bruke og utlede numeriske metoder for å derivere og integrere funksjoner</li>
+<li>bruke og utlede metoder for å finne nullpunter til funksjoner</li>
+<li>bruke og utlede numeriske metoder til å løse differensiallikninger</li>
+<li>sammenligne noen analytiske og numeriske metoder</li>
+</ul>
+
+<p>
+<b>Modellering</b>
+</p>
+<ul class="org-ul">
+<li>utforme matematiske modeller med utgangspunkt i praktiske problemstillinger og vurdere modellene</li>
+<li>gjøre rede for modellbegrepet og drøfte ulemper og fordeler ved noen modeller</li>
+<li>sammenligne resultater fra simuleringer med eksperimentelle data</li>
+<li>planlegge, utføre, drøfte og presentere et selvstendig arbeid knyttet til modellering</li>
+</ul>
+
+<p>
+Dette er hårete, men gjennomførbare, mål for et «tretimersfag». For de av dere som har gledet seg til å lære å programmere, er det <i>grunnleggende programmering</i> som i hovedsak dekker dette. Her skal vi lære ting som er essensielle for <i>all</i> programmering, uavhengig av bruksområde. Gjennom arbeidet innenfor disse temaene, skal vi forsøke å legge et solid programmeringsgrunnlag, som du skal kunne bruke på hjemmeprosjekter, når du sitter på studiebenken og har valgt informatikk som fagfelt eller når du jobber som ingeniør.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf352037" class="outline-3">
+<h3 id="orgf352037">Opplegg</h3>
+<div class="outline-text-3" id="text-orgf352037">
+<p>
+Vi legger opp en prosjektbasert gjennomgang. Når man hører om at lister i Python er «muterbare», at funksjoer kan ha «bieffekter» eller at <code>self</code> viser til instansen av klassen som kjører metoden, er det nyttig om du ser behovet for disse fagbegrepene i et arbeid du holder på med.
+</p>
+
+<p>
+Vi kommer til å ha to prosjekter på høsten og to på våren. Jeg kommer til å legge noen anbefalinger for hvilke prosjekter dette kan være, men jeg er åpen for forslag om du har noe annet du kunne tenkt deg å se nærmere på.
+</p>
+
+<p>
+Prosjektene ser ut som følger:
+</p>
+
+<dl class="org-dl">
+<dt>realfagsbibliotek</dt><dd>Opprett et sett med konstanter, funksjoner og datatyper det kan være nyttig å ha tilgjengelig for øvrig realfagsarbeid. Siden skal du bruke arbeidet ditt til å løse oppgaver fra de ulike realfagene (matematikk, fysikk, kjemi og biologi).</dd>
+<dt>bysykkelanalyse</dt><dd>Analyser data tilgjengeliggjort av Oslo bysykkel.</dd>
+<dt>partikler i boks</dt><dd>Modeller en boks med gasspartikler.</dd>
+<dt>selvvalgt</dt><dd>Velg et eget prosjekt.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3c7fafe" class="outline-2">
+<h2 id="org3c7fafe">Bruk av nettsida</h2>
+<div class="outline-text-2" id="text-org3c7fafe">
+<p>
+Denne nettsida er bygd opp rund å skulle kunne være fullstendig tastaturnavigerbar.
+</p>
+
+<p>
+Du kan til enhver tid skrive «?» på tastaturet for å få opp en hjelpeside. <i>Bruk den.</i>
+</p>
+
+<p>
+Jeg har med vilje ikke lagt inn noe kommentarfelt til hvert kapittel, men ønsker at du flittig bruker spørrefunksjonen som har tastatursnarvei «q». Du vil da tas til <a href="https://github.com">Github</a>, en sosial nettside for programmering, hvor denne sida ligger lagret. Still spørsmålet ditt der, så vil forhåpentligvis noen snarlig kunne hjelpe deg. Spesielt relevante spørsmål legger jeg lenke til ved de temaene det gjelder.
+</p>
+
+<p>
+Koden til hvert kapittel ligger tilgjengelig som egen fil under hver kapitteloverskrift. Jeg anbefaler dog at du kun bruker denne direkte om du virkelig står fast. Forsøk først å skrive av eventuell kode direkte fra nettsida, da dette gjør at du får en bedre forståelse av hva programmet gjør og hvordan det fungerer.
+</p>
+
+<blockquote>
+<p>
+Hvorfor i all verden ser den så dårlig ut på mobil?
+&#x2013; ukjent elev, 2018
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Jeg jobber med saken.
+&#x2013; Tarjei Bærland, 2018
+</p>
+</blockquote>
 </div>
 </div>
 
@@ -558,7 +443,6 @@ Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av 
 </div>
 </div>
 </div>
-
 <div id="outline-container-orgbcbb7b8" class="outline-2">
 <h2 id="orgbcbb7b8">Programmeringsspråk</h2>
 <div class="outline-text-2" id="text-orgbcbb7b8">
@@ -600,6 +484,7 @@ I dette faget kommer vi til å bruke språket Python. Python er et populært spr
 </div>
 </div>
 </div>
+
 <div id="outline-container-org2db9b98" class="outline-3">
 <h3 id="org2db9b98">Ulike typer programmeringsspråk</h3>
 <div class="outline-text-3" id="text-org2db9b98">
@@ -726,6 +611,68 @@ Noen språk egner seg dog bedre til visse stiler, vi kommer i all hovedsak til �
 </div>
 </div>
 
+<div id="outline-container-org0a8d29b" class="outline-2">
+<h2 id="org0a8d29b">Datamaskinen</h2>
+<div class="outline-text-2" id="text-org0a8d29b">
+</div>
+<div id="outline-container-org2c1fc78" class="outline-3">
+<h3 id="org2c1fc78">Verdier</h3>
+<div class="outline-text-3" id="text-org2c1fc78">
+</div>
+<div id="outline-container-org21466c4" class="outline-4">
+<h4 id="org21466c4">Totallssystemet</h4>
+<div class="outline-text-4" id="text-org21466c4">
+<p>
+Til hverdags bruker vi, selv «datafolk», titallssystemet. Vi bruker ti ulike siffer, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, til å angi hvor mange man har av den <i>tierpotensen</i> plasseringen til sifferet står på, altså <i>koeffisienten</i> til hver tierpotens. Til slutt legger vi sammen alle disse tierpotensene.
+</p>
+
+<p>
+La oss se på hvordan tallet 1020304 er bygd opp i titallsystemet.
+</p>
+
+<pre class="example">
+1020304 = 1 * 10^6 + 0 * 10^5 + 2 * 10^4 + 0 * 10^3 + 3 * 10^2 + 0 * 10^1 + 4 * 10^0
+</pre>
+
+<p>
+Her har vi altså <i>én</i> million, <i>null</i> hundretusener, <i>to</i> titusener, <i>null</i> tusener, <i>tre</i> hundrere, <i>null</i> tiere, og <i>fire</i> enere. Vi leser det sjølsagt som «énmilliontjuetusenogfire».
+</p>
+
+<p>
+Minnet til en datamaskin er satt sammen av en lang rekke elektriske ledere det enten går eller ikke går strøm i, de er enten <i>på</i> eller <i>av</i>, 1 eller 0. Datamaskiner flest jobber altså i et <i>totallssystem</i>.
+</p>
+
+<pre class="example">
+10100101 = 1 * 2^7 + 0 * 2^6 + 1 * 2^5 + 0 * 2^4 + 0 * 2^3 + 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 128 + 32 + 4 + 1 = 165
+</pre>
+
+<p>
+Verdien 10100101 i totallsystemet er altså 165 i titallsystemet, vi kan skrive det som (1010010)<sub>2</sub> = (165)<sub>10</sub>.
+</p>
+
+<p>
+Vi kaller en 1-er eller 0-er, en <i>bit</i>. En samling av åtte bits kaller vi en <i>byte</i>.
+</p>
+
+
+<div class="TASK">
+<p>
+Regn følgende bytes over til titallssystemet:
+</p>
+
+<p>
+00000111
+10101010
+10000011
+11111111
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org2c461e8" class="outline-2">
 <h2 id="org2c461e8">Basispython</h2>
 <div class="outline-text-2" id="text-org2c461e8">
@@ -798,6 +745,9 @@ Vi kan nå gjennomføre enkle regneoperasjoner, men det melder seg raskt et beho
 <div class="outline-text-4" id="text-orgdd437f8">
 <p>
 I Python viser navn alltid til verdier.
+</p>
+
+<p>
 <img src="figurer/navn_enkelt.png" alt="navn_enkelt.png"/>
 </p>
 
@@ -2300,7 +2250,6 @@ Lag en funksjon, <code>glidelaas</code>, med følgende spesifikasjoner:
 </div>
 </div>
 </div>
-
 
 <div id="outline-container-orgac8989a" class="outline-2">
 <h2 id="orgac8989a">Plotting</h2>
