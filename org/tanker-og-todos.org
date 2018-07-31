@@ -1,21 +1,5 @@
 #+TITLE: Tanker
 
-* Framdrift
-- [0/1] *Skolespesifikt*
-  - [ ] [[file:00_faget.org][Programmering og modellering X]]
-- [0/7] *Kapitler*
-  - [ ] [[file:01_introduksjon.org][Introduksjon]]
-  - [ ] [[file:02_datamaskinen.org][Datamaskinen]]
-  - [ ] [[file:03_variabler-datatyper.org][Variabler og datatyper]]
-  - [ ] [[file:04_abstraksjon.org][Abstraksjon og funksjoner]]
-  - [ ] [[file:05_programflyt.org][Kontrollblokker og løkker]]
-  - [ ] [[file:06_plotting.org][Plotting]]
-  - [ ] [[file:07_filer.org][Arbeid med filer]]
-- [0/3] *Indeks, hjelp og oppgaver*
-  - [ ] [[file:index.org][Indeks]]
-  - [ ] [[file:syntaksark.org][Syntaks og eksempler]]
-  - [ ] [[file:prosjekter.org][Prosjektoppgaver]]
-
 * Mål
 ** Hvem er det for?
 Skal dette være en «bok» kun for programmering og modellering-elever, eller for alle? Det er enkelt nok å lage noe /kun/ for elevene i promo ... mye vanskeligere om man trekker med alle. Det er dog ikke dét faget jeg ønsker å få noe til for.

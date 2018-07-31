@@ -1,10 +1,12 @@
-#+TITLE: Sitemap
+#+TITLE: Sitemap for project promo
 
+- [[file:faget.org][Faget ved Edvard Munch]]
+- [[file:ommeg.org][Om meg]]
 - [[file:index.org][Programmering og modellering]]
 - [[file:promo.org][Programmering og modellering X]]
 - [[file:edvardmunch.org][Programmering og modellering X ved Edvard Munch]]
 - [[file:prosjekter.org][Prosjektoppgaver]]
 - [[file:syntaksark.org][Syntaks]]
 - [[file:tanker-og-todos.org][Tanker]]
-- stil
-  - [[file:stil/promo_orgheader.org][promo_orgheader]]
+- [[file:orgheader.org][orgheader]]
+- [[file:orgheader_nojs.org][orgheader_nojs]]
