@@ -11,7 +11,7 @@ Prosessoren (CPU-en) i en rimelig datamaskin kan i dag gjennomføre over 10 mil
 
 Datamaskiner endrer spillereglene /fullstendig/.
 
-Personlig tror jeg ikke det er essensielt at hver og en av oss må kunne programmere disse maskinene. Jeg tror dog det er viktig, og at det stadig blir viktigere, at vi veit hvilke /muligheter/ programmeringen åpner for. Nesten uavhengig av hvilket fagfelt du jobber innenfor, er det oppgaver innenfor feltet som best lar seg løse med programmering.
+Personlig tror jeg ikke det er essensielt at hver og en av oss må kunne programmere disse maskinene. Jeg tror dog det er viktig, og at det stadig blir viktigere, at vi veit hvilke muligheter programmeringen åpner for. Nesten uavhengig av hvilket fagfelt du jobber innenfor, finnes det oppgaver som best lar seg løse med programmering.
 
 Programmering i seg selv er en ferdighet uten andre krav til forkunskaper enn at du må kunne lese og skrive. For de fleste byr allikevel programmering på en bratt læringskurve. Datamaskiner er ufattelig gode til noen ting, spesielt regning, og tilsvarende dårlig til andre. Der vi kan lese en setning som «dnene steningen ihonnelder neon fiel», vil ~if x == 2~ og ~if x = 2~ kunne være forskjellen på et dataprogram som fungerer og et som ikke fungerer.
 
@@ -19,6 +19,80 @@ Som spirende programmerer kommer du til å kjenne på både frustrasjon og irrit
 
 Lykke til!
 
+** Et første program
+Før vi gjør noe annet, kan vi ha et kort førstemøte med Python. Om du er på en Windows-maskin med Python installert (er du elev i Osloskolen, skal det være tilfellet) kan du trykke på Windows-knappen på tastaturet, skrive «cmd» i feltet som kommer opp, trykke enter, og forhåpentligvis få opp noe à la følgende.
+
+#+CAPTION: Kommandolinja til Windows
+[[fig:cmd-vindu.png]]
+
+I det vinduet skal du nå kunne skrive «python» og trykke enter. Du bør få opp litt tekst og til slutt en linje som viser ~>>>~.
+
+Forsøk å skrive følgende linjer og trykk enter etter hver.
+
+#+BEGIN_EXAMPLE
+>>> print("Hei, verden!")
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+>>> 2 + 2
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+>>> 2 + 2 == 5
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+>>> # print("Hei, verden!")
+#+END_EXAMPLE
+
+Du bør ha fått noe lignende det under tilbake.
+
+#+BEGIN_EXAMPLE
+Hei, verden!
+4
+False
+
+#+END_EXAMPLE
+
+I så fall, godt jobba! Du har nå begynt å skrive litt Python. Vi kommer snart tilbake til hvordan jeg ønsker at du skal jobbe med kodesnuttene som står på denne sida mens du jobber deg gjennom temaene.
+
+** Faget
+Denne sida er opprinnelig skrevet for faget /Programmering og modellering X/ slik det fremstår ved skolestart høsten 2018. Vi har da følgende læremål å forholde oss til:
+
+*Grunnleggende programmering*
+- gjøre rede for overgangen mellom høynivåkode og lavnivåkode
+- omgjøre problemstillinger til konkrete delproblemer, vurdere hvilke delproblemer som lar seg løse digitalt, og utforme løsninger for disse
+- bruke grunnleggende programmering som variabler, datatyper, løkker, tester, plotting, tilfeldige tall, funksjoner og enkel brukerinteraksjon
+- lage strukturerte og oversiktlige programmer med hensiktsmessige kommentarer
+
+*Matematiske metoder*
+- lage programskisser og algoritmer med utgansgpunkt i et matematisk problem
+- bruke og utlede numeriske metoder for å derivere og integrere funksjoner
+- bruke og utlede metoder for å finne nullpunter til funksjoner
+- bruke og utlede numeriske metoder til å løse differensiallikninger
+- sammenligne noen analytiske og numeriske metoder
+
+*Modellering*
+- utforme matematiske modeller med utgangspunkt i praktiske problemstillinger og vurdere modellene
+- gjøre rede for modellbegrepet og drøfte ulemper og fordeler ved noen modeller
+- sammenligne resultater fra simuleringer med eksperimentelle data
+- planlegge, utføre, drøfte og presentere et selvstendig arbeid knyttet til modellering
+
+Dette er hårete, men gjennomførbare, mål for et «tretimersfag». For de av dere som har gledet seg til å lære å programmere, er det /grunnleggende programmering/ som i hovedsak dekker dette. Her skal vi lære ting som er essensielle for /all/ programmering, uavhengig av bruksområde. Gjennom arbeidet innenfor disse temaene, skal vi forsøke å legge et solid programmeringsgrunnlag, som du skal kunne bruke på hjemmeprosjekter, når du sitter på studiebenken og har valgt informatikk som fagfelt eller når du jobber som ingeniør.
+
+** Opplegg
+Vi legger opp en prosjektbasert gjennomgang. Når man hører om at lister i Python er «muterbare», at funksjoer kan ha «bieffekter» eller at ~self~ viser til instansen av klassen som kjører metoden, er det nyttig om du ser behovet for disse fagbegrepene i et arbeid du holder på med.
+
+Vi kommer til å ha to prosjekter på høsten og to på våren. Jeg kommer til å legge noen anbefalinger for hvilke prosjekter dette kan være, men jeg er åpen for forslag om du har noe annet du kunne tenkt deg å se nærmere på.
+
+Prosjektene ser ut som følger:
+
+- realfagsbibliotek :: Opprett et sett med konstanter, funksjoner og datatyper det kan være nyttig å ha tilgjengelig for øvrig realfagsarbeid. Siden skal du bruke arbeidet ditt til å løse oppgaver fra de ulike realfagene (matematikk, fysikk, kjemi og biologi).
+- bysykkelanalyse :: Analyser data tilgjengeliggjort av Oslo bysykkel.
+- partikler i boks :: Modeller en boks med gasspartikler.
+- selvvalgt :: Velg et eget prosjekt.
+
+* Bruk av nettsida                                                                  :noexport:
 * Matematikk og programmering
 ** Programmering
 Når vi programmerer, setter vi opp et sett med instrukser til datamaskinen. Disse instruksene er en trinnvis gjennomgang av hvordan maskinen skal løse et problem.
@@ -66,7 +140,6 @@ print(svar)
 Dette kan vi gjøre fordi Python kommer med gangefunksjonen innebygd. Det dukker dog raskt opp matematiske påstander vi ikke kan løse uten en trinnvis prosess.
 
 Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av de førti første primtallene?» Dette har vi i de aller fleste programmeringsspråk ikke direkte måte å løse, vi må fortelle maskinen hva den skal gjøre instruks for instruks.
-
 * Programmeringsspråk
 Vi skal gjennom arbeidet i denne [[popup:jeg kommer ikke på noe bedere å kalle det][boka]] bruke programmeringsspråket Python.
 
@@ -92,6 +165,7 @@ print(svar)
 #+BEGIN_SRC org
 15
 #+END_SRC
+
 ** Ulike typer programmeringsspråk
 I teorien kan alle programmeringsspråk som er såkalt [[popup:Etter Alan Turing, av «The Imitation Game»-berømmelse][/turingkomplette/]] beregne alt som kan beregnes. For at et språk skal være turingkomplett, må det litt forenklet ha mulighet til å gjenta kode om en betingelse ikke er nådd og kunne skrive og lese fra minnet. Dette gjelder i praksis alle programmeringsspråk.
 
@@ -163,14 +237,61 @@ kvadrattall = list(map(lambda x: x ** 2, range(1, 101)))
 Her er det mange ord du ikke har sett før. Noen av dem kommer du til å bli svært godt kjent med, mens andre skal få lov til å holde seg obskure en god stund til. Med dette eksempelet ønsket jeg å illustrere at man innad i ett programmeringsspråk kan skrive innenfor mange ulike stiler.
 
 Noen språk egner seg dog bedre til visse stiler, vi kommer i all hovedsak til å skrive /imperativ/ kode i Python.
+** Semantikk og syntaks                                                            :noexport:
+:LOGBOOK:
+CLOCK: [2018-07-29 søn. 09:49]--[2018-07-29 søn. 10:21] =>  0:32
+:END:
+Hvert programmeringsspråk har et sett med «primitive constructs» (Guttag, s. 4), en syntaks, statisk semantikk og semnantikk. Om vi tenker på et naturlig språk (f.eks. norsk) er /primitivene/ ord, syntaksen forteller oss hvilke ord som lager velformede setninger, den statiske semantikken definerer hvilke setninger som er meningsfulle, og semantikken forteller til slutt hva meningen til de setningene er.
 
-* Datamaskinen                                                                      :noexport:
-** Historikk
+I Python har vi blant annet primitivene /literals/ (f.eks. tallet ~42.3~ og tekststrengen ~hei på deg~, og [[popup:%C2%ABinfiks%C2%BB%20fordi%20vi%20setter%20dem%20inn%20/mellom/%20to%20verdier][/infiksoperatorer/]] som ~+~ og ~*~). På norsk er tekststrengen «Stol hodet kne.» ikke en syntaktisk gyldig setning, siden vi på norsk ikke kan ha setninger på formen ~<substantiv> <substantiv> <substantiv>~. I Python er sekvensen av primitiver ~3.2 + 42.3~ syntaktisk velformulert, mens sekvensen ~3.2 42.3~ ikke er det.
+
+Den statiske semantikken forteller oss hvilke syntaktisk korrekte sekvenser som faktisk gir mening. På norsk er sekvensen «kua er store» på formen ~<subjekt> <verbal> <adverbial>~, noe som er en syntaktisk akseptabel setning, men ~kua~ er i entall og ~store~ viser til flertall, så det er fremdeles ikke gyldig norsk. Dette er da en statisk-semantisk feil. I Python er sekvensen ~42.3 / "hei på deg"~ syntaktisk gyldig, men den gir en statisk semantisk feil siden det ikke gir mening å dele et tall på en tekststreng.
+
+Semantikken i et språk assosierer en betydning til hver syntaktisk gyldige setning. I naturlige språk kan semantikken være tvetydig. Er for eksempel setningen «Jeg kan ikke si nok fine ting om deg» flatterende eller fornærmende? Programmeringsspråk er laget slik at enhver «lovlige» setning kun har én semantisk tolkning, de er entydige.
+
+Når man begynner med programmering, er flesteparten av feilene man produserer såkalte syntaksfeil.
+
+#+BEGIN_SRC python :exports both :results output raw
+3.2 42.3
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC
+  File "<stdin>", line 3
+    3.2 42.3
+           ^
+SyntaxError: invalid syntax
+#+END_SRC
+
+Noen programmeringsspråk, som C og Java, gjør en stor grad av statisk-semantisk kontrollering av programmene, Python gjør (dessverre, mener mange) ikke dette.
+
+Siden korrekte programmer er entydige, snakker vi sjelden om at programmer har semantiske feil. At de er entydige betyr dog ikke at programmet «betyr» det programmererer mente at det skulle da hun skreiv det. Når et program «betyr» noe annet enn det programmerer mente, kan det skje det dårlige ting.
+
+Når et program har feil, og oppfører seg på en utilsiktet måte?
+
+- Det kan kræsje, altså stoppe å fungere og gi en melding som gjør det tydelig at dette har skjedd. Om operativsystemet vårt fungerer som det skal, påvirker ikke dette systemet for øvrig. Allikevel har nok de fleste av oss vært borti at vi må restarte maskinen på grunn av et program som har kræsjet.
+- Det kan fortsette å kjøre og kjøre og kjøre /ad infinitum/. Om vi ikke veit omtrent hvor lang tid programmet i utgangspunktet skulle bruke på jobben, kan dette være vanskelig å kjenne igjen.
+- Det kan fullføre jobben sin og gi et svar som kanskje eller kanskje ikke er korrekt.
+
+Av disse tre feiltypene, hvor alle er uønsket, er uten tvil den siste den verste. Det er her formuer tapes, biler kjører av veien, pasienter blir gitt for høye doser stråling og fly går i bakken.
+
+Når mulig, bør programmer skrives på en slik måte at om de ikke fungerer på den måten man har tenkt at de skal, skal dette være tydelig. Vi kommer til å forsøke å legge inn systemer som passer på dette gjennom det følgende arbeidet.
+
+#+BEGIN_TASK
+Dataprogrammer er til tider plagsomet bokstavelige.
+
+Du har to punkter på et kart. Forsøk å beskrive et program, en algoritme, som skal få deg fra det ene punktet til det andre i bil.
+
+Hvor mange fartsbøter ville programmet ditt fått?
+#+END_TASK
+
+* Datamaskinen
+** Historikk                                                                       :noexport:
 *** Claude Shannon
 *** Alan Touring
 *** Jon von Neumann
 
-** Logikk
+** Logikk                                                                          :noexport:
 *** Syllogismer
 *** Boolsk
 
@@ -207,8 +328,22 @@ Regn følgende bytes over til titallssystemet:
 10000011
 11111111
 #+END_TASK
-*** TODO Håndtering av desimaltall                                                :noexport:
-Om hvordan 1/10 ikke lar seg representere eksakt i totallssystemet
+
+*** Håndtering av desimaltall                                                     :noexport:
+Vi har nå sett på hvordan en datamaskin kan representere tallene 0 og 1 via ledninger det ikke går eller går strøm i, og hvordan disse 0-ene og 1-erne kan brukes til å bygge opp alle heltall ved hjelp av totallssystemet.
+
+Hva så med tallet 0.5? Hva med [[popup:når vi snakker om programmering, mener vi titallssystemet når vi sier «desimaltall», om vi ønsker å si «tall med komma», kaller vi det flyttall][flyttallene]]?
+
+Flyttall representeres i all hovedsak som en slags variaent av tall på standardform når det er i minnet. I Python er det holdt av 64 bits til hvert flyttall. Når vi programmerer, må vi kan det dog være nødvendig å passe på når vi jobber med flyttall, da det her blir tydelige forskjeller på to- og titallssystemene.
+
+Vi kommer ikke her til å gå nærmere inn på akkurat hvordan verdiene er lagret i maskinen (ønsker du å grave deg ned i dette, er [[https://en.wikipedia.org/wiki/IEEE_754][Wikipedia]] en fin ressurs), men ser vi på noe så enkelt som verdien 0.1 i Python, er verdien som Python /egentlig/ jobber med ørlite høyere, se under.
+
+#+BEGIN_SRC python 
+>>> 0.1
+0.1000000000000000055511151231257827021181583404541015625
+#+END_SRC
+
+Til dagligdags regning, har ikke dette noe særlig betydning, vi må dog ha det i tankene når vi setter opp tester for ~if~-setninger, men mer om det seinere.
 
 * Basispython
 ** Regnerekkefølge og kommandolinja
@@ -252,6 +387,7 @@ Vi kan nå gjennomføre enkle regneoperasjoner, men det melder seg raskt et beho
 
 *** Hva er et navn?
 I Python viser navn alltid til verdier.
+
 #+BEGIN_SRC dot :file ../figurer/navn_enkelt.png :cmdline -Kdot -Tpng :results silent
 digraph {
 rankdir=LR;
@@ -1731,6 +1867,11 @@ https://matplotlib.org/examples/pylab_examples/spine_placement_demo.html#pylab-e
    https://learnxinyminutes.com/docs/python/
    [[file:syntaksark.org::*Variabler%20og%20samlinger][Variabler og samlinger]]
 
+** TODO Fjerne html-eksport fra toppen av sida.
+[[file:~/repos/promo/org/promo.org]]
+
+20180725 22:46
+
 * Notater                                                                           :noexport:
 ** Latex-chart
 
@@ -1757,11 +1898,8 @@ https://matplotlib.org/examples/pylab_examples/spine_placement_demo.html#pylab-e
 </label>
 #+END_EXPORT
 
-
 ** Arbeidsminnet i titallssystemet
 I «arbeidsminnet» i en datamaskin, representeres koeffisientene som spenningsnivåer. Det ville her i utgangspunktet ikke vært noe i veien for å sette ti ulike spenningsnivåer, og dermed la datamaskinen jobbe med titallsystemet den òg. Problemet er da at det ville vært lite som skulle til for at en verdien var feil. Om vi setter minimumspenningen til 0 V og maksimumsspenningen til 5 V, får altså hver verdi et spenn på 0,5 V som er «sitt». Det skal da lite til at en verdi som 1,6 V faller under 1,5 V, og dermed at en 4-er brått er en 3-er.
-
-
 
 ** Partial
 #+BEGIN_SRC python
@@ -1789,10 +1927,5 @@ print(c(9))
 11
 #+END_SRC
 
-* GjÃ¸remÃ¥l
 
-** TODO Fjerne html-eksport fra toppen av sida.
-[[file:~/repos/promo/org/promo.org]]
-
-20180725 22:46
 
