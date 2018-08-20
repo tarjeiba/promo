@@ -1,7 +1,7 @@
-#+SETUPFILE:orgheader.org
+#+SETUPFILE:orgheader-nojs.org
 #+TITLE: Syntaks
 
-Det følgende er en blanding av egetskrevet materiale og materiale sterkt inspirert av https://learnxinyminutes.com/docs/python/, gitt ut under en [[https://creativecommons.org/licenses/by-sa/3.0/deed.no][Creative Commons-DelPåSammeVilkår]]-lisens. Det følgende er derfor lisensiert på tilsvarende måte.
+Det følgende er en blanding av egenskrevet materiale og materiale sterkt inspirert av https://learnxinyminutes.com/docs/python/, gitt ut under en [[https://creativecommons.org/licenses/by-sa/3.0/deed.no][Creative Commons-DelPåSammeVilkår]]-lisens. Det følgende er derfor lisensiert på tilsvarende måte.
 
 * Kommentarer
 #+BEGIN_SRC python
