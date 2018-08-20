@@ -1,7 +1,54 @@
 #+SETUPFILE: orgheader.org
 #+TITLE: Programmering og modellering X ved Edvard Munch
 
-Følgende er en gjennomgang av mine, Tarjeis, forventninger til dere, elevene, gjennom faget Programmering og modellering X.
+* Datoer
+|  Uke | Tema                            | Funktest     | Prosjekt |
+|------+---------------------------------+--------------+----------|
+|   34 | Introduksjon og sjekk av utstyr | ~hei verden~ |          |
+|   35 |                                 |              |          |
+|   36 |                                 |              |          |
+|   37 |                                 |              |          |
+|   38 |                                 |              |          |
+|   39 |                                 |              |          |
+| +40+ | Høstferie                       |              |          |
+|   41 |                                 |              |          |
+|   42 |                                 |              |          |
+|   43 |                                 |              |          |
+|   44 |                                 |              |          |
+|   45 |                                 |              |          |
+|   46 |                                 |              |          |
+| +47+ | Heldagsprøver                   |              |          |
+|   48 |                                 |              |          |
+|   49 |                                 |              |          |
+|   50 |                                 |              |          |
+|   51 |                                 |              |          |
+| +52+ | Juleferie                       |              |          |
+|  +1+ | Juleferie                       |              |          |
+|    2 |                                 |              |          |
+|------+---------------------------------+--------------+----------|
+|    3 |                                 |              |          |
+|    4 |                                 |              |          |
+|    5 |                                 |              |          |
+|    6 |                                 |              |          |
+|    7 |                                 |              |          |
+|  +8+ | Vinterferie                     |              |          |
+|    9 |                                 |              |          |
+|   10 |                                 |              |          |
+|   11 |                                 |              |          |
+|   12 |                                 |              |          |
+|   13 |                                 |              |          |
+|   14 |                                 |              |          |
+|   15 |                                 |              |          |
+|   16 |                                 |              |          |
+|   17 |                                 |              |          |
+|   18 |                                 |              |          |
+|   19 |                                 |              |          |
+|   20 |                                 |              |          |
+|   21 |                                 |              |          |
+|   22 |                                 |              |          |
+|   23 |                                 |              |          |
+|   24 |                                 |              |          |
+|   25 |                                 |              |          |
 
 * Mine mål
 I løpet av dette faget er mitt mål at dere skal
@@ -10,14 +57,12 @@ I løpet av dette faget er mitt mål at dere skal
 
 * Mine forventninger
 
-* Datoer
 
-| Uke | Opplegg | Hjemme |
-|-----+---------+--------|
-|     |         |        |
+
 
 * Forutsetninger
 Dette faget baseres på Matematikk 1T. Det er /ikke/ egnet å ta faget ved siden av andre matematikkfag enn R1 og R2, dette er ikke et generelt programmeringsfag, men et realfagsrettet.
+
 
 * Arbeid
 ** På skolen
