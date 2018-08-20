@@ -2,6 +2,5 @@
 #+TITLE: Programmering og modellering
 
 - faget ved Edvard Munch :: [[file:faget.org][her]]
-- boka :: [[file:promo.org][her]]
-- om meg :: [[file:ommeg.org][her]]
+- fagstoff :: [[file:promo.org][her]]
 - Github-repo :: [[https://github.com/tarjeiba/promo][her]]
