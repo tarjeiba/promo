@@ -1,5 +1,5 @@
 #+SETUPFILE: orgheader.org
-#+PROPERTY: header-args :eval never-export :results silent
+#+PROPERTY: header-args :eval never-export
 #+TITLE: Programmering og modellering X
 
 #+BEGIN_EXPORT html
@@ -111,7 +111,7 @@ Jeg jobber med saken.
 -- Tarjei Bærland, 2018
 #+END_QUOTE
 
-* Matematikk og programmering
+* Matematikk og programmering                                                       :noexport:
 ** Programmering
 Når vi programmerer, setter vi opp et sett med instrukser til datamaskinen. Disse instruksene er en trinnvis gjennomgang av hvordan maskinen skal løse et problem.
 
@@ -129,7 +129,7 @@ så lenge b er større enn null, gjør følgende:
 
 Hva vil verdien til ~svar~ være når dette programmet har kjørt ferdig?
 
-** Matematikk
+** Matematikk                                                                      :noexport:
 Det forrige eksempelet ville vi løst matematisk ved å skrive opp følgende uttrykk:
 
 $$ \textrm{svar} = 5 + 5 + 5 = 5 \cdot 3 $$
@@ -138,7 +138,7 @@ $$ \textrm{svar} = 5 + 5 + 5 = 5 \cdot 3 $$
 
 Dette kunne vi gjort i de aller fleste programmeringsspråk òg, i Python ville det for eksempel sett ut som følger:
 
-#+BEGIN_SRC python :exports code :results silent
+#+BEGIN_SRC ipython :exports code :results silent
 a = 5
 b = 3
 svar = a * b
@@ -146,7 +146,7 @@ svar = a * b
 
 Som da ville gitt oss...
 
-#+BEGIN_SRC python :exports both
+#+BEGIN_SRC ipython :exports both
 print(svar)
 #+END_SRC
 
@@ -158,7 +158,7 @@ print(svar)
 Dette kan vi gjøre fordi Python kommer med gangefunksjonen innebygd. Det dukker dog raskt opp matematiske påstander vi ikke kan løse uten en trinnvis prosess.
 
 Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av de førti første primtallene?» Dette har vi i de aller fleste programmeringsspråk ikke direkte måte å løse, vi må fortelle maskinen hva den skal gjøre instruks for instruks.
-* Programmeringsspråk
+* Programmeringsspråk                                                               :noexport:
 Vi skal gjennom arbeidet i denne [[popup:jeg kommer ikke på noe bedere å kalle det][boka]] bruke programmeringsspråket Python.
 
 Det er mange gode grunner til å velge Python, vi skal gå gjennom noen av dem straks, men vit med sikkerhet det at vi like så godt kunne valgt et annet språk.
@@ -167,7 +167,8 @@ Det er mange gode grunner til å velge Python, vi skal gå gjennom noen av dem s
 Det finnes et utall programmeringsspråk. Noen språk er bedre egnet enn andre for visse oppgaver, intet språk er best på alt. Om du veit at det eneste du skal jobbe med er statistikk, ville kanskje det rette valget for deg være språket R; om du skal jobbe med Arduino bør du bli kjent med C++; om du ikke liker den imperative fremgangsmåten de fleste språk byr på, men ønsker en mer /funksjonell/ tilnærming, plukk opp Haskell; elsker du parenteser, se nærmere på Lisp; vil du skrive programmer som kjører i nettleseren, lær deg Javascript; hater du deg selv, sett deg ned med Brainfuck (jeg beklager språket).
 
 I dette faget kommer vi til å bruke språket Python. Python er et populært språk av mange grunner, og dets populæritet gjør at man kan bruke det innenfor mange fagdisiplinerer. En av fordelene med Python, er at overgangen fra /pseudokode/ til kjørende program ofte er lite. Under ser vi pseudokoden fra tidligere oversatt til Python.
-#+BEGIN_SRC python :exports both
+
+#+BEGIN_SRC ipython :exports both :results raw
 a = 5
 b = 3
 svar = 0
@@ -177,11 +178,6 @@ while b > 0:
     b = b - 1
 
 print(svar)
-#+END_SRC
-
-#+RESULTS:
-#+BEGIN_SRC org
-15
 #+END_SRC
 
 ** Ulike typer programmeringsspråk
@@ -222,7 +218,7 @@ int main() {
 /C/ er et klassisk programmeringsspråk og det dukker opp mer eller mindre over alt.
 
 *** Python
-#+BEGIN_SRC python :exports code :results silent
+#+BEGIN_SRC ipython :exports code :results silent
 print("Hello, world!")
 #+END_SRC
 
@@ -240,7 +236,7 @@ Et alternativ til imperativ kode er /deklarativ/ kode. Da forteller vi programme
 
 Under kommer to python-løsninger til oppgaven «lag en liste med de 100 første kvadrattaellene».
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 n = 1                         # sett verdien av n til 1
 kvadrattall = []              # sett verdien av kvadrattall til []
 while n <= 100:               # gjør den kommende snutten så lenge n er mindre eller lik 100
@@ -248,7 +244,7 @@ while n <= 100:               # gjør den kommende snutten så lenge n er mindre
     n += 1                    # øk verdien til n med 1
 #+END_SRC
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 kvadrattall = list(map(lambda x: x ** 2, range(1, 101)))
 #+END_SRC
 
@@ -269,7 +265,7 @@ Semantikken i et språk assosierer en betydning til hver syntaktisk gyldige setn
 
 Når man begynner med programmering, er flesteparten av feilene man produserer såkalte syntaksfeil.
 
-#+BEGIN_SRC python :exports both :results output raw
+#+BEGIN_SRC ipython :exports both :results output raw
 3.2 42.3
 #+END_SRC
 
@@ -303,7 +299,7 @@ Du har to punkter på et kart. Forsøk å beskrive et program, en algoritme, som
 Hvor mange fartsbøter ville programmet ditt fått?
 #+END_TASK
 
-* Datamaskinen
+* Datamaskinen                                                                      :noexport:
 ** Historikk                                                                       :noexport:
 *** Claude Shannon
 *** Alan Touring
@@ -356,14 +352,14 @@ Flyttall representeres i all hovedsak som en slags variaent av tall på standard
 
 Vi kommer ikke her til å gå nærmere inn på akkurat hvordan verdiene er lagret i maskinen (ønsker du å grave deg ned i dette, er [[https://en.wikipedia.org/wiki/IEEE_754][Wikipedia]] en fin ressurs), men ser vi på noe så enkelt som verdien 0.1 i Python, er verdien som Python /egentlig/ jobber med ørlite høyere, se under.
 
-#+BEGIN_SRC python 
+#+BEGIN_SRC ipython 
 >>> 0.1
 0.1000000000000000055511151231257827021181583404541015625
 #+END_SRC
 
 Til dagligdags regning, har ikke dette noe særlig betydning, vi må dog ha det i tankene når vi setter opp tester for ~if~-setninger, men mer om det seinere.
 
-* Basispython
+* Basispython                                                                       :noexport:
 ** Regnerekkefølge og kommandolinja
 Siden Python-programmer kan oversettes til maskinkode løpende, kan vi jobbe /interaktivt/ med Python, à la slik vi er vant med fra CAS i Geogebra. Vi kan altså, om vi ønsker, skrive en linje med kode, se hva denne gjør, for så å skrive neste.
 
@@ -433,11 +429,11 @@ b -> 42
 #+END_SRC
 
 #+RESULTS:
-[[fig:navn_dobbelt.png]]
+[[file:figurer/navn_dobbelt.png]]
 
 Python har /dynamiske typer/ noe som vil si at vi kan gjenbruke navn på helt andre type verdier enn hva de opprinnelig blei brukt på.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 a = 42
 b = a
 a = "Babel"
@@ -488,7 +484,7 @@ Fra de fleste programmer ønsker vi en eller annen form for informasjon ut fra p
 
 Sistnevnte gjøres via funksjonen ~print~.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 print("Hei, verden!")
 #+END_SRC
 
@@ -499,7 +495,7 @@ Hei, verden!
 
 Det er heller ikke noe i veien for å kombinere printing med variabler.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 a = 2
 b = 3
 c = a + b
@@ -513,7 +509,7 @@ Summen av  2  og  3  er  5 .
 
 Dette kan fort bli en uhensiktsmessig måte å skrive ut svar på, så vi bruker heller den innebygde formateringen ~f-strenger~.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 print(f"Summen av {a} og {b} er {c}.")
 #+END_SRC
 
@@ -526,7 +522,7 @@ Summen av 2 og 3 er 5.
 
 Vi kan, eksempelvis, spesifisere hvor mange desimaler vi ønsker. (Setningen ~from math import pi¨~ skal vi se i mye mer detalj på seinere.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 from math import pi
 print(pi)
 print(f'pi skrevet med 5 gyldige siffer er {pi:.5}.')
@@ -540,7 +536,7 @@ pi skrevet med 5 gyldige siffer er 3.1416.
 
 Generelt kan vi spesifisere et tall som skal skrives ut ved å bruke tallets totale ~bredde~ og dets ~presisjon~ på en enkel måte med ~f-strenger~.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 bredde = 7
 presisjon = 3
 print(f'pi = {pi:{bredde}.{presisjon}}')
@@ -553,7 +549,7 @@ pi =    3.14
 *** Input
 Å be brukeren om å taste inn verdier til programmet ditt kan enkelt gjøres ved å bruke ~input~-funksjonen. Om vi er usikre på hvordan denne brukes, kan vi benytte oss av pythons innebygde hjelpefunksjonalitet.
 
-#+BEGIN_SRC python :exports both
+#+BEGIN_SRC ipython :exports both
 help(input)
 #+END_SRC
 
@@ -573,7 +569,7 @@ input(prompt=None, /)
 
 ~input~ er altså en innebygd (/built-in/) funksjon som leser en tekststreng fra /standard input/. Dersom vi ønsker å gi brukeren en /prompt/, à la «>>>» kan vi gjøre det ved å gi det som argument til funksjonen.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 navn = input("Hva heter du? ")
 print("fDu heter {navn}." )
 #+END_SRC
@@ -611,7 +607,7 @@ False
 
 Merk at ~=~ /ikke/ er en logisk sjekk, à la ulikhetene over. Om vi ønsker å sjekke for likhet, må vi bruke ~==~. ~=~ er fremdeles «tildelingoperatoren», vi bruker den for å gi ting navn, noe som betyr at det ikke er noe i veien for å gjøre for eksempel følgende i Python:
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 sannhetsverdi = 3 > 2
 print(sannhetsverdi)
 #+END_SRC
@@ -624,7 +620,7 @@ True
 Her vil først Python /evaluere/ påstanden på høyre side, altså ~3 > 2~, finne at dette er sant, og dermed sette sannhetverdi til å ha verdien ~True~.
 *** Heltall
 Heltall i Python oppgis på vanlig måte. ~3~, ~112~ eller ~1231421124~.
-#+BEGIN_SRC python :exports none
+#+BEGIN_SRC ipython :exports none
 import sys
 print(sys.maxsize)
 #+END_SRC
@@ -640,13 +636,13 @@ print(sys.maxsize)
 *** Lister
 Lister eller [[https://en.wikipedia.org/wiki/Array_data_structure][/arrays/]] er en klassisk datastruktur. Vi samler en rekke verdier inn i en liste, for at vi så skal kunne gjøre operasjoner på lista direkte eller elementvis. Lister lages i Python ved å bruke klamme-parenteser, ~[~ og ~[~.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 favorittall = [-1, 0, 7, 11, 42]
 #+END_SRC
 
 Det er heller ikke noe i veien for å ha noe annet enn tall i ei liste, ei heller blandede typer.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 frukter = ["eple", "pære", "appelsin", "mango"]
 #+END_SRC
 
@@ -659,7 +655,7 @@ Innholdet i ei liste kaller vi enkeltvis for listas /elementer/, og hvert elemen
 
 Legg merke til at i Python er listene nullindeksert, altså har det første elementet i lista indeks 0.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 print(frukter[0])
 #+END_SRC
 
@@ -670,7 +666,7 @@ eple
 
 Vi kan hente ut elementer fra ei liste ved å bruke /slice/-notasjonen. Den ser ut som ~listenavn[første ønskede : ikke-inkludert siste ønskede : steglengde]~. Om vi har liste ~min_liste~ av ~n~ elementer, kan vi hente ut de ~k~ første ved å skrive ~min_liste[0:k:1]~, alternativt bruke at nullte element er standard startverdi og ~1~ er standard steglengde, ~min_liste[:k]~.
 
-#+BEGIN_SRC python :exports both
+#+BEGIN_SRC ipython :exports both
 print(frukter[0:2:1])
 print(frukter[:2])
 print(frukter[2:])
@@ -685,7 +681,7 @@ print(frukter[2:])
 
 **** Muterbarhet
 Se på følgende snutt, og skriv ned hva du tror vil bli gitt av print-setningen.
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 a = ['mai', 'juni', 'juli', 'august']
 b = a
 a[1] = 'november'
@@ -737,7 +733,7 @@ Og hvorfor er dette viktig? Jo, fordi verdier i lister kan endres uten at man op
 
 Hvordan skal vi så gjøre det? Når vi skal kopiere en liste, kan vi gjøre dette ved å skrive ~b = a[:]~, siden /slicen/ ~a[:]~ er en ny liste med alle elementene i ~a~. Gjør vi dette igjen med snutten over, vil vi få ønske oppførsel.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 a = ['mai', 'juni', 'juli', 'august']
 b = a[:]
 a[1] = 'november'
@@ -747,7 +743,7 @@ print(f'b er: {b}')
 #+END_SRC
 
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 a = ['test']
 b = a[:]
 print(id(a))
@@ -760,7 +756,7 @@ print(id(b))
 1655628749192
 #+END_SRC
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 enere = [1, 1, 1, 1, 1]
 print(id(enere))
 enere += [5]
@@ -773,7 +769,7 @@ print(id(enere))
 1655628749192
 #+END_SRC
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 enere = "11111"
 print(id(enere))
 enere += "5"
@@ -788,7 +784,7 @@ print(id(enere))
 
 *** «Assosiasjonslister» eller /dictionaries/                                     :noexport:
 
-* Abstraksjon
+* Abstraksjon                                                                       :noexport:
 ** Biblioteker
 *** Et fysikkbibliotek
 #+BEGIN_EXAMPLE
@@ -798,7 +794,7 @@ C:\Users\tabaa004\AppData\Roaming\Python\Python36\site-packages
 
 Her legger jeg en kort fil som jeg kaller ~fysikk.py~. Dette skal på sikt være fysikkbiblioteket mitt. Her ønsker jeg å samle alle konstanter, samt en del formler og likninger jeg stadig ender med å bruke.
 
-#+BEGIN_SRC python :exports both
+#+BEGIN_SRC ipython :exports both
 import fysikk as fy
 
 print(fy.g)
@@ -819,7 +815,7 @@ En del slike biblioteker er en del av Pythons /standardbibliotek/. Det vil enkel
 
 Vårt første møte ~import~-setninger blir også vårt første møte «punktnotasjon» eller /dot notation/. Vi skriver ~fy.g~ for vi ønsker å bruke ~g~ fra ~fysikk~-modulen, som vi her har valgt å gi kallenavnet («alias»-et) ~fy~. Vi ser av feilmeldingen under at om vi forsøker å bruke ~g~ direkte, får vi beskjed om at denne ikke er definert.
 
-#+BEGIN_SRC python :exports both
+#+BEGIN_SRC ipython :exports both
 import fysikk
 
 print(g)
@@ -836,28 +832,26 @@ Vi kommer til å møte på punktnotasjonen i en situasjon til, for bruk av /meto
 
 *** Vårt typiske importoppsett
 Du vil noen ganger se anbefalt å bruke en pakke som heter [[https://scipy.github.io/old-wiki/pages/PyLab][~pylab~]]. Dette er en samlepakke for tidligere nevnte ~scipy~, ~numpy~ og ~matplotlib~. Dette er en god pakke, men vi kommer ikke til å bruke den her. Grunnen er enkelt og greit at jeg mener den inviterer til dårlige vaner og at brukeren ikke må forholde seg til økosystemet hun jobber i. Pylab oppfordrer til å importere pakken via
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 from pylab import *
 #+END_SRC
 hvor ~*~-markøren vil si «alt». Problemet med dette er at det nå ikke blir synlig for brukeren /hvor/ en funksjon, klasse eller variabel kommer fra. Det øker også sannsynligheten for at man ved uhell skriver over allerede-definerte navn.
 
 Vi kommer til stort sett til å importere i det minste følgende:
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython :session None
 import numpy as np
 import matplotlib.pyplot as plt
 #+END_SRC
 
 Vi kommer også til å hente ut spesifikke funksjoner fra eksempelvis ~math~, noe vi kan gjøre via:
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython :session None
 from math import sqrt
 import math
 import numpy as np
 
 
 liste = []
-liste.exte
 a = np.array([1, 2])
-a.
 
 print(sqrt(2))
 
@@ -865,9 +859,7 @@ help(liste.extend)
 #+END_SRC
 
 #+RESULTS:
-#+BEGIN_SRC org
-1.4142135623730951
-#+END_SRC
+: # Out[3]:
 
 Legg merke til at vi her ikke lenger har behov for punktnotasjon når vi skal bruke ~sqrt~, da vi spesifikt har hentet ut denne fra ~math~-biblioteket.
 
@@ -897,7 +889,7 @@ funk -> output [label="Utdata"]
 *** Definisjon og kall
 De to viktigste tingene vi gjør med en funksjon er å definere den og å gjøre et kall på den. Definisjon skjer i Python ved å bruke nøkkelordet ~def~. Et kall fungerer ved at vi skriver funksjonsnavnet og en parentes som inneholder eventuelle paramtere.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 def hilsen():
     """En funksjon som sier 'hei'"""
     print('hei')
@@ -926,7 +918,7 @@ I slike tilfeller kan vi enten skrive ~return~, ~return None~, eller la være å
 Modifiser ~hilsen~ og ~hilsen_navngitt~ til heller å /returnere/ sine respektive tekststrenger.
 
 Ønsket oppførsel er altså for eksempel:
-#+BEGIN_SRC python :exports both
+#+BEGIN_SRC ipython :exports both
 svar = hilsen_navngitt('Trond')
 print(svar)
 #+END_SRC
@@ -953,7 +945,7 @@ def funksjonsnavn(arg1, arg2, ...):
 
 La oss si vi ønsker å lage en funksjon som tar inn et tall og returnerer tallet kvadrert. Dette kan vi gjøre som vist under.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 def kvadrer(x):
     """Kvadrer tallet x."""
     svar = x * x
@@ -971,7 +963,7 @@ I denne /definisjonen/ (markert med nøkkelordet ~def~), setter vi /navnet/ til 
 
 #+BEGIN_TASK
 Hva er /funksjonsnavnet/, /argumentene/ og /returverdi/ for funksjonen under?
-#+BEGIN_SRC python :exports code
+#+BEGIN_SRC ipython :exports code
 def snitt(a, b):
     """Gi gjennomsnittet av tallene a og b."""
     svar = (a + b) / 2
@@ -980,7 +972,7 @@ def snitt(a, b):
 
 Videre, i /funksjonskallet/ under, hva vil verdien av variabelen ~regnet_snitt~ være og hva er /parameterne/ i kallet?
 
-#+BEGIN_SRC python :exports code
+#+BEGIN_SRC ipython :exports code
 regnet_snitt = snitt(4.5, 9)
 #+END_SRC
 #+END_TASK
@@ -988,7 +980,7 @@ regnet_snitt = snitt(4.5, 9)
 ** Skop
 Se på følgende programsnutt.
 
-#+BEGIN_SRC python :exports both
+#+BEGIN_SRC ipython :exports both
 n = 3
 
 def inkrement(n):
@@ -1017,7 +1009,7 @@ Her har vi først en /variabel/ kalt ~n~, som vi setter til verdien ~3~. Vi defi
 
 Hva skjer så om vi kjører samme skript, bare med én vesentlig endring?
 
-#+BEGIN_SRC python :exports code
+#+BEGIN_SRC ipython :exports code
 n = 3
 
 def inkrement(n):
@@ -1048,7 +1040,7 @@ Kjør de to foregående programsnuttene og forklar eventuelle avvik mellom dem.
 
 De delene av et program hvor en gitt variabel er tilgjengelig, kaller vi den variabelenes «skop», eller /scope/.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 x = 2
 def utskrift():
     print(f'Inne i funksjonen er verdien til x {x}.')
@@ -1063,7 +1055,7 @@ print(f'Utenfor funksjonen er verdien til x {x}.')
 #+BEGIN_SRC org
 Jeg skriver verdien av x, som  er 2.
 #+END_SRC
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 
 x = 2
 def utskrift_med_indre():
@@ -1077,7 +1069,7 @@ print(f'Utenfor funksjonen er verdien til x {x}.')
 #+BEGIN_TASK
 Hva blir skrevet av følgende program?
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 def kvadrer(x):
     return x*x
 
@@ -1097,7 +1089,7 @@ Funksjonene er /verbene/ i programeringsspråket vårt. De /gjør/ noe med data 
 
 Området vi nå er på vei over i, kalles /objektorientert programmering/. Som nevnt tidligere, er det ikke strengt nødvendig med klasser for å kunne løse problemer, men det gjør mye av programmeringen langt enklere og mer oversiktlig. I tillegg virker klasser som et /abstraksjonsnivå/ mellom den som skriver og den som bruker et program.
 
-#+BEGIN_SRC python :session kloss :exports code
+#+BEGIN_SRC ipython :session kloss :exports code
   class Kloss(object):
       """En kloss som glir på et underlag og kan kollidere med andre klosser
       Klosser initieres med en masse, startposisjon og startfart, alle flyttall.
@@ -1115,7 +1107,7 @@ Området vi nå er på vei over i, kalles /objektorientert programmering/. Som n
 
 Det er kanskje ikke helt tydelig hva denne snutten gjør ennå. Her lager vi oss en ny /klasse/ som vi kaller ~Kloss~. Overse ~(object)~ inntil videre. Vi sier så at klossen skal lages, «initieres» med en masse, startposisjon, og startfart, alle disse er flyttall. Ønsker vi å lage en kloss med masse 1.0 kg, startposisjon 0.0 m og startfart 1.0 m/s, kan vi gjøre dette som 
 
-#+BEGIN_SRC python :session kloss :exports both
+#+BEGIN_SRC ipython :session kloss :exports both
 kloss = Kloss(1.0, 0.0, 1.0)
 print(type(kloss))
 #+END_SRC
@@ -1129,7 +1121,7 @@ Men ... hva skjedde med ~__init__~-argumentet ~self~? Vel, dette dukker opp gjen
 
 Slik det står nå, er klossen vår en litt kjedelig sak, vi kan, om vi ønsker, hente ut egenskapene dens, men vi kan vanskelig få den til å gjøre stort. La oss gi den en måte å bevege seg på.
 
-#+BEGIN_SRC python :session kloss_b
+#+BEGIN_SRC ipython :session kloss_b
   class Kloss(object):
       """En kloss som glir på et underlag og kan kollidere med andre klosser
       Klosser initieres med en masse, startposisjon og startfart, alle flyttall.
@@ -1148,7 +1140,7 @@ Slik det står nå, er klossen vår en litt kjedelig sak, vi kan, om vi ønsker,
 #+BEGIN_SRC org
 #+END_SRC
 
-#+BEGIN_SRC python :session kloss_b
+#+BEGIN_SRC ipython :session kloss_b
 kloss = Kloss(1.0, 0.0, 1.0)
 
 t = 0
@@ -1199,7 +1191,7 @@ Her er det en gjentagende del. Om du skulle programmert dette ved bruk av en lø
 
 For vår funksjon kommer gangen i dette til å se ut som følger:
 
-#+BEGIN_SRC python :exports results
+#+BEGIN_SRC ipython :exports results
 import math
 
 def f(x):
@@ -1313,7 +1305,7 @@ Svaret er 2.6103.
 #+BEGIN_TASK
 Forsøk å implementere halveringsmetoden for denne funksjonen i python. Du kan bruke funksjonsdefinisjonen
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 import math
 
 def f(x):
@@ -1323,7 +1315,7 @@ def f(x):
 og sette startverdiene til 0.0 og 10.0.
 #+END_TASK
 
-* Programflyt
+* Programflyt                                                                       :noexport:
 ** Logikk
 Hvis ~a~ er sann og ~b~ er sann, så er ~a og b~ sann. Hvis ~a~ er sann, men ~b~ er usann, så er ~a og b~ usann.
 
@@ -1371,7 +1363,7 @@ Dersom vi ønsker at programmeringsspråket vårt skal kunne brukes til å regne
 
 Dersom du ønsker å skrive et program som kaster en mynt og sier om det blei kron eller mynt som landet opp, så kan du gjøre det som følger.
 
-#+BEGIN_SRC dot :exports none :file figurer/if-setning.png :cmdline -Kdot -Tppng
+#+BEGIN_SRC dot :exports none :file figurer/if-setning.png :cmdline -Kdot -Tpng
 digraph G {
         start [label="Ting gjøres...", shape=box, fontname="Open Sans"];
         if [label="Er noe sant?", shape=diamond, fontname="Open Sans"];
@@ -1383,6 +1375,9 @@ digraph G {
         if -> iff [label="Nei", fontname="Open Sans"];
 }
 #+END_SRC
+
+#+RESULTS:
+[[file:figurer/if-setning.png]]
 
 #+CAPTION: Et enkelt flytskjema for avgjørelser
 [[fig:if-setning.png]]
@@ -1400,7 +1395,7 @@ hvis ikke:
 
 Om vi så ønsker å gjøre dette til en pythonsnutt som, for eksempel et program som «kaster en mynt» og forteller deg hva det fikk, kan det gjøres på følgende måte:
 
-#+BEGIN_SRC python :exports both :session none
+#+BEGIN_SRC ipython :exports both :session none
 import random as rnd
 
 myntkast = rnd.random()
@@ -1418,7 +1413,7 @@ Det blei visst mynt nå.
 
 En if-setning har altså følgende [[file:syntaksark.org::*~if~][syntaks]]:
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 if boolsk():        # boolsk() defineres i syntaksark
     print("boolsk() ga sant")
 else:
@@ -1441,7 +1436,7 @@ En forenklet lærer sjekker kun poengsum og setter karakter deretter. Denne fore
 
 Vi kan løse dette med ~if~ og ~else~ som vist under.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 import random as rnd
 
 poeng = rnd.randint(0, 100)
@@ -1467,7 +1462,7 @@ else:
 
 Vi ser her at vi ender med å gjenta strukturen ~else: if..:~ gang på gang, og det baller på seg med innrykksnivåer. Som en kur til dette, har vi ~elif~-strukturen. Det samme programmet kan løses som under.
 
-#+BEGIN_SRC python :exports both :session none
+#+BEGIN_SRC ipython :exports both :session none
 import random as rnd
 
 poeng = rnd.randint(0, 100)
@@ -1494,14 +1489,14 @@ Læreren mener at karakteren 3 er å leve.
 ** Mens vi venter
 Vi har allerede i [[file:introduksjon.org::*Valg%20av%20spr%C3%A5k][Valg av språk]] sett på ei ~while~-løkke. Denne bruker vi når vi ønsker at en programsnutt skal gjenta seg fram til en gitt betingelse er oppfylt. En ~while~-løkke består av nøkkelordet ~while~, et uttrykk som returnerer en [[file:variabler-datatyper.org::*Boolske%20verdier][boolsk]] verdi, og en eller flere setninger som skal kjøres.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 while uttrykk:
     setning(er)
 #+END_SRC
 
 Ønsker vi for eksempel å skrive ut alle heltall fra 1 til 10, kan det løses med en while løkke på følgende vis:
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 tall = 1
 while tall <= 10:
     print(tall)
@@ -1531,7 +1526,7 @@ Vurder følgende fremgangsmåte for et vilkårlig, positivt heltall, $n$:
 Collatz' [[popup:%C2%ABFormodning,%20innen%20matematikk,%20en%20antatt%20sann%20setning%20som%20enn%C3%A5%20ikke%20har%20blitt%20bevist.%C2%BB%20(Store%20norske%20leksikon)][formodning]] sier at om du så tar tallet du får gjennom samme prosess, og så tar tallet du får /da/ gjennom samme prosses, og så videre, og så videre, vil du til slutt få tallet 1. /Uansett/ hvilket positive heltall du startet på. En del tall har blitt sjekket, men ikke [[popup:Alle%20tall%20til%20$20\cdot2^{58}\approx%205.7646\cdot%2010^18$%20er%20sjekket.(https://sweet.ua.pt/tos/bib/3.5.html)][alle]].
 Under vises rekka av collatz-tall om man starter på 17. Tall nummer to blir da 52, siden $1\cdot 3 + 1 = 52$.
 
-#+BEGIN_SRC python :exports results :session none
+#+BEGIN_SRC ipython :exports results :session none
 # Snutt for å skrive ut 3n+1-tallene
 
 n = 17
@@ -1559,7 +1554,7 @@ Bruk ~if~-setninger og en ~while~-løkke for å lage et program som gjør følge
 
 ** Fibonacci                                                              :prosjekt:noexport:
 
-#+BEGIN_SRC python :session none :exports results
+#+BEGIN_SRC ipython :session none :exports results
 import sys
 a, b = 0, 1
 
@@ -1577,7 +1572,7 @@ while b < 1000:
 *** ~for~-løkka
 Vi har en liste med alle tallene fra 1 til 10. For hvert av tallene ønsker vi å skrive ut hvorvidt tallet er delelig på 7.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 tallene = range(1, 10 + 1)
 
 for tall in tallene:
@@ -1606,7 +1601,7 @@ I dette eksempelet brukte vi ei ~for~-løkke. Ei slik løkke gjør noe for hvert
 *** Listegenerering                                                      :avansert:noexport:
 Nå som vi kjenner ~for~-løkka, kan vi se på en avansert måte å lage lister på, ved hjelp av et pythonverktøy kalt [[file:syntaksark.org::*%C2%ABList%20comprehension%C2%BB][/list comprehension/]].
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 oddetallene = [i for i in range(1, 11) if i % 2 != 0]
 
 kvadrattallene = [sum(oddetallene[:i+1]) for i in range(len(oddetallene))]
@@ -1632,7 +1627,7 @@ Skriv et program som teller oppover fra 1. Få programmet til å hoppe over tall
 *** ~def utvid~
 Lag en funnksjon, ~utvid~, med følgende spesifiasjoner
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 def utvid(liste1: list, liste2: list) -> list:
     """Returner sammenslåingen («concatination») av liste1 og liste2."""
     res = []
@@ -1646,7 +1641,7 @@ def utvid(liste1: list, liste2: list) -> list:
 *** ~def muterende_utvid~
 Lag en funksjon, ~muterende_utvid~, med følgende spesifikasjoner:
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 def muterende_utvid(liste1: list, liste2: list) -> None:
     """Utvider liste1 med elementene fra liste2.
 
@@ -1663,7 +1658,7 @@ def muterende_utvid(liste1: list, liste2: list) -> None:
 *** ~def glidelaas~
 Lag en funksjon, ~glidelaas~, med følgende spesifikasjoner:
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 def glidelaas(liste1: list, liste2: list) -> list:
     """liste1 = [elem1_0, elem1_1, elem1_2, ..., elem1_n]
     liste2 = [elem2_0, elem2_1, elem2_2, ..., elem2_n]
@@ -1678,44 +1673,35 @@ def glidelaas(liste1: list, liste2: list) -> list:
     return res
 #+END_SRC
 
-* Plotting
-** Et enkelt linjeplot
 
+* Plotting
+** Et enkelt linjeplot                                                             :noexport:
 Først og fremst må vi /importere/ matplotlib-biblioteket. I de aller fleste programmer hvor du skal lage grafer, ønsker du følgende linjer i starten av programmet.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython :results silent :session linjeplot
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 #+END_SRC
 
-#+RESULTS:
-#+BEGIN_SRC org
-#+END_SRC
-
 Vi kan så gjøre i stand noen enkle data, for eksempel andregradsfunksjonen  $f(x)=x^2-3x+2$.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython :results silent :session linjeplot
 x = np.arange(-10, 10, 0.01)
 y = [x_i ** 2 - 3 * x_i + 2 for x_i in x]
 #+END_SRC
 
-#+RESULTS:
-#+BEGIN_SRC org
-#+END_SRC
-
 I matplotlib jobber vi i hovedsak med to objekttyper, figurer (/figures/) og akser (/axes/). Vi kan opprette disse to objektene og lage grafen på følgende måte:
 
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython :results silent :session linjeplot
 fig, ax = plt.subplots()
 ax.plot(x, y)
+fig.savefig("enkel_parabel.png")
 #+END_SRC
 
-#+BEGIN_SRC python
-fig.savefig("test.png")
-#+END_SRC
-* Filbehandling
-* Tekstfiler
+[[fig:enkel_parabel.png]]
+
+* Tekstfiler                                                                        :noexport:
 #+BEGIN_SRC ipython :exports none :results silent
 import random as rnd
 import numpy as np
@@ -1730,7 +1716,7 @@ tidssteg = 0.01
 tider = np.linspace(starttid, sluttid, int((sluttid-starttid)/tidssteg))
 linjer = [(tid, posisjon(tid)) for tid in tider]
 
-with open("data/posisjonseksempel.csv", mode='w+') as fil:
+with open("../data/posisjonseksempel.csv", mode='w+') as fil:
     for linje in linjer:
         fil.write(f"{linje[0]}, {linje[1]}\n")
 #+END_SRC
@@ -1739,7 +1725,7 @@ Under ser du de ti første linjene fra ei fil med måledata fra en posisjonsmål
 
 Du finner hele fila [[file:data/posisjonseksempel.csv][her]].
 
-#+INCLUDE: "~/jobb/fagmateriell/org/promo/data/posisjonseksempel.csv" example :lines "-11"
+#+INCLUDE: "~/repos/promo/data/posisjonseksempel.csv" example :lines "-11"
 
 ~.py~-filene vi skriver når vi programmerer, ~.csv~-filene à la den vist over, eller ~.txt~-filer representeres bokstav for bokstav i dataminnet. Dette i kontrast til for eksempel ~.docx~-filene vi skriver i Word eller ~.xlsx~-filene vi jobber med i Excel. I tekstfiler kan vi gå byte for byte gjennom fila og finne tegn etter tegn, avhengig av hvilket kodesystem fila er skrevet med.
 
@@ -1749,7 +1735,7 @@ Dette gjør at slike filer er relativt enkle å lese inn og jobbe med i Python. 
 Vi kan enkelt lese inn tekstfiler, som ~.csv~-fila over, i Python.
 
 #+BEGIN_SRC ipython :session fil :results silent
-posisjonsfil = open("data/posisjonseksempel.csv", "r")
+posisjonsfil = open("../data/posisjonseksempel.csv", "r")
 #+END_SRC
 
 Vi har nå fått et «filobjekt» kalt ~posisjonsfil~, som er koblet til fila over og åpnet kun med leserettigheter.
@@ -1790,7 +1776,7 @@ posisjonsfil.close()
 For å unngå å måtte huske å lukke fila, kan vi alternativt jobb med fila innenfor en ~with~-kontekst, det foregående eksempelet blir da som følger:
 
 #+BEGIN_SRC ipython :exports both :results output org
-with open("data/posisjonseksempel.csv", "r") as posisjonsfil:
+with open("../data/posisjonseksempel.csv", "r") as posisjonsfil:
     filtekst = posisjonsfil.readlines()
 
 for linje in filtekst[:5]:
@@ -1845,7 +1831,7 @@ kasttittel = "Kast nr."
 terningtitler = "Tern. 1, Tern. 2"
 antall_kast = 10000
 
-terningdata = open("data/terningeksempel.csv", "w")
+terningdata = open("../data/terningeksempel.csv", "w")
 terningdata.write(f"{kasttittel}, {terningtitler}")
 
 for kast in range(antall_kast):
@@ -1864,12 +1850,12 @@ I linja ~linje = f"\n{kast+1}, {tern1}, {tern2}"~ skjer det to nevneverdige ting
 
 Etter å ha kjørt foregående snutt, ender vi med en innhold à la følgende:
 
-#+INCLUDE: "~/jobb/fagmateriell/org/promo/data/terningeksempel.csv" example :lines "-11"
+#+INCLUDE: "~/repos/promo/data/terningeksempel.csv" example :lines "-11"
 
 #+BEGIN_TASK
 Endre terningeksempelet over til å skrive en fjerde kolonne, «Sum», hvor verdiene er summen av ~tern1~ og ~tern2~.
 #+END_TASK
-* Testing og bugs
+* Testing og bugs                                                                   :noexport:
 ** Testing
 
 ** Bugs
@@ -1918,7 +1904,7 @@ https://matplotlib.org/examples/pylab_examples/spine_placement_demo.html#pylab-e
 I «arbeidsminnet» i en datamaskin, representeres koeffisientene som spenningsnivåer. Det ville her i utgangspunktet ikke vært noe i veien for å sette ti ulike spenningsnivåer, og dermed la datamaskinen jobbe med titallsystemet den òg. Problemet er da at det ville vært lite som skulle til for at en verdien var feil. Om vi setter minimumspenningen til 0 V og maksimumsspenningen til 5 V, får altså hver verdi et spenn på 0,5 V som er «sitt». Det skal da lite til at en verdi som 1,6 V faller under 1,5 V, og dermed at en 4-er brått er en 3-er.
 
 ** Partial
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
 from functools import wraps
 
 def increment(whole_func):
