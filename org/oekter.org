@@ -1,0 +1,217 @@
+#+SETUPFILE: orgheader.org
+#+TITLE: Økter
+
+Generell oversikt finner du på [[file:edvardmunch.org::*Datoer][Edvard Munch - datoer]].
+
+* Uke 34
+:PROPERTIES:
+:header-args:  :tangle ../py/uke34.py
+:END:
+
+** Introduksjon
+
+** 
+* Uke 35                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke35.py
+:END:
+
+* Uke 36                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke36.py
+:END:
+
+* Uke 37                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke37.py
+:END:
+
+* Uke 38                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke38.py
+:END:
+
+* Uke 39                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke39.py
+:END:
+
+* Uke 41                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke41.py
+:END:
+
+* Uke 42                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke42.py
+:END:
+
+* Uke 43                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke43.py
+:END:
+
+* Uke 44                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke44.py
+:END:
+
+* Uke 45                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke45.py
+:END:
+
+* Uke 46                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke46.py
+:END:
+
+* Uke 47                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke47.py
+:END:
+
+* Uke 48                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke48.py
+:END:
+
+* Uke 49                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke49.py
+:END:
+
+* Uke 50                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke50.py
+:END:
+
+* Uke 51                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke51.py
+:END:
+
+* Uke 52                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke52.py
+:END:
+
+* Uke 1                                                                             :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke1.py
+:END:
+
+* Uke 2                                                                             :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke2.py
+:END:
+
+* Uke 3                                                                             :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke3.py
+:END:
+
+* Uke 4                                                                             :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke4.py
+:END:
+
+* Uke 5                                                                             :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke5.py
+:END:
+
+* Uke 6                                                                             :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke6.py
+:END:
+
+* Uke 7                                                                             :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke7.py
+:END:
+
+* Uke 9                                                                             :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke9.py
+:END:
+
+* Uke 10                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke10.py
+:END:
+
+* Uke 11                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke11.py
+:END:
+
+* Uke 12                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke12.py
+:END:
+
+* Uke 13                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke13.py
+:END:
+
+* Uke 14                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke14.py
+:END:
+
+* Uke 15                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke15.py
+:END:
+
+* Uke 16                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke16.py
+:END:
+
+* Uke 17                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke17.py
+:END:
+
+* Uke 18                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke18.py
+:END:
+
+* Uke 19                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke19.py
+:END:
+
+* Uke 20                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke20.py
+:END:
+
+* Uke 21                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke21.py
+:END:
+
+* Uke 22                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke22.py
+:END:
+
+* Uke 23                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke23.py
+:END:
+
+* Uke 24                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke24.py
+:END:
+
+* Uke 25                                                                            :noexport:
+:PROPERTIES:
+:header-args:  :tangle ../py/uke25.py
+:END:

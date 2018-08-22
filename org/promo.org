@@ -6,10 +6,18 @@
 <script type="text/javascript" language="JavaScript"> org_html_manager.set("BASE_URL_QUESTIONS", "https://github.com/tarjeiba/promo/issues/new/");</script>
 #+END_EXPORT
 
+#+BEGIN_SRC emacs-lisp :eval query-export :exports none
+(add-to-list 'org-html-infojs-options '(sdepth . "2"))
+#+END_SRC
+
 * Introduksjon
 Prosessoren (CPU-en) i en rimelig datamaskin kan i dag gjennomføre over 10 milliarder desimaltallsoperasjoner hvert sekund. Hold en ball en meter over bakken. Fra du slipper ballen, til den treffer bakken, kan datamaskinen din fylle ut en gangetabell som går fra 1 til 45 000.
 
 Datamaskiner endrer spillereglene /fullstendig/.
+
+# #+CAPTION: Slipp en ball fra en meter. Regn!
+# #+ATTR_HTML: :alt Alt går i ball :align right :width 100px
+# [[fig:tegning_regneball.png]]
 
 Personlig tror jeg ikke det er essensielt at hver og en av oss må kunne programmere disse maskinene. Jeg tror dog det er viktig, og at det stadig blir viktigere, at vi veit hvilke muligheter programmeringen åpner for. Nesten uavhengig av hvilket fagfelt du jobber innenfor, finnes det oppgaver som best lar seg løse med programmering.
 
@@ -92,7 +100,7 @@ Prosjektene ser ut som følger:
 - partikler i boks :: Modeller en boks med gasspartikler.
 - selvvalgt :: Velg et eget prosjekt.
 
-* Bruk av nettsida
+* Bruk av nettsida                                                                  :noexport:
 Denne nettsida er bygd opp rund å skulle kunne være fullstendig tastaturnavigerbar.
 
 Du kan til enhver tid skrive «?» på tastaturet for å få opp en hjelpeside. /Bruk den./
@@ -111,7 +119,7 @@ Jeg jobber med saken.
 -- Tarjei Bærland, 2018
 #+END_QUOTE
 
-* Matematikk og programmering
+* Matematikk og programmering                                                       :noexport:
 ** Programmering
 Når vi programmerer, setter vi opp et sett med instrukser til datamaskinen. Disse instruksene er en trinnvis gjennomgang av hvordan maskinen skal løse et problem.
 
@@ -158,7 +166,7 @@ print(svar)
 Dette kan vi gjøre fordi Python kommer med gangefunksjonen innebygd. Det dukker dog raskt opp matematiske påstander vi ikke kan løse uten en trinnvis prosess.
 
 Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av de førti første primtallene?» Dette har vi i de aller fleste programmeringsspråk ikke direkte måte å løse, vi må fortelle maskinen hva den skal gjøre instruks for instruks.
-* Programmeringsspråk
+* Programmeringsspråk                                                               :noexport:
 Vi skal gjennom arbeidet i denne [[popup:jeg kommer ikke på noe bedere å kalle det][boka]] bruke programmeringsspråket Python.
 
 Det er mange gode grunner til å velge Python, vi skal gå gjennom noen av dem straks, men vit med sikkerhet det at vi like så godt kunne valgt et annet språk.
@@ -303,7 +311,7 @@ Du har to punkter på et kart. Forsøk å beskrive et program, en algoritme, som
 Hvor mange fartsbøter ville programmet ditt fått?
 #+END_TASK
 
-* Datamaskinen
+* Datamaskinen                                                                      :noexport:
 ** Historikk                                                                       :noexport:
 *** Claude Shannon
 *** Alan Touring
@@ -342,8 +350,11 @@ Vi kaller en 1-er eller 0-er, en /bit/. En samling av åtte bits kaller vi en /b
 Regn følgende bytes over til titallssystemet:
 
 00000111
+
 10101010
+
 10000011
+
 11111111
 #+END_TASK
 
@@ -363,7 +374,7 @@ Vi kommer ikke her til å gå nærmere inn på akkurat hvordan verdiene er lagre
 
 Til dagligdags regning, har ikke dette noe særlig betydning, vi må dog ha det i tankene når vi setter opp tester for ~if~-setninger, men mer om det seinere.
 
-* Basispython
+* Basispython                                                                       :noexport:
 ** Regnerekkefølge og kommandolinja
 Siden Python-programmer kan oversettes til maskinkode løpende, kan vi jobbe /interaktivt/ med Python, à la slik vi er vant med fra CAS i Geogebra. Vi kan altså, om vi ønsker, skrive en linje med kode, se hva denne gjør, for så å skrive neste.
 
@@ -788,7 +799,7 @@ print(id(enere))
 
 *** «Assosiasjonslister» eller /dictionaries/                                     :noexport:
 
-* Abstraksjon
+* Abstraksjon                                                                       :noexport:
 ** Biblioteker
 *** Et fysikkbibliotek
 #+BEGIN_EXAMPLE
@@ -1323,7 +1334,7 @@ def f(x):
 og sette startverdiene til 0.0 og 10.0.
 #+END_TASK
 
-* Programflyt
+* Programflyt                                                                       :noexport:
 ** Logikk
 Hvis ~a~ er sann og ~b~ er sann, så er ~a og b~ sann. Hvis ~a~ er sann, men ~b~ er usann, så er ~a og b~ usann.
 
@@ -1678,7 +1689,7 @@ def glidelaas(liste1: list, liste2: list) -> list:
     return res
 #+END_SRC
 
-* Plotting
+* Plotting                                                                          :noexport:
 ** Et enkelt linjeplot
 
 Først og fremst må vi /importere/ matplotlib-biblioteket. I de aller fleste programmer hvor du skal lage grafer, ønsker du følgende linjer i starten av programmet.
@@ -1714,8 +1725,8 @@ ax.plot(x, y)
 #+BEGIN_SRC python
 fig.savefig("test.png")
 #+END_SRC
-* Filbehandling
-* Tekstfiler
+* Filbehandling                                                                     :noexport:
+* Tekstfiler                                                                        :noexport:
 #+BEGIN_SRC ipython :exports none :results silent
 import random as rnd
 import numpy as np
@@ -1869,7 +1880,7 @@ Etter å ha kjørt foregående snutt, ender vi med en innhold à la følgende:
 #+BEGIN_TASK
 Endre terningeksempelet over til å skrive en fjerde kolonne, «Sum», hvor verdiene er summen av ~tern1~ og ~tern2~.
 #+END_TASK
-* Testing og bugs
+* Testing og bugs                                                                   :noexport:
 ** Testing
 
 ** Bugs
