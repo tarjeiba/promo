@@ -1,3 +1,6 @@
 [submodule "js/org-info-js-nb"]
 	path = js/org-info-js-nb
 	url = https://github.com/tarjeiba/org-info-js-nb
+[submodule "org-info-js-nb"]
+	path = js/org-info-js-nb
+	url = https://github.com/tarjeiba/org-info-js-nb.git
