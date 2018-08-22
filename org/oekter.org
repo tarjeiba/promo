@@ -9,8 +9,58 @@ Generell oversikt finner du på [[file:edvardmunch.org::*Datoer][Edvard Munch - 
 :END:
 
 ** Introduksjon
+- Se på [[https://tarjeiba.github.io/promo/promo.html#org99cf12d]]
+- Hvis ikke python er lagt inn på maskinene. [[https://repl.it]]
 
-** 
+** Notater
+#+BEGIN_SRC python :results output 
+print("Hello world!") # I Python, er #-tegnet mbrukt til kommentarer
+#+END_SRC
+
+#+BEGIN_SRC python
+
+print("Hello world!")
+hei = "Vær hilset!" # lagrer "vær hilset!" som variabel hei
+print(hei) # her er 'hei' et variabelnavn
+# Hvorfor gir print(hei) feil?
+
+# Datatyper
+a = 3 # heltall
+b = 3.1 # kommatall, flyttall
+c = "Dette er tekst" # teksstreng
+d = 'Dette er også en tekststreng'
+e = 'Dette er en tekststreng med "anførselstegn"'
+
+input("Det som skal stå på skjermen")
+#+END_SRC
+
+#+BEGIN_SRC python
+# Et program som dobler et tall
+tall = input("Gi meg et tall:") # tall er nå en tekststreng
+tall = float(tall)
+print("tall:", tall)
+
+print("Det dobbelte av tall er:")
+dobbelt = tall * 2
+print(dobbelt)
+#+END_SRC
+
+#+BEGIN_SRC python
+3 ** 2 # 3^2
+#+END_SRC
+
+
+#+BEGIN_TASK
+- Be om et navn, skriv ut "Hei på deg, {navn}"    # Husk print("Hei på deg", navn)
+
+- Be om ett tall, skriv ut tallet opphøyd i andre.
+- Be om ett tall, skriv ut tre lavere enn tallet, så ganger to # Test med tall = 1 => -4
+- Be om ett tall, skriv ut det dobbelte av tallet i fjerde
+
+- Be om to tall, skriv ut summen av dem
+- Be om to tall, skriv ut produktet av dem
+- Be om to tall, skriv ut det første opphøyd i det andre
+#+END_TASK
 * Uke 35                                                                            :noexport:
 :PROPERTIES:
 :header-args:  :tangle ../py/uke35.py

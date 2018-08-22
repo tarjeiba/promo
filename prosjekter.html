@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-07-31 tir. 20:07 -->
+<!-- 2018-08-22 on. 15:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Prosjektoppgaver</title>
@@ -14,13 +14,13 @@
 <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
 <script type="text/javascript" src="js/popup.js"></script>
 
-<script type="text/javascript" src="c:/Users/tabaa004/Dropbox/home/repos/org-info-js-nb/org-info-src.js">
+<script type="text/javascript" src="js/org-info-js-nb/org-info-src.js">
 /**
  *
- * @source: c:/Users/tabaa004/Dropbox/home/repos/org-info-js-nb/org-info-src.js
+ * @source: js/org-info-js-nb/org-info-src.js
  *
  * @licstart  The following is the entire license notice for the
- *  JavaScript code in c:/Users/tabaa004/Dropbox/home/repos/org-info-js-nb/org-info-src.js.
+ *  JavaScript code in js/org-info-js-nb/org-info-src.js.
  *
  * Copyright (C) 2012-2018 Free Software Foundation, Inc.
  *
@@ -40,7 +40,7 @@
  * through which recipients can access the Corresponding Source.
  *
  * @licend  The above is the entire license notice
- * for the JavaScript code in c:/Users/tabaa004/Dropbox/home/repos/org-info-js-nb/org-info-src.js.
+ * for the JavaScript code in js/org-info-js-nb/org-info-src.js.
  *
  */
 </script>
@@ -73,10 +73,10 @@ for the JavaScript code in this tag.
 */
 
 <!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "1");
+org_html_manager.set("TOC_DEPTH", "2");
 org_html_manager.set("LINK_HOME", "");
 org_html_manager.set("LINK_UP", "");
-org_html_manager.set("LOCAL_TOC", "0");
+org_html_manager.set("LOCAL_TOC", "1");
 org_html_manager.set("VIEW_BUTTONS", "0");
 org_html_manager.set("MOUSE_HINT", "underline");
 org_html_manager.set("FIXED_TOC", "0");
@@ -139,31 +139,38 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb092ca3">Største felles divisor</a></li>
+<li><a href="#orge4efe14">Største felles divisor</a>
+<ul>
+<li><a href="#org3ce17be">Oppgave</a></li>
+<li><a href="#org33f6f96">En elementær tilnærming</a></li>
+<li><a href="#org7b31fcc"><span class="todo TODO">TODO</span> Euklids algoritme</a></li>
+<li><a href="#org10c20f1">Kilder</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb092ca3" class="outline-2">
-<h2 id="orgb092ca3">Største felles divisor</h2>
-<div class="outline-text-2" id="text-orgb092ca3">
+<div id="outline-container-orge4efe14" class="outline-2">
+<h2 id="orge4efe14">Største felles divisor</h2>
+<div class="outline-text-2" id="text-orge4efe14">
 <p>
 Innenfor tallteori er to talls største felles divisor (<i>greates common divisor</i>) en vesentlig egenskap å kunne avgjøre. Målet med denne oppgaven er å lage en funksjoner <code>sfd</code>, med to argumenter <code>a</code> og <code>b</code>, som returnerer <code>a</code> og <code>b</code> sine største felles divisor.
 </p>
 </div>
 
-<div id="outline-container-orgc65c831" class="outline-3">
-<h3 id="orgc65c831">Oppgave</h3>
-<div class="outline-text-3" id="text-orgc65c831">
+<div id="outline-container-org3ce17be" class="outline-3">
+<h3 id="org3ce17be">Oppgave</h3>
+<div class="outline-text-3" id="text-org3ce17be">
 <p>
 Vi har et rom som er 221 dm bredt og 595 dm langt. Om vi skal flislegge gulvet i dette rommet med hele kvadratiske fliser, hva er den største sidelengden flisene kan ha?
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgdf27a41" class="outline-3">
-<h3 id="orgdf27a41">En elementær tilnærming</h3>
-<div class="outline-text-3" id="text-orgdf27a41">
+<div id="outline-container-org33f6f96" class="outline-3">
+<h3 id="org33f6f96">En elementær tilnærming</h3>
+<div class="outline-text-3" id="text-org33f6f96">
 <p>
 For to tall, <code>a</code> og <code>b</code>, hvor <code>b &lt; a</code>, kan deres <i>sfd</i> være maksimalt <code>b/2</code>.
 </p>
@@ -214,9 +221,9 @@ Lag en predikatfunksjon som svarer på hvorvidt <code>a</code> og <code>b</code>
 </div>
 </div>
 
-<div id="outline-container-org0d69df1" class="outline-3">
-<h3 id="org0d69df1"><span class="todo TODO">TODO</span> Euklids algoritme</h3>
-<div class="outline-text-3" id="text-org0d69df1">
+<div id="outline-container-org7b31fcc" class="outline-3">
+<h3 id="org7b31fcc"><span class="todo TODO">TODO</span> Euklids algoritme</h3>
+<div class="outline-text-3" id="text-org7b31fcc">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> numpy <span class="org-keyword">as</span> np
 <span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
@@ -322,16 +329,16 @@ plt.show()
 </div>
 
 
-<div id="outline-container-orgbe37290" class="outline-4">
-<h4 id="orgbe37290"><span class="todo TODO">TODO</span> Animasjon SFD</h4>
-<div class="outline-text-4" id="text-orgbe37290">
+<div id="outline-container-org9cf98f7" class="outline-4">
+<h4 id="org9cf98f7"><span class="todo TODO">TODO</span> Animasjon SFD</h4>
+<div class="outline-text-4" id="text-org9cf98f7">
 <p>
 À la Wikipedias <a href="https://no.wikipedia.org/wiki/St%C3%B8rste_felles_divisor">Største felles divisor</a>.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgd648724"></a><span class="todo TODO">TODO</span> Legge inn ImageMagick<br />
-<div class="outline-text-5" id="text-orgd648724">
+<li><a id="org8a3b47f"></a><span class="todo TODO">TODO</span> Legge inn ImageMagick<br />
+<div class="outline-text-5" id="text-org8a3b47f">
 <p>
 <a href="https://www.imagemagick.org/script/download.php#windows">https://www.imagemagick.org/script/download.php#windows</a>
 </p>
@@ -342,9 +349,9 @@ plt.show()
 </div>
 
 
-<div id="outline-container-org5a5ab20" class="outline-3">
-<h3 id="org5a5ab20">Kilder</h3>
-<div class="outline-text-3" id="text-org5a5ab20">
+<div id="outline-container-org10c20f1" class="outline-3">
+<h3 id="org10c20f1">Kilder</h3>
+<div class="outline-text-3" id="text-org10c20f1">
 <p>
 <a href="https://no.wikipedia.org/wiki/St%C3%B8rste_felles_divisor">Største felles divisor</a>
 </p>
