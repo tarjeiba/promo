@@ -114,6 +114,7 @@ Hvorfor i all verden ser den så dårlig ut på mobil?
 -- ukjent elev, 2018
 #+END_QUOTE
 
+
 #+BEGIN_QUOTE
 Jeg jobber med saken.
 -- Tarjei Bærland, 2018
