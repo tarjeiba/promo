@@ -87,7 +87,7 @@ table {
 /* @group Layout */
 
 #content {
-	width: 70em;
+	max-width: 70em;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 8px;
@@ -102,7 +102,7 @@ table {
 
 /* #main { */
 div.outline-2 {
-    width: 70em;
+    maxn-width: 70em;
 	float: right;
 	/* The lines below are useful if the "main" div isn't available and
 	   div.outline-2 has to be used. */
@@ -228,6 +228,7 @@ h1.title {
 
 /* @end */
 
+
 td {
 	border: 1px solid #ccc;
 }
@@ -260,8 +261,9 @@ a:hover {
     margin: 0px;
 }
 
-
 
+
+
 /*********************************************************************************/
 /* Popup-vindu									 */
 /* Det følgende er hentet fra https://www.w3schools.com/howto/howto_js_popup.asp */
