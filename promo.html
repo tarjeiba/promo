@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-08-22 on. 15:09 -->
+<!-- 2018-08-27 ma. 12:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programmering og modellering X</title>
@@ -73,7 +73,7 @@ for the JavaScript code in this tag.
 */
 
 <!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "2");
+org_html_manager.set("TOC_DEPTH", "1");
 org_html_manager.set("LINK_HOME", "");
 org_html_manager.set("LINK_UP", "");
 org_html_manager.set("LOCAL_TOC", "1");
@@ -131,6 +131,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -139,13 +161,12 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbba0f0b">Introduksjon</a>
-<ul>
-<li><a href="#org2c4eb3e">Et første program</a></li>
-<li><a href="#org99cf12d">Faget</a></li>
-<li><a href="#org58ed3f0">Opplegg</a></li>
-</ul>
-</li>
+<li><a href="#orgbba0f0b">Introduksjon</a></li>
+<li><a href="#org482f9c2">Bruk av nettsida</a></li>
+<li><a href="#org42726c6">Matematikk og programmering</a></li>
+<li><a href="#orga28e052">Programmeringsspråk</a></li>
+<li><a href="#org95d2d5a">Basispython</a></li>
+<li><a href="#org8d1425f">Abstraksjon</a></li>
 </ul>
 </div>
 </div>
@@ -296,6 +317,1316 @@ Prosjektene ser ut som følger:
 <dt>partikler i boks</dt><dd>Modeller en boks med gasspartikler.</dd>
 <dt>selvvalgt</dt><dd>Velg et eget prosjekt.</dd>
 </dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org482f9c2" class="outline-2">
+<h2 id="org482f9c2">Bruk av nettsida</h2>
+<div class="outline-text-2" id="text-org482f9c2">
+<p>
+Denne nettsida er bygd opp rund å skulle kunne være fullstendig tastaturnavigerbar.
+</p>
+
+<p>
+Du kan til enhver tid skrive «?» på tastaturet for å få opp en hjelpeside. <i>Bruk den.</i>
+</p>
+
+<p>
+Jeg har med vilje ikke lagt inn noe kommentarfelt til hvert kapittel, men ønsker at du flittig bruker spørrefunksjonen som har tastatursnarvei «q». Du vil da tas til <a href="https://github.com">Github</a>, en sosial nettside for programmering, hvor denne sida ligger lagret. Still spørsmålet ditt der, så vil forhåpentligvis noen snarlig kunne hjelpe deg. Spesielt relevante spørsmål legger jeg lenke til ved de temaene det gjelder.
+</p>
+
+<p>
+Koden til hvert kapittel ligger tilgjengelig som egen fil under hver kapitteloverskrift. Jeg anbefaler dog at du kun bruker denne direkte om du virkelig står fast. Forsøk først å skrive av eventuell kode direkte fra nettsida, da dette gjør at du får en bedre forståelse av hva programmet gjør og hvordan det fungerer.
+</p>
+
+<blockquote>
+<p>
+Hvorfor i all verden ser den så dårlig ut på mobil?
+&#x2013; ukjent elev, 2018
+</p>
+</blockquote>
+
+
+<blockquote>
+<p>
+Jeg jobber med saken.
+&#x2013; Tarjei Bærland, 2018
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org42726c6" class="outline-2">
+<h2 id="org42726c6">Matematikk og programmering</h2>
+<div class="outline-text-2" id="text-org42726c6">
+</div>
+<div id="outline-container-org3e58f92" class="outline-3">
+<h3 id="org3e58f92">Programmering</h3>
+<div class="outline-text-3" id="text-org3e58f92">
+<p>
+Når vi programmerer, setter vi opp et sett med instrukser til datamaskinen. Disse instruksene er en trinnvis gjennomgang av hvordan maskinen skal løse et problem.
+</p>
+
+<p>
+Med en fiktiv maskin som i utgangspunktet kun kan legge sammen og trekke fra, hva forsøker vi å få maskinen til å gjøre via trinnene under?
+</p>
+
+<pre class="example">
+sett a til å være tallet 5
+sett b til å være tallet 3
+sett svar til å være tallet 0
+
+så lenge b er større enn null, gjør følgende:
+    oppdater svar ved å legge til a
+    senk verdien til b med 1
+</pre>
+
+<p>
+Hva vil verdien til <code>svar</code> være når dette programmet har kjørt ferdig?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org43ed563" class="outline-3">
+<h3 id="org43ed563">Matematikk</h3>
+<div class="outline-text-3" id="text-org43ed563">
+<p>
+Det forrige eksempelet ville vi løst matematisk ved å skrive opp følgende uttrykk:
+</p>
+
+<p>
+\[ \textrm{svar} = 5 + 5 + 5 = 5 \cdot 3 \]
+</p>
+
+<p>
+<code>svar</code> har altså verdien 15. Her forteller vi ikke lenger hvordan det skal regnes ut, vi sier bare hva <code>svar</code> er.
+</p>
+
+<p>
+Dette kunne vi gjort i de aller fleste programmeringsspråk òg, i Python ville det for eksempel sett ut som følger:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">a</span> = 5
+<span class="org-variable-name">b</span> = 3
+<span class="org-variable-name">svar</span> = a * b
+</pre>
+</div>
+
+<p>
+Som da ville gitt oss&#x2026;
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span>(svar)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">15
+</pre>
+</div>
+
+<p>
+Dette kan vi gjøre fordi Python kommer med gangefunksjonen innebygd. Det dukker dog raskt opp matematiske påstander vi ikke kan løse uten en trinnvis prosess.
+</p>
+
+<p>
+Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av de førti første primtallene?» Dette har vi i de aller fleste programmeringsspråk ikke direkte måte å løse, vi må fortelle maskinen hva den skal gjøre instruks for instruks.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga28e052" class="outline-2">
+<h2 id="orga28e052">Programmeringsspråk</h2>
+<div class="outline-text-2" id="text-orga28e052">
+<p>
+Vi skal gjennom arbeidet i denne <span class="popup"onclick="myPopupFunction()">boka<span class="popuptext" id="myPopup">jeg kommer ikke på noe bedere å kalle det</span></span> bruke programmeringsspråket Python.
+</p>
+
+<p>
+Det er mange gode grunner til å velge Python, vi skal gå gjennom noen av dem straks, men vit med sikkerhet det at vi like så godt kunne valgt et annet språk.
+</p>
+</div>
+
+<div id="outline-container-org96d7702" class="outline-3">
+<h3 id="org96d7702">Valg av språk</h3>
+<div class="outline-text-3" id="text-org96d7702">
+<p>
+Det finnes et utall programmeringsspråk. Noen språk er bedre egnet enn andre for visse oppgaver, intet språk er best på alt. Om du veit at det eneste du skal jobbe med er statistikk, ville kanskje det rette valget for deg være språket R; om du skal jobbe med Arduino bør du bli kjent med C++; om du ikke liker den imperative fremgangsmåten de fleste språk byr på, men ønsker en mer <i>funksjonell</i> tilnærming, plukk opp Haskell; elsker du parenteser, se nærmere på Lisp; vil du skrive programmer som kjører i nettleseren, lær deg Javascript; hater du deg selv, sett deg ned med Brainfuck (jeg beklager språket).
+</p>
+
+<p>
+I dette faget kommer vi til å bruke språket Python. Python er et populært språk av mange grunner, og dets populæritet gjør at man kan bruke det innenfor mange fagdisiplinerer. En av fordelene med Python, er at overgangen fra <i>pseudokode</i> til kjørende program ofte er lite. Under ser vi pseudokoden fra tidligere oversatt til Python.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">a</span> = 5
+<span class="org-variable-name">b</span> = 3
+<span class="org-variable-name">svar</span> = 0
+
+<span class="org-keyword">while</span> b &gt; 0:
+    <span class="org-variable-name">svar</span> = svar + a
+    <span class="org-variable-name">b</span> = b - 1
+
+<span class="org-keyword">print</span>(svar)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">15
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b2b313" class="outline-3">
+<h3 id="org0b2b313">Ulike typer programmeringsspråk</h3>
+<div class="outline-text-3" id="text-org0b2b313">
+<p>
+I teorien kan alle programmeringsspråk som er såkalt <span class="popup"onclick="myPopupFunction()"><i>turingkomplette</i><span class="popuptext" id="myPopup">Etter Alan Turing, av «The Imitation Game»-berømmelse</span></span> beregne alt som kan beregnes. For at et språk skal være turingkomplett, må det litt forenklet ha mulighet til å gjenta kode om en betingelse ikke er nådd og kunne skrive og lese fra minnet. Dette gjelder i praksis alle programmeringsspråk.
+</p>
+
+<p>
+Allikevel er det en voldsom forskjell på de ulike språkene. Et klassisk eksempel de fleste programmere har vært innom, er å få maskinen til å si "Hello, world!". La oss se på det for tre ulike språk.
+</p>
+</div>
+
+<div id="outline-container-org493aabe" class="outline-4">
+<h4 id="org493aabe">«Assembly»</h4>
+<div class="outline-text-4" id="text-org493aabe">
+<div class="org-src-container">
+<pre class="src src-asm">
+        <span class="org-keyword">extern</span> exit, printf
+
+        <span class="org-keyword">section</span> .data
+        <span class="org-keyword">msg</span> db <span class="org-string">"Hello World!"</span>, 10, 0
+
+        <span class="org-keyword">section</span> .text
+        <span class="org-keyword">global</span> main
+<span class="org-function-name">main</span>:
+        <span class="org-keyword">push</span> msg
+        <span class="org-keyword">call</span> printf
+
+        <span class="org-keyword">mov</span> dword [esp], 0
+        <span class="org-keyword">call</span> exit
+</pre>
+</div>
+
+<p>
+<i>Assembly</i> er ikke ett programeringsspråk, men en samlebetegnelse for språkene skrevet spesifikt for hver CPU-type. Språket brukt over (hentet fra <a href="https://gist.github.com/Overv/5714335">denne</a> snutten) er ment for den såkalte x86-arkitekturen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb5dcc81" class="outline-4">
+<h4 id="orgb5dcc81">C</h4>
+<div class="outline-text-4" id="text-orgb5dcc81">
+<div class="org-src-container">
+<pre class="src src-C"><span class="org-preprocessor">#include</span><span class="org-string">&lt;stdio.h&gt;</span>
+
+<span class="org-type">int</span> <span class="org-function-name">main</span>() {
+  printf(<span class="org-string">"Hello, world!"</span>);
+  <span class="org-keyword">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<i>C</i> er et klassisk programmeringsspråk og det dukker opp mer eller mindre over alt.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd08448a" class="outline-4">
+<h4 id="orgd08448a">Python</h4>
+<div class="outline-text-4" id="text-orgd08448a">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span>(<span class="org-string">"Hello, world!"</span>)
+</pre>
+</div>
+
+<p>
+Den vanligste utgaven av Python er skrevet i C.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf1367e4" class="outline-4">
+<h4 id="orgf1367e4">Høynivå og lavnivå</h4>
+<div class="outline-text-4" id="text-orgf1367e4">
+<p>
+Vi ser tydelige forskjeller på eksemplene over. Assembly-koden ligger nære de instruksjonene CPU-en sjøl trenger for å kunne skrive «Hello, world!» på skjermen, mens Python-koden mer eller mindre bare repeterer oppgaveteksten.
+</p>
+
+<p>
+Vi sier at assembly er <i>lavnivå</i>-kode, siden man må bruke ressurser på for eksempel direkte minnehåndtering når man skriver i det.  Python derimot er <i>høynivå</i>-kode, hvor brukeren ikke behøver tenke på slikt. <i>C</i> legger seg et sted mellom de to. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org33ba2f7" class="outline-4">
+<h4 id="org33ba2f7">Imperative og deklarative kode</h4>
+<div class="outline-text-4" id="text-org33ba2f7">
+<p>
+Felles for de tre eksemplene over er at vi for hver linje i koden forteller programmet hva det skal gjøre, vi sier at kodestilen er <i>imperativ</i>.
+</p>
+
+<p>
+Et alternativ til imperativ kode er <i>deklarativ</i> kode. Da forteller vi programmet kun hva vi har lyst på, ikke nødvendigvis hvordan vi ønsker at problemet skal løses. 
+</p>
+
+<p>
+Under kommer to python-løsninger til oppgaven «lag en liste med de 100 første kvadrattaellene».
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">n</span> = 1                         <span class="org-comment-delimiter"># </span><span class="org-comment">sett verdien av n til 1</span>
+<span class="org-variable-name">kvadrattall</span> = []              <span class="org-comment-delimiter"># </span><span class="org-comment">sett verdien av kvadrattall til []</span>
+<span class="org-keyword">while</span> n &lt;= 100:               <span class="org-comment-delimiter"># </span><span class="org-comment">gj&#248;r den kommende snutten s&#229; lenge n er mindre eller lik 100</span>
+    kvadrattall.append(n * n) <span class="org-comment-delimiter"># </span><span class="org-comment">tilf&#248;y n * n i kvadrattall</span>
+    <span class="org-variable-name">n</span> += 1                    <span class="org-comment-delimiter"># </span><span class="org-comment">&#248;k verdien til n med 1</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">kvadrattall</span> = <span class="org-builtin">list</span>(<span class="org-builtin">map</span>(<span class="org-keyword">lambda</span> x: x ** 2, <span class="org-builtin">range</span>(1, 101)))
+</pre>
+</div>
+
+<p>
+Her er det mange ord du ikke har sett før. Noen av dem kommer du til å bli svært godt kjent med, mens andre skal få lov til å holde seg obskure en god stund til. Med dette eksempelet ønsket jeg å illustrere at man innad i ett programmeringsspråk kan skrive innenfor mange ulike stiler.
+</p>
+
+<p>
+Noen språk egner seg dog bedre til visse stiler, vi kommer i all hovedsak til å skrive <i>imperativ</i> kode i Python.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95d2d5a" class="outline-2">
+<h2 id="org95d2d5a">Basispython</h2>
+<div class="outline-text-2" id="text-org95d2d5a">
+</div>
+<div id="outline-container-orgc494975" class="outline-3">
+<h3 id="orgc494975">Regnerekkefølge og kommandolinja</h3>
+<div class="outline-text-3" id="text-orgc494975">
+<p>
+Siden Python-programmer kan oversettes til maskinkode løpende, kan vi jobbe <i>interaktivt</i> med Python, à la slik vi er vant med fra CAS i Geogebra. Vi kan altså, om vi ønsker, skrive en linje med kode, se hva denne gjør, for så å skrive neste.
+</p>
+
+<p>
+For å åpne en enkel Python-«prompt» (som er navnet på det som i vårt tilfelle tegnene «&gt;&gt;&gt;»), kan du åpne kommandolinjeverktøyet ved å trykke windows-tasten og skrive «cmd», trykke enter, og skrive <code>python</code> og trykke enter i vinduet som åpner seg. Du skal få fram noe lignende følgende:
+</p>
+
+<pre class="example">
+Python 3.6.1 |Anaconda 4.4.0 (64-bit)| (default, May 11 2017, 13:25:24) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;
+</pre>
+
+<p>
+Hver gang du ser <code>&gt;&gt;&gt;</code> «prompter» Python deg til å skrive inn en kommando.
+</p>
+
+<p>
+Vanlige regneoperasjoner gjennomfører vi i Python på akkurat den måten man skulle forvente.
+</p>
+
+<pre class="example">
+&gt;&gt;&gt; 2 + 3                 # addisjon ved å skrive "+" mellom to verdier
+5
+&gt;&gt;&gt; 2 - 3                 # subtraksjon ved å skrive "-" mellom to verdier
+-1
+&gt;&gt;&gt; 2 * 3                 # multiplikasjon ved å skrive "*" mellom to verdier
+6
+&gt;&gt;&gt; 2 ** 3                # eksponentiering ved å skrive "**" mellom to verdier
+8
+&gt;&gt;&gt; 2 * (5 - 3 ** 2) ** 2 # regnerekkefølge oppfører seg på "vanlig" måte
+32
+</pre>
+
+<p>
+Av disse er det kun potensen som skiller seg ut fra hvordan vi «vanligvis» skriver regning.
+</p>
+
+<p>
+Du kan med andre ord begynne å bruke Python som en kalkulator uten mer om og men &#x2026; om enn kun å gjøre dette ville være å skrape den aller øverste delen av overflaten av hvilke muligheter et fullverdig programmeringsspråk byr på.
+</p>
+
+<div class="TASK">
+<p>
+Prøv deg fram på vanlig tallregning i Python direkte i <i>interpreteren</i>.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgca94a58" class="outline-3">
+<h3 id="orgca94a58">Variabler</h3>
+<div class="outline-text-3" id="text-orgca94a58">
+<p>
+Vi kan nå gjennomføre enkle regneoperasjoner, men det melder seg raskt et behov for å kunne ta vare på resultatet fra en utregning, for så å kunne bruke dette i en annen utregning seinere. Dette kan vi gjøre via navngitte <i>variabler</i>.
+</p>
+</div>
+
+<div id="outline-container-org2e369bc" class="outline-4">
+<h4 id="org2e369bc">Hva er et navn?</h4>
+<div class="outline-text-4" id="text-org2e369bc">
+<p>
+I Python viser navn alltid til verdier.
+</p>
+
+<p>
+<img src="figurer/navn_enkelt.png" alt="navn_enkelt.png"/>
+</p>
+
+<p>
+I Python kan det godt være to navn på samme verdi.
+</p>
+<p>
+<img src="figurer/navn_dobbelt.png" alt="navn_dobbelt.png"/>
+</p>
+
+<p>
+Python har <i>dynamiske typer</i> noe som vil si at vi kan gjenbruke navn på helt andre type verdier enn hva de opprinnelig blei brukt på.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">a</span> = 42
+<span class="org-variable-name">b</span> = a
+<span class="org-variable-name">a</span> = <span class="org-string">"Babel"</span>
+</pre>
+</div>
+
+<p>
+Som gir følgende navnstruktur:
+</p>
+
+<p>
+<img src="figurer/navn_rebundet.png" alt="navn_rebundet.png"/>
+</p>
+
+<p>
+Dette er i kontrast til et språk som C, hvor vi for eksempel ville sett følgende:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span class="org-type">int</span> <span class="org-variable-name">a</span> = 42;
+a = 42.0;
+</pre>
+</div>
+
+<p>
+Dette er fordi C er et språk med <i>statiske</i> typer. Det vil si at om vi har sagt at <code>a</code> skal være et heltall (<code>int</code>), må vi holde den som det gjennom hele programmet.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb4642b4" class="outline-3">
+<h3 id="orgb4642b4">Interaksjon</h3>
+<div class="outline-text-3" id="text-orgb4642b4">
+</div>
+<div id="outline-container-org1c5f457" class="outline-4">
+<h4 id="org1c5f457">Printing</h4>
+<div class="outline-text-4" id="text-org1c5f457">
+<p>
+Fra de fleste programmer ønsker vi en eller annen form for informasjon ut fra programmet. Dette kan være at programmet lager en graf for oss, at den skriver data til en fil, at interpreteren skriver svaret direkte på mellomregninger, eller at programmet skriver tilbake til kommandolinja.
+</p>
+
+<p>
+Sistnevnte gjøres via funksjonen <code>print</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span>(<span class="org-string">"Hei, verden!"</span>)
+</pre>
+</div>
+
+<p>
+Det er heller ikke noe i veien for å kombinere printing med variabler.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">a</span> = 2
+<span class="org-variable-name">b</span> = 3
+<span class="org-variable-name">c</span> = a + b
+<span class="org-keyword">print</span>(<span class="org-string">"Summen av "</span>, a, <span class="org-string">" og "</span>, b, <span class="org-string">" er "</span>, c, <span class="org-string">"."</span>)
+</pre>
+</div>
+
+<p>
+Dette kan fort bli en uhensiktsmessig måte å skrive ut svar på, så vi bruker heller den innebygde formateringen <code>f-strenger</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span>(f<span class="org-string">"Summen av {a} og {b} er {c}."</span>)
+</pre>
+</div>
+
+<p>
+<code>f-strenger</code> er særegent for Python, men andre språk har gjerne sine måter å formatere tekstrestrenger på. Dette er et kraftig verktøy, hvor vi har store muligheter for å formatere svarene våre på en hensiktsmessig måte.
+</p>
+
+<p>
+Vi kan, eksempelvis, spesifisere hvor mange desimaler vi ønsker. (Setningen <code>from math import pi¨</code> skal vi se i mye mer detalj på seinere.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> math <span class="org-keyword">import</span> pi
+<span class="org-keyword">print</span>(pi)
+<span class="org-keyword">print</span>(f<span class="org-string">'pi skrevet med 5 gyldige siffer er {pi:.5}.'</span>)
+</pre>
+</div>
+
+<p>
+Generelt kan vi spesifisere et tall som skal skrives ut ved å bruke tallets totale <code>bredde</code> og dets <code>presisjon</code> på en enkel måte med <code>f-strenger</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">bredde</span> = 7
+<span class="org-variable-name">presisjon</span> = 3
+<span class="org-keyword">print</span>(f<span class="org-string">'pi = {pi:{bredde}.{presisjon}}'</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org10b345e" class="outline-4">
+<h4 id="org10b345e">Input</h4>
+<div class="outline-text-4" id="text-org10b345e">
+<p>
+Å be brukeren om å taste inn verdier til programmet ditt kan enkelt gjøres ved å bruke <code>input</code>-funksjonen. Om vi er usikre på hvordan denne brukes, kan vi benytte oss av pythons innebygde hjelpefunksjonalitet.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-builtin">help</span>(<span class="org-builtin">input</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">Help on built-in function input in module builtins:
+
+input(prompt=None, /)
+    Read a string from standard input.  The trailing newline is stripped.
+
+    The prompt string, if given, is printed to standard output without a
+    trailing newline before reading input.
+
+    If the user hits EOF (*nix: Ctrl-D, Windows: Ctrl-Z+Return), raise EOFError.
+    On *nix systems, readline is used if available.
+</pre>
+</div>
+
+<p>
+<code>input</code> er altså en innebygd (<i>built-in</i>) funksjon som leser en tekststreng fra <i>standard input</i>. Dersom vi ønsker å gi brukeren en <i>prompt</i>, à la «&gt;&gt;&gt;» kan vi gjøre det ved å gi det som argument til funksjonen.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">navn</span> = <span class="org-builtin">input</span>(<span class="org-string">"Hva heter du? "</span>)
+<span class="org-keyword">print</span>(<span class="org-string">"fDu heter {navn}."</span> )
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgde2574a" class="outline-3">
+<h3 id="orgde2574a">Typer</h3>
+<div class="outline-text-3" id="text-orgde2574a">
+<p>
+Et pythonprogram er et sett med instruksjoner som handler på ulike <i>objekter</i>. Objekter i Python kommer i to utgaver, skalare objekter og ikke-skalare objekter. Et skalart objekt er udelelig, det er <i>atomene</i> i Python. Ikke-skalare objekter, for eksempel tekststrenger, har en indre struktur. Av de følgende, er <i>boolske verdier</i>, <i>heltall</i> og <i>flyttall</i> skalare objekter.
+</p>
+</div>
+<div id="outline-container-org60516a1" class="outline-4">
+<h4 id="org60516a1">Boolske verdier</h4>
+<div class="outline-text-4" id="text-org60516a1">
+<p>
+I kapittelet <a href="datamaskinen.html">Datamaskinen</a> introduserer jeg logiske verdier som enten kan være <i>sanne</i> eller <i>usanne</i>. Disse er nødvendige for at vi skal kunne ha et fullstendig programerbart språk. Når vi seinere skal se på såkalte if-setninger, er vi nødt til å ha en måte å avgjøre om noe er sant eller usant på.
+</p>
+
+<pre class="example">
+&gt;&gt;&gt; sann = True
+&gt;&gt;&gt; usann = False
+&gt;&gt;&gt; sann
+True
+&gt;&gt;&gt; usann
+False
+</pre>
+
+
+<p>
+Boolske verdier oppstår ofte når vi ønsker å vurdere en påstand. Eksempelvis er det <i>sant</i> at verdien 3 er større eller lik verdien 2, det er også Python enig i.
+</p>
+<pre class="example">
+&gt;&gt;&gt; 3 &gt;= 2
+True
+&gt;&gt;&gt; 3 == 2
+False
+&gt;&gt;&gt; 3 &lt; 2
+False
+</pre>
+
+<p>
+Merk at <code>=</code> <i>ikke</i> er en logisk sjekk, à la ulikhetene over. Om vi ønsker å sjekke for likhet, må vi bruke <code>==</code>. <code>=</code> er fremdeles «tildelingoperatoren», vi bruker den for å gi ting navn, noe som betyr at det ikke er noe i veien for å gjøre for eksempel følgende i Python:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">sannhetsverdi</span> = 3 &gt; 2
+<span class="org-keyword">print</span>(sannhetsverdi)
+</pre>
+</div>
+
+<p>
+Her vil først Python <i>evaluere</i> påstanden på høyre side, altså <code>3 &gt; 2</code>, finne at dette er sant, og dermed sette sannhetverdi til å ha verdien <code>True</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org7c87271" class="outline-4">
+<h4 id="org7c87271">Heltall</h4>
+<div class="outline-text-4" id="text-org7c87271">
+<p>
+Heltall i Python oppgis på vanlig måte. <code>3</code>, <code>112</code> eller <code>1231421124</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org0acdee5" class="outline-4">
+<h4 id="org0acdee5">Lister</h4>
+<div class="outline-text-4" id="text-org0acdee5">
+<p>
+Lister eller <a href="https://en.wikipedia.org/wiki/Array_data_structure"><i>arrays</i></a> er en klassisk datastruktur. Vi samler en rekke verdier inn i en liste, for at vi så skal kunne gjøre operasjoner på lista direkte eller elementvis. Lister lages i Python ved å bruke klamme-parenteser, <code>[</code> og <code>[</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">favorittall</span> = [-1, 0, 7, 11, 42]
+</pre>
+</div>
+
+<p>
+Det er heller ikke noe i veien for å ha noe annet enn tall i ei liste, ei heller blandede typer.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">frukter</span> = [<span class="org-string">"eple"</span>, <span class="org-string">"p&#230;re"</span>, <span class="org-string">"appelsin"</span>, <span class="org-string">"mango"</span>]
+</pre>
+</div>
+
+<p>
+Innholdet i ei liste kaller vi enkeltvis for listas <i>elementer</i>, og hvert element er tildelt en <i>indeks</i>. Under ser vi nærmere på <code>frukter</code>.
+</p>
+
+<pre class="example">
+| element | eple | pære | appelsin | mango |
+| indeks  |    0 |    1 |        2 |     3 |
+</pre>
+
+<p>
+Legg merke til at i Python er listene nullindeksert, altså har det første elementet i lista indeks 0.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span>(frukter[0])
+</pre>
+</div>
+
+<p>
+Vi kan hente ut elementer fra ei liste ved å bruke <i>slice</i>-notasjonen. Den ser ut som <code>listenavn[første ønskede : ikke-inkludert siste ønskede : steglengde]</code>. Om vi har liste <code>min_liste</code> av <code>n</code> elementer, kan vi hente ut de <code>k</code> første ved å skrive <code>min_liste[0:k:1]</code>, alternativt bruke at nullte element er standard startverdi og <code>1</code> er standard steglengde, <code>min_liste[:k]</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span>(frukter[0:2:1])
+<span class="org-keyword">print</span>(frukter[:2])
+<span class="org-keyword">print</span>(frukter[2:])
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">['eple', 'p&#230;re']
+['eple', 'p&#230;re']
+['appelsin', 'mango']
+</pre>
+</div>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgeb7f3e1"></a>Muterbarhet<br />
+<div class="outline-text-5" id="text-orgeb7f3e1">
+<p>
+Se på følgende snutt, og skriv ned hva du tror vil bli gitt av print-setningen.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">a</span> = [<span class="org-string">'mai'</span>, <span class="org-string">'juni'</span>, <span class="org-string">'juli'</span>, <span class="org-string">'august'</span>]
+<span class="org-variable-name">b</span> = a
+<span class="org-variable-name">a</span>[1] = <span class="org-string">'november'</span>
+
+<span class="org-keyword">print</span>(f<span class="org-string">'a er: {a}'</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">'b er: {b}'</span>)
+</pre>
+</div>
+
+<p>
+Forsøk å kjøre koden, hva ser du? Jo, der vi forventer at vi ved linja <code>b</code> = <code>a</code> skal få en kopi av lista <code>a</code>, ser det ut som at vi får to forskjellige navn til samme ting, og det er akkurat det vi får. En liste er en «muterbar» eller <i>mutable</i> datastruktur i Python. Og hva vil så det si? Jo, der vi setter 
+</p>
+
+<p>
+<img src="figurer/mutable_lister.png" alt="mutable_lister.png"/>
+</p>
+
+<p>
+<img src="figurer/mutable_lister_a_b_forventet.png" alt="mutable_lister_a_b_forventet.png"/>
+</p>
+
+<p>
+<img src="figurer/mutable_lister_a_b_faktisk.png" alt="mutable_lister_a_b_faktisk.png"/>
+</p>
+
+<p>
+Og hvorfor er dette viktig? Jo, fordi verdier i lister kan endres uten at man oppretter en ny liste. Nå blir det vesentlig at navn i python <i>alltid</i> viser til et objekt, og når vi sier <code>b = a</code> og <code>a</code> er en liste, får vi rett og slett bare ett nytt navn på <code>a</code>.
+</p>
+
+<p>
+Hvordan skal vi så gjøre det? Når vi skal kopiere en liste, kan vi gjøre dette ved å skrive <code>b = a[:]</code>, siden <i>slicen</i> <code>a[:]</code> er en ny liste med alle elementene i <code>a</code>. Gjør vi dette igjen med snutten over, vil vi få ønske oppførsel.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">a</span> = [<span class="org-string">'mai'</span>, <span class="org-string">'juni'</span>, <span class="org-string">'juli'</span>, <span class="org-string">'august'</span>]
+<span class="org-variable-name">b</span> = a[:]
+<span class="org-variable-name">a</span>[1] = <span class="org-string">'november'</span>
+
+<span class="org-keyword">print</span>(f<span class="org-string">'a er: {a}'</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">'b er: {b}'</span>)
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">a</span> = [<span class="org-string">'test'</span>]
+<span class="org-variable-name">b</span> = a[:]
+<span class="org-keyword">print</span>(<span class="org-builtin">id</span>(a))
+<span class="org-keyword">print</span>(<span class="org-builtin">id</span>(b))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">enere</span> = [1, 1, 1, 1, 1]
+<span class="org-keyword">print</span>(<span class="org-builtin">id</span>(enere))
+<span class="org-variable-name">enere</span> += [5]
+<span class="org-keyword">print</span>(<span class="org-builtin">id</span>(enere))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">enere</span> = <span class="org-string">"11111"</span>
+<span class="org-keyword">print</span>(<span class="org-builtin">id</span>(enere))
+<span class="org-variable-name">enere</span> += <span class="org-string">"5"</span>
+<span class="org-keyword">print</span>(<span class="org-builtin">id</span>(enere))
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8d1425f" class="outline-2">
+<h2 id="org8d1425f">Abstraksjon</h2>
+<div class="outline-text-2" id="text-org8d1425f">
+</div>
+<div id="outline-container-org4cb886d" class="outline-3">
+<h3 id="org4cb886d">Biblioteker</h3>
+<div class="outline-text-3" id="text-org4cb886d">
+</div>
+<div id="outline-container-orga1535e9" class="outline-4">
+<h4 id="orga1535e9">Et fysikkbibliotek</h4>
+<div class="outline-text-4" id="text-orga1535e9">
+<pre class="example">
+tabaa004&gt; python -m site --user-site
+C:\Users\tabaa004\AppData\Roaming\Python\Python36\site-packages
+</pre>
+
+<p>
+Her legger jeg en kort fil som jeg kaller <code>fysikk.py</code>. Dette skal på sikt være fysikkbiblioteket mitt. Her ønsker jeg å samle alle konstanter, samt en del formler og likninger jeg stadig ender med å bruke.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> fysikk <span class="org-keyword">as</span> fy
+
+<span class="org-keyword">print</span>(fy.g)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">9.81
+</pre>
+</div>
+
+<p>
+Linja <code>import fysikk as fy</code> er vesentlig. Den består av to nøkkelord, <code>import</code> og <code>as</code>; ett modulnavn, <code>fysikk</code>; og ett alias, <code>fy</code>.
+</p>
+
+<p>
+En slik importeringssetning kommer vi til å se i de aller fleste programmene vi skal lage. Pythons motto er at det kommer «batteries included», men det betyr ikke at alt ligger tilgjengelig idet vi starter programmet, vi må <i>importere</i> bibliotekene.
+</p>
+
+<p>
+I eksempelet over er <code>fysikk</code> et slikt bibliotek. Vi kommer seinere til å bruke et knippe biblioteker, spesielt <a href="https://docs.python.org/2/library/math.html"><code>math</code></a>, <a href="http://www.numpy.org/"><code>numpy</code></a>, <a href="https://www.scipy.org/"><code>scipy</code></a>, og <a href="https://matplotlib.org/"><code>matplotlib</code></a>.
+</p>
+
+<p>
+En del slike biblioteker er en del av Pythons <i>standardbibliotek</i>. Det vil enkelt og greit si at utviklerne av Python også tar seg av å holde disse modulene (les: bibliotekene) ved like. En del av standardbiblioteket er <span class="popup"onclick="myPopupFunction()">innebygde funksjoner<span class="popuptext" id="myPopup">Dette er funksjoner som er tilgjengelig uten noen form for ~import~-setning, f.eks. funksjonen ~sorted~, som sorterer ei liste</span></span>, men det er også egne moduler man må importere, slik som <span class="popup"onclick="myPopupFunction()"><code>math</code><span class="popuptext" id="myPopup">~math~ trenger vi fort, dette biblioteket inneholder både ~sqrt~ og ~factorial~.</span></span>.
+</p>
+
+<p>
+Vårt første møte <code>import</code>-setninger blir også vårt første møte «punktnotasjon» eller <i>dot notation</i>. Vi skriver <code>fy.g</code> for vi ønsker å bruke <code>g</code> fra <code>fysikk</code>-modulen, som vi her har valgt å gi kallenavnet («alias»-et) <code>fy</code>. Vi ser av feilmeldingen under at om vi forsøker å bruke <code>g</code> direkte, får vi beskjed om at denne ikke er definert.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> fysikk
+
+<span class="org-keyword">print</span>(g)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+NameError: name 'g' is not defined
+</pre>
+</div>
+
+<p>
+Vi kommer til å møte på punktnotasjonen i en situasjon til, for bruk av <i>metoder</i> på <i>objekter</i>. Mer om det seinere.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb00ea20" class="outline-4">
+<h4 id="orgb00ea20">Vårt typiske importoppsett</h4>
+<div class="outline-text-4" id="text-orgb00ea20">
+<p>
+Du vil noen ganger se anbefalt å bruke en pakke som heter <a href="https://scipy.github.io/old-wiki/pages/PyLab"><code>pylab</code></a>. Dette er en samlepakke for tidligere nevnte <code>scipy</code>, <code>numpy</code> og <code>matplotlib</code>. Dette er en god pakke, men vi kommer ikke til å bruke den her. Grunnen er enkelt og greit at jeg mener den inviterer til dårlige vaner og at brukeren ikke må forholde seg til økosystemet hun jobber i. Pylab oppfordrer til å importere pakken via
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> pylab <span class="org-keyword">import</span> *
+</pre>
+</div>
+<p>
+hvor <code>*</code>-markøren vil si «alt». Problemet med dette er at det nå ikke blir synlig for brukeren <i>hvor</i> en funksjon, klasse eller variabel kommer fra. Det øker også sannsynligheten for at man ved uhell skriver over allerede-definerte navn.
+</p>
+
+<p>
+Vi kommer til stort sett til å importere i det minste følgende:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> numpy <span class="org-keyword">as</span> np
+<span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
+</pre>
+</div>
+
+<p>
+Vi kommer også til å hente ut spesifikke funksjoner fra eksempelvis <code>math</code>, noe vi kan gjøre via:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> math <span class="org-keyword">import</span> sqrt
+<span class="org-keyword">import</span> math
+<span class="org-keyword">import</span> numpy <span class="org-keyword">as</span> np
+
+
+<span class="org-variable-name">liste</span> = []
+liste.exte
+<span class="org-variable-name">a</span> = np.array([1, 2])
+a.
+
+<span class="org-keyword">print</span>(sqrt(2))
+
+<span class="org-builtin">help</span>(liste.extend)
+</pre>
+</div>
+
+<p>
+Legg merke til at vi her ikke lenger har behov for punktnotasjon når vi skal bruke <code>sqrt</code>, da vi spesifikt har hentet ut denne fra <code>math</code>-biblioteket.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org173b127" class="outline-3">
+<h3 id="org173b127">Funksjoner</h3>
+<div class="outline-text-3" id="text-org173b127">
+<p>
+Vi har nå fått et knippe verktøy for å lage ulike variabler, men vi kommer snart til å se at vi gjentar oss selv mye i programmeringen. Som programmerer bør du være på utkikk etter kode som er gjentagelser av tidligere kode, dette kan som oftes samles i en egen blokk. Vi kaller slike gjenbrukebare blokker av kode for «funksjoner» eller «underrutiner» (<i>subrutines</i>).
+</p>
+
+<p>
+<img src="figurer/funksjon.png" alt="funksjon.png"/>
+</p>
+</div>
+
+<div id="outline-container-org4e5052a" class="outline-4">
+<h4 id="org4e5052a">Definisjon og kall</h4>
+<div class="outline-text-4" id="text-org4e5052a">
+<p>
+De to viktigste tingene vi gjør med en funksjon er å definere den og å gjøre et kall på den. Definisjon skjer i Python ved å bruke nøkkelordet <code>def</code>. Et kall fungerer ved at vi skriver funksjonsnavnet og en parentes som inneholder eventuelle paramtere.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">hilsen</span>():
+    <span class="org-doc">"""En funksjon som sier 'hei'"""</span>
+    <span class="org-keyword">print</span>(<span class="org-string">'hei'</span>)
+    <span class="org-keyword">return</span>
+
+<span class="org-keyword">def</span> <span class="org-function-name">hilsen_navngitt</span>(navn):
+    <span class="org-doc">"""En funksjon som hilser p&#229; noe navngitt."""</span>
+    <span class="org-keyword">print</span>(f<span class="org-string">'Hei, {navn}!'</span>)
+    <span class="org-keyword">return</span>
+
+hilsen()
+hilsen_navngitt(<span class="org-string">'Trond'</span>)
+</pre>
+</div>
+
+<p>
+Legg merke til at funksjonene over ikke <i>returnere</i> noe. De gjennomfører setningene det de bler bedt om å gjøre, men gir ikke tilbake noen verdi.
+</p>
+
+<p>
+I slike tilfeller kan vi enten skrive <code>return</code>, <code>return None</code>, eller la være å skrive noen retursetning overhodet.
+</p>
+
+<div class="TASK">
+<p>
+Modifiser <code>hilsen</code> og <code>hilsen_navngitt</code> til heller å <i>returnere</i> sine respektive tekststrenger.
+</p>
+
+<p>
+Ønsket oppførsel er altså for eksempel:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">svar</span> = hilsen_navngitt(<span class="org-string">'Trond'</span>)
+<span class="org-keyword">print</span>(svar)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">Hei, Trond!
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd7d37af" class="outline-4">
+<h4 id="orgd7d37af">Ord når vi snakker om funksjoner</h4>
+<div class="outline-text-4" id="text-orgd7d37af">
+<p>
+En funksjon <i>defineres</i> og i definisjonen tar funksjonen inn <i>argumenter</i>. Når vi <i>kaller</i> funksjonen, kan vi sende <i>variabler</i> inn som funksjonens <i>parametere</i>.
+</p>
+
+<p>
+Strukturen på alle funksjonsdefinisjoner er som følger:
+</p>
+
+<pre class="example">
+def funksjonsnavn(arg1, arg2, ...):
+    """En beskrivelse av hva funksjonen gjør."""
+    
+    setninger hvor funksjonen gjør noe
+
+    return det funksjonen skal returnere
+</pre>
+
+<p>
+La oss si vi ønsker å lage en funksjon som tar inn et tall og returnerer tallet kvadrert. Dette kan vi gjøre som vist under.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">kvadrer</span>(x):
+    <span class="org-doc">"""Kvadrer tallet x."""</span>
+    <span class="org-variable-name">svar</span> = x * x
+    <span class="org-keyword">return</span> svar
+
+<span class="org-keyword">print</span>(kvadrer(2))
+</pre>
+</div>
+
+<p>
+I denne <i>definisjonen</i> (markert med nøkkelordet <code>def</code>), setter vi <i>navnet</i> til funksjonen til å være <code>kvadrer</code>, vi definerer ett argument <code>x</code>, vi har en setning i <i>funksjonskroppen</i> som lager en variabel som kun er synlig for funksjonen, <code>svar</code>, som vi setter til å være <code>x * x</code>, før vi avslutter med å returnere <code>svar</code>. Til slutt <i>kaller</i> vi funksjonen ved å skrive funksjonsnavnet, og å sende inn <i>parameteren</i> <code>2</code>.
+</p>
+
+<div class="TASK">
+<p>
+Hva er <i>funksjonsnavnet</i>, <i>argumentene</i> og <i>returverdi</i> for funksjonen under?
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">snitt</span>(a, b):
+    <span class="org-doc">"""Gi gjennomsnittet av tallene a og b."""</span>
+    <span class="org-variable-name">svar</span> = (a + b) / 2
+    <span class="org-keyword">return</span> svar
+</pre>
+</div>
+
+<p>
+Videre, i <i>funksjonskallet</i> under, hva vil verdien av variabelen <code>regnet_snitt</code> være og hva er <i>parameterne</i> i kallet?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">regnet_snitt</span> = snitt(4.5, 9)
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1a8e049" class="outline-3">
+<h3 id="org1a8e049">Skop</h3>
+<div class="outline-text-3" id="text-org1a8e049">
+<p>
+Se på følgende programsnutt.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">n</span> = 3
+
+<span class="org-keyword">def</span> <span class="org-function-name">inkrement</span>(n):
+    <span class="org-doc">"""&#216;k verdien til n med 1."""</span>
+    <span class="org-variable-name">n</span> += 1
+    <span class="org-keyword">print</span>(f<span class="org-string">'--Vi er inne i funksjonen.'</span>)
+    <span class="org-keyword">print</span>(f<span class="org-string">'--Verdien til n er n&#229; {n}.'</span>)
+    <span class="org-keyword">return</span> n
+
+inkrement(n)
+
+<span class="org-keyword">print</span>(f<span class="org-string">'Vi er p&#229; utsiden av funksjonen.'</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">'Verdien til n er n&#229; {n}.'</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">
+--Vi er inne i funksjonen.
+--Verdien til n er n&#229; 4.
+Vi er p&#229; utsiden av funksjonen.
+Verdien til n er n&#229; 3.
+</pre>
+</div>
+
+<p>
+Her har vi først en <i>variabel</i> kalt <code>n</code>, som vi setter til verdien <code>3</code>. Vi definerer så en <i>funksjon</i> med <i>argument</i> <code>n</code>. Dette argumentet har ikke noe med variabelen å gjøre, argumentet gjelder kun for funksjonen, og blir opprettet idet funksjonen blir laget. Til slutt <i>kaller</i> vi funksjonen 
+</p>
+
+<p>
+Hva skjer så om vi kjører samme skript, bare med én vesentlig endring?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">n</span> = 3
+
+<span class="org-keyword">def</span> <span class="org-function-name">inkrement</span>(n):
+    <span class="org-doc">"""&#216;k verdien til n med 1."""</span>
+    <span class="org-variable-name">n</span> += 1
+    <span class="org-keyword">print</span>(f<span class="org-string">'--Vi er inne i funksjonen.'</span>)
+    <span class="org-keyword">print</span>(f<span class="org-string">'--Verdien til n er n&#229; {n}.'</span>)
+    <span class="org-keyword">return</span> n
+
+<span class="org-variable-name">n</span> = inkrement(n)        <span class="org-comment-delimiter"># </span><span class="org-comment">Obs!</span>
+
+<span class="org-keyword">print</span>(f<span class="org-string">'Vi er p&#229; utsiden av funksjonen.'</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">'Verdien til n er n&#229; {n}.'</span>)
+</pre>
+</div>
+
+<div class="TASK">
+<p>
+Kjør de to foregående programsnuttene og forklar eventuelle avvik mellom dem.
+</p>
+
+</div>
+
+<p>
+De delene av et program hvor en gitt variabel er tilgjengelig, kaller vi den variabelenes «skop», eller <i>scope</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">x</span> = 2
+<span class="org-keyword">def</span> <span class="org-function-name">utskrift</span>():
+    <span class="org-keyword">print</span>(f<span class="org-string">'Inne i funksjonen er verdien til x {x}.'</span>)
+    <span class="org-keyword">return</span>
+
+utskrift()
+
+<span class="org-keyword">print</span>(f<span class="org-string">'Utenfor funksjonen er verdien til x {x}.'</span>)
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-python">
+<span class="org-variable-name">x</span> = 2
+<span class="org-keyword">def</span> <span class="org-function-name">utskrift_med_indre</span>():
+    <span class="org-variable-name">x</span> = 3
+    <span class="org-keyword">print</span>(f<span class="org-string">'Inne i funksjonen er verdien til x {x}.'</span>)
+    <span class="org-keyword">return</span>
+
+<span class="org-keyword">print</span>(f<span class="org-string">'Utenfor funksjonen er verdien til x {x}.'</span>)
+</pre>
+</div>
+
+<div class="TASK">
+<p>
+Hva blir skrevet av følgende program?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">kvadrer</span>(x):
+    <span class="org-keyword">return</span> x*x
+
+<span class="org-keyword">def</span> <span class="org-function-name">g</span>(y):
+    <span class="org-keyword">return</span> y + 3
+
+<span class="org-keyword">def</span> <span class="org-function-name">h</span>(y):
+    <span class="org-keyword">return</span> kvadrer(y) + 3
+
+<span class="org-keyword">print</span> h(2)
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org570557c" class="outline-3">
+<h3 id="org570557c">Klasser</h3>
+<div class="outline-text-3" id="text-org570557c">
+<p>
+Funksjonene er <i>verbene</i> i programeringsspråket vårt. De <i>gjør</i> noe med data og kan returnere verdier. Følger vi analogien videre, vil vi da kunne si at så langt er flyttallene, heltallene, listene, tuplene, tekststrengene, og assosiasjonslistene <i>subjektene</i> i språket vårt. Vi har også sett hvordan vi kan lage nye verb ved å definere funksjoner, vi skal nå gå ett skritt videre ved å lage nye subjekter, klasser.
+</p>
+
+<p>
+Området vi nå er på vei over i, kalles <i>objektorientert programmering</i>. Som nevnt tidligere, er det ikke strengt nødvendig med klasser for å kunne løse problemer, men det gjør mye av programmeringen langt enklere og mer oversiktlig. I tillegg virker klasser som et <i>abstraksjonsnivå</i> mellom den som skriver og den som bruker et program.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Kloss</span>(<span class="org-builtin">object</span>):
+    <span class="org-doc">"""En kloss som glir p&#229; et underlag og kan kollidere med andre klosser</span>
+<span class="org-doc">    Klosser initieres med en masse, startposisjon og startfart, alle flyttall.</span>
+<span class="org-doc">    """</span>
+
+    <span class="org-keyword">def</span> <span class="org-function-name">__init__</span>(<span class="org-keyword">self</span>, masse, startposisjon, startfart):
+        <span class="org-keyword">self</span>.masse = masse
+        <span class="org-keyword">self</span>.posisjon = startposisjon
+        <span class="org-keyword">self</span>.fart = startfart
+</pre>
+</div>
+
+<p>
+Det er kanskje ikke helt tydelig hva denne snutten gjør ennå. Her lager vi oss en ny <i>klasse</i> som vi kaller <code>Kloss</code>. Overse <code>(object)</code> inntil videre. Vi sier så at klossen skal lages, «initieres» med en masse, startposisjon, og startfart, alle disse er flyttall. Ønsker vi å lage en kloss med masse 1.0 kg, startposisjon 0.0 m og startfart 1.0 m/s, kan vi gjøre dette som 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">kloss</span> = Kloss(1.0, 0.0, 1.0)
+<span class="org-keyword">print</span>(<span class="org-builtin">type</span>(kloss))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">&lt;class '<span class="org-underline">__main__</span>.Kloss'&gt;
+</pre>
+</div>
+
+<p>
+Men &#x2026; hva skjedde med <code>__init__</code>-argumentet <code>self</code>? Vel, dette dukker opp gjennom hele klossens levetid som klossen selv. Når vi skal lage funksjoner for klossen (kalt «metoder») kommer vi til å bruke punktnotasjon for å kalle disse metodene.
+</p>
+
+<p>
+Slik det står nå, er klossen vår en litt kjedelig sak, vi kan, om vi ønsker, hente ut egenskapene dens, men vi kan vanskelig få den til å gjøre stort. La oss gi den en måte å bevege seg på.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Kloss</span>(<span class="org-builtin">object</span>):
+    <span class="org-doc">"""En kloss som glir p&#229; et underlag og kan kollidere med andre klosser</span>
+<span class="org-doc">    Klosser initieres med en masse, startposisjon og startfart, alle flyttall.</span>
+<span class="org-doc">    """</span>
+
+    <span class="org-keyword">def</span> <span class="org-function-name">__init__</span>(<span class="org-keyword">self</span>, masse, startposisjon, startfart):
+        <span class="org-keyword">self</span>.masse = masse
+        <span class="org-keyword">self</span>.posisjon = startposisjon
+        <span class="org-keyword">self</span>.fart = startfart
+
+    <span class="org-keyword">def</span> <span class="org-function-name">beveg</span>(<span class="org-keyword">self</span>, delta_t):
+        <span class="org-keyword">self</span>.posisjon += <span class="org-keyword">self</span>.fart * delta_t
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">kloss</span> = Kloss(1.0, 0.0, 1.0)
+
+<span class="org-variable-name">t</span> = 0
+<span class="org-variable-name">delta_t</span> = 0.1
+
+<span class="org-keyword">while</span> t &lt;= 1:
+    kloss.beveg(delta_t)
+    <span class="org-keyword">print</span>(kloss.posisjon)
+    <span class="org-variable-name">t</span> += delta_t
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org633093a" class="outline-3">
+<h3 id="org633093a">Kjenn dine røtter</h3>
+<div class="outline-text-3" id="text-org633093a">
+<p>
+Av en eller annen grunn ønsker vi å finne nullpunktet til funksjonen $f(x) = 0.7e<sup>-x</sup> - 5x + 13.$ Du setter deg ned med penn og papir, og innser raskt at du ikke kan det du behøver for å finne en <i>analytisk</i> løsning til oppgaven (se f.eks. løsningen til <a href="http://www.wolframalpha.com/input/?i=0.7e%5E(-x)+-+5x+%2B+13+%3D+0">Wolfram Alpha</a>).
+</p>
+
+<p>
+Du tar derfor fram det digitale millimeterpapiret, Geogebra, tegner grafen, trykker «skjæring mellom to objekt», velger grafen og x-aksen og får opp at nullpunktet ligger ved \(x=2.61\).
+</p>
+
+<p>
+Hvordan gjør Geogebra dette?
+</p>
+
+<p>
+Én måte å gjøre det på er ved hjelp av <i>halveringsmetoden</i>. Dette er en flott måte å finne et nullpunkt på, gitt at du veit følgende:
+</p>
+<ul class="org-ul">
+<li>to punkter på funksjonen</li>
+<li>at funksjonsverdien er negativ i ett av disse punktene</li>
+<li>at funksjonsverdien er positiv i det andre av disse punktene</li>
+</ul>
+
+<p>
+Vår \(f(x)\) er positiv i \(x=0\) og negativ i \(x=10\), så dette kan være gode startverdier.
+</p>
+
+<p>
+Med dette på plass går algoritmen som følger:
+</p>
+
+<pre class="example">
+a er en verdi hvor f(a) &gt; 0
+b er en verdi hvor f(b) &lt; 0
+eps er en bitte liten verdi, f.eks. 0.0001
+
+
+hvis f( (a+b)/2 ) &lt; 0
+    sett b til å være (a+b)/2
+ellers
+    sett a til å være (a+b)/2
+gjenta så lenge f( (a+b)/2 ) &gt; eps
+</pre>
+
+<div class="TASK">
+<p>
+Her er det en gjentagende del. Om du skulle programmert dette ved bruk av en løkke, ville du brukt en <code>for</code>- eller <code>while</code>-løkke for å løse dette? Hvorfor?
+</p>
+
+</div>
+
+<p>
+For vår funksjon kommer gangen i dette til å se ut som følger:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">Iterasjon nr. 1
+a har verdien 0.0
+b har verdien 10.0
+--------------------
+Iterasjon nr. 2
+a har verdien 0.0
+b har verdien 5.0
+--------------------
+Iterasjon nr. 3
+a har verdien 2.5
+b har verdien 5.0
+--------------------
+Iterasjon nr. 4
+a har verdien 2.5
+b har verdien 3.75
+--------------------
+Iterasjon nr. 5
+a har verdien 2.5
+b har verdien 3.125
+--------------------
+Iterasjon nr. 6
+a har verdien 2.5
+b har verdien 2.8125
+--------------------
+Iterasjon nr. 7
+a har verdien 2.5
+b har verdien 2.6562
+--------------------
+Iterasjon nr. 8
+a har verdien 2.5781
+b har verdien 2.6562
+--------------------
+Iterasjon nr. 9
+a har verdien 2.5781
+b har verdien 2.6172
+--------------------
+Iterasjon nr. 10
+a har verdien 2.5977
+b har verdien 2.6172
+--------------------
+Iterasjon nr. 11
+a har verdien 2.6074
+b har verdien 2.6172
+--------------------
+Iterasjon nr. 12
+a har verdien 2.6074
+b har verdien 2.6123
+--------------------
+Iterasjon nr. 13
+a har verdien 2.6099
+b har verdien 2.6123
+--------------------
+Iterasjon nr. 14
+a har verdien 2.6099
+b har verdien 2.6111
+--------------------
+Iterasjon nr. 15
+a har verdien 2.6099
+b har verdien 2.6105
+--------------------
+Iterasjon nr. 16
+a har verdien 2.6102
+b har verdien 2.6105
+--------------------
+Iterasjon nr. 17
+a har verdien 2.6102
+b har verdien 2.6103
+--------------------
+Iterasjon nr. 18
+a har verdien 2.6102
+b har verdien 2.6103
+--------------------
+Svaret er 2.6103.
+</pre>
+</div>
+
+<div class="TASK">
+<p>
+Forsøk å implementere halveringsmetoden for denne funksjonen i python. Du kan bruke funksjonsdefinisjonen
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> math
+
+<span class="org-keyword">def</span> <span class="org-function-name">f</span>(x):
+    <span class="org-keyword">return</span> 0.7 * math.exp(- x) - 5 * x + 13
+</pre>
+</div>
+
+<p>
+og sette startverdiene til 0.0 og 10.0.
+</p>
+
+</div>
 </div>
 </div>
 </div>

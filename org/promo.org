@@ -93,14 +93,7 @@ Vi legger opp en prosjektbasert gjennomgang. Når man hører om at lister i Pyth
 
 Vi kommer til å ha to prosjekter på høsten og to på våren. Jeg kommer til å legge noen anbefalinger for hvilke prosjekter dette kan være, men jeg er åpen for forslag om du har noe annet du kunne tenkt deg å se nærmere på.
 
-Prosjektene ser ut som følger:
-
-- realfagsbibliotek :: Opprett et sett med konstanter, funksjoner og datatyper det kan være nyttig å ha tilgjengelig for øvrig realfagsarbeid. Siden skal du bruke arbeidet ditt til å løse oppgaver fra de ulike realfagene (matematikk, fysikk, kjemi og biologi).
-- bysykkelanalyse :: Analyser data tilgjengeliggjort av Oslo bysykkel.
-- partikler i boks :: Modeller en boks med gasspartikler.
-- selvvalgt :: Velg et eget prosjekt.
-
-* Bruk av nettsida                                                                  :noexport:
+* Bruk av nettsida
 Denne nettsida er bygd opp rund å skulle kunne være fullstendig tastaturnavigerbar.
 
 Du kan til enhver tid skrive «?» på tastaturet for å få opp en hjelpeside. /Bruk den./
@@ -120,7 +113,7 @@ Jeg jobber med saken.
 -- Tarjei Bærland, 2018
 #+END_QUOTE
 
-* Matematikk og programmering                                                       :noexport:
+* Matematikk og programmering
 ** Programmering
 Når vi programmerer, setter vi opp et sett med instrukser til datamaskinen. Disse instruksene er en trinnvis gjennomgang av hvordan maskinen skal løse et problem.
 
@@ -167,7 +160,7 @@ print(svar)
 Dette kan vi gjøre fordi Python kommer med gangefunksjonen innebygd. Det dukker dog raskt opp matematiske påstander vi ikke kan løse uten en trinnvis prosess.
 
 Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av de førti første primtallene?» Dette har vi i de aller fleste programmeringsspråk ikke direkte måte å løse, vi må fortelle maskinen hva den skal gjøre instruks for instruks.
-* Programmeringsspråk                                                               :noexport:
+* Programmeringsspråk
 Vi skal gjennom arbeidet i denne [[popup:jeg kommer ikke på noe bedere å kalle det][boka]] bruke programmeringsspråket Python.
 
 Det er mange gode grunner til å velge Python, vi skal gå gjennom noen av dem straks, men vit med sikkerhet det at vi like så godt kunne valgt et annet språk.
@@ -375,7 +368,7 @@ Vi kommer ikke her til å gå nærmere inn på akkurat hvordan verdiene er lagre
 
 Til dagligdags regning, har ikke dette noe særlig betydning, vi må dog ha det i tankene når vi setter opp tester for ~if~-setninger, men mer om det seinere.
 
-* Basispython                                                                       :noexport:
+* Basispython
 ** Regnerekkefølge og kommandolinja
 Siden Python-programmer kan oversettes til maskinkode løpende, kan vi jobbe /interaktivt/ med Python, à la slik vi er vant med fra CAS i Geogebra. Vi kan altså, om vi ønsker, skrive en linje med kode, se hva denne gjør, for så å skrive neste.
 
@@ -800,7 +793,7 @@ print(id(enere))
 
 *** «Assosiasjonslister» eller /dictionaries/                                     :noexport:
 
-* Abstraksjon                                                                       :noexport:
+* Abstraksjon
 ** Biblioteker
 *** Et fysikkbibliotek
 #+BEGIN_EXAMPLE
@@ -906,8 +899,10 @@ funk -> output [label="Utdata"]
 #+RESULTS:
 [[fig:funksjon.png]]
 
+Vi har allerede brukt et par funksjoner, spesielt ~print~-funksjonen. Denne funksjonen har et navn (~print~), den tar inn ett eller flere argumenter (det som skal skrives) og den /gjør noe/ (skriver til skjermen).
+
 *** Definisjon og kall
-De to viktigste tingene vi gjør med en funksjon er å definere den og å gjøre et kall på den. Definisjon skjer i Python ved å bruke nøkkelordet ~def~. Et kall fungerer ved at vi skriver funksjonsnavnet og en parentes som inneholder eventuelle paramtere.
+De to hovedtingene vi gjør med en funksjon er å definere den og å bruke (kalle) den. Definisjon skjer i Python ved å bruke nøkkelordet ~def~. Et kall fungerer ved at vi skriver funksjonsnavnet og en parentes som inneholder eventuelle paramtere.
 
 #+BEGIN_SRC python
 def hilsen():
@@ -1885,6 +1880,59 @@ Endre terningeksempelet over til å skrive en fjerde kolonne, «Sum», hvor verd
 ** Testing
 
 ** Bugs
+
+* Appendiks: Prosjekter|
+** Største felles divisor                                                          :noexport:
+Innenfor tallteori er to talls største felles divisor (/greates common divisor/) en vesentlig egenskap å kunne avgjøre. Målet med denne oppgaven er å lage en funksjoner ~sfd~, med to argumenter ~a~ og ~b~, som returnerer ~a~ og ~b~ sine største felles divisor.
+
+*** Oppgave
+Vi har et rom som er 221 dm bredt og 595 dm langt. Om vi skal flislegge gulvet i dette rommet med hele kvadratiske fliser, hva er den største sidelengden flisene kan ha?
+
+*** En elementær tilnærming
+For to tall, ~a~ og ~b~, hvor ~b < a~, kan deres /sfd/ være maksimalt ~b/2~.
+
+#+BEGIN_TASK
+Argumenter for foregående setning.
+#+END_TASK
+
+Dersom ~sfd(a,b) == 1~ har ~a~ og ~b~ /ingen/ felles divisorer større enn én, vi sier da at ~a~ og ~b~ /relativt primistiske/. For å finne en eventuell /sfd/ for ~a~ og ~b~, kan vi da teste alle tall fra 1 til ~b/2~.
+
+#+BEGIN_SRC python
+def sfd_elementaer(a, b):
+    """Returner største felles divisor for heltallene a og b."""
+
+    if a > b:
+        a, b = b, a
+
+    sfd = 1                     # Holder denne verdien er a og b relativt primistiske
+    test = 1
+    
+    while test <= b/2:
+        if a % test == 0 and b % test == 0:
+            sfd = test
+        test += 1
+
+    return sfd
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+17
+#+END_SRC
+
+#+BEGIN_TASK
+Denne testen er ineffektiv. Blant annet sjekker den alle partall, uavhengig av om ~a~ eller ~b~ er oddetall. Endre funksjonen til å være slik ~test~ økes med 2 i oddetallssteg (1, 3, 5, ...) dersom  enten ~a~ eller ~b~ er oddetall.
+#+END_TASK
+
+#+BEGIN_TASK
+Lag en predikatfunksjon som svarer på hvorvidt ~a~ og ~b~ er relativt primistiske.
+#+END_TASK
+
+*** Kilder
+[[https://no.wikipedia.org/wiki/St%C3%B8rste_felles_divisor][Største felles divisor]]
+
+** Sykkeldata
+** Dating-algoritmen
 
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner

@@ -1,13 +1,179 @@
 #+SETUPFILE: orgheader.org
 #+TITLE: Økter
 
-Generell oversikt finner du på [[file:edvardmunch.org::*Datoer][Edvard Munch - datoer]].
+#+BEGIN_SRC emacs-lisp :eval query-export :exports none
+(add-to-list 'org-html-infojs-options '(sdepth . "2"))
+#+END_SRC
 
-* Uke 34
+* Uke 35
+:PROPERTIES:
+:header-args:  :tangle ../py/uke35.py
+:END:
+[[py:uke35.py]]
+** Definere en funksjon 
+#+BEGIN_SRC python :session uke35
+def f(x):
+    """Et enkelt polynom."""
+    return x ** 2 + 5 * x - 4
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :session uke35 :results output raw
+print(f(2))
+print(f(4))
+print(f(-5))
+#+END_SRC
+
+#+RESULTS:
+10
+32
+-4
+
+
+** Åpningsoppgaver
+*** Forklar operasjonen
+Kjør følgende linjer i Python og beskriv hva som skjer:
+#+BEGIN_SRC python :exports code
+2 // 3
+4 // 5
+5 // 5
+7 // 7
+8 // 7
+10 // 3
+0 // 4
+12 // 4
+#+END_SRC
+
+*** Forklar hva funksjonene gjør
+#+BEGIN_SRC python
+funk1(1, 4)  # => 5
+funk1(2, 2)  # => 4
+funk1(3, 5)  # => 8
+funk1(4, -6) # => -2
+#+END_SRC
+
+#+BEGIN_SRC python
+funk2(2, 4)  # => 16
+funk2(3, 3)  # => 27
+funk2(90, 0) # => 1
+#+END_SRC
+
+#+BEGIN_SRC python
+funk3(3) # => True
+funk3(2) # => False
+funk3(11) # => True
+funk3(1) # => True
+funk3(22) # => False
+#+END_SRC
+
+#+BEGIN_SRC python :exports none :session funk3 :results output raw
+def funk3(n):
+    a, b = 0, 1
+    while n >= 1:
+        a, b = b + a, a
+        n -= 1
+    print(a)
+    return a
+#+END_SRC
+
+#+BEGIN_SRC python :session funk3 :results output raw :exports code
+funk3(1)  # => 1  
+funk3(2)  # => 1  
+funk3(3)  # => 2  
+funk3(5)  # => 5  
+funk3(10) # => 55 
+#+END_SRC
+
+** Funksjoner
+- bakgrunnsstoff :: [[file:promo.org::*Funksjoner][Funksjoner]]
+
+
+** «Tallsjekkern»
+Lag et program med følgende oppførsel:
+1. Be brukeren om et tall
+2. Skriv ut tallet brukeren ga
+
+#+BEGIN_SRC python :tangle ../py/uke35_tallsjekkern.py
+# Be brukeren om et tall
+tall = input("Skriv inn et tall:")
+# Endre 'tall' til ikke å være tekststreng
+tall = int(tall) # nå er det et heltall
+
+
+print("Du ga meg tallet: ", tall)
+
+if tall > 10:
+    print("Oi. Det var stort!")
+    print("Jeg er fortsatt i if-setninga.")
+else:
+    print("Jøsses ... det var et bitte lite tall.")
+#+END_SRC
+
+** Kvadratrøtter
+#+BEGIN_SRC python
+import math # Alternativ 1
+from math import sqrt # Alternativ 2
+
+kvadratrot = math.sqrt(2) # Hvis alt. 1
+kvadratrot = sqrt(2)      # Hvis alt. 2
+print(kvadratrot)
+#+END_SRC
+
+** Oppgaver
+#+BEGIN_SRC python
+if arbeid_så_langt == "altfor lett":
+    # lag et program som ber brukern om tre tall (a, b, c)
+    # og løser andregradslikningen a*x^2 + b*x + c = 0
+
+elif arbeid_så_langt == "helt passe":
+    # Lag nye programmer à la tallsjekkern.py hvor dere ber om input
+    # og skriver ut noe basert på inputen.
+    # Utfordring: Skriv ut om input var partall eller oddetall
+    #             (sjekk syntaksark ('y') i «boka» etter %-operator
+
+else: #altså alt er for vanskelig
+    # Gå gjennom eksempler fra sist en gang til.n
+#+END_SRC
+
+*** Til neste gang, uke 36
+Forsøk å fylle ut funksjonen under.
+
+
+#+BEGIN_SRC python
+from math import sqrt
+
+def abc_loeser(a, b, c):
+    """Denne funksjonen løser andregradslikningen:
+    a x^2 + b x + c = 0
+
+    x1,2 = (-b +- sqrt(b^2 - 4ac) / 2a
+    """
+
+    # Det som avgjør hvor mange løsninger vi har
+    # er 'determinanten' d = b^2 - 4 a c
+    # d > 0 : to løsninger
+    # d == 0: en løsniong
+    # d < 0 : ingen løsninger
+    if d > 0:
+        # gjør noe
+        loesninger = "ett eller annet"
+    elif d == 0:
+        # gjør noe
+        loesninger = "ett eller annet"
+    else:
+        # gjør noe
+        loesninger = "ett eller annet"
+
+
+    return loesninger
+#+END_SRC
+
+* Uke 34                                                                             :avholdt:
 :PROPERTIES:
 :header-args:  :tangle ../py/uke34.py
 :END:
-
+[[py:uke34.py]]
 ** Introduksjon
 - Se på [[https://tarjeiba.github.io/promo/promo.html#org99cf12d]]
 - Hvis ikke python er lagt inn på maskinene. [[https://repl.it]]
@@ -61,10 +227,6 @@ print(dobbelt)
 - Be om to tall, skriv ut produktet av dem
 - Be om to tall, skriv ut det første opphøyd i det andre
 #+END_TASK
-* Uke 35                                                                            :noexport:
-:PROPERTIES:
-:header-args:  :tangle ../py/uke35.py
-:END:
 
 * Uke 36                                                                            :noexport:
 :PROPERTIES:

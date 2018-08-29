@@ -6,20 +6,22 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 pre  {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    padding-top: 8pt;
-    padding-bottom: 8pt;
+    /* border-top: 1px solid #ccc; */
+    /* border-bottom: 1px solid #ccc; */
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    padding: 11.5px;
     font-family: "Source Code Pro",  monospace;
+    font-weight: 400;
     width: 100%;
     overflow: auto;
-    margin: 0em;
-    margin-bottom: 1em;
+    margin: 0 0 12px;
     display: inline-block;
     line-height: 1.0em;
     text-align: left;
     white-space: pre;
-  }
+}
 
 code {
     font-family: "Source Code Pro", monospace;
@@ -33,85 +35,85 @@ code {
 
 /* @group Baseline */
 body {
-	font-size: 14px;
-	line-height: 1.5em;
-	padding: 0;
-	margin: 0;
-	font-family: "Open Sans";
+    font-size: 14px;
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans";
 }
 
 
 h1 {
-	margin: 0;
-	font-size: 1.6666666666666667em;
-	line-height: 0.9em;
-	margin-bottom: 0.9em;
+    margin: 0;
+    font-size: 1.6666666666666667em;
+    line-height: 0.9em;
+    margin-bottom: 0.9em;
 }
 h2 {
-	margin: 0;
-	font-size: 1.5em;
-	line-height: 1em;
-	margin-bottom: 1em;
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1em;
+    margin-bottom: 1em;
 }
 h3 {
-	margin: 0;
-	font-size: 1.3333333333333333em;
-	line-height: 1.125em;
-	margin-bottom: 1.125em;
+    margin: 0;
+    font-size: 1.3333333333333333em;
+    line-height: 1.125em;
+    margin-bottom: 1.125em;
 }
 h4 {
-	margin: 0;
-	font-size: 1.1666666666666667em;
-	line-height: 1.2857142857142858em;
-	margin-bottom: 1.2857142857142858em;
+    margin: 0;
+    font-size: 1.1666666666666667em;
+    line-height: 1.2857142857142858em;
+    margin-bottom: 1.2857142857142858em;
 }
 
 p, ul, blockquote, td, th, label {
-	margin: 0;
-	font-size: 1em;
-	line-height: 1.5em;
-	margin-bottom: 1.5em;
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
 }
 p.small, #postamble {
-	margin: 0;
-	font-size: 0.8333333333333334em;
-	line-height: 1.8em;
-	margin-bottom: 1.8em;
+    margin: 0;
+    font-size: 0.8333333333333334em;
+    line-height: 1.8em;
+    margin-bottom: 1.8em;
 }
 table {
-	border-collapse: collapse;
-	margin-bottom: 1.5em;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
 }
 /* @end */
 
 /* @group Layout */
 
 #content {
-	max-width: 70em;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 8px;
+    max-width: 70em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px;
 }
 
 
 #table-of-contents {
-	width: 15em;
-	float: left;
-	overflow: auto;
+    width: 15em;
+    float: left;
+    overflow: auto;
 }
 
 /* #main { */
 div.outline-2 {
-    maxn-width: 70em;
-	float: right;
-	/* The lines below are useful if the "main" div isn't available and
-	   div.outline-2 has to be used. */
-	position: relative;
+    max-width: 70em;
+    float: right;
+    /* The lines below are useful if the "main" div isn't available and
+       div.outline-2 has to be used. */
+    position: relative;
 }
 
 #postamble {
-	clear: both;
-	text-align: center;
+    clear: both;
+    text-align: center;
 }
 
 
@@ -120,8 +122,8 @@ div.outline-2 {
 /* @group Header */
 
 h1.title {
-	margin-top: 10px;
-	text-align: center;
+    margin-top: 10px;
+    text-align: center;
 }
 
 h1.title {
@@ -137,19 +139,19 @@ h1.title {
 /* @group Org Keywords */
 
 .todo {
-	color: red;
+    color: red;
 }
 
 .done {
-	color: green;
+    color: green;
 }
 
 .tag {
-	color: blue;
-	text-transform: lowercase;
-	/* This will be obscured by the surrounding span tag, so blank everything. */
-	background: #fff;
-	border: none;
+    color: blue;
+    text-transform: lowercase;
+    /* This will be obscured by the surrounding span tag, so blank everything. */
+    background: #fff;
+    border: none;
 	/* position: relative;
 	text-align: right;
 	right: 1em; */

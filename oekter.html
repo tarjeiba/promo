@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-08-22 on. 15:13 -->
+<!-- 2018-08-29 on. 15:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter</title>
@@ -139,91 +139,117 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga6c7cdd">Uke 34</a>
+<li><a href="#org24f220d">«Tallsjekkern»</a></li>
+<li><a href="#orge81cdc2">Kvadratrøtter</a></li>
+<li><a href="#orgbe6fdc4">Oppgaver</a>
 <ul>
-<li><a href="#orgbe17437">Introduksjon</a></li>
-<li><a href="#org1c08436">Notater</a></li>
+<li><a href="#orgddcbb46">Til neste gang, uke 36</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
+<div id="outline-container-org24f220d" class="outline-2">
+<h2 id="org24f220d">«Tallsjekkern»</h2>
+<div class="outline-text-2" id="text-org24f220d">
 <p>
-Generell oversikt finner du på <a href="edvardmunch.html#org7149a49">Edvard Munch - datoer</a>.
+Lag et program med følgende oppførsel:
+</p>
+<ol class="org-ol">
+<li>Be brukeren om et tall</li>
+<li>Skriv ut tallet brukeren ga</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-comment-delimiter"># </span><span class="org-comment">Be brukeren om et tall</span>
+<span class="org-variable-name">tall</span> = <span class="org-builtin">input</span>(<span class="org-string">"Skriv inn et tall:"</span>)
+<span class="org-comment-delimiter"># </span><span class="org-comment">Endre 'tall' til ikke &#229; v&#230;re tekststreng</span>
+<span class="org-variable-name">tall</span> = <span class="org-builtin">int</span>(tall) <span class="org-comment-delimiter"># </span><span class="org-comment">n&#229; er det et heltall</span>
+
+
+<span class="org-keyword">print</span>(<span class="org-string">"Du ga meg tallet: "</span>, tall)
+
+<span class="org-keyword">if</span> tall &gt; 10:
+    <span class="org-keyword">print</span>(<span class="org-string">"Oi. Det var stort!"</span>)
+    <span class="org-keyword">print</span>(<span class="org-string">"Jeg er fortsatt i if-setninga."</span>)
+<span class="org-keyword">else</span>:
+    <span class="org-keyword">print</span>(<span class="org-string">"J&#248;sses ... det var et bitte lite tall."</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge81cdc2" class="outline-2">
+<h2 id="orge81cdc2">Kvadratrøtter</h2>
+<div class="outline-text-2" id="text-orge81cdc2">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> math <span class="org-comment-delimiter"># </span><span class="org-comment">Alternativ 1</span>
+<span class="org-keyword">from</span> math <span class="org-keyword">import</span> sqrt <span class="org-comment-delimiter"># </span><span class="org-comment">Alternativ 2</span>
+
+<span class="org-variable-name">kvadratrot</span> = math.sqrt(2) <span class="org-comment-delimiter"># </span><span class="org-comment">Hvis alt. 1</span>
+<span class="org-variable-name">kvadratrot</span> = sqrt(2)      <span class="org-comment-delimiter"># </span><span class="org-comment">Hvis alt. 2</span>
+<span class="org-keyword">print</span>(kvadratrot)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbe6fdc4" class="outline-2">
+<h2 id="orgbe6fdc4">Oppgaver</h2>
+<div class="outline-text-2" id="text-orgbe6fdc4">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">if</span> arbeid_s&#229;_langt == <span class="org-string">"altfor lett"</span>:
+    <span class="org-comment-delimiter"># </span><span class="org-comment">lag et program som ber brukern om tre tall (a, b, c)</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">og l&#248;ser andregradslikningen a*x^2 + b*x + c = 0</span>
+
+<span class="org-keyword">elif</span> arbeid_s&#229;_langt == <span class="org-string">"helt passe"</span>:
+    <span class="org-comment-delimiter"># </span><span class="org-comment">Lag nye programmer &#224; la tallsjekkern.py hvor dere ber om input</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">og skriver ut noe basert p&#229; inputen.</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">Utfordring: Skriv ut om input var partall eller oddetall</span>
+    <span class="org-comment-delimiter">#             </span><span class="org-comment">(sjekk syntaksark ('y') i &#171;boka&#187; etter %-operator</span>
+
+<span class="org-keyword">else</span>: <span class="org-comment-delimiter">#</span><span class="org-comment">alts&#229; alt er for vanskelig</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">G&#229; gjennom eksempler fra sist en gang til.n</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgddcbb46" class="outline-3">
+<h3 id="orgddcbb46">Til neste gang, uke 36</h3>
+<div class="outline-text-3" id="text-orgddcbb46">
+<p>
+Forsøk å fylle ut funksjonen under.
 </p>
 
-<div id="outline-container-orga6c7cdd" class="outline-2">
-<h2 id="orga6c7cdd">Uke 34</h2>
-<div class="outline-text-2" id="text-orga6c7cdd">
-</div>
-
-<div id="outline-container-orgbe17437" class="outline-3">
-<h3 id="orgbe17437">Introduksjon</h3>
-<div class="outline-text-3" id="text-orgbe17437">
-<ul class="org-ul">
-<li>Se på <a href="https://tarjeiba.github.io/promo/promo.html#org99cf12d">https://tarjeiba.github.io/promo/promo.html#org99cf12d</a></li>
-<li>Hvis ikke python er lagt inn på maskinene. <a href="https://repl.it">https://repl.it</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org1c08436" class="outline-3">
-<h3 id="org1c08436">Notater</h3>
-<div class="outline-text-3" id="text-org1c08436">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">print</span>(<span class="org-string">"Hello world!"</span>) <span class="org-comment-delimiter"># </span><span class="org-comment">I Python, er #-tegnet mbrukt til kommentarer</span>
-</pre>
-</div>
 
 <div class="org-src-container">
-<pre class="src src-python">
-<span class="org-keyword">print</span>(<span class="org-string">"Hello world!"</span>)
-<span class="org-variable-name">hei</span> = <span class="org-string">"V&#230;r hilset!"</span> <span class="org-comment-delimiter"># </span><span class="org-comment">lagrer "v&#230;r hilset!" som variabel hei</span>
-<span class="org-keyword">print</span>(hei) <span class="org-comment-delimiter"># </span><span class="org-comment">her er 'hei' et variabelnavn</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Hvorfor gir print(hei) feil?</span>
+<pre class="src src-python"><span class="org-keyword">from</span> math <span class="org-keyword">import</span> sqrt
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">Datatyper</span>
-<span class="org-variable-name">a</span> = 3 <span class="org-comment-delimiter"># </span><span class="org-comment">heltall</span>
-<span class="org-variable-name">b</span> = 3.1 <span class="org-comment-delimiter"># </span><span class="org-comment">kommatall, flyttall</span>
-<span class="org-variable-name">c</span> = <span class="org-string">"Dette er tekst"</span> <span class="org-comment-delimiter"># </span><span class="org-comment">teksstreng</span>
-<span class="org-variable-name">d</span> = <span class="org-string">'Dette er ogs&#229; en tekststreng'</span>
-<span class="org-variable-name">e</span> = <span class="org-string">'Dette er en tekststreng med "anf&#248;rselstegn"'</span>
+<span class="org-keyword">def</span> <span class="org-function-name">abc_loeser</span>(a, b, c):
+    <span class="org-doc">"""Denne funksjonen l&#248;ser andregradslikningen:</span>
+<span class="org-doc">    a x^2 + b x + c = 0</span>
 
-<span class="org-builtin">input</span>(<span class="org-string">"Det som skal st&#229; p&#229; skjermen"</span>)
+<span class="org-doc">    x1,2 = (-b +- sqrt(b^2 - 4ac) / 2a</span>
+<span class="org-doc">    """</span>
+
+    <span class="org-comment-delimiter"># </span><span class="org-comment">Det som avgj&#248;r hvor mange l&#248;sninger vi har</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">er 'determinanten' d = b^2 - 4 a c</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">d &gt; 0 : to l&#248;sninger</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">d == 0: en l&#248;sniong</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">d &lt; 0 : ingen l&#248;sninger</span>
+    <span class="org-keyword">if</span> d &gt; 0:
+        <span class="org-comment-delimiter"># </span><span class="org-comment">gj&#248;r noe</span>
+        <span class="org-variable-name">loesninger</span> = <span class="org-string">"ett eller annet"</span>
+    <span class="org-keyword">elif</span> d == 0:
+        <span class="org-comment-delimiter"># </span><span class="org-comment">gj&#248;r noe</span>
+        <span class="org-variable-name">loesninger</span> = <span class="org-string">"ett eller annet"</span>
+    <span class="org-keyword">else</span>:
+        <span class="org-comment-delimiter"># </span><span class="org-comment">gj&#248;r noe</span>
+        <span class="org-variable-name">loesninger</span> = <span class="org-string">"ett eller annet"</span>
+
+
+    <span class="org-keyword">return</span> loesninger
 </pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-comment-delimiter"># </span><span class="org-comment">Et program som dobler et tall</span>
-<span class="org-variable-name">tall</span> = <span class="org-builtin">input</span>(<span class="org-string">"Gi meg et tall:"</span>) <span class="org-comment-delimiter"># </span><span class="org-comment">tall er n&#229; en tekststreng</span>
-<span class="org-variable-name">tall</span> = <span class="org-builtin">float</span>(tall)
-<span class="org-keyword">print</span>(<span class="org-string">"tall:"</span>, tall)
-
-<span class="org-keyword">print</span>(<span class="org-string">"Det dobbelte av tall er:"</span>)
-<span class="org-variable-name">dobbelt</span> = tall * 2
-<span class="org-keyword">print</span>(dobbelt)
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python">3 ** 2 <span class="org-comment-delimiter"># </span><span class="org-comment">3^2</span>
-</pre>
-</div>
-
-
-<div class="TASK">
-<ul class="org-ul">
-<li>Be om et navn, skriv ut "Hei på deg, {navn}"    # Husk print("Hei på deg", navn)</li>
-
-<li>Be om ett tall, skriv ut tallet opphøyd i andre.</li>
-<li>Be om ett tall, skriv ut tre lavere enn tallet, så ganger to # Test med tall = 1 =&gt; -4</li>
-<li>Be om ett tall, skriv ut det dobbelte av tallet i fjerde</li>
-
-<li>Be om to tall, skriv ut summen av dem</li>
-<li>Be om to tall, skriv ut produktet av dem</li>
-<li>Be om to tall, skriv ut det første opphøyd i det andre</li>
-</ul>
-
 </div>
 </div>
 </div>
