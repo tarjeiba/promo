@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-08-27 ma. 12:33 -->
+<!-- 2018-09-04 ti. 10:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programmering og modellering X</title>
@@ -167,6 +167,7 @@ for the JavaScript code in this tag.
 <li><a href="#orga28e052">Programmeringsspråk</a></li>
 <li><a href="#org95d2d5a">Basispython</a></li>
 <li><a href="#org8d1425f">Abstraksjon</a></li>
+<li><a href="#org8aebd2d">Appendiks: Prosjekter|</a></li>
 </ul>
 </div>
 </div>
@@ -306,17 +307,6 @@ Vi legger opp en prosjektbasert gjennomgang. Når man hører om at lister i Pyth
 <p>
 Vi kommer til å ha to prosjekter på høsten og to på våren. Jeg kommer til å legge noen anbefalinger for hvilke prosjekter dette kan være, men jeg er åpen for forslag om du har noe annet du kunne tenkt deg å se nærmere på.
 </p>
-
-<p>
-Prosjektene ser ut som følger:
-</p>
-
-<dl class="org-dl">
-<dt>realfagsbibliotek</dt><dd>Opprett et sett med konstanter, funksjoner og datatyper det kan være nyttig å ha tilgjengelig for øvrig realfagsarbeid. Siden skal du bruke arbeidet ditt til å løse oppgaver fra de ulike realfagene (matematikk, fysikk, kjemi og biologi).</dd>
-<dt>bysykkelanalyse</dt><dd>Analyser data tilgjengeliggjort av Oslo bysykkel.</dd>
-<dt>partikler i boks</dt><dd>Modeller en boks med gasspartikler.</dd>
-<dt>selvvalgt</dt><dd>Velg et eget prosjekt.</dd>
-</dl>
 </div>
 </div>
 </div>
@@ -442,7 +432,7 @@ Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av 
 <h2 id="orga28e052">Programmeringsspråk</h2>
 <div class="outline-text-2" id="text-orga28e052">
 <p>
-Vi skal gjennom arbeidet i denne <span class="popup"onclick="myPopupFunction()">boka<span class="popuptext" id="myPopup">jeg kommer ikke på noe bedere å kalle det</span></span> bruke programmeringsspråket Python.
+Vi skal gjennom arbeidet i denne <span class="popup"onclick="myPopupFunction()">boka<span class="popuptext" id="jeg kommer ikke på noe bedere å kalle det">jeg kommer ikke på noe bedere å kalle det</span></span> bruke programmeringsspråket Python.
 </p>
 
 <p>
@@ -484,7 +474,7 @@ I dette faget kommer vi til å bruke språket Python. Python er et populært spr
 <h3 id="org0b2b313">Ulike typer programmeringsspråk</h3>
 <div class="outline-text-3" id="text-org0b2b313">
 <p>
-I teorien kan alle programmeringsspråk som er såkalt <span class="popup"onclick="myPopupFunction()"><i>turingkomplette</i><span class="popuptext" id="myPopup">Etter Alan Turing, av «The Imitation Game»-berømmelse</span></span> beregne alt som kan beregnes. For at et språk skal være turingkomplett, må det litt forenklet ha mulighet til å gjenta kode om en betingelse ikke er nådd og kunne skrive og lese fra minnet. Dette gjelder i praksis alle programmeringsspråk.
+I teorien kan alle programmeringsspråk som er såkalt <span class="popup"onclick="myPopupFunction()"><i>turingkomplette</i><span class="popuptext" id="Etter Alan Turing, av «The Imitation Game»-berømmelse">Etter Alan Turing, av «The Imitation Game»-berømmelse</span></span> beregne alt som kan beregnes. For at et språk skal være turingkomplett, må det litt forenklet ha mulighet til å gjenta kode om en betingelse ikke er nådd og kunne skrive og lese fra minnet. Dette gjelder i praksis alle programmeringsspråk.
 </p>
 
 <p>
@@ -1076,7 +1066,7 @@ I eksempelet over er <code>fysikk</code> et slikt bibliotek. Vi kommer seinere t
 </p>
 
 <p>
-En del slike biblioteker er en del av Pythons <i>standardbibliotek</i>. Det vil enkelt og greit si at utviklerne av Python også tar seg av å holde disse modulene (les: bibliotekene) ved like. En del av standardbiblioteket er <span class="popup"onclick="myPopupFunction()">innebygde funksjoner<span class="popuptext" id="myPopup">Dette er funksjoner som er tilgjengelig uten noen form for ~import~-setning, f.eks. funksjonen ~sorted~, som sorterer ei liste</span></span>, men det er også egne moduler man må importere, slik som <span class="popup"onclick="myPopupFunction()"><code>math</code><span class="popuptext" id="myPopup">~math~ trenger vi fort, dette biblioteket inneholder både ~sqrt~ og ~factorial~.</span></span>.
+En del slike biblioteker er en del av Pythons <i>standardbibliotek</i>. Det vil enkelt og greit si at utviklerne av Python også tar seg av å holde disse modulene (les: bibliotekene) ved like. En del av standardbiblioteket er <span class="popup"onclick="myPopupFunction()">innebygde funksjoner<span class="popuptext" id="Dette er funksjoner som er tilgjengelig uten noen form for ~import~-setning, f.eks. funksjonen ~sorted~, som sorterer ei liste">Dette er funksjoner som er tilgjengelig uten noen form for ~import~-setning, f.eks. funksjonen ~sorted~, som sorterer ei liste</span></span>, men det er også egne moduler man må importere, slik som <span class="popup"onclick="myPopupFunction()"><code>math</code><span class="popuptext" id="~math~ trenger vi fort, dette biblioteket inneholder både ~sqrt~ og ~factorial~.">~math~ trenger vi fort, dette biblioteket inneholder både ~sqrt~ og ~factorial~.</span></span>.
 </p>
 
 <p>
@@ -1163,13 +1153,17 @@ Vi har nå fått et knippe verktøy for å lage ulike variabler, men vi kommer s
 <p>
 <img src="figurer/funksjon.png" alt="funksjon.png"/>
 </p>
+
+<p>
+Vi har allerede brukt et par funksjoner, spesielt <code>print</code>-funksjonen. Denne funksjonen har et navn (<code>print</code>), den tar inn ett eller flere argumenter (det som skal skrives) og den <i>gjør noe</i> (skriver til skjermen).
+</p>
 </div>
 
 <div id="outline-container-org4e5052a" class="outline-4">
 <h4 id="org4e5052a">Definisjon og kall</h4>
 <div class="outline-text-4" id="text-org4e5052a">
 <p>
-De to viktigste tingene vi gjør med en funksjon er å definere den og å gjøre et kall på den. Definisjon skjer i Python ved å bruke nøkkelordet <code>def</code>. Et kall fungerer ved at vi skriver funksjonsnavnet og en parentes som inneholder eventuelle paramtere.
+De to hovedtingene vi gjør med en funksjon er å definere den og å bruke (kalle) den. Definisjon skjer i Python ved å bruke nøkkelordet <code>def</code>. Et kall fungerer ved at vi skriver funksjonsnavnet og en parentes som inneholder eventuelle paramtere.
 </p>
 
 <div class="org-src-container">
@@ -1628,6 +1622,18 @@ og sette startverdiene til 0.0 og 10.0.
 
 </div>
 </div>
+</div>
+</div>
+
+<div id="outline-container-org8aebd2d" class="outline-2">
+<h2 id="org8aebd2d">Appendiks: Prosjekter|</h2>
+<div class="outline-text-2" id="text-org8aebd2d">
+</div>
+<div id="outline-container-org0565f55" class="outline-3">
+<h3 id="org0565f55">Sykkeldata</h3>
+</div>
+<div id="outline-container-orgfe2f3ff" class="outline-3">
+<h3 id="orgfe2f3ff">Dating-algoritmen</h3>
 </div>
 </div>
 </div>

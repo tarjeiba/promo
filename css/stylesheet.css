@@ -138,6 +138,8 @@ h1.title {
 
 /* @group Org Keywords */
 
+
+
 .todo {
     color: red;
 }
@@ -147,7 +149,7 @@ h1.title {
 }
 
 .tag {
-    color: blue;
+    color: gray;
     text-transform: lowercase;
     /* This will be obscured by the surrounding span tag, so blank everything. */
     background: #fff;
@@ -178,6 +180,14 @@ h1.title {
     align: center;
     display: inline-block;
   }
+
+.LOESNING {
+    border-left: 6px solid #aaa;
+    background-color: #eee;
+    padding: 8pt;
+    max-width: 100%;
+}
+			 
 
 .TASK {
     border-left: 6px solid #aaa;
@@ -240,11 +250,22 @@ td {
 } 
 
 
-h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
-    background-color: #eee;
-    padding: 2px;
-    border: 1px solid #ccc;
+/* h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { */
+/*     background-color: #eee; */
+/*     padding: 2px; */
+/*     border: 1px solid #eee; */
+/* } */
+
+span.tag:before {
+    content: 'emner: ';
 }
+
+/* span:not(.tag):before { */
+/*     content: '('; */
+/* } */
+/* span:not(.tag):after { */
+/*     content: ')'; */
+/* } */
 
 .outline-1, .outline-2, .outline-3, .outline-4, .outline-5, .outline-6 {
     margin-left: 0em;
@@ -2037,8 +2058,8 @@ body {
 .todo   { font-family: monospace; color: red; }
 .done   { font-family: monospace; color: green; }
 .priority { font-family: monospace; color: orange; }
-.tag    { background-color: #eee; font-family: monospace;
-          padding: 2px; font-size: 80%; font-weight: normal; }
+/* .tag    { background-color: #eee; font-family: monospace; */
+/*           padding: 2px; font-size: 80%; font-weight: normal; } */
 .timestamp { color: #bebebe; }
 .timestamp-kwd { color: #5f9ea0; }
 .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
