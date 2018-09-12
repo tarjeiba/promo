@@ -11,6 +11,9 @@
 #+END_SRC
 
 * Introduksjon
+:PROPERTIES:
+:CUSTOM_ID: intro
+:END:
 Prosessoren (CPU-en) i en rimelig datamaskin kan i dag gjennomføre over 10 milliarder desimaltallsoperasjoner hvert sekund. Hold en ball en meter over bakken. Fra du slipper ballen, til den treffer bakken, kan datamaskinen din fylle ut en gangetabell som går fra 1 til 45 000.
 
 Datamaskiner endrer spillereglene /fullstendig/.
@@ -94,6 +97,9 @@ Vi legger opp en prosjektbasert gjennomgang. Når man hører om at lister i Pyth
 Vi kommer til å ha to prosjekter på høsten og to på våren. Jeg kommer til å legge noen anbefalinger for hvilke prosjekter dette kan være, men jeg er åpen for forslag om du har noe annet du kunne tenkt deg å se nærmere på.
 
 * Bruk av nettsida
+:PROPERTIES:
+:CUSTOM_ID: bruk
+:END:
 Denne nettsida er bygd opp rund å skulle kunne være fullstendig tastaturnavigerbar.
 
 Du kan til enhver tid skrive «?» på tastaturet for å få opp en hjelpeside. /Bruk den./
@@ -114,7 +120,13 @@ Jeg jobber med saken.
 #+END_QUOTE
 
 * Matematikk og programmering
+:PROPERTIES:
+:CUSTOM_ID: matematikkogprogrammering
+:END:
 ** Programmering
+:PROPERTIES:
+:CUSTOM_ID: programmering
+:END:
 Når vi programmerer, setter vi opp et sett med instrukser til datamaskinen. Disse instruksene er en trinnvis gjennomgang av hvordan maskinen skal løse et problem.
 
 Med en fiktiv maskin som i utgangspunktet kun kan legge sammen og trekke fra, hva forsøker vi å få maskinen til å gjøre via trinnene under?
@@ -132,6 +144,9 @@ så lenge b er større enn null, gjør følgende:
 Hva vil verdien til ~svar~ være når dette programmet har kjørt ferdig?
 
 ** Matematikk
+:PROPERTIES:
+:CUSTOM_ID: programmering
+:END:
 Det forrige eksempelet ville vi løst matematisk ved å skrive opp følgende uttrykk:
 
 $$ \textrm{svar} = 5 + 5 + 5 = 5 \cdot 3 $$
@@ -161,6 +176,9 @@ Dette kan vi gjøre fordi Python kommer med gangefunksjonen innebygd. Det dukker
 
 Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av de førti første primtallene?» Dette har vi i de aller fleste programmeringsspråk ikke direkte måte å løse, vi må fortelle maskinen hva den skal gjøre instruks for instruks.
 * Programmeringsspråk
+:PROPERTIES:
+:CUSTOM_ID: programmeringsspraak
+:END:
 Vi skal gjennom arbeidet i denne [[popup:jeg kommer ikke på noe bedere å kalle det][boka]] bruke programmeringsspråket Python.
 
 Det er mange gode grunner til å velge Python, vi skal gå gjennom noen av dem straks, men vit med sikkerhet det at vi like så godt kunne valgt et annet språk.
@@ -369,7 +387,15 @@ Vi kommer ikke her til å gå nærmere inn på akkurat hvordan verdiene er lagre
 Til dagligdags regning, har ikke dette noe særlig betydning, vi må dog ha det i tankene når vi setter opp tester for ~if~-setninger, men mer om det seinere.
 
 * Basispython
+:PROPERTIES:
+:CUSTOM_ID: basispython
+:END:
+
 ** Regnerekkefølge og kommandolinja
+:PROPERTIES:
+:CUSTOM_ID: regnerekkefoelgeogkommandolinja
+:END:
+
 Siden Python-programmer kan oversettes til maskinkode løpende, kan vi jobbe /interaktivt/ med Python, à la slik vi er vant med fra CAS i Geogebra. Vi kan altså, om vi ønsker, skrive en linje med kode, se hva denne gjør, for så å skrive neste.
 
 For å åpne en enkel Python-«prompt» (som er navnet på det som i vårt tilfelle tegnene «>>>»), kan du åpne kommandolinjeverktøyet ved å trykke windows-tasten og skrive «cmd», trykke enter, og skrive ~python~ og trykke enter i vinduet som åpner seg. Du skal få fram noe lignende følgende:
@@ -406,14 +432,21 @@ Prøv deg fram på vanlig tallregning i Python direkte i /interpreteren/.
 #+END_TASK
 
 ** Variabler
+:PROPERTIES:
+:CUSTOM_ID: variabler
+:END:
+
 Vi kan nå gjennomføre enkle regneoperasjoner, men det melder seg raskt et behov for å kunne ta vare på resultatet fra en utregning, for så å kunne bruke dette i en annen utregning seinere. Dette kan vi gjøre via navngitte /variabler/.
 
 *** Hva er et navn?
+:PROPERTIES:
+:CUSTOM_ID: hvaeretnavn
+:END:
 I Python viser navn alltid til verdier.
 
 #+BEGIN_SRC dot :file ../figurer/navn_enkelt.png :cmdline -Kdot -Tpng :results silent
 digraph {
-rankdir=LR;
+rankdir=LR;'
 navn [shape=cds, fontname="Open Sans"]
 verdi [shape=circle, fontname="Open Sans"]
 
@@ -488,7 +521,13 @@ a = 42.0;
 
 Dette er fordi C er et språk med /statiske/ typer. Det vil si at om vi har sagt at ~a~ skal være et heltall (~int~), må vi holde den som det gjennom hele programmet.
 ** Interaksjon
+:PROPERTIES:
+:CUSTOM_ID: interaksjon
+:END:
 *** Printing
+:PROPERTIES:
+:CUSTOM_ID: printing
+:END:
 Fra de fleste programmer ønsker vi en eller annen form for informasjon ut fra programmet. Dette kan være at programmet lager en graf for oss, at den skriver data til en fil, at interpreteren skriver svaret direkte på mellomregninger, eller at programmet skriver tilbake til kommandolinja.
 
 Sistnevnte gjøres via funksjonen ~print~.
@@ -555,7 +594,11 @@ print(f'pi = {pi:{bredde}.{presisjon}}')
 #+BEGIN_SRC org
 pi =    3.14
 #+END_SRC
+
 *** Input
+:PROPERTIES:
+:CUSTOM_ID: input
+:END:
 Å be brukeren om å taste inn verdier til programmet ditt kan enkelt gjøres ved å bruke ~input~-funksjonen. Om vi er usikre på hvordan denne brukes, kan vi benytte oss av pythons innebygde hjelpefunksjonalitet.
 
 #+BEGIN_SRC python :exports both
@@ -580,7 +623,7 @@ input(prompt=None, /)
 
 #+BEGIN_SRC python
 navn = input("Hva heter du? ")
-print("fDu heter {navn}." )
+print(f"Du heter {navn}." )
 #+END_SRC
 
 #+RESULTS:
@@ -590,8 +633,14 @@ Du heter von Neumann.
 #+END_SRC
 
 ** Typer
+:PROPERTIES:
+:CUSTOM_ID: typer
+:END:
 Et pythonprogram er et sett med instruksjoner som handler på ulike /objekter/. Objekter i Python kommer i to utgaver, skalare objekter og ikke-skalare objekter. Et skalart objekt er udelelig, det er /atomene/ i Python. Ikke-skalare objekter, for eksempel tekststrenger, har en indre struktur. Av de følgende, er /boolske verdier/, /heltall/ og /flyttall/ skalare objekter.
 *** Boolske verdier
+:PROPERTIES:
+:CUSTOM_ID: boolskeverdier
+:END:
 I kapittelet [[file:datamaskinen.org][Datamaskinen]] introduserer jeg logiske verdier som enten kan være /sanne/ eller /usanne/. Disse er nødvendige for at vi skal kunne ha et fullstendig programerbart språk. Når vi seinere skal se på såkalte if-setninger, er vi nødt til å ha en måte å avgjøre om noe er sant eller usant på.
 
 #+BEGIN_EXAMPLE
@@ -628,6 +677,9 @@ True
 
 Her vil først Python /evaluere/ påstanden på høyre side, altså ~3 > 2~, finne at dette er sant, og dermed sette sannhetverdi til å ha verdien ~True~.
 *** Heltall
+:PROPERTIES:
+:CUSTOM_ID: heltall
+:END:
 Heltall i Python oppgis på vanlig måte. ~3~, ~112~ eller ~1231421124~.
 #+BEGIN_SRC python :exports none
 import sys
@@ -640,10 +692,20 @@ print(sys.maxsize)
 #+END_SRC
 
 *** Flyttall                                                                      :noexport:
+:PROPERTIES:
+:CUSTOM_ID: flyttall
+:END:
 
 *** Tekststrenger                                                                 :noexport:
+:PROPERTIES:
+:CUSTOM_ID: tekststrenger
+:END:
+
 *** Lister
-Lister eller [[https://en.wikipedia.org/wiki/Array_data_structure][/arrays/]] er en klassisk datastruktur. Vi samler en rekke verdier inn i en liste, for at vi så skal kunne gjøre operasjoner på lista direkte eller elementvis. Lister lages i Python ved å bruke klamme-parenteser, ~[~ og ~[~.
+:PROPERTIES:
+:CUSTOM_ID: lister
+:END:
+Lister eller [[https://en.wikipedia.org/wiki/Array_data_structure][/arrays/]] er en klassisk datastruktur. Vi samler en rekke verdier inn i en liste, for at vi så skal kunne gjøre operasjoner på lista direkte eller elementvis. Lister lages i Python ved å bruke klamme-parenteser, ~[~ og ~]~, hvor hvert element er adskilt med komma.
 
 #+BEGIN_SRC python
 favorittall = [-1, 0, 7, 11, 42]
@@ -689,6 +751,9 @@ print(frukter[2:])
 #+END_SRC
 
 **** Muterbarhet
+:PROPERTIES:
+:CUSTOM_ID: muterbarhet
+:END:
 Se på følgende snutt, og skriv ned hva du tror vil bli gitt av print-setningen.
 #+BEGIN_SRC python
 a = ['mai', 'juni', 'juli', 'august']
@@ -791,10 +856,45 @@ print(id(enere))
 1655628511248
 #+END_SRC
 
-*** «Assosiasjonslister» eller /dictionaries/                                     :noexport:
+*** «Assosiasjonslister»                                                          :noexport:
+:PROPERTIES:
+:CUSTOM_ID: assosiasjonslister
+:END:
+
+** Oppgaver
+:PROPERTIES:
+:CUSTOM_ID: basispython-oppgaver
+:END:
+*** Kortoppgaver
+:PROPERTIES:
+:CUSTOM_ID: basispython-kortoppgaver
+:END:
+1. Be om et navn, skriv ut "Hei på deg, {navn}"    # Husk print("Hei på deg", navn)
+2. Be om ett tall, skriv ut tallet opphøyd i andre.
+3. Be om ett tall, skriv ut tre lavere enn tallet, så ganger to # Test med tall = 1 => -4
+4. Be om ett tall, skriv ut det dobbelte av tallet i fjerde
+5. Be om to tall, skriv ut summen av dem
+6. Be om to tall, skriv ut produktet av dem
+7. Be om to tall, skriv ut det første opphøyd i det andre
+8. <<forrige>>Uten bruk av PC, hva blir...
+   - ~2 + 2 ** 2~?
+   - ~3 * 3 - 3~?
+   - ~3 + 3 ** (3 * 3)~?
+   - ~(3 - 3) ** 3~?
+   - ~3 * 3 ** 3~?
+   - ~4 + 4 % 4~?
+   - ~5 // 4~?
+   - ~5 / 2 * 5~?
+9. Kontroller svarene dine i oppgave [[forrige]] ved å bruke Python.
 
 * Abstraksjon
+:PROPERTIES:
+:CUSTOM_ID: abstraksjon
+:END:
 ** Biblioteker
+:PROPERTIES:
+:CUSTOM_ID: biblioteker
+:END:
 *** Et fysikkbibliotek
 #+BEGIN_EXAMPLE
 tabaa004> python -m site --user-site
@@ -877,6 +977,9 @@ help(liste.extend)
 Legg merke til at vi her ikke lenger har behov for punktnotasjon når vi skal bruke ~sqrt~, da vi spesifikt har hentet ut denne fra ~math~-biblioteket.
 
 ** Funksjoner
+:PROPERTIES:
+:CUSTOM_ID: funksjoner
+:END:
 Vi har nå fått et knippe verktøy for å lage ulike variabler, men vi kommer snart til å se at vi gjentar oss selv mye i programmeringen. Som programmerer bør du være på utkikk etter kode som er gjentagelser av tidligere kode, dette kan som oftes samles i en egen blokk. Vi kaller slike gjenbrukebare blokker av kode for «funksjoner» eller «underrutiner» (/subrutines/).
 
 #+BEGIN_SRC dot :file figurer/funksjon.png :cmdline -Kdot -Tpng :exports results
@@ -993,6 +1096,9 @@ regnet_snitt = snitt(4.5, 9)
 #+END_TASK
 
 ** Skop
+:PROPERTIES:
+:CUSTOM_ID: skop
+:END:
 Se på følgende programsnutt.
 
 #+BEGIN_SRC python :exports both
@@ -1100,6 +1206,9 @@ print h(2)
 #+END_TASK
 
 ** Klasser
+:PROPERTIES:
+:CUSTOM_ID: klasser
+:END:
 Funksjonene er /verbene/ i programeringsspråket vårt. De /gjør/ noe med data og kan returnere verdier. Følger vi analogien videre, vil vi da kunne si at så langt er flyttallene, heltallene, listene, tuplene, tekststrengene, og assosiasjonslistene /subjektene/ i språket vårt. Vi har også sett hvordan vi kan lage nye verb ved å definere funksjoner, vi skal nå gå ett skritt videre ved å lage nye subjekter, klasser.
 
 Området vi nå er på vei over i, kalles /objektorientert programmering/. Som nevnt tidligere, er det ikke strengt nødvendig med klasser for å kunne løse problemer, men det gjør mye av programmeringen langt enklere og mer oversiktlig. I tillegg virker klasser som et /abstraksjonsnivå/ mellom den som skriver og den som bruker et program.
@@ -1172,6 +1281,9 @@ while t <= 1:
 #+END_SRC
 
 ** Kjenn dine røtter
+:PROPERTIES:
+:CUSTOM_ID: kjenndineroetter
+:END:
 Av en eller annen grunn ønsker vi å finne nullpunktet til funksjonen $f(x) = 0.7e^{-x} - 5x + 13.$ Du setter deg ned med penn og papir, og innser raskt at du ikke kan det du behøver for å finne en /analytisk/ løsning til oppgaven (se f.eks. løsningen til [[http://www.wolframalpha.com/input/?i=0.7e%255E(-x)+-+5x+%252B+13+%253D+0][Wolfram Alpha]]).
 
 Du tar derfor fram det digitale millimeterpapiret, Geogebra, tegner grafen, trykker «skjæring mellom to objekt», velger grafen og x-aksen og får opp at nullpunktet ligger ved $x=2.61$.
@@ -1330,20 +1442,86 @@ def f(x):
 og sette startverdiene til 0.0 og 10.0.
 #+END_TASK
 
-* Programflyt                                                                       :noexport:
+** Oppgaver
+:PROPERTIES:
+:CUSTOM_ID: abstraksjon-oppgaver
+:END:
+*** Kortoppgaver
+:PROPERTIES:
+:CUSTOM_ID: abstraksjon-kortoppgaver
+:END:
+1. Lag en funksjon som dobler et tall
+2. Lag en funksjon som halverer et tall
+3. Lag en funksjon som legger sammen to tall
+4. Lag en funksjon som kvadrer et tall
+5. Lag en funksjon som opphøyer et tall i et annet
+6. Lag en funksjon som returnerer en tekstrestreng ~n~ ganger
+
+*** Samme utfall?
+:PROPERTIES:
+:custom_id: sammeutfall
+:END:
+
+Under vises definisjonen av to funksjoner. Beskriv forskjellen på de to funksjonene. Hvordan påvirker det bruken av dem?
+
+#+BEGIN_SRC python
+def addisjon_1(a, b):
+    """Legg sammen to tall, a og b."""
+    res = a + b
+    print(f"Summen av a og b er {res}.")
+    return None
+
+
+def addisjon_2(a, b):
+    """Returner summen av to tall, a og b."""
+    res = a + b
+    print(f"Summen av a og b er {res}.")
+    return res
+
+#+END_SRC
+
+* Intermezzo: Tilfeldige tall
+Å lage tilfeldige tall er vanskeligere enn man skulle tro. Det er kanskje ikke vanlig å kjøpe [[https://en.wikipedia.org/wiki/A_Million_Random_Digits_with_100,000_Normal_Deviates][bøker]] som kun inneholder tilfeldige tall lenger, det var kanskje aldri /vanlig/, men det er fremdeles et marked for /virkelig/ tilfeldige [[https://www.random.org/][tall]].
+
+For den typen programmering vi er på vei til å begi oss ut på, kommer vi ikke unna å kaste noen digitale terninger eller stokke tilfeldig om på noen lister. Til dette kan vi bruke ~random~-biblioteket i Python. Dette gir oss ikke /virkelig/ tilfeldige tall, da de er produsert ved bruk av en algoritme, men såkalt /pseudo random numbers/ eller «tilsynelatende tilfeldige tall». Til vårt bruk er de mer enn gode nok.
+
+Her har vi noen essensielle funksjoner, nevnt under. Vi kommer snart nok i situasjoner hvor vi trenger å bruke dem.
+
+#+BEGIN_SRC python
+import random as rnd
+
+desimaltall = rnd.random()      # 'desimaltall' er nå i intervallet [0, 1)
+terningkast = rnd.randint(1, 6) # 'terningkast' er nå i intervallet [1, 6]
+
+alfabetisert = ['appelsin', 'eple', 'gulrot', 'pære', 'squash']
+rnd.shuffle(alfabetisert)       # 'alfabetisert' er neppe alfabetisert lenger
+#+END_SRC
+
+Vi lar det være med det inntil videre.
+
+* Programflyt
+:PROPERTIES:
+:CUSTOM_ID: programflyt
+:END:
 ** Logikk
+:PROPERTIES:
+:CUSTOM_ID: logikk
+:END:
 Hvis ~a~ er sann og ~b~ er sann, så er ~a og b~ sann. Hvis ~a~ er sann, men ~b~ er usann, så er ~a og b~ usann.
 
 Innenfor logikken, er ~og~ en svært viktig funksjon.
 
 | Navn                  | Dagligtale  | Matematisk | Python |
 |-----------------------+-------------+------------+--------|
-| negasjon              | ikke        | $\neg$     | ~not~  |
-| konjunksjon           | og          | $\wedge$   | ~and~  |
-| inklusiv disjunksjon  | og-eller    | $\vee$     | ~or~   |
+| negasjon              | ikke        | ¬          | ~not~  |
+| konjunksjon           | og          | ∧          | ~and~  |
+| inklusiv disjunksjon  | og-eller    | ∨          | ~or~   |
 | eksklusiv disjunksjon | enten-eller |            | ~xor~  |
 
 *** Sannhetsskjemaer
+:PROPERTIES:
+:CUSTOM_ID: sannhetsskjemaer
+:END:
 I det følgende betyr 1 ~True~ og 0 ~False~.
 
 
@@ -1371,9 +1549,50 @@ I det følgende betyr 1 ~True~ og 0 ~False~.
 |   1 |   0 |        1 |
 |   1 |   1 |        1 |
 
-\[\int_8^9 f(x) \mathrm{d}x  = 5\]
+*** Regnerekkefølge
+:PROPERTIES:
+:custom_id: logikkregnerekkefoelge
+:END:
+I «vanlig» regning har vi en regnerekkefølge på operatorene som bestemmer om $2\cdot 3 + 1$ betyr $6 + 1$ eller $2\cdot 4$. Videre bruker vi parenteser for å endre regnerekkefølgen der nødvendig, eksempelvis ved å sette $2\cdot (3 + 1)$ om vi ønsker å ta addisjonen før multiplikasjonen her.
 
-** dersom ... så ...
+Det samme har vi behov for når vi jobber med logikk. For de vi er interessert i, «ikke», «og» og «eller», er rekkefølgen nettopp slik.
+1. «ikke» -- ¬ -- ~not~
+2. «og» -- ∧ -- ~and~
+3. «eller» -- ∨ -- ~or~
+
+Siden vi kommer til å gjøre langt mindre så kalt «boolsk algebra» enn vanlig regning, anbefales man å bruke parenteser for å fjerne eventuelle usikkerheter.
+
+Vi kan da se på noen smårare eksempler ved å bruke de to enkle testene ~2 <= 3~ og ~3 < 2~ (henholdsvis ~True~, siden 2 /er/ mindre eller lik 3, og ~False~ siden 3 /ikke er/ mindre enn 2).
+
+Test følgende i en Python-interpreter:
+
+#+BEGIN_SRC python
+if 2 <= 3 and 3 < 2 or 2 <= 3: # True and False or True
+    print("Den første kjørte.")
+else:
+    print("Den første kjørte ikke.")
+
+if 3 < 2 and 2 <= 3 or 2 <= 3: # False and True or True
+    print("Den andre kjørte.")
+    print("Den andre kjørte ikke.")
+#+END_SRC
+
+Merk, siden ~2 <= 3~ /evaluerer/ til ~True~ og ~3 < 2~ til ~False~, er det ingenting i veien for å endre eksempelet over til
+
+#+BEGIN_SRC python
+a = 2 <= 3
+b = 3 < 2
+
+if a and b or a:
+    print("Den første kjørte.")
+else:
+    print("Den første kjørte ikke.")
+#+END_SRC
+
+** dersom ... så ...                                                                     :if:
+:PROPERTIES:
+:CUSTOM_ID: dersomsaa
+:END:
 Dersom vi ønsker at programmeringsspråket vårt skal kunne brukes til å regne ut alle beregnbare funksjoner, så må programmeringsspråket vårt ha en måte å ta avgjørelser på. Dersom språket vi har valgt er Python, så kan slike avgjørelser tas med en ~if~-setning.
 
 Dersom du ønsker å skrive et program som kaster en mynt og sier om det blei kron eller mynt som landet opp, så kan du gjøre det som følger.
@@ -1498,7 +1717,10 @@ else:
 Læreren mener at karakteren 3 er å leve.
 #+END_SRC
 
-** Mens vi venter
+** Mens vi venter                                                                     :while:
+:PROPERTIES:
+:CUSTOM_ID: mensviventer
+:END:
 Vi har allerede i [[file:introduksjon.org::*Valg%20av%20spr%C3%A5k][Valg av språk]] sett på ei ~while~-løkke. Denne bruker vi når vi ønsker at en programsnutt skal gjenta seg fram til en gitt betingelse er oppfylt. En ~while~-løkke består av nøkkelordet ~while~, et uttrykk som returnerer en [[file:variabler-datatyper.org::*Boolske%20verdier][boolsk]] verdi, og en eller flere setninger som skal kjøres.
 
 #+BEGIN_SRC python
@@ -1530,6 +1752,9 @@ while tall <= 10:
 #+END_SRC
 
 ** Collatz' formodning                                                             :prosjekt:
+:PROPERTIES:
+:CUSTOM_ID: collatzformodning
+:END:
 Vurder følgende fremgangsmåte for et vilkårlig, positivt heltall, $n$:
 
 - Hvis $n$ er et partall, del det på to
@@ -1565,6 +1790,9 @@ Bruk ~if~-setninger og en ~while~-løkke for å lage et program som gjør følge
 - Slutter når ~n == 1~
 
 ** Fibonacci                                                              :prosjekt:noexport:
+:PROPERTIES:
+:CUSTOM_ID: fibonacci
+:END:
 
 #+BEGIN_SRC python :session none :exports results
 import sys
@@ -1580,8 +1808,14 @@ while b < 1000:
 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 
 #+END_SRC
 
-** Løpe gjennom ei liste
+** Løpe gjennom ei liste                                                                :for:
+:PROPERTIES:
+:CUSTOM_ID: loepegjennomeiliste
+:END:
 *** ~for~-løkka
+:PROPERTIES:
+:CUSTOM_ID: for-loekka
+:END:
 Vi har en liste med alle tallene fra 1 til 10. For hvert av tallene ønsker vi å skrive ut hvorvidt tallet er delelig på 7.
 
 #+BEGIN_SRC python
@@ -1611,6 +1845,9 @@ for tall in tallene:
 I dette eksempelet brukte vi ei ~for~-løkke. Ei slik løkke gjør noe for hvert element i ei liste, eller noe annet det kan /itereres/ over.
 
 *** Listegenerering                                                      :avansert:noexport:
+:PROPERTIES:
+:CUSTOM_ID: listegenerering
+:END:
 Nå som vi kjenner ~for~-løkka, kan vi se på en avansert måte å lage lister på, ved hjelp av et pythonverktøy kalt [[file:syntaksark.org::*%C2%ABList%20comprehension%C2%BB][/list comprehension/]].
 
 #+BEGIN_SRC python
@@ -1631,13 +1868,83 @@ for kvadrattall in kvadrattallene:
 25
 #+END_SRC
 
-
 ** Oppgaver
+:PROPERTIES:
+:CUSTOM_ID: programflyt-oppgaver
+:END:
+*** Kortoppgaver                                                                  :noexport:
+:PROPERTIES:
+:custom_id: programflyt-kortoppgaver
+:END:
+1. Lag sannhetsskjema for $\neg a \wedge b$
+
+*** abc-formelen
+:PROPERTIES:
+:custom_id: programflyt-oppgaver-abc
+:END:
+En generell andregradslikning kan skrives på formen \[ax^2 + bx + c = 0\]
+
+Egenskapene til en andregradslikning bestemmes av /diskriminanten/. (Denne dukker gjerne opp som $d=b^2 - 4ac$.) Vi har følgende muligheter for en andregradslikning:
+- $d>0$ :: Andregradslikningen har to løsninger
+- $d=0$ :: Andregradslikningen har én løsning
+- $d<0$ :: Andregradslikningen har ingen reelle løsninger
+
+**** a - Antall løsninger
+Lag et program som skriver ut /antallet løsninger/ på en andregradslikning spesifisert av brukeren. Du kan velge å ta utgangspunkt i den delvise løsningen under.
+
+#+BEGIN_EXPORT html
+<label for="toggle-1">Vis løsning: </label>
+<input type="checkbox" id="toggle-1">
+#+END_EXPORT
+#+BEGIN_LOESNING
+#+BEGIN_SRC python
+from math import sqrt
+
+a = input("a: ")
+b = input("b: ")
+c = input("c: ")
+
+d = None # endre None til å regne ut diskriminanten
+
+if d > 0:
+    # Hva ønsker du at skal skje hvis d er positiv?
+    print(None) # fjern denne linja
+
+# Her mangler det en elif- og en else-setning
+
+    
+print("Ferdig")
+#+END_SRC
+#+END_LOESNING
+
+**** b - Verdien til løsningene
+Utvid programmet fra [[*a - Antall l%C3%B8sninger][a]] til også å gi x-verdiene til løsningene
+
+**** c - Faktoriseringen                                                       :utfordring:
+Utvid programmet fra [[*b - Verdien til l%C3%B8sningene][b]] til å skrive ut hva andregradslingen er faktorisert. En mulig bruk av programmet kan altså da se ut som følger:
+
+#+BEGIN_EXAMPLE
+Gi a: 3
+Gi b: 3
+Gi c: -18
+
+Du ga andregradslikningen 
+Den kan faktoriseres 3(x - 2)(x + 3)
+#+END_EXAMPLE
 *** 7-ern
+
+
+
+:PROPERTIES:
+:CUSTOM_ID: programflyt-oppgaver-7ern
+:END:
 Skriv et program som teller oppover fra 1. Få programmet til å hoppe over tallene som er delelige på 7.
 
 *** ~def utvid~
-Lag en funnksjon, ~utvid~, med følgende spesifiasjoner
+:PROPERTIES:
+:CUSTOM_ID: programflyt-oppgaver-utvid
+:END:
+Lag en funksjon, ~utvid~, med følgende spesifikasjoner:
 
 #+BEGIN_SRC python
 def utvid(liste1: list, liste2: list) -> list:
@@ -1651,6 +1958,9 @@ def utvid(liste1: list, liste2: list) -> list:
 #+END_SRC
 
 *** ~def muterende_utvid~
+:PROPERTIES:
+:CUSTOM_ID: programflyt-oppgaver-muterendeutvid
+:END:
 Lag en funksjon, ~muterende_utvid~, med følgende spesifikasjoner:
 
 #+BEGIN_SRC python
@@ -1668,6 +1978,9 @@ def muterende_utvid(liste1: list, liste2: list) -> None:
 #+END_SRC
 
 *** ~def glidelaas~
+:PROPERTIES:
+:CUSTOM_ID: programflyt-oppgaver-glidelaas
+:END:
 Lag en funksjon, ~glidelaas~, med følgende spesifikasjoner:
 
 #+BEGIN_SRC python
@@ -1685,8 +1998,67 @@ def glidelaas(liste1: list, liste2: list) -> list:
     return res
 #+END_SRC
 
+*** ~def er_partall~
+:PROPERTIES:
+:custom_id: programflyt-oppgaver-erpartall
+:END:
+Lag en funksjon, ~er_partall~, med følgende spesifikasjoner:
+
+#+BEGIN_SRC python
+def er_partall(n):
+    """Returner True hvis n er partall, False hvis ikke."""
+    if test: # bytt ut 'test' med egen kode
+        return True
+    else:
+        return False
+#+END_SRC
+
+*** Terningtipperen                                                           :miniprosjekt:
+I denne oppgave bruker vi  ~random~-biblioteket ([[*Intermezzo: Tilfeldige tall][Intermezzo: Tilfeldige tall]]).
+
+**** ~def terningkast~
+Lag en funksjon, ~terningkast~, med følgende spesifikasjoner:
+
+#+BEGIN_SRC python
+def terningkast():
+    """Returnerer et tilfeldig tall mellom 1 og 6."""
+    tall = None # endre None slik at det er et tilfeldig tall mellom 1 og 6
+    return tall
+#+END_SRC
+
+**** Ett forsøk
+Lag et program som gjør følgende:
+- Kaster en terning
+- Lagrer verdien av kastet i en variabel
+- Lar brukeren gjette på verdien
+- Forteller brukeren om hun tippet riktig eller galt
+
+**** Uendelig forsøk
+Utvid programmet til å gjøre følgende:
+- Gi brukeren uendelig med forsøk til å gjette verdien
+- Skrive ut hvor mange forsøk hun brukte når hun tippet riktig
+
+**** To forsøk
+Utvid programmet til å gjøre følgende:
+- Brukeren har to forsøk til å gjette verdien
+- Programmet forteller brukeren «~For lavt~» dersom hun gjetter en for lav verdi, og «~For høyt~» om hun gjetter en for høy verdi
+
+
+*** Fra ett til hundre                                                          :utfordring:
+Lag et gjettespill som trekker et tilfeldig tall fra og med 1 til og med 100. Spillet skal ha følgende spesifikasjoner:
+- Spillet skal kunne spilles så mange ganger man vil fram til man velger å avslutte (Tips: Man kan hoppe ut av en ~while~-løkke ved å bruke ~break~)-
+- Spillet forteller deg om du har gjettet for høyt eller for lavt om du ikke gjetter riktig
+
+La flere personer spille spillet ditt, og noter deg hvor mange forsøk de bruker. Eller se på [[#tekstfiler][Tekstfiler]]-kapittelet for inspirasjon til hvordan du kan holde en «high score»-liste.
+
 * Plotting                                                                          :noexport:
+:PROPERTIES:
+:CUSTOM_ID: plotting
+:END:
 ** Et enkelt linjeplot
+:PROPERTIES:
+:CUSTOM_ID: linjeplot
+:END:
 
 Først og fremst må vi /importere/ matplotlib-biblioteket. I de aller fleste programmer hvor du skal lage grafer, ønsker du følgende linjer i starten av programmet.
 
@@ -1721,8 +2093,11 @@ ax.plot(x, y)
 #+BEGIN_SRC python
 fig.savefig("test.png")
 #+END_SRC
-* Filbehandling                                                                     :noexport:
-* Tekstfiler                                                                        :noexport:
+
+* Tekstfiler
+:PROPERTIES:
+:CUSTOM_ID: tekstfiler
+:END:
 #+BEGIN_SRC ipython :exports none :results silent
 import random as rnd
 import numpy as np
@@ -1753,6 +2128,9 @@ Du finner hele fila [[file:data/posisjonseksempel.csv][her]].
 Dette gjør at slike filer er relativt enkle å lese inn og jobbe med i Python. For å jobbe med ei ~.docx~-fil i Python, trenger vi spesiallagde pakker, og ved neste korsvei kan Microsoft bestemme seg for å endre formatet filene er lagret i, og slike pakker vil ikke nødvendigvis lenger fungere.
 
 ** Lese inn tekstfiler
+:PROPERTIES:
+:CUSTOM_ID: leseinntekstfiler
+:END:
 Vi kan enkelt lese inn tekstfiler, som ~.csv~-fila over, i Python.
 
 #+BEGIN_SRC ipython :session fil :results silent
@@ -1794,6 +2172,9 @@ posisjonsfil.close()
 #+END_SRC
 
 *** Alternativ innlesing                                                          :avansert:
+:PROPERTIES:
+:CUSTOM_ID: alternativinnlesing
+:END:
 For å unngå å måtte huske å lukke fila, kan vi alternativt jobb med fila innenfor en ~with~-kontekst, det foregående eksempelet blir da som følger:
 
 #+BEGIN_SRC ipython :exports both :results output org
@@ -1814,6 +2195,9 @@ Time(s), Position(m)
 #+END_SRC
 
 ** Plotting av data
+:PROPERTIES:
+:CUSTOM_ID: plottingavdata
+:END:
 Vi så i forrige kapittel på hvordan vi enkelt kan lage grafer ved hjelp av ~matplotlib~. Eksempelet under plotter dataene fra eksempelfila.
 
 #+BEGIN_SRC ipython :results silent
@@ -1843,6 +2227,9 @@ plt.savefig("figurer/posisjonseksempel_posisjon.png")
 [[fig:posisjonseksempel_posisjon.png]]
 
 ** Skrive til tekstfiler
+:PROPERTIES:
+:CUSTOM_ID: skrivetiltekstfiler
+:END:
 Vi skal seinere kjøre simuleringer i egenskrevne programmer. Vi kommer da til å ha behov for å kunne lagre resultatene våre på en hensiktsmessig måte.
 
 #+BEGIN_SRC ipython :results silent :exports code
@@ -1877,12 +2264,27 @@ Etter å ha kjørt foregående snutt, ender vi med en innhold à la følgende:
 Endre terningeksempelet over til å skrive en fjerde kolonne, «Sum», hvor verdiene er summen av ~tern1~ og ~tern2~.
 #+END_TASK
 * Testing og bugs                                                                   :noexport:
+:PROPERTIES:
+:CUSTOM_ID: testingogbugs
+:END:
 ** Testing
+:PROPERTIES:
+:CUSTOM_ID: testing
+:END:
 
 ** Bugs
+:PROPERTIES:
+:CUSTOM_ID: bugs
+:END:
 
-* Appendiks: Prosjekter|
+* Appendiks: Prosjekter
+:PROPERTIES:
+:CUSTOM_ID: appendiks-prosjekter
+:END:
 ** Største felles divisor                                                          :noexport:
+:PROPERTIES:
+:CUSTOM_ID: appendiks-prosjekter-gcd
+:END:
 Innenfor tallteori er to talls største felles divisor (/greates common divisor/) en vesentlig egenskap å kunne avgjøre. Målet med denne oppgaven er å lage en funksjoner ~sfd~, med to argumenter ~a~ og ~b~, som returnerer ~a~ og ~b~ sine største felles divisor.
 
 *** Oppgave
@@ -1932,7 +2334,36 @@ Lag en predikatfunksjon som svarer på hvorvidt ~a~ og ~b~ er relativt primistis
 [[https://no.wikipedia.org/wiki/St%C3%B8rste_felles_divisor][Største felles divisor]]
 
 ** Sykkeldata
+:PROPERTIES:
+:CUSTOM_ID: appendiks-prosjekter-sykkeldata
+:END:
+
 ** Dating-algoritmen
+:PROPERTIES:
+:CUSTOM_ID: appendiks-prosjekter-datingalgoritmen
+:END:
+
+** Twitter-boten                                                                   :noexport:
+
+
+*** En oppdateringsbot for denne sida
+
+#+BEGIN_SRC python :exports none :tangle ../py/twitter_oppdatering.py
+from twitter import Twitter, OAuth, TwitterHTTPError
+import json
+
+secrets_filename = 'oppdatering.secrets'
+
+api_keys = {}
+with open(secrets_filename, 'r') as f:
+    api_keys = json.loads(f.read())
+
+t = Twitter(auth=OAuth(api_keys['OAUTH_TOKEN'], api_keys['OAUTH_SECRET'],
+                       api_keys['CONSUMER_KEY'], api_keys['CONSUMER_SECRET']))
+
+print(t.search.tweets(q='hello', result_type='recent', count=3))
+#+END_SRC
+
 
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner
@@ -1948,6 +2379,10 @@ https://matplotlib.org/examples/pylab_examples/spine_placement_demo.html#pylab-e
 
 20180725 22:46
 
+** TODO Popup fungerer bare for ett ord av gangen
+https://www.w3schools.com/howto/howto_js_popup.asp
+
+Dette var opprinnelig hentet fra w3schools. For berdre å få dette til få fungere, kan jeg sende en id-en til javascriptfunksjonen. Dette for å sørge for at alt er unikt.
 * Notater                                                                           :noexport:
 ** Latex-chart
 
@@ -2005,3 +2440,6 @@ print(c(9))
 
 
 
+** Twitter-bot
+1. Lag en twitter-konto
+2. Søk om å få den som /utviklerkonto/ på developers.twitter.com

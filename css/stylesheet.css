@@ -23,6 +23,66 @@ pre  {
     white-space: pre;
 }
 
+.DEFINITION {
+    border: 1px solid #486470;
+    border-radius: 4px;
+    background-color: #b5c1c5;
+    margin: 0 0 12px;
+    padding: 11.5px;
+}
+
+.NOTES {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    overflow: auto;
+    /* margin: 1.2em; */
+    margin: auto;
+    align: center;
+    display: none;
+  }
+
+.LOESNING {
+    border-left: 6px solid #aaa;
+    background-color: #eee;
+    padding: 8pt;
+    max-width: 100%;
+}
+
+.task {
+    border-left: 6px solid #aaa;
+    background-color: #ccc;
+    padding: 8pt;
+    width: 100%;
+    overflow: auto;
+    text-align: left;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 0px !important;
+}
+
+
+div.loesning:before {
+    content: 'løsning';
+    font-weight: bold;
+}
+
+/* bruker '+' for å velge direkte påfølgende, se */
+/* https://stackoverflow.com/questions/10782054/what-does-the-tilde-squiggle-twiddle-css-selector-mean */
+input[type=checkbox]:checked + .LOESNING {
+   display: inline-block;
+}
+
+input[type=checkbox]:not(:checked) + .LOESNING {
+   display: none;
+}
+
+
+
+.task .src {
+    padding: 0pt;
+}
+
 code {
     font-family: "Source Code Pro", monospace;
 }
@@ -136,8 +196,39 @@ h1.title {
 
 /* @end */
 
-/* @group Org Keywords */
 
+/* @group Lister */
+
+dl {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+dt {
+  float: left;
+  width: 5%;
+  /* adjust the width; make sure the total of both is 100% */
+  padding: 0;
+}
+
+dt:after {
+    content: ")";
+}
+		 
+
+dd {
+  float: left;
+  width: 95%;
+  /* adjust the width; make sure the total of both is 100% */
+  /* background: #dd0 */
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+/* @end */
+
+/* @group Org Keywords */
 
 
 .todo {
@@ -151,7 +242,7 @@ h1.title {
 .tag {
     color: gray;
     text-transform: lowercase;
-    /* This will be obscured by the surrounding span tag, so blank everything. */
+    /* this will be obscured by the surrounding span tag, so blank everything. */
     background: #fff;
     border: none;
 	/* position: relative;
@@ -163,51 +254,17 @@ h1.title {
 }
 
 .timestamp-kwd  {
-	/* keyword associated with a time stamp, like SCHEDULED */
+	/* keyword associated with a time stamp, like scheduled */
 }
 
 .target {
 	/* target for links */
 }
 
-.NOTES {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    overflow: auto;
-    /* margin: 1.2em; */
-    margin: auto;
-    align: center;
-    display: inline-block;
-  }
-
-.LOESNING {
-    border-left: 6px solid #aaa;
-    background-color: #eee;
-    padding: 8pt;
-    max-width: 100%;
-}
-			 
-
-.TASK {
-    border-left: 6px solid #aaa;
-    background-color: #ccc;
-    padding: 8pt;
-    width: 100%;
-    overflow: auto;
-    text-align: left;
-    display: inline-block;
-    font-weight: bold;
-    margin-bottom: 0px !important;
-}
-
-.TASK .src {
-    padding: 0pt;
-}
 
 /* @end */
 
-/* @group Table of Contents */
+/* @group table of contents */
 
 #table-of-contents h2 {
 	letter-spacing: -0.1em;
@@ -220,7 +277,7 @@ h1.title {
 
 /* @end */
 
-/* @group Outline Level 2 */
+/* @group outline level 2 */
 
 .outline-2 h2 {
     /* background: #6699ff; */
@@ -288,11 +345,11 @@ a:hover {
 
 
 /*********************************************************************************/
-/* Popup-vindu									 */
-/* Det følgende er hentet fra https://www.w3schools.com/howto/howto_js_popup.asp */
+/* popup-vindu									 */
+/* det følgende er hentet fra https://www.w3schools.com/howto/howto_js_popup.asp */
 /*********************************************************************************/
 
-/* Popup container */
+/* popup container */
 .popup {
     position: relative;
     cursor: pointer;
@@ -301,7 +358,7 @@ a:hover {
 }
 
 
-/* The actual popup (appears on top) */
+/* the actual popup (appears on top) */
 .popup .popuptext {
     visibility: hidden;
     width: 160px;
@@ -317,7 +374,7 @@ a:hover {
     margin-left: -80px;
 }
 
-/* Popup arrow */
+/* popup arrow */
 .popup .popuptext::after {
     content: "";
     position: absolute;
@@ -329,25 +386,25 @@ a:hover {
     border-color: #555 transparent transparent transparent;
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
+/* toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
     visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
+    -webkit-animation: fadein 1s;
+    animation: fadein 1s
 }
 
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
+/* add animation (fade in the popup) */
+@-webkit-keyframes fadein {
     from {opacity: 0;} 
     to {opacity: 1;}
 }
 
-@keyframes fadeIn {
+@keyframes fadein {
     from {opacity: 0;}
     to {opacity:1 ;}
 }
 
-/* Foreslått css for inputfelt */
+/* foreslått css for inputfelt */
 
 /* #txt { */
 /*     border:none; */
