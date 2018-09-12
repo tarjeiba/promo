@@ -2094,7 +2094,7 @@ ax.plot(x, y)
 fig.savefig("test.png")
 #+END_SRC
 
-* Tekstfiler
+* Tekstfileg
 :PROPERTIES:
 :CUSTOM_ID: tekstfiler
 :END:
