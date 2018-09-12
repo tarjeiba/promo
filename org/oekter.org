@@ -11,7 +11,6 @@
 :CUSTOM_ID: uke38
 :header-args:  :tangle ../py/uke38.py
 :END:
-
 ** Oppstart prosjekt
 
 * Uke 37
@@ -19,10 +18,10 @@
 :CUSTOM_ID: uke37
 :header-args:  :tangle ../py/uke37.py
 :END:
-** Oppstartsoppgave
+** Oppstartsoppgave 1
 Hva gjør følgende program?
 
-#+begin_src dot :file ../figurer/oekter_37_2018_oppstart.png :cmdline -kdot -tpng :results silent :exports none
+#+begin_src dot :file ../figurer/oekter_37_2018_oppstart1.png :cmdline -Kdot -Tpng :results silent :exports none
 digraph {
    	graph[fontname="Open Sans"];
 	node[fontname="Open Sans"];
@@ -42,7 +41,39 @@ digraph {
     message -> input;
 }
 #+end_src
-[[fig:oekter_37_2018_oppstart.png]]
+[[fig:oekter_37_2018_oppstart1.png]]
+** Oppstartsoppgave 2
+#+begin_src dot :file ../figurer/oekter_37_2018_oppstart2.png :cmdline -Kdot -Tpng :results silent :exports none
+digraph {
+   	graph[fontname="Open Sans"];
+	node[fontname="Open Sans"];
+	edge[fontname="Open Sans"];
+
+    start[shape="box", style=rounded];
+    end[shape="box", style=rounded];
+
+    message[shape="parallelogram", style="", label="print: prøv igjen", fontsize=12];
+    input[shape="parallelogram", style="", label="input: tall"];
+    init_f[shape="parallelogram", style="", label="f = []"];
+    init_i[shape="paralellelogram", style="", label="i = 1"];
+    if_mod[shape="diamond", style="", label="tall % i == 0"];
+    if_il[shape="diamond", style="", label="i > tall"];
+    incl_f[shape="diamond", style="", label="f.append(i)"];
+    incr_i[shape="diamond", style="", label="i += 1"];
+
+    start -> input;
+    input -> init_f;
+    init_f -> init_i;
+    init_i -> if_il;
+    if_il -> end[label="True"];
+    if_il -> if_mod[label="False"];
+    if_mod -> incl_f[label="True"];
+    if_mod -> incr_i[label="False"];
+    incl_f -> incr_i;
+    incr_i -> if_il;
+}
+#+end_src
+[[fig:oekter_37_2018_oppstart2.png]]
 
 ** Forventet status så langt
 *** Enkel regning
