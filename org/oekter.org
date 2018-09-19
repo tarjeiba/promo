@@ -6,12 +6,16 @@
 #+END_SRC
 
 
-* Uke 38                                                                            :noexport:
+* Uke 38
 :PROPERTIES:
 :CUSTOM_ID: uke38
 :header-args:  :tangle ../py/uke38.py
 :END:
+
 ** Oppstart prosjekt
+- Bakgrunnsstoff 1: [[https://www.telegraph.co.uk/news/2018/04/28/russian-twitter-bots-attempted-influence-election-supporting/][The Telegraph]]
+- Bakgrunnsstoff 2: [[https://www.b.dk/globalt/robotter-stoetter-sverigedemokraterna-og-partier-bliver-cyberangrebet-digitalt-pres][Berlingske]]
+- Prosjektside: [[file:promo.org::#prosjekt_twitterboten][Twitter-boten]]
 
 * Uke 37
 :PROPERTIES:
@@ -102,7 +106,7 @@ Fagstoff: [[file:promo.org::#mensviventer][Mens vi venter]]
 Oppgaver:
 - [[file:promo.org::#collatzformodning][Collatz' formodning]]
 - 
-* Uke 36                                                                             :avholdt:
+* Uke 36                                                                             :avholdt:n
 :PROPERTIES:
 :CUSTOM_ID: uke36
 :header-args:  :tangle ../py/uke36.py

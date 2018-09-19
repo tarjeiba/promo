@@ -1999,7 +1999,7 @@ def glidelaas(liste1: list, liste2: list) -> list:
 #+END_SRC
 
 *** ~def er_partall~
-:PROPERTIES:
+:PROPER TIES:
 :custom_id: programflyt-oppgaver-erpartall
 :END:
 Lag en funksjon, ~er_partall~, med følgende spesifikasjoner:
@@ -2094,7 +2094,7 @@ ax.plot(x, y)
 fig.savefig("test.png")
 #+END_SRC
 
-* Tekstfileg
+* Tekstfiler
 :PROPERTIES:
 :CUSTOM_ID: tekstfiler
 :END:
@@ -2333,37 +2333,112 @@ Lag en predikatfunksjon som svarer på hvorvidt ~a~ og ~b~ er relativt primistis
 *** Kilder
 [[https://no.wikipedia.org/wiki/St%C3%B8rste_felles_divisor][Største felles divisor]]
 
-** Sykkeldata
+** Sykkeldata                                                                      :noexport:
 :PROPERTIES:
 :CUSTOM_ID: appendiks-prosjekter-sykkeldata
 :END:
 
-** Dating-algoritmen
+** Dating-algoritmen                                                               :noexport:
 :PROPERTIES:
 :CUSTOM_ID: appendiks-prosjekter-datingalgoritmen
 :END:
 
-** Twitter-boten                                                                   :noexport:
+** Twitter-boten
+:PROPERTIES:
+:custom_id: prosjekt_twitterboten
+:END:
+
+Gjennom dette prosjektet skal vi lage en «bot» som skal operere en twitter-konto. Til dette er det et par småting vi må ha på plass, vi må ha..
+
+- registrert en twitter-konto boten skal få jobbe gjennom ([[https://twitter.com][twitter.com]])
+- søkt om, og fått godkjent, kontoen som en «utvikler-konto» ([[https://developer.twitter.com][developer.twitter.com]])
+- lagd en app som skal få jobbe mot vår nye utviklerkonto ([[https://developer.twitter.com][developer.twitter.com]])
+- hentet autoriserings- og forbruker-kodene som blei laget for vår bot og twitter-konto
+
+*** Oppsett
+Registrer en konto på [[https://twitter.com][Twitter]]. Merk, dersom du ikke vil at boten skal tvitre fra din vanlige konto, om du har en, bør du her regisrtere en ny.
+
+Deretter, gå gjennom [[https://developer.twitter.com/en/apply-for-access][Apply for access]] på [[https://developer.twitter.com][developer.twitter.com]]. Målet her er å få regisrtert brukeren din som en utvikler. Vær oppriktig i svarfeltene, om at du skal bruke kontoen i studeiesammenheng, og at du både vil søke opp andre tweets, samt sende ut dine egne.
+
+Denne prosessen tar gjerne ti--femten minutter.
+
+Du skal så lage en bot (eller «app») som skal få tilgang til å lese og skrive på twitter-kontoen din, også dette gjør vi på [[https://developer.twitter.com][developer.twitter.com]]. Trykk på nedtrekksmenyen ved navnet på kontoen din, og velg «[[https://developer.twitter.com/en/apps][apps]]». [[fig:twitterbot_appknapp.png]] Deretter velger du « «[[https://developer.twitter.com/en/apps/create][Create an app]]», hvor du skal fylle ut følgende om den kommende boten din:
+
+| Hva?                                | Hvordan?                                                                                                                                                                                   |
+|-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ~App name~                          | Navnet på boten din. Jeg har kalt min «promo oppdateringsvarsel»                                                                                                                           |
+| ~Application description~           | Hva skal boten din gjøre? Her kan du skrive  at du skal bruke den til et skolefag i programmering, om det er det du skal, og at den skal sende ut en liten mengde tweets og gjøre noen søk |
+| ~Website URL~                       | Her må du fylle inn noe, men det er ikke så viktig hva du skriver. Om du har laget deg en github-konto, kan det være naturlig å ha URL-en til denne                                        |
+| ~Enable sign in with twitter~       | Vi skal ikke lage en hjemmeside hvor brukerne skal kunne logge inn med twitterkonto, så denne trenger vi *ikke*                                                                            |
+| ~Callback URLs~                     | Denne kan stå tom                                                                                                                                                                          |
+| ~Terms of service URL~              | Denne kan stå tom                                                                                                                                                                          |
+| ~Privacy policy URL~                | Denne kan stå tom                                                                                                                                                                          |
+| ~Organization name~                 | Denne kan stå tom                                                                                                                                                                          |
+| ~Organization website URL~          | Denne kan stå tom                                                                                                                                                                          |
+| ~Tell us how this app will be used~ | Tilsvarende tidligere beskrivelser. Vær oppriktig og forklar det enkelt.                                                                                                                   |
 
 
-*** En oppdateringsbot for denne sida
+Nå gjenstår det bare å finne autoriseringsnøklene som er blitt generert for boten vår. Vi har nå fått en ~App ID~, ~Consumer API keys~ (både en ~API key~ og en ~API secret key~), og to ~Access tokens~ (både en ~Access token~ og en ~Access token secret~). Om du velger Apps og din nylagde applikasjon nå, vil «Keys and tokens»-fanen ligne på det under, bare uten nøklene klipt bort.
 
-#+BEGIN_SRC python :exports none :tangle ../py/twitter_oppdatering.py
-from twitter import Twitter, OAuth, TwitterHTTPError
+[[fig:twitterbot_apptokens.png]]
+
+Nå er det bare litt kode som gjenstår for å få våre python-genererte tweets ut i verden.
+
+*** Botens første, spede steg
+#+BEGIN_SRC python :exports code :session twitterbot :tangle ../py/twitter_oppdatering.py
+import tweepy
 import json
 
 secrets_filename = 'oppdatering.secrets'
+
+# oppdatering.secrets er ganske enkelt en fil som inneholder kodene twitter tildelte oss
+# da vi registrerte boten vår. Innholdet i fila ser ut som noe à la dette (inkludert krøllparenteser:
+# {
+#      "OAUTH_TOKEN" : "0y1Fewz5D8r83r06848qGwB850rbf23fdascOZvxP2MVF0p63z9HZU-6z7",
+#     "OAUTH_SECRET" : "2ae6zeVgY46g9JUKp2LLYobasdfQZsXDVAwQ4JQqhbvAR9hGzp",
+#     "CONSUMER_KEY" : "DFWhHzNORWWIMjNnjosdfaSKV740Qq",
+#     "CONSUMER_SECRET" : "pxpC6HUNGuqbsofgMz0VrxPD1BffASDfDGR12a6XAzDfPVNRRQl7Ngpt3J8BM"
+# }
+# Merk: Dette er sjølsagt ikke de faktiske kodene. De bør jeg, og du, holde hemmelig
 
 api_keys = {}
 with open(secrets_filename, 'r') as f:
     api_keys = json.loads(f.read())
 
-t = Twitter(auth=OAuth(api_keys['OAUTH_TOKEN'], api_keys['OAUTH_SECRET'],
-                       api_keys['CONSUMER_KEY'], api_keys['CONSUMER_SECRET']))
 
-print(t.search.tweets(q='hello', result_type='recent', count=3))
+auth = tweepy.OAuthHandler(api_keys['CONSUMER_KEY'], api_keys['CONSUMER_SECRET'])
+auth.set_access_token(api_keys['OAUTH_TOKEN'], api_keys['OAUTH_SECRET'])
 #+END_SRC
 
+Det foregående ser mer komplisert ut enn det trenger å være, for deg, som ikke trenger å bekymre deg for at gud og hvermann skal kunne gå inn på nettsida du forsøker å lage og hente twitternøklene dine så de i en liten stund kan få gjøre hva de vil, kan koden se mer ut som følger:
+
+#+BEGIN_SRC python :exports code :session twitterbot :tangle ../py/twitter_oppdatering.py
+import tweepy
+import json
+
+# bytt ut nøklene under med dine egne
+OAUTH_TOKEN = "0y1Fewz5D8r83r06848qGwB850rbf23fdascOZvxP2MVF0p63z9HZU-6z7"
+OAUTH_SECRET = "2ae6zeVgY46g9JUKp2LLYobasdfQZsXDVAwQ4JQqhbvAR9hGzp"
+CONSUMER_KEY = "DFWhHzNORWWIMjNnjosdfaSKV740Qq"
+CONSUMER_SECRET = "pxpC6HUNGuqbsofgMz0VrxPD1BffASDfDGR12a6XAzDfPVNRRQl7Ngpt3J8BM"
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(OAUTH_TOKEN, OAUTH_SECRET)
+#+END_SRC
+
+Vi har nå fått python-programmet til å «logge seg på» twitter, med de rettighetene vi har gitt det. Vi bruker nå denne påloggingen til å opprette et ~api~-objekt, som vi skal benytte til å gjøre alle de tingene Twitter lar oss gjøre. Først og fremst, la oss «oppdatere statusen» vår, eller tvitre, som det også kalles:
+
+#+BEGIN_SRC python :exports code :session twitterbot :tangle ../py/twitter_oppdatering.py
+api = tweepy.API(auth)
+api.update_status('Hei på deg, verden!')
+#+END_SRC
+
+Resultatet av denne kodesnutten er tweeten under.
+
+#+BEGIN_EXPORT html
+<blockquote class="twitter-tweet" data-lang="en"><p lang="no" dir="ltr">Hei på deg, verden!</p>&mdash; promomunch (@promomunch) <a href="https://twitter.com/promomunch/status/1040655480618659842?ref_src=twsrc%5Etfw">September 14, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+#+END_EXPORT
 
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner
