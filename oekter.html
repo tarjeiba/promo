@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-09-19 on. 12:44 -->
+<!-- 2018-09-29 Sat 09:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter</title>
@@ -139,6 +139,12 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#uke38">Uke 39</a>
+<ul>
+<li><a href="#org9f9514d">Oppstartsoppgave</a></li>
+<li><a href="#org1928389">Fjerde ord i en setning</a></li>
+</ul>
+</li>
 <li><a href="#uke38">Uke 38</a>
 <ul>
 <li><a href="#orgc9bf55f">Oppstart prosjekt</a></li>
@@ -166,7 +172,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org645e96e">Definere en funksjon</a></li>
 <li><a href="#orgbf88843">Åpningsoppgaver</a></li>
-<li><a href="#orgbd99337">Funksjoner</a></li>
+<li><a href="#org0d40191">Funksjoner</a></li>
 <li><a href="#org24f220d">«Tallsjekkern»</a></li>
 <li><a href="#orge81cdc2">Kvadratrøtter</a></li>
 <li><a href="#orgbe6fdc4">Oppgaver</a></li>
@@ -182,11 +188,150 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
+<div id="outline-container-org2115ac0" class="outline-2">
+<h2 id="uke38"><a id="org2115ac0"></a>Uke 39</h2>
+<div class="outline-text-2" id="text-uke38">
+</div>
+<div id="outline-container-org9f9514d" class="outline-3">
+<h3 id="org9f9514d">Oppstartsoppgave</h3>
+<div class="outline-text-3" id="text-org9f9514d">
+<p>
+Beskriv de ulike elementene av følgende program:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> math
+
+<span class="org-variable-name">tallet</span> = 42
+
+<span class="org-variable-name">skurten</span> = math.sqrt(tallet)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1928389" class="outline-3">
+<h3 id="org1928389">Fjerde ord i en setning</h3>
+<div class="outline-text-3" id="text-org1928389">
+<p>
+Dere fikk en oppgave om å lage en funksjon som henter ut fjerde ord i en setning. La oss si funksjonen heter <code>fjerde_ord</code>, skal altså funkjsonen fungere på følgende måte:
+</p>
+<pre class="example">
+&gt;&gt;&gt; setningen = "Dette er en lang setning som har mange flere enn fire ord."
+&gt;&gt;&gt; fjerde_ord(setningen)
+lang
+</pre>
+
+<p>
+Under kommer en definisjon som vil fungere for denne, så en forklaring på hva de ulike elementene er i denne definisjonen.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">fjerde_ord</span>(setning):
+    <span class="org-doc">"""Ta inn en teksstreng, `setning`, og returner det fjerde ordet i setningen."""</span>
+
+    <span class="org-variable-name">ord_i_liste</span> = setning.split(<span class="org-string">" "</span>)
+    <span class="org-variable-name">returverdi</span> = ord_i_liste[3]
+
+    <span class="org-keyword">return</span> returverdi
+</pre>
+</div>
+
+<p>
+Om vi forsøker å kalle denne funksjonen, som over, får vi altså:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">setningen</span> = <span class="org-string">"Dette er en lang setning som har mange flere enn fire ord."</span>
+<span class="org-variable-name">retur_av_funksjonskall</span> = fjerde_ord(setningen)
+<span class="org-keyword">print</span>(retur_av_funksjonskall)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">None
+</pre>
+</div>
+
+<p>
+Vi går gjennom dette linje for linje.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">fjerde_ord</span>(setning):
+</pre>
+</div>
+
+<p>
+Her forteller vi at vi ønsker å <i>definere</i> en funksjon, som får navnet «~fjerde<sub>ord</sub>~», og som skal ta inn én parameter, som for resten av funksjonsdefinisjonen heter «~setning~».
+</p>
+
+<p>
+De følgende linjene, som er rykket inn i forhold til definisjonssetningen, kaller vi <i>funksjonskroppen</i>, det er her vi sier hva funksjonen skal gjøre.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">ord_i_i_liste</span> = setning.split(<span class="org-string">" "</span>)
+</pre>
+</div>
+
+<p>
+Vi lager her en variabel som kun tilhører funksjonskroppen, som vi kaller <code>ord_i_liste</code>. Denne variabelen skal være en liste av alle ordene i tekststrengen som vi sendte til funksjonen, <code>setning</code>. For å få til dette, bruker vi listemetoden <code>split</code>. (Akkurat nå kan vi tenke på <i>metoder</i> som funksjoner som tilhører visse typer. Det gir mening å splitte opp en teksstreng, men det gir ikke mening å splitte opp et heltall.) Vi gjør dette ved å skrive <code>setning.split(" ")</code>. Vi sier her «ta teksstrengen <code>setning</code>, og splitt denne opp til en liste, hvor du har splittet ved hvert mellomrom i setningen.
+</p>
+
+<p>
+Hva tror <code>oppdelt</code> er etter linjene under?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">sammensatt</span> = <span class="org-string">"""Dette er en lang, veldig lang, faktisk, setningen,</span>
+<span class="org-string">med dr&#248;ssevis av innskutte, p&#229; riktig m&#229;te, sj&#248;lsagt, leddsetninger."""</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">Her har jeg brukt tre anf&#248;rselstegn for &#229; kunne &#229; linjeskift i tekststrengen.</span>
+
+<span class="org-variable-name">oppdelt</span> = sammensatt.split(<span class="org-string">","</span>)
+</pre>
+</div>
+
+<p>
+Vel, vi har altså nå en liste med ord, kalt <code>ord_i_liste</code>, som vi ønsker å hente ut det fjerde ordet fra. Vi trenger da å huske at lister en indeksert med null som første element i Python. Da er <code>liste[0]</code> det første elementet, <code>liste[1]</code> det andre, <code>liste[2]</code> det tredje og <code>liste[3]</code> det fjerde. Vi kunne nå helt fint ha sagt at returverdien til funksjonen skulle være <code>ord_i_liste[3]</code>, ved bare å skrive
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">return</span> ord_i_liste[3]
+</pre>
+</div>
+
+<p>
+men jeg har her valgt å lage en returvariabel, kalt <code>returverdi</code>. De siste linjene i funksjonskroppen blir da
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">returverdi</span> = ord_li_liste[3]
+<span class="org-keyword">return</span> returverdi
+</pre>
+</div>
+
+<p>
+Vi har nå laget en funksjon som oppfører seg på følgende måte:
+</p>
+
+
+<div class="figure">
+<p><img src="../figurer/oekter_fjerde_ord.png" alt="oekter_fjerde_ord.png" />
+</p>
+</div>
+
+<p>
+Den neste utfordringen er da å finne ut hvordan vi skal kunne lage en funksjon som returnerer det <i>n</i>-te ordet i en setning.
+</p>
+</div>
+</div>
+</div>
+
+
 <div id="outline-container-orgc61e0fb" class="outline-2">
 <h2 id="uke38"><a id="orgc61e0fb"></a>Uke 38</h2>
 <div class="outline-text-2" id="text-uke38">
 </div>
-
 <div id="outline-container-orgc9bf55f" class="outline-3">
 <h3 id="orgc9bf55f">Oppstart prosjekt</h3>
 <div class="outline-text-3" id="text-orgc9bf55f">
@@ -263,9 +408,9 @@ Oppgaver: <a href="promo.html#programflyt-oppgaver-abc">abc-formelen</a>
 </div>
 </div>
 
-<div id="outline-container-org8648ba3" class="outline-4">
-<h4 id="org8648ba3">Funksjoner</h4>
-<div class="outline-text-4" id="text-org8648ba3">
+<div id="outline-container-org516b886" class="outline-4">
+<h4 id="org516b886">Funksjoner</h4>
+<div class="outline-text-4" id="text-org516b886">
 <p>
 Fagstoff: <a href="promo.html#funksjoner">Funksjoner</a>
 </p>
@@ -302,7 +447,6 @@ Oppgaver:
 <h2 id="uke36"><a id="org4a5ed08"></a>Uke 36&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></h2>
 <div class="outline-text-2" id="text-uke36">
 </div>
-
 <div id="outline-container-orgd167c34" class="outline-3">
 <h3 id="orgd167c34">Installering</h3>
 <div class="outline-text-3" id="text-orgd167c34">
@@ -631,9 +775,9 @@ funk3(10) <span class="org-comment-delimiter"># </span><span class="org-comment"
 </div>
 </div>
 
-<div id="outline-container-orgbd99337" class="outline-3">
-<h3 id="orgbd99337">Funksjoner</h3>
-<div class="outline-text-3" id="text-orgbd99337">
+<div id="outline-container-org0d40191" class="outline-3">
+<h3 id="org0d40191">Funksjoner</h3>
+<div class="outline-text-3" id="text-org0d40191">
 <dl class="org-dl">
 <dt>bakgrunnsstoff</dt><dd><a href="promo.html#org173b127">Funksjoner</a></dd>
 </dl>

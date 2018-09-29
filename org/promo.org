@@ -982,7 +982,7 @@ Legg merke til at vi her ikke lenger har behov for punktnotasjon når vi skal br
 :END:
 Vi har nå fått et knippe verktøy for å lage ulike variabler, men vi kommer snart til å se at vi gjentar oss selv mye i programmeringen. Som programmerer bør du være på utkikk etter kode som er gjentagelser av tidligere kode, dette kan som oftes samles i en egen blokk. Vi kaller slike gjenbrukebare blokker av kode for «funksjoner» eller «underrutiner» (/subrutines/).
 
-#+BEGIN_SRC dot :file figurer/funksjon.png :cmdline -Kdot -Tpng :exports results
+#+BEGIN_SRC dot :file ../figurer/funksjon.png :cmdline -Kdot -Tpng :exports results
 digraph {
 // graph from left to right
 rankdir=LR;
@@ -1290,7 +1290,7 @@ Du tar derfor fram det digitale millimeterpapiret, Geogebra, tegner grafen, tryk
 
 Hvordan gjør Geogebra dette?
 
-Én måte å gjøre det på er ved hjelp av /halveringsmetoden/. Dette er en flott måte å finne et nullpunkt på, gitt at du veit følgende:
+Én måte å gjøre det på er ved hjelp av /halveringsmetoden/. Dette er en måte å finne et nullpunkt på, gitt at du veit følgende:
 - to punkter på funksjonen
 - at funksjonsverdien er negativ i ett av disse punktene
 - at funksjonsverdien er positiv i det andre av disse punktene
@@ -2414,7 +2414,6 @@ Det foregående ser mer komplisert ut enn det trenger å være, for deg, som ikk
 
 #+BEGIN_SRC python :exports code :session twitterbot :tangle ../py/twitter_oppdatering.py
 import tweepy
-import json
 
 # bytt ut nøklene under med dine egne
 OAUTH_TOKEN = "0y1Fewz5D8r83r06848qGwB850rbf23fdascOZvxP2MVF0p63z9HZU-6z7"
@@ -2426,7 +2425,9 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(OAUTH_TOKEN, OAUTH_SECRET)
 #+END_SRC
 
-Vi har nå fått python-programmet til å «logge seg på» twitter, med de rettighetene vi har gitt det. Vi bruker nå denne påloggingen til å opprette et ~api~-objekt, som vi skal benytte til å gjøre alle de tingene Twitter lar oss gjøre. Først og fremst, la oss «oppdatere statusen» vår, eller tvitre, som det også kalles:
+Vi har nå fått python-programmet til å «logge seg på» twitter, med de rettighetene vi har gitt det. Vi bruker nå denne påloggingen til å opprette et ~api~-objekt, som vi skal benytte til å gjøre alle de tingene Twitter lar oss gjøre. 
+
+Først og fremst, la oss «oppdatere statusen» vår, eller tvitre, som det også kalles. Det følgende skriver du i samme programsnutt som «innloggingen»: 
 
 #+BEGIN_SRC python :exports code :session twitterbot :tangle ../py/twitter_oppdatering.py
 api = tweepy.API(auth)
@@ -2440,6 +2441,28 @@ Resultatet av denne kodesnutten er tweeten under.
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 #+END_EXPORT
 
+*** ~api~-objektet
+Over har vi linja ~api = tweepy.API(auth)~. Her skjer det mye. Fra venstre, har vi følgende:
+
+1) Vi lager et variabelnavn, ~api~
+2) Vi skal bruke noe fra ~tweepy~-modulen, ~tweepy.~
+3) Fra tweepy skal vi bruke ~API~-klassen, ~API()~
+4) For å lage en /instanse/ av ~API~-klassen, sender vi inn vår nye ~auth~-variabel. Denne kan du tenke på som «påloggingen» vår. Dette gjør at vi kan få boten vår til å jobbe med flere kontoer, om vi ønsker.
+
+Tenk på hvordan denne linja henger sammen med en som er tilsynelatende mye enklere, utregningen av en kvadratrot.
+
+#+BEGIN_SRC python :exports code
+import math
+
+tallet = 42
+skurten = math.sqrt(tallet)
+#+END_SRC
+
+Ser du at linja ~skurten = math.sqrt(tallet)~ her inneholder akkurat de samme elemenetene som over? Den eneste prinsipielle forskjellen på disse to, er at vi med ~api =~-linja «kaller» ~API~-klassen, mens vi i ~skurten~ kaller ~sqrt~-/funksjonen/.
+
+Der det vi får igjen av å kalle ~sqrt~-funksjonen er et tall, som vi kan gjøre Tallting™ med, får vi et ~API~-objekt av å kalle ~API~-klassen. ~API~-objektet (som her har fått /navnet/ ~api~), skal vi bruke til å gjøre Twitterting™ med, som å sende statuser, lese statuser, retweete og få venner.
+
+Om vi ser på [[http://docs.tweepy.org/en/v3.5.0/api.html][hjelpedokumentasjonen]] til api-objektet, 
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner
 https://matplotlib.org/examples/pylab_examples/spine_placement_demo.html#pylab-examples-spine-placement-demo

@@ -5,13 +5,123 @@
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
 #+END_SRC
 
+* Uke 39
+:PROPERTIES:
+:CUSTOM_ID: uke38
+:header-args:  :tangle ../py/uke38.py
+:END:
+** Oppstartsoppgave
+Beskriv de ulike elementene av følgende program:
+
+#+BEGIN_SRC python
+import math
+
+tallet = 42
+
+skurten = math.sqrt(tallet)
+#+END_SRC
+** Fjerde ord i en setning
+Dere fikk en oppgave om å lage en funksjon som henter ut fjerde ord i en setning. La oss si funksjonen heter ~fjerde_ord~, skal altså funkjsonen fungere på følgende måte:
+#+BEGIN_EXAMPLE
+>>> setningen = "Dette er en lang setning som har mange flere enn fire ord."
+>>> fjerde_ord(setningen)
+lang
+#+END_EXAMPLE
+
+Under kommer en definisjon som vil fungere for denne, så en forklaring på hva de ulike elementene er i denne definisjonen.
+
+#+BEGIN_SRC python :session fjerde :results silent :exports code
+def fjerde_ord(setning):
+    """Ta inn en teksstreng, `setning`, og returner det fjerde ordet i setningen."""
+
+    ord_i_liste = setning.split(" ")
+    returverdi = ord_i_liste[3]
+
+    return returverdi
+#+END_SRC
+
+Om vi forsøker å kalle denne funksjonen, som over, får vi altså:
+
+#+BEGIN_SRC python :session fjerde :results output org :exports both
+setningen = "Dette er en lang setning som har mange flere enn fire ord."
+retur_av_funksjonskall = fjerde_ord(setningen)
+print(retur_av_funksjonskall)
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+lang
+#+END_SRC
+
+Vi går gjennom dette linje for linje.
+
+#+BEGIN_SRC python
+def fjerde_ord(setning):
+#+END_SRC
+
+Her forteller vi at vi ønsker å /definere/ en funksjon, som får navnet «~fjerde_ord~», og som skal ta inn én parameter, som for resten av funksjonsdefinisjonen heter «~setning~».
+
+De følgende linjene, som er rykket inn i forhold til definisjonssetningen, kaller vi /funksjonskroppen/, det er her vi sier hva funksjonen skal gjøre.
+
+#+BEGIN_SRC python
+ord_i_i_liste = setning.split(" ")
+#+END_SRC
+
+Vi lager her en variabel som kun tilhører funksjonskroppen, som vi kaller ~ord_i_liste~. Denne variabelen skal være en liste av alle ordene i tekststrengen som vi sendte til funksjonen, ~setning~. For å få til dette, bruker vi listemetoden ~split~. (Akkurat nå kan vi tenke på /metoder/ som funksjoner som tilhører visse typer. Det gir mening å splitte opp en teksstreng, men det gir ikke mening å splitte opp et heltall.) Vi gjør dette ved å skrive ~setning.split(" ")~. Vi sier her «ta teksstrengen ~setning~, og splitt denne opp til en liste, hvor du har splittet ved hvert mellomrom i setningen.
+
+Hva tror ~oppdelt~ er etter linjene under?
+
+#+BEGIN_SRC python
+sammensatt = """Dette er en lang, veldig lang, faktisk, setningen,
+med drøssevis av innskutte, på riktig måte, sjølsagt, leddsetninger."""
+# Her har jeg brukt tre anførselstegn for å kunne å linjeskift i tekststrengen.
+
+oppdelt = sammensatt.split(",")
+#+END_SRC
+
+Vel, vi har altså nå en liste med ord, kalt ~ord_i_liste~, som vi ønsker å hente ut det fjerde ordet fra. Vi trenger da å huske at lister en indeksert med null som første element i Python. Da er ~liste[0]~ det første elementet, ~liste[1]~ det andre, ~liste[2]~ det tredje og ~liste[3]~ det fjerde. Vi kunne nå helt fint ha sagt at returverdien til funksjonen skulle være ~ord_i_liste[3]~, ved bare å skrive
+
+#+BEGIN_SRC python
+return ord_i_liste[3]
+#+END_SRC
+
+men jeg har her valgt å lage en returvariabel, kalt ~returverdi~. De siste linjene i funksjonskroppen blir da
+
+#+BEGIN_SRC python
+returverdi = ord_li_liste[3]
+return returverdi
+#+END_SRC
+
+Vi har nå laget en funksjon som oppfører seg på følgende måte:
+
+#+BEGIN_SRC dot :file ../figurer/oekter_fjerde_ord.png :cmdline -Kdot -Tpng :exports results
+digraph {
+// graph from left to right
+rankdir=LR;
+splines=true;
+node [shape=box, fontname="Open Sans"];
+edge [fontname="Open Sans"];
+
+input [label="Inndata", style=invis]
+funk [label="fjerde_ord"]
+output [label="Utdata", style=invis]
+
+input -> funk [label="En setning med flere enn fire ord"]
+funk -> output [label="Det fjerde ordet i setningen"]
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:../figurer/oekter_fjerde_ord.png]]
+
+Den neste utfordringen er da å finne ut hvordan vi skal kunne lage en funksjon som returnerer det /n/-te ordet i en setning.
+
 
 * Uke 38
 :PROPERTIES:
 :CUSTOM_ID: uke38
 :header-args:  :tangle ../py/uke38.py
 :END:
-
 ** Oppstart prosjekt
 - Bakgrunnsstoff 1: [[https://www.telegraph.co.uk/news/2018/04/28/russian-twitter-bots-attempted-influence-election-supporting/][The Telegraph]]
 - Bakgrunnsstoff 2: [[https://www.b.dk/globalt/robotter-stoetter-sverigedemokraterna-og-partier-bliver-cyberangrebet-digitalt-pres][Berlingske]]
@@ -106,12 +216,11 @@ Fagstoff: [[file:promo.org::#mensviventer][Mens vi venter]]
 Oppgaver:
 - [[file:promo.org::#collatzformodning][Collatz' formodning]]
 - 
-* Uke 36                                                                             :avholdt:n
+* Uke 36                                                                             :avholdt:
 :PROPERTIES:
 :CUSTOM_ID: uke36
 :header-args:  :tangle ../py/uke36.py
 :END:
-
 ** Installering
 1. anaconda (noe som inneholder python, og litt ymse annet)
 2. pycharm (det dere skal bruke for å skrive python)
