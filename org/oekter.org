@@ -112,7 +112,7 @@ funk -> output [label="Det fjerde ordet i setningen"]
 #+END_SRC
 
 #+RESULTS:
-[[file:../figurer/oekter_fjerde_ord.png]]
+[[fig:oekter_fjerde_ord.png]]
 
 Den neste utfordringen er da å finne ut hvordan vi skal kunne lage en funksjon som returnerer det /n/-te ordet i en setning.
 
