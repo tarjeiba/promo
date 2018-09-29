@@ -7,8 +7,8 @@
 
 * Uke 39
 :PROPERTIES:
-:CUSTOM_ID: uke38
-:header-args:  :tangle ../py/uke38.py
+:CUSTOM_ID: uke39
+:header-args:  :tangle ../py/uke39.py
 :END:
 ** Oppstartsoppgave
 Beskriv de ulike elementene av følgende program:
