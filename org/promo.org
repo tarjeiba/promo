@@ -28,6 +28,16 @@ Programmering i seg selv er en ferdighet uten andre krav til forkunskaper enn at
 
 Som spirende programmerer kommer du til å kjenne på både frustrasjon og irritasjon, men forhåpentligvis en overvekt av mestringsfølelse og glede. I starten bruker vi gjerne tre timer på å automatisere en jobb det ville tatt oss fem minutter å gjøre for hånd. Tro meg uansett når jeg sier at følelsen når kodesnutten kjører uten feilmelding etter tre timers jobb gjør det mer enn verdt investeringa.
 
+Her er det en endring.
+
+#+BEGIN_SRC python
+import math
+
+math.sqrt(2)
+#+END_SRC
+
+
+
 Lykke til!
 
 ** Et første program
@@ -145,7 +155,7 @@ Hva vil verdien til ~svar~ være når dette programmet har kjørt ferdig?
 
 ** Matematikk
 :PROPERTIES:
-:CUSTOM_ID: programmering
+:CUSTOM_ID: matematikk
 :END:
 Det forrige eksempelet ville vi løst matematisk ved å skrive opp følgende uttrykk:
 
@@ -175,6 +185,7 @@ print(svar)
 Dette kan vi gjøre fordi Python kommer med gangefunksjonen innebygd. Det dukker dog raskt opp matematiske påstander vi ikke kan løse uten en trinnvis prosess.
 
 Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av de førti første primtallene?» Dette har vi i de aller fleste programmeringsspråk ikke direkte måte å løse, vi må fortelle maskinen hva den skal gjøre instruks for instruks.
+
 * Programmeringsspråk
 :PROPERTIES:
 :CUSTOM_ID: programmeringsspraak

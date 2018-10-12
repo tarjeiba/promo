@@ -134,6 +134,11 @@ p, ul, blockquote, td, th, label {
     line-height: 1.5em;
     margin-bottom: 1.5em;
 }
+
+ul {
+    list-style-type: disc;
+}
+
 p.small, #postamble {
     margin: 0;
     font-size: 0.8333333333333334em;
@@ -165,7 +170,7 @@ table {
 /* #main { */
 div.outline-2 {
     max-width: 70em;
-    float: right;
+    /* float: right; */
     /* The lines below are useful if the "main" div isn't available and
        div.outline-2 has to be used. */
     position: relative;
