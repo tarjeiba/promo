@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-10-12 Fri 19:44 -->
+<!-- 2018-11-07 Wed 12:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programmering og modellering X</title>
@@ -220,7 +220,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#appendiks-prosjekter">Appendiks: Prosjekter</a>
 <ul>
-<li><a href="#prosjekt_twitterboten">Twitter-boten</a></li>
+<li><a href="#prosjekt_twitterboten">Twitter-boten - Introduksjon</a></li>
 </ul>
 </li>
 </ul>
@@ -1091,12 +1091,12 @@ Hvordan skal vi så gjøre det? Når vi skal kopiere en liste, kan vi gjøre det
 </div>
 </div>
 
-<div id="outline-container-orgcec6be8" class="outline-3">
-<h3 id="basispython-oppgaver"><a id="orgcec6be8"></a>Oppgaver</h3>
+<div id="outline-container-org1eadca2" class="outline-3">
+<h3 id="basispython-oppgaver"><a id="org1eadca2"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-basispython-oppgaver">
 </div>
-<div id="outline-container-org4268ba8" class="outline-4">
-<h4 id="basispython-kortoppgaver"><a id="org4268ba8"></a>Kortoppgaver</h4>
+<div id="outline-container-org8f54508" class="outline-4">
+<h4 id="basispython-kortoppgaver"><a id="org8f54508"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-basispython-kortoppgaver">
 <ol class="org-ol">
 <li>Be om et navn, skriv ut "Hei på deg, {navn}"    # Husk print("Hei på deg", navn)</li>
@@ -1727,12 +1727,12 @@ og sette startverdiene til 0.0 og 10.0.
 </div>
 </div>
 
-<div id="outline-container-orgfcff3bf" class="outline-3">
-<h3 id="abstraksjon-oppgaver"><a id="orgfcff3bf"></a>Oppgaver</h3>
+<div id="outline-container-org02fd5a2" class="outline-3">
+<h3 id="abstraksjon-oppgaver"><a id="org02fd5a2"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-abstraksjon-oppgaver">
 </div>
-<div id="outline-container-org8f54508" class="outline-4">
-<h4 id="abstraksjon-kortoppgaver"><a id="org8f54508"></a>Kortoppgaver</h4>
+<div id="outline-container-orgf54dad6" class="outline-4">
+<h4 id="abstraksjon-kortoppgaver"><a id="orgf54dad6"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-abstraksjon-kortoppgaver">
 <ol class="org-ol">
 <li>Lag en funksjon som dobler et tall</li>
@@ -2325,8 +2325,8 @@ I dette eksempelet brukte vi ei <code>for</code>-løkke. Ei slik løkke gjør no
 </div>
 </div>
 
-<div id="outline-container-org1eadca2" class="outline-3">
-<h3 id="programflyt-oppgaver"><a id="org1eadca2"></a>Oppgaver</h3>
+<div id="outline-container-org6c0e47f" class="outline-3">
+<h3 id="programflyt-oppgaver"><a id="org6c0e47f"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-programflyt-oppgaver">
 </div>
 <div id="outline-container-orge280972" class="outline-4">
@@ -2801,8 +2801,8 @@ Endre terningeksempelet over til å skrive en fjerde kolonne, «Sum», hvor verd
 <h2 id="appendiks-prosjekter"><a id="org658e773"></a>Appendiks: Prosjekter</h2>
 <div class="outline-text-2" id="text-appendiks-prosjekter">
 </div>
-<div id="outline-container-org5d27a0e" class="outline-3">
-<h3 id="prosjekt_twitterboten"><a id="org5d27a0e"></a>Twitter-boten</h3>
+<div id="outline-container-orgd620d8d" class="outline-3">
+<h3 id="prosjekt_twitterboten"><a id="orgd620d8d"></a>Twitter-boten - Introduksjon</h3>
 <div class="outline-text-3" id="text-prosjekt_twitterboten">
 <p>
 Gjennom dette prosjektet skal vi lage en «bot» som skal operere en twitter-konto. Til dette er det et par småting vi må ha på plass, vi må ha..
@@ -2920,34 +2920,8 @@ Nå er det bare litt kode som gjenstår for å få våre python-genererte tweets
 <div id="outline-container-org1e66327" class="outline-4">
 <h4 id="org1e66327">Botens første, spede steg</h4>
 <div class="outline-text-4" id="text-org1e66327">
-<div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">import</span> tweepy
-<span class="org-keyword">import</span> json
-
-<span class="org-variable-name">secrets_filename</span> = <span class="org-string">'oppdatering.secrets'</span>
-
-<span class="org-comment-delimiter"># </span><span class="org-comment">oppdatering.secrets er ganske enkelt en fil som inneholder kodene twitter tildelte oss</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">da vi registrerte boten v&#229;r. Innholdet i fila ser ut som noe &#224; la dette (inkludert kr&#248;llparenteser:</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">{</span>
-<span class="org-comment-delimiter">#      </span><span class="org-comment">"OAUTH_TOKEN" : "0y1Fewz5D8r83r06848qGwB850rbf23fdascOZvxP2MVF0p63z9HZU-6z7",</span>
-<span class="org-comment-delimiter">#     </span><span class="org-comment">"OAUTH_SECRET" : "2ae6zeVgY46g9JUKp2LLYobasdfQZsXDVAwQ4JQqhbvAR9hGzp",</span>
-<span class="org-comment-delimiter">#     </span><span class="org-comment">"CONSUMER_KEY" : "DFWhHzNORWWIMjNnjosdfaSKV740Qq",</span>
-<span class="org-comment-delimiter">#     </span><span class="org-comment">"CONSUMER_SECRET" : "pxpC6HUNGuqbsofgMz0VrxPD1BffASDfDGR12a6XAzDfPVNRRQl7Ngpt3J8BM"</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">}</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Merk: Dette er sj&#248;lsagt ikke de faktiske kodene. De b&#248;r jeg, og du, holde hemmelig</span>
-
-<span class="org-variable-name">api_keys</span> = {}
-<span class="org-keyword">with</span> <span class="org-builtin">open</span>(secrets_filename, <span class="org-string">'r'</span>) <span class="org-keyword">as</span> f:
-    <span class="org-variable-name">api_keys</span> = json.loads(f.read())
-
-
-<span class="org-variable-name">auth</span> = tweepy.OAuthHandler(api_keys[<span class="org-string">'CONSUMER_KEY'</span>], api_keys[<span class="org-string">'CONSUMER_SECRET'</span>])
-auth.set_access_token(api_keys[<span class="org-string">'OAUTH_TOKEN'</span>], api_keys[<span class="org-string">'OAUTH_SECRET'</span>])
-</pre>
-</div>
-
 <p>
-Det foregående ser mer komplisert ut enn det trenger å være, for deg, som ikke trenger å bekymre deg for at gud og hvermann skal kunne gå inn på nettsida du forsøker å lage og hente twitternøklene dine så de i en liten stund kan få gjøre hva de vil, kan koden se mer ut som følger:
+Aller først må vi få autentiseringsnøklene som blei genert for oss da vi opprettet boten under developerkontoen vår inn i programmet vårt.
 </p>
 
 <div class="org-src-container">
@@ -3022,8 +2996,287 @@ Der det vi får igjen av å kalle <code>sqrt</code>-funksjonen er et tall, som v
 </p>
 
 <p>
-Om vi ser på <a href="http://docs.tweepy.org/en/v3.5.0/api.html">hjelpedokumentasjonen</a> til api-objektet, 
+Om vi ser på <a href="http://docs.tweepy.org/en/v3.5.0/api.html">hjelpedokumentasjonen</a> til api-objektet, ser vi at vi har mange «metoder» (funksjoner vi kaller via en notasjon som <code>api.update_status()</code>) tilgjengelig. Om vi videre ønsker å utforske disse metodene videre, er det spesielt tre funksjoner vi har behov for kunne bruke, <code>dir</code>, <code>type</code>, og <code>help</code>. La oss bruke dem til å forstå mer av <code>update_class</code>-metoden.
 </p>
+</div>
+</div>
+
+<div id="outline-container-org6aa3b92" class="outline-4">
+<h4 id="org6aa3b92">Hjelp til hjelp</h4>
+<div class="outline-text-4" id="text-org6aa3b92">
+<p>
+Under lager jeg en enkel <code>for</code>-løkke for å utforske hvilke muligheter vi har med <code>api</code>-objektet.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">for</span> alternativ <span class="org-keyword">in</span> <span class="org-builtin">dir</span>(api):
+    <span class="org-keyword">print</span>(alternativ)
+</pre>
+</div>
+
+<p>
+<i>Her vises kun et utdrag av resultatene</i>. Forsøk å kjøre dette på egen maskin, i et konsollvindu.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">....
+update_profile_background_image
+update_profile_banner
+update_profile_image
+update_status
+update_with_media
+upload_host
+upload_root
+user_timeline
+...
+</pre>
+</div>
+
+<p>
+Vi kan utforsøke <code>update_status</code> videre med <code>help</code>-funksjonen. Først, legg merke til fra <a href="http://docs.tweepy.org/en/v3.5.0/api.html#status-methods">dokumentasjonen</a> at <code>update_status</code> returnerer et objekt av typen <code>Status</code>. La oss sjekke dette nærmere.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">teststatus</span> = api.update_status(<span class="org-string">"Dette er et ekesempel p&#229; en ukreativ tweet."</span>)
+</pre>
+</div>
+
+<p>
+Hva skiller denne linja fra linja hvor vi la ut «Hei, verden»-tweeten vår over? Jo, her forsøker vi å beholde returobjektet for videre behandling, ikke kun å sende tweeten. Siden høyre side av likhetstegnet uansett evalueres («kjøres») først, blei det allikevel sendt en tweet nå.
+</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="no" dir="ltr">Dette er et ekesempel på en ukreativ tweet.</p>&mdash; promomunch (@promomunch) <a href="https://twitter.com/promomunch/status/1060088692344262656?ref_src=twsrc%5Etfw">November 7, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>
+Vi skal altså nå, om alt stemmer, ha mulighet til å utforske <code>teststatus</code> videre.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span>(f<span class="org-string">"Statusen er av type {type(teststatus)}"</span>)
+<span class="org-keyword">print</span>(<span class="org-string">"-----------------"</span>)
+<span class="org-keyword">print</span>(<span class="org-string">"teststatus har blant annet f&#248;lgende egenskaper:"</span>)
+<span class="org-keyword">for</span> alternativ <span class="org-keyword">in</span> <span class="org-builtin">dir</span>(teststatus)[30:45]: <span class="org-comment-delimiter"># </span><span class="org-comment">for ikke &#229; vise alle</span>
+    <span class="org-keyword">print</span>(alternativ)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">Statusen er av type &lt;class 'tweepy.models.Status'&gt;
+-----------------
+teststatus har blant annet f&#248;lgende egenskaper:
+contributors
+coordinates
+created_at
+destroy
+entities
+favorite
+favorite_count
+favorited
+geo
+id
+id_str
+in_reply_to_screen_name
+in_reply_to_status_id
+in_reply_to_status_id_str
+in_reply_to_user_id
+</pre>
+</div>
+
+<p>
+(Når du kjører dette på egen maskin, bør du skrive ut alt som kommer fra <code>dir</code>.)
+</p>
+
+<p>
+La oss si vi ønsker å svare på denne tweeten, hvordan skal vi gjøre det? Vel, et svar på twitter er bare en ny status, som er opprettet ved å trykke på svar-knappen. Dette kan vi også gjøre i Python-skriptet vårt.
+</p>
+
+<p>
+Under vises dokumentasjonen til <code>update_status</code>-metoden.
+</p>
+
+<p>
+<img src="figurer/tweepy-update-status-doc.png" alt="tweepy-update-status-doc.png"/>
+</p>
+
+<p>
+Vi ser at <code>update_status</code> kan ta inn seks parametere, blant annet <code>status</code> og <code>in_reply_to_status_id</code>. Alle andre parameterere enn <code>status</code> er <i>frivillige</i>, det eneste vi <i>må</i> ha med er altså statusteksten.
+</p>
+
+<p>
+For å svare på forrige tweet, må vi altså ha «the ID of an existing status that the update is in reply to». Vi ser over at <code>teststatus</code>-objektet vårt har en <code>id</code>-parameter tilgjengelig, så vi kan lagre oss denne som under (her skriver jeg den ut òg, det er ikke nødvendig i skriptet deres):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">svar_til_id</span> = teststatus.<span class="org-builtin">id</span>
+<span class="org-keyword">print</span>(svar_til_id)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">1060088692344262656
+</pre>
+</div>
+
+<p>
+Vi er nå klare til å sende svaret vårt:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">svartekst</span> = <span class="org-string">"@promomunch Vel ... kreativ staving, om ikke annet."</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">OBS: Et svar m&#229; inneholde @-navnet til den du svarer</span>
+<span class="org-variable-name">svartweet</span> = api.update_status(svartekst, in_reply_to_status_id=svar_til_id)
+</pre>
+</div>
+
+<p>
+Vi får da følgende, meningstunge utveksling:
+</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="no" dir="ltr">Vel ... kreativ staving, om ikke annet.</p>&mdash; promomunch (@promomunch) <a href="https://twitter.com/promomunch/status/1060093288001298432?ref_src=twsrc%5Etfw">November 7, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>
+Alt ligger nå til rette for å lage boter som interagerer med Twitter automatisk.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org78fcd5e" class="outline-4">
+<h4 id="org78fcd5e">Prosjektbeskrivelse</h4>
+<div class="outline-text-4" id="text-org78fcd5e">
+<p>
+Dere kan velge mellom to prosjektalternativer, hvorav det ene anses som programmeringsmessig mer utfordrende å komme i gang med, da dette krever at du programmerer logikken som skal drive spillet ditt.
+</p>
+
+<p>
+<b>Alternativ 1 &#x2013; Samtaleboten</b>
+Du skal lage en twitterbot som har en forprogrammert samtale med en annen twitterbot. Samtalen avtaler dere dere mellom, offline. Botene må da kunne følgende:
+</p>
+
+<ul class="org-ul">
+<li>Svare på tweets (statuser) av hverandre</li>
+<li>Hente replikker fra en forprogrammert liste</li>
+<li>Være høflige</li>
+</ul>
+
+<p>
+Etter dere har fått til dette, hvordan ville dere gått fram for å få botene til å ta valg i løpet av samtalen? Hva hvis brukern skal komme og gi input?
+</p>
+
+<p>
+<b>Alternativ 2 &#x2013; Battleshipsboten</b>
+Du skal lage en bot som spiller Battleships mot en annen twitterkonto. «Språket» innad i en tweet er som følger:
+</p>
+
+<pre class="example">
+Du:
+"@den_du_spiller_mot B4 #battlebots"
+Motstander, hvis bom:
+"@deg Bom! E3 #battlebots"
+Motstander, hvis treff:
+"@deg Treff! #battlebots"
+Motstander, hvis treff og skip sunket:
+"@deg Forlis! #battlebots"
+</pre>
+
+<p>
+Battleships spilles på et rutenett av ti ganger ti ruter, som fylles med ti skip av følgende størrelser:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Antall</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-right">Størrelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Hangarskip</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Krigsskip</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Cruiser</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">Frigatter</td>
+<td class="org-right">2</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Et eksempel på et ferdig utfylt brett kan da se ut som følger:
+</p>
+
+<p>
+<img src="figurer/twitterbot_battleshipsbrett.png" alt="twitterbot_battleshipsbrett.png"/>
+</p>
+
+<p>
+<b>Fellesutfordringer</b>
+Vi må oppdatere twitter-statusene våre jevnlig for å få tilgang på siste utvikling i tidslinja vår.
+</p>
+
+<p>
+En måte å begrense tidslinja på, er å holde oversikt over hva som er siste tweet vi sendte ut, og kun vise de nye tweetene som har kommet etter denne. (Merk, i eksempelet under burde du da <i>egentlig</i> bruke <code>id</code>-en til <code>svartweet</code>, ikke <code>teststatus</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">statuser</span> = api.home_timeline(since_id=svar_til_id)
+<span class="org-keyword">for</span> status <span class="org-keyword">in</span> statuser:
+    <span class="org-keyword">print</span>(status.text)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">@promomunch Vel ... kreativ staving, om ikke annet.
+</pre>
+</div>
+
+<p>
+Felles for alle prosjektene er at vi må ha et program som kjører uten å slutte før vi selv bestemmer at det skal slutte. Det kan vi gjøre i en <code>while</code>-løkke. Oppsettet for programmet kan da være noe à la følgende:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> time
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">oppsettskode</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">p&#229;logging etc.</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">ting som bare skal gj&#248;res en gang per programkj&#248;ring</span>
+
+<span class="org-keyword">while</span> <span class="org-constant">True</span>:
+    <span class="org-variable-name">statuser</span> = api.home_timeline()
+    <span class="org-comment-delimiter"># </span><span class="org-comment">Sjekk om noe har skjedd.</span>
+
+    <span class="org-keyword">if</span> nytt_svar:
+        <span class="org-comment-delimiter"># </span><span class="org-comment">kode som skal kj&#248;res om det har kommet nytt svar</span>
+
+    time.sleep(5) <span class="org-comment-delimiter"># </span><span class="org-comment">vent i fem sekunder f&#248;r du fortsetter</span>
+</pre>
+</div>
 </div>
 </div>
 </div>

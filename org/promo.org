@@ -1,5 +1,5 @@
 #+SETUPFILE: orgheader.org
-#+PROPERTY: header-args :eval never-export :results silent
+#+PROPERTY: header-args :eval never-export :results output
 #+TITLE: Programmering og modellering X
 
 #+BEGIN_EXPORT html
@@ -2354,7 +2354,7 @@ Lag en predikatfunksjon som svarer på hvorvidt ~a~ og ~b~ er relativt primistis
 :CUSTOM_ID: appendiks-prosjekter-datingalgoritmen
 :END:
 
-** Twitter-boten
+** Twitter-boten - Introduksjon
 :PROPERTIES:
 :custom_id: prosjekt_twitterboten
 :END:
@@ -2396,7 +2396,7 @@ Nå gjenstår det bare å finne autoriseringsnøklene som er blitt generert for 
 Nå er det bare litt kode som gjenstår for å få våre python-genererte tweets ut i verden.
 
 *** Botens første, spede steg
-#+BEGIN_SRC python :exports code :session twitterbot :tangle ../py/twitter_oppdatering.py
+#+BEGIN_SRC python :exports none :session twitterbot :tangle ../py/twitter_oppdatering.py
 import tweepy
 import json
 
@@ -2419,9 +2419,11 @@ with open(secrets_filename, 'r') as f:
 
 auth = tweepy.OAuthHandler(api_keys['CONSUMER_KEY'], api_keys['CONSUMER_SECRET'])
 auth.set_access_token(api_keys['OAUTH_TOKEN'], api_keys['OAUTH_SECRET'])
+
+api = tweepy.API(auth)
 #+END_SRC
 
-Det foregående ser mer komplisert ut enn det trenger å være, for deg, som ikke trenger å bekymre deg for at gud og hvermann skal kunne gå inn på nettsida du forsøker å lage og hente twitternøklene dine så de i en liten stund kan få gjøre hva de vil, kan koden se mer ut som følger:
+Aller først må vi få autentiseringsnøklene som blei genert for oss da vi opprettet boten under developerkontoen vår inn i programmet vårt.
 
 #+BEGIN_SRC python :exports code :session twitterbot :tangle ../py/twitter_oppdatering.py
 import tweepy
@@ -2473,7 +2475,191 @@ Ser du at linja ~skurten = math.sqrt(tallet)~ her inneholder akkurat de samme el
 
 Der det vi får igjen av å kalle ~sqrt~-funksjonen er et tall, som vi kan gjøre Tallting™ med, får vi et ~API~-objekt av å kalle ~API~-klassen. ~API~-objektet (som her har fått /navnet/ ~api~), skal vi bruke til å gjøre Twitterting™ med, som å sende statuser, lese statuser, retweete og få venner.
 
-Om vi ser på [[http://docs.tweepy.org/en/v3.5.0/api.html][hjelpedokumentasjonen]] til api-objektet, 
+Om vi ser på [[http://docs.tweepy.org/en/v3.5.0/api.html][hjelpedokumentasjonen]] til api-objektet, ser vi at vi har mange «metoder» (funksjoner vi kaller via en notasjon som ~api.update_status()~) tilgjengelig. Om vi videre ønsker å utforske disse metodene videre, er det spesielt tre funksjoner vi har behov for kunne bruke, ~dir~, ~type~, og ~help~. La oss bruke dem til å forstå mer av ~update_class~-metoden.
+
+*** Hjelp til hjelp
+
+Under lager jeg en enkel ~for~-løkke for å utforske hvilke muligheter vi har med ~api~-objektet.
+#+BEGIN_SRC python :exports both :results output org :session twitterbot ../py/twitter_oppdatering.py
+for alternativ in dir(api):
+    print(alternativ)
+#+END_SRC
+
+/Her vises kun et utdrag av resultatene/. Forsøk å kjøre dette på egen maskin, i et konsollvindu.
+
+#+RESULTS:
+#+BEGIN_SRC org
+....
+update_profile_background_image
+update_profile_banner
+update_profile_image
+update_status
+update_with_media
+upload_host
+upload_root
+user_timeline
+...
+#+END_SRC
+
+Vi kan utforsøke ~update_status~ videre med ~help~-funksjonen. Først, legg merke til fra [[http://docs.tweepy.org/en/v3.5.0/api.html#status-methods][dokumentasjonen]] at ~update_status~ returnerer et objekt av typen ~Status~. La oss sjekke dette nærmere.
+
+#+BEGIN_SRC python :exports both :session twitterbot
+teststatus = api.update_status("Dette er et ekesempel på en ukreativ tweet.")
+#+END_SRC
+
+Hva skiller denne linja fra linja hvor vi la ut «Hei, verden»-tweeten vår over? Jo, her forsøker vi å beholde returobjektet for videre behandling, ikke kun å sende tweeten. Siden høyre side av likhetstegnet uansett evalueres («kjøres») først, blei det allikevel sendt en tweet nå.
+
+#+BEGIN_EXPORT html
+<blockquote class="twitter-tweet" data-lang="en"><p lang="no" dir="ltr">Dette er et ekesempel på en ukreativ tweet.</p>&mdash; promomunch (@promomunch) <a href="https://twitter.com/promomunch/status/1060088692344262656?ref_src=twsrc%5Etfw">November 7, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+#+END_EXPORT
+
+Vi skal altså nå, om alt stemmer, ha mulighet til å utforske ~teststatus~ videre.
+
+#+BEGIN_SRC python :exports both :results output org :session twitterbot
+print(f"Statusen er av type {type(teststatus)}")
+print("-----------------")
+print("teststatus har blant annet følgende egenskaper:")
+for alternativ in dir(teststatus)[30:45]: # for ikke å vise alle
+    print(alternativ)
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+Statusen er av type <class 'tweepy.models.Status'>
+-----------------
+teststatus har blant annet følgende egenskaper:
+contributors
+coordinates
+created_at
+destroy
+entities
+favorite
+favorite_count
+favorited
+geo
+id
+id_str
+in_reply_to_screen_name
+in_reply_to_status_id
+in_reply_to_status_id_str
+in_reply_to_user_id
+#+END_SRC
+
+(Når du kjører dette på egen maskin, bør du skrive ut alt som kommer fra ~dir~.)
+
+La oss si vi ønsker å svare på denne tweeten, hvordan skal vi gjøre det? Vel, et svar på twitter er bare en ny status, som er opprettet ved å trykke på svar-knappen. Dette kan vi også gjøre i Python-skriptet vårt.
+
+Under vises dokumentasjonen til ~update_status~-metoden.
+
+[[fig:tweepy-update-status-doc.png]]
+
+Vi ser at ~update_status~ kan ta inn seks parametere, blant annet ~status~ og ~in_reply_to_status_id~. Alle andre parameterere enn ~status~ er /frivillige/, det eneste vi /må/ ha med er altså statusteksten.
+
+For å svare på forrige tweet, må vi altså ha «the ID of an existing status that the update is in reply to». Vi ser over at ~teststatus~-objektet vårt har en ~id~-parameter tilgjengelig, så vi kan lagre oss denne som under (her skriver jeg den ut òg, det er ikke nødvendig i skriptet deres):
+
+#+BEGIN_SRC python :exports both :results output org :session twitterbot
+svar_til_id = teststatus.id
+print(svar_til_id)
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+1060088692344262656
+#+END_SRC
+
+Vi er nå klare til å sende svaret vårt:
+
+#+BEGIN_SRC python :exports both :output results org :session twitterbot
+svartekst = "@promomunch Vel ... kreativ staving, om ikke annet."
+# OBS: Et svar må inneholde @-navnet til den du svarer
+svartweet = api.update_status(svartekst, in_reply_to_status_id=svar_til_id)
+#+END_SRC
+
+Vi får da følgende, meningstunge utveksling:
+
+#+BEGIN_EXPORT html
+<blockquote class="twitter-tweet" data-lang="en"><p lang="no" dir="ltr">Vel ... kreativ staving, om ikke annet.</p>&mdash; promomunch (@promomunch) <a href="https://twitter.com/promomunch/status/1060093288001298432?ref_src=twsrc%5Etfw">November 7, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+#+END_EXPORT
+
+Alt ligger nå til rette for å lage boter som interagerer med Twitter automatisk.
+
+*** Prosjektbeskrivelse
+Dere kan velge mellom to prosjektalternativer, hvorav det ene anses som programmeringsmessig mer utfordrende å komme i gang med, da dette krever at du programmerer logikken som skal drive spillet ditt.
+
+*Alternativ 1 -- Samtaleboten*
+Du skal lage en twitterbot som har en forprogrammert samtale med en annen twitterbot. Samtalen avtaler dere dere mellom, offline. Botene må da kunne følgende:
+
+- Svare på tweets (statuser) av hverandre
+- Hente replikker fra en forprogrammert liste
+- Være høflige
+
+Etter dere har fått til dette, hvordan ville dere gått fram for å få botene til å ta valg i løpet av samtalen? Hva hvis brukern skal komme og gi input?
+
+*Alternativ 2 -- Battleshipsboten*
+Du skal lage en bot som spiller Battleships mot en annen twitterkonto. «Språket» innad i en tweet er som følger:
+
+#+BEGIN_EXAMPLE
+Du:
+"@den_du_spiller_mot B4 #battlebots"
+Motstander, hvis bom:
+"@deg Bom! E3 #battlebots"
+Motstander, hvis treff:
+"@deg Treff! #battlebots"
+Motstander, hvis treff og skip sunket:
+"@deg Forlis! #battlebots"
+#+END_EXAMPLE
+
+Battleships spilles på et rutenett av ti ganger ti ruter, som fylles med ti skip av følgende størrelser:
+
+| Antall | Type       | Størrelse |
+|--------+------------+-----------|
+|      1 | Hangarskip |         6 |
+|      2 | Krigsskip  |         4 |
+|      3 | Cruiser    |         3 |
+|      4 | Frigatter  |         2 |
+
+Et eksempel på et ferdig utfylt brett kan da se ut som følger:
+
+[[fig:twitterbot_battleshipsbrett.png]]
+
+*Fellesutfordringer*
+Vi må oppdatere twitter-statusene våre jevnlig for å få tilgang på siste utvikling i tidslinja vår.
+
+En måte å begrense tidslinja på, er å holde oversikt over hva som er siste tweet vi sendte ut, og kun vise de nye tweetene som har kommet etter denne. (Merk, i eksempelet under burde du da /egentlig/ bruke ~id~-en til ~svartweet~, ikke ~teststatus~.
+
+#+BEGIN_SRC python :exports both :results output org :session twitterbot
+statuser = api.home_timeline(since_id=svar_til_id)
+for status in statuser:
+    print(status.text)
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+@promomunch Vel ... kreativ staving, om ikke annet.
+#+END_SRC
+
+Felles for alle prosjektene er at vi må ha et program som kjører uten å slutte før vi selv bestemmer at det skal slutte. Det kan vi gjøre i en ~while~-løkke. Oppsettet for programmet kan da være noe à la følgende:
+
+#+BEGIN_SRC python :exports both :results output org :session twitterbot
+import time
+
+# oppsettskode
+# pålogging etc.
+# ting som bare skal gjøres en gang per programkjøring
+
+while True:
+    statuser = api.home_timeline()
+    # Sjekk om noe har skjedd.
+
+    if nytt_svar:
+        # kode som skal kjøres om det har kommet nytt svar
+
+    time.sleep(5) # vent i fem sekunder før du fortsetter
+#+END_SRC
+
+
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner
 https://matplotlib.org/examples/pylab_examples/spine_placement_demo.html#pylab-examples-spine-placement-demo
