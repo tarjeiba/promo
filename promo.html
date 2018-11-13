@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-11-07 Wed 12:48 -->
+<!-- 2018-11-13 Tue 16:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programmering og modellering X</title>
@@ -14,13 +14,13 @@
 <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
 <script type="text/javascript" src="js/popup.js"></script>
 
-<script type="text/javascript" src="js/org-info-js-nb/org-info-src.js">
+<script type="text/javascript" src="js/org-info-js-nb/org-info.js">
 /**
  *
- * @source: js/org-info-js-nb/org-info-src.js
+ * @source: js/org-info-js-nb/org-info.js
  *
  * @licstart  The following is the entire license notice for the
- *  JavaScript code in js/org-info-js-nb/org-info-src.js.
+ *  JavaScript code in js/org-info-js-nb/org-info.js.
  *
  * Copyright (C) 2012-2018 Free Software Foundation, Inc.
  *
@@ -40,7 +40,7 @@
  * through which recipients can access the Corresponding Source.
  *
  * @licend  The above is the entire license notice
- * for the JavaScript code in js/org-info-js-nb/org-info-src.js.
+ * for the JavaScript code in js/org-info-js-nb/org-info.js.
  *
  */
 </script>
@@ -746,8 +746,6 @@ I Python viser navn alltid til verdier.
 
 <p>
 I Python kan det godt være to navn på samme verdi.
-</p>
-<p>
 <img src="figurer/navn_dobbelt.png" alt="navn_dobbelt.png"/>
 </p>
 
@@ -780,12 +778,25 @@ a = 42.0;
 </pre>
 </div>
 
+<div class="org-src-container">
+<pre class="src src-C"><span class="org-constant">warning</span>: data definition has no type or storage <span class="org-type">class</span>
+<span class="org-variable-name">a</span> = 43.0;
+^
+warning: type defaults to <span class="org-warning">'</span><span class="org-type">int</span><span class="org-warning">'</span> in declaration of <span class="org-string">'a'</span> [-Wimplicit-<span class="org-type">int</span>]
+error: redefinition of <span class="org-string">'a'</span>
+note: previous definition of <span class="org-string">'a'</span> was here
+<span class="org-type">int</span> a = 42;
+    ^
+</pre>
+</div>
+
 <p>
 Dette er fordi C er et språk med <i>statiske</i> typer. Det vil si at om vi har sagt at <code>a</code> skal være et heltall (<code>int</code>), må vi holde den som det gjennom hele programmet.
 </p>
 </div>
 </div>
 </div>
+
 <div id="outline-container-orgb4642b4" class="outline-3">
 <h3 id="interaksjon"><a id="orgb4642b4"></a>Interaksjon</h3>
 <div class="outline-text-3" id="text-interaksjon">
@@ -1091,12 +1102,12 @@ Hvordan skal vi så gjøre det? Når vi skal kopiere en liste, kan vi gjøre det
 </div>
 </div>
 
-<div id="outline-container-org1eadca2" class="outline-3">
-<h3 id="basispython-oppgaver"><a id="org1eadca2"></a>Oppgaver</h3>
+<div id="outline-container-org151ee02" class="outline-3">
+<h3 id="basispython-oppgaver"><a id="org151ee02"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-basispython-oppgaver">
 </div>
-<div id="outline-container-org8f54508" class="outline-4">
-<h4 id="basispython-kortoppgaver"><a id="org8f54508"></a>Kortoppgaver</h4>
+<div id="outline-container-orgd204889" class="outline-4">
+<h4 id="basispython-kortoppgaver"><a id="orgd204889"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-basispython-kortoppgaver">
 <ol class="org-ol">
 <li>Be om et navn, skriv ut "Hei på deg, {navn}"    # Husk print("Hei på deg", navn)</li>
@@ -1727,12 +1738,12 @@ og sette startverdiene til 0.0 og 10.0.
 </div>
 </div>
 
-<div id="outline-container-org02fd5a2" class="outline-3">
-<h3 id="abstraksjon-oppgaver"><a id="org02fd5a2"></a>Oppgaver</h3>
+<div id="outline-container-orgb1f57bc" class="outline-3">
+<h3 id="abstraksjon-oppgaver"><a id="orgb1f57bc"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-abstraksjon-oppgaver">
 </div>
-<div id="outline-container-orgf54dad6" class="outline-4">
-<h4 id="abstraksjon-kortoppgaver"><a id="orgf54dad6"></a>Kortoppgaver</h4>
+<div id="outline-container-orgbc9cf8a" class="outline-4">
+<h4 id="abstraksjon-kortoppgaver"><a id="orgbc9cf8a"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-abstraksjon-kortoppgaver">
 <ol class="org-ol">
 <li>Lag en funksjon som dobler et tall</li>
@@ -2325,8 +2336,8 @@ I dette eksempelet brukte vi ei <code>for</code>-løkke. Ei slik løkke gjør no
 </div>
 </div>
 
-<div id="outline-container-org6c0e47f" class="outline-3">
-<h3 id="programflyt-oppgaver"><a id="org6c0e47f"></a>Oppgaver</h3>
+<div id="outline-container-org146d385" class="outline-3">
+<h3 id="programflyt-oppgaver"><a id="org146d385"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-programflyt-oppgaver">
 </div>
 <div id="outline-container-orge280972" class="outline-4">

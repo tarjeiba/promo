@@ -12,7 +12,7 @@
 #+OPTIONS: html5-fancy:nil tex:t
 #+HTML_DOCTYPE: xhtml-strict
 #+HTML_CONTAINER: div
-#+INFOJS_OPT: path:js/org-info-js-nb/org-info-src.js
+#+INFOJS_OPT: path:js/org-info-js-nb/org-info.js
 #+INFOJS_OPT: toc:nil ltoc:nil view:info mouse:underline buttons:nil
 #+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.1 (<a href="http://orgmode.org">Org</a> mode 9.1.13)
 

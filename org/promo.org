@@ -457,31 +457,32 @@ I Python viser navn alltid til verdier.
 
 #+BEGIN_SRC dot :file ../figurer/navn_enkelt.png :cmdline -Kdot -Tpng :results silent
 digraph {
-rankdir=LR;'
-navn [shape=cds, fontname="Open Sans"]
-verdi [shape=circle, fontname="Open Sans"]
+	graph [bgcolor="transparent"]
+	rankdir=LR;
+	navn [shape=cds, fontname="Open Sans"]
+	verdi [shape=circle, fontname="Open Sans"]
 
-navn -> verdi
+	navn -> verdi
 }
 #+END_SRC
 
 [[fig:navn_enkelt.png]]
 
 I Python kan det godt være to navn på samme verdi.
-#+BEGIN_SRC dot :file figurer/navn_dobbelt.png :cmdline -Kdot -Tpng :exports results
+#+BEGIN_SRC dot :file ../figurer/navn_dobbelt.png :cmdline -Kdot -Tpng :exports results
 digraph {
-rankdir=LR;
-splines=True;
-a [shape=cds, fontname="Open Sans"]
-b [shape=cds, fontname="Open Sans"]
-42 [shape=circle, fontname="Open Sans"]
+	graph [bgcolor="transparent"]
+	rankdir=LR;
+	splines=True;
+	a [shape=cds, fontname="Open Sans"]
+	b [shape=cds, fontname="Open Sans"]
+	42 [shape=circle, fontname="Open Sans"]
 
-a -> 42
-b -> 42
+	a -> 42
+	b -> 42
 }
 #+END_SRC
 
-#+RESULTS:
 [[fig:navn_dobbelt.png]]
 
 Python har /dynamiske typer/ noe som vil si at vi kan gjenbruke navn på helt andre type verdier enn hva de opprinnelig blei brukt på.
@@ -494,21 +495,21 @@ a = "Babel"
 
 Som gir følgende navnstruktur:
 
-#+BEGIN_SRC dot :file figurer/navn_rebundet.png :cmdline -Kdot -Tpng :exports results
+#+BEGIN_SRC dot :file ../figurer/navn_rebundet.png :cmdline -Kdot -Tpng :exports results
 digraph {
-rankdir=LR;
+	graph [bgcolor="transparent"]
+	rankdir=LR;
 
-a [shape=cds, fontname="Open Sans"]
-b [shape=cds, fontname="Open Sans"]
-42 [shape=circle, fontname="Open Sans"]
-babel [shape=circle, fontname="Open Sans", label="\"babel\""]
+	a [shape=cds, fontname="Open Sans"]
+	b [shape=cds, fontname="Open Sans"]
+	42 [shape=circle, fontname="Open Sans"]
+	babel [shape=circle, fontname="Open Sans", label="\"babel\""]
 
-b -> 42
-a -> babel
+	b -> 42
+	a -> babel
 }
 #+END_SRC
 
-#+RESULTS:
 [[fig:navn_rebundet.png]]
 
 Dette er i kontrast til et språk som C, hvor vi for eksempel ville sett følgende:
@@ -518,8 +519,7 @@ int a = 42;
 a = 42.0;
 #+END_SRC
 
-#+RESULTS:
-#+BEGIN_SRC 
+#+BEGIN_SRC C
  warning: data definition has no type or storage class
  a = 43.0;
  ^
@@ -531,6 +531,7 @@ a = 42.0;
 #+END_SRC
 
 Dette er fordi C er et språk med /statiske/ typer. Det vil si at om vi har sagt at ~a~ skal være et heltall (~int~), må vi holde den som det gjennom hele programmet.
+
 ** Interaksjon
 :PROPERTIES:
 :CUSTOM_ID: interaksjon
@@ -2658,7 +2659,6 @@ while True:
 
     time.sleep(5) # vent i fem sekunder før du fortsetter
 #+END_SRC
-
 
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner

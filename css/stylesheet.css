@@ -10,7 +10,7 @@ pre  {
     /* border-bottom: 1px solid #ccc; */
     border: 1px solid #cdcdcd;
     border-radius: 4px;
-    background-color: #f7f7f7;
+    background-color: #ecf0f1;
     padding: 11.5px;
     font-family: "Source Code Pro",  monospace;
     font-weight: 400;
@@ -133,6 +133,10 @@ p, ul, blockquote, td, th, label {
     font-size: 1em;
     line-height: 1.5em;
     margin-bottom: 1.5em;
+}
+
+blockquote {
+    margin: 3em;
 }
 
 ul {
@@ -335,11 +339,11 @@ span.tag:before {
 
 a {
     text-decoration: none;
-    color: #6699ff;
+    color: #2492db;
 }
 
 a:hover {
-    border-bottom: 1px dotted #57d;
+    border-bottom: 1px dotted #2492db;
 }
 
 #postamble p {
@@ -423,7 +427,7 @@ a:hover {
 
 body {
     color: #333333;
-    background-color: #ffffff;
+    background-color: #ecf0f1;
 }
 .org-bold {
     /* bold */
