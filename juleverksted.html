@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-12-10 Mon 10:14 -->
+<!-- 2018-12-10 Mon 14:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Juleverksted</title>
@@ -17,6 +17,7 @@
 <script src="js/skulpt.min.js" type="text/javascript"></script>
 <script src="js/skulpt-stdlib.js" type="text/javascript"></script>
 <script src="js/codemirror.js"></script>
+<script src="js/editor.js" type="text/javascript"></script>
 <link rel="stylesheet" href="css/codemirror.css">
 <script src="js/codemirror_python.js"></script>
 <script type="text/javascript" src="js/org-info-js-nb/org-info.js">
@@ -144,81 +145,43 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org966cf11">Introduksjon</a></li>
-<li><a href="#org04edd8c">Tegne en stjerne</a></li>
+<li><a href="#orgd995aef">Rudolf</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org966cf11" class="outline-2">
-<h2 id="org966cf11">Introduksjon</h2>
-<div class="outline-text-2" id="text-org966cf11">
-<script type="text/javascript"> 
-function outf(text) { 
-    var mypre = document.getElementById("output"); 
-    mypre.innerHTML = mypre.innerHTML + text; 
-} 
-
-function builtinRead(x) {
-    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-            throw "File not found: '" + x + "'";
-    return Sk.builtinFiles["files"][x];
-}
-
-function runit() { 
-   var prog = editor.getValue()
-   <!-- var prog = document.getElementById("myScript").value;  -->
-   var mypre = document.getElementById("output"); 
-
-   mypre.innerHTML = ''; 
-   Sk.pre = "output";
-   Sk.configure({output:outf, read:builtinRead}); 
-   (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'introcanvas';
-   var myPromise = Sk.misceval.asyncToPromise(function() {
-       return Sk.importMainWithBody("<stdin>", false, prog, true);
-   });
-
-   myPromise.then(function(mod) {
-       console.log('success');
-   },
-       function(err) {
-       console.log(err.toString());
-   });
-}
-</script> 
+<div id="outline-container-orgd995aef" class="outline-2">
+<h2 id="orgd995aef">Rudolf</h2>
+<div class="outline-text-2" id="text-orgd995aef">
+<p>
+Møt Rudolf. Rudolf er, for forandringens skyld, en skilpadde. Rudolf er en skilpadde som tegner en strek.
+</p>
 
 <p>
-<b>Test dette</b>
+Skilpadda Rudolf opprettes ved å skrive <code>rudolf = turtle.Turtle()</code>, etter først å ha gjort verden klar for skilpadder à la Rudolf ved å skrive <code>import turtle</code>. La oss prøve det, for deretter å fortelle Rudolf at han skal gå 50 framover, før han skal snu seg 30° mot høyre, atter gå 30 framover, snu seg 150° mot venstre og gå 20 framover.
 </p>
-<form> 
-<textarea id="myScript" cols="80" rows="15">import turtle
+
+
+    <textarea id="code" cols="85" rows="25">
+import turtle
+
 t = turtle.Turtle()
-t.forward(100)
-</textarea><br />
 
-<button type="button" onclick="runit()">Kjør</button> 
-</form>
+for c in ['red', 'green', 'yellow', 'blue']:
+    t.color(c)
+    t.forward(75)
+    t.left(90)
+    </textarea>
 
-<script type="text/javascript">
-var editor = CodeMirror.fromTextArea(document.getElementById('myScript'), {
-                        mode: 'python',
-                        matchBrackets: true,
-                        dragDrop: false,
-                        styleSelectedText: false,
-                        showCursorWhenSelecting: true,
-                        lineWrapping: true,
-                        lineNumbers: true
-                    });
-var textAreaContents = editor.getDoc().getValue(); </script>
 
-<pre id="output" ></pre>
-<!-- If you want turtle graphics include a canvas -->
-<div id="introcanvas"></div> 
+    <!-- <button id="skulpt_run">Run</button> -->
+    <textarea id="codeoutput"></textarea>
+
+    <p>Output: (<a href="#" id="clearoutput">clear</a>)</p>
+    <pre id="edoutput"></pre>
+    <div id="mycanvas" height="400" width="400"
+	 style="border-style: solid;"></div>
 </div>
-</div>
-
-<div id="outline-container-org04edd8c" class="outline-2">
-<h2 id="org04edd8c">Tegne en stjerne</h2>
 </div>
 </div>
 </body>
