@@ -16,7 +16,7 @@ function runit() {
 		   });
 } 
 
-$(document).ready(function () {
+$(document).ready(function () { // Dette er en jquery-funksjon -- sjekk den ut
     var output = $('#edoutput');
     var outf = function (text) {
         output.text(output.text() + text);
