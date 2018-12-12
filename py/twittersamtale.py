@@ -23,22 +23,22 @@ auth.set_access_token(api_keys['OAUTH_TOKEN'], api_keys['OAUTH_SECRET'])
 
 api = tweepy.API(auth)
 
-initiell_id = 1070305872046448641
+min_id = 1072837266496765952
 
 
-funnet_svar = False
-
-while funnet_svar == False:
+while True:
     print("Oppdaterer tidslinje.")
     tidslinje = api.home_timeline()
     for tweet in tidslinje:
-        if tweet.in_reply_to_status_id == initiell_id:
+        if tweet.in_reply_to_status_id == min_id:
             print("Funnet svar.")
             svar_til_id = tweet.id
             bruker = tweet.author.screen_name
-            mitt_svar = api.update_status(f"@{bruker} Voldsomt hyggelig å høre fra deg.",
+            print(tweet.text)
+            tekst = input("Hva vil du si til dette? >>> ")
+            mitt_svar = api.update_status(f"@{bruker} " + tekst,
                                           in_reply_to_status_id=svar_til_id)
-            funnet_svar = True
+            min_id = mitt_svar.id
     time.sleep(61)
 
 
