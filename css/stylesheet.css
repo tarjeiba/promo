@@ -85,6 +85,7 @@ input[type=checkbox]:not(:checked) + .LOESNING {
 
 code {
     font-family: "Source Code Pro", monospace;
+    font-weight: bold;
 }
 
 #text-table-of-contents a {
@@ -2148,7 +2149,7 @@ pre.src:before {
     padding: 3px;
     border: 1px solid black;
 }
-pre.src:hover:before { display: inline;}
+/* pre.src:hover:before { display: inline;} */
 /* Languages per Org manual */
 pre.src-asymptote:before { content: 'Asymptote'; }
 pre.src-awk:before { content: 'Awk'; }
@@ -2180,7 +2181,7 @@ pre.src-org:before { content: 'Org mode'; }
 pre.src-oz:before { content: 'OZ'; }
 pre.src-plantuml:before { content: 'Plantuml'; }
 pre.src-processing:before { content: 'Processing.js'; }
-pre.src-python:before { content: 'Python'; }
+/* pre.src-python:before { content: 'Python'; } */
 pre.src-R:before { content: 'R'; }
 pre.src-ruby:before { content: 'Ruby'; }
 pre.src-sass:before { content: 'Sass'; }

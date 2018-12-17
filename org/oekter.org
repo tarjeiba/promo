@@ -7,7 +7,7 @@
 
 * uke 49
 ** Rammeverk for twittersamtale
-[[py:twittersamtale]]
+[[py:twittersamtale.py]]
 * uke 46
 *Oppstartsoppgave*
 Lag en funksjon som skriver ut første til hundrede kvadrattall.
@@ -45,7 +45,7 @@ Begynne med en kravspesifikasjon til programmet. Ett av kompetansemålene i fage
 
 - omgjøre problemstillinger til konkrete delproblemer, vurdere hvilke av disse delproblemene som lar seg løse digitalt, og utforme løsninger for disse.
 
-Du har nå valgt prosjektoppgave ([[*Prosjektbeskrivelse][Prosjektbeskrivelse]])
+Du har nå valgt prosjektoppgave
 
 #+BEGIN_SRC python :session uke46 :results output org
 print("hei")
@@ -268,8 +268,7 @@ Fagstoff: [[file:promo.org::#mensviventer][Mens vi venter]]
 Oppgaver:
 - [[file:promo.org::#collatzformodning][Collatz' formodning]]
 - 
-* uke 36                                                                             :avholdt:
-:PROPERTIES:
+* uke 36                                                                             :avholdt::PROPERTIES:
 :CUSTOM_ID: uke36
 :header-args:  :tangle ../py/uke36.py
 :END:
@@ -366,8 +365,7 @@ while tall >= 1:
 
 
 ** Utfordring
-Collatz' formodning fra [[file:promo.org::*Collatz'%20formodning][«boka»]].
-
+Collatz' formodning fra [[file:promo.org::*Collatz'%20formodning][«boka»
 * uke 35                                                                             :avholdt:
 :PROPERTIES:
 :CUSTOM_ID: uke35

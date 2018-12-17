@@ -454,7 +454,6 @@ Vi kan nå gjennomføre enkle regneoperasjoner, men det melder seg raskt et beho
 :CUSTOM_ID: hvaeretnavn
 :END:
 I Python viser navn alltid til verdier.
-
 #+BEGIN_SRC dot :file ../figurer/navn_enkelt.png :cmdline -Kdot -Tpng :results silent
 digraph {
 	graph [bgcolor="transparent"]
@@ -582,17 +581,15 @@ Summen av 2 og 3 er 5.
 
 Vi kan, eksempelvis, spesifisere hvor mange desimaler vi ønsker. (Setningen ~from math import pi¨~ skal vi se i mye mer detalj på seinere.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :session pi
 from math import pi
 print(pi)
 print(f'pi skrevet med 5 gyldige siffer er {pi:.5}.')
 #+END_SRC
 
 #+RESULTS:
-#+BEGIN_SRC org
-3.141592653589793
-pi skrevet med 5 gyldige siffer er 3.1416.
-#+END_SRC
+: 3.141592653589793
+: pi skrevet med 5 gyldige siffer er 3.1416.
 
 Generelt kan vi spesifisere et tall som skal skrives ut ved å bruke tallets totale ~bredde~ og dets ~presisjon~ på en enkel måte med ~f-strenger~.
 
@@ -600,12 +597,10 @@ Generelt kan vi spesifisere et tall som skal skrives ut ved å bruke tallets tot
 bredde = 7
 presisjon = 3
 print(f'pi = {pi:{bredde}.{presisjon}}')
+print(f'pi = {pi:7.3}')
 #+END_SRC
 
 #+RESULTS:
-#+BEGIN_SRC org
-pi =    3.14
-#+END_SRC
 
 *** Input
 :PROPERTIES:
@@ -778,16 +773,17 @@ print(f'b er: {b}')
 
 Forsøk å kjøre koden, hva ser du? Jo, der vi forventer at vi ved linja ~b~ = ~a~ skal få en kopi av lista ~a~, ser det ut som at vi får to forskjellige navn til samme ting, og det er akkurat det vi får. En liste er en «muterbar» eller /mutable/ datastruktur i Python. Og hva vil så det si? Jo, der vi setter 
 
-#+BEGIN_SRC ditaa :file figurer/mutable_lister_a.png
+#+BEGIN_SRC ditaa :cmdline -T -S :file ../figurer/mutable_lister_a.png 
   +---+                  +------------------------------------+
   | a +----------------->|['mai', 'juni', 'juli', 'august']   |
   +---+                  +------------------------------------+
 #+END_SRC
 
-#+RESULTS:
-[[fig:mutable_lister.png]]
+#+attr_html: :width 100%
+fig:mutable_lister_a.png
 
-#+BEGIN_SRC ditaa :file figurer/mutable_lister_a_b_forventet.png
+
+#+BEGIN_SRC ditaa :cmdline -T -S :file ../figurer/mutable_lister_a_b_forventet.png
   +---+                  +------------------------------------+
   | a +----------------->|['mai', 'juni', 'juli', 'august']   |
   +---+                  +------------------------------------+
@@ -798,10 +794,9 @@ Forsøk å kjøre koden, hva ser du? Jo, der vi forventer at vi ved linja ~b~ = 
                                                              
 #+END_SRC
 
-#+RESULTS:
-[[fig:mutable_lister_a_b_forventet.png]]
+fig:mutable_lister_a_b_forventet.png]]
 
-#+BEGIN_SRC ditaa :file figurer/mutable_lister_a_b_faktisk.png
+#+BEGIN_SRC ditaa :cmdline -T -S :file ../figurer/mutable_lister_a_b_faktisk.png
   +---+                  +------------------------------------+
   | a +----------------->|['mai', 'juni', 'juli', 'august']   |
   +---+                  +------------------------------------+
@@ -812,7 +807,6 @@ Forsøk å kjøre koden, hva ser du? Jo, der vi forventer at vi ved linja ~b~ = 
                       
 #+END_SRC
 
-#+RESULTS:
 [[fig:mutable_lister_a_b_faktisk.png]]
 
 Og hvorfor er dette viktig? Jo, fordi verdier i lister kan endres uten at man oppretter en ny liste. Nå blir det vesentlig at navn i python /alltid/ viser til et objekt, og når vi sier ~b = a~ og ~a~ er en liste, får vi rett og slett bare ett nytt navn på ~a~.
@@ -970,12 +964,6 @@ from math import sqrt
 import math
 import numpy as np
 
-
-liste = []
-liste.exte
-a = np.array([1, 2])
-a.
-
 print(sqrt(2))
 
 help(liste.extend)
@@ -997,6 +985,7 @@ Vi har nå fått et knippe verktøy for å lage ulike variabler, men vi kommer s
 #+BEGIN_SRC dot :file ../figurer/funksjon.png :cmdline -Kdot -Tpng :exports results
 digraph {
 // graph from left to right
+	graph [bgcolor="transparent"]
 rankdir=LR;
 splines=true;
 node [shape=box, fontname="Open Sans"];
@@ -1609,8 +1598,9 @@ Dersom vi ønsker at programmeringsspråket vårt skal kunne brukes til å regne
 
 Dersom du ønsker å skrive et program som kaster en mynt og sier om det blei kron eller mynt som landet opp, så kan du gjøre det som følger.
 
-#+BEGIN_SRC dot :exports none :file figurer/if-setning.png :cmdline -Kdot -Tppng
+#+BEGIN_SRC dot :exports none :file ../figurer/if-setning.png :cmdline -Kdot -Tpng
 digraph G {
+	graph [bgcolor="transparent"]
         start [label="Ting gjøres...", shape=box, fontname="Open Sans"];
         if [label="Er noe sant?", shape=diamond, fontname="Open Sans"];
         ift [label="Gjør dette...", shape=box, fontname="Open Sans"];
@@ -2157,13 +2147,13 @@ filtekst = posisjonsfil.readlines()
 
 ~filtekst~ er nå en ~liste~ av tekststrenger, en for hver linje i fila.
 
-#+BEGIN_SRC ipython :session fil :results output org
+#+BEGIN_SRC ipython :session fil :results output python
 for linje in filtekst[:11]:
     print(linje)
 #+END_SRC
 
 #+RESULTS:
-#+BEGIN_SRC org
+#+begin_example
 Time(s), Position(m)
 0.0, 1.0858895821272105
 0.010083333333333333, 1.0985063603168348
@@ -2175,7 +2165,7 @@ Time(s), Position(m)
 0.07058333333333333, 1.143944885230753
 0.08066666666666666, 1.0941470792810783
 0.09075, 1.118830320142538
-#+END_SRC
+#+end_example
 
 Når vi åpner en file på denne måte, må vi huske å lukke den før vi avslutter programmet.
 
@@ -2397,7 +2387,7 @@ Nå gjenstår det bare å finne autoriseringsnøklene som er blitt generert for 
 Nå er det bare litt kode som gjenstår for å få våre python-genererte tweets ut i verden.
 
 *** Botens første, spede steg
-#+BEGIN_SRC python :exports none :session twitterbot :tangle ../py/twitter_oppdatering.py
+#+BEGIN_SRC python :exports none :session twitterbot :tangle ../py/twitter_oppdatering.py :results silent
 import tweepy
 import json
 
@@ -2659,6 +2649,28 @@ while True:
 
     time.sleep(5) # vent i fem sekunder før du fortsetter
 #+END_SRC
+
+* Appendiks: Skilpadder                                                             :noexport:
+#+BEGIN_SRC python
+from turtle import *
+
+def square(side):
+    for _ in range(4):
+        forward(side)
+        right(90)
+
+def inspi(step, angle, inc):
+    forward(step)
+    right(angle)
+    inspi(step+inc, angle+inc, inc+1)
+
+inspi(10, 10, 1)
+#+END_SRC
+
+#+RESULTS:
+
+
+
 
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner

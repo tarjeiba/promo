@@ -5,6 +5,7 @@ function runit() {
     Sk.pre = "edoutput";
     Sk.configure({output:outf, read:builtinRead}); 
     (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+    Sk.TurtleGraphics.height = 600; Sk.TurtleGraphics.width = 800;
     var myPromise = Sk.misceval.asyncToPromise(function() {
 	return Sk.importMainWithBody("<stdin>", false, prog, true);
     });
@@ -13,6 +14,7 @@ function runit() {
     },
 		   function(err) {
 		       console.log(err.toString());
+		       $('#edoutput').text(err.toString());
 		   });
 } 
 
@@ -70,28 +72,11 @@ $(document).ready(function () { // Dette er en jquery-funksjon -- sjekk den ut
     window.outf = outf;
     window.builtinRead = builtinRead;
 
-    $("#skulpt_run").click(runit());
+    $("#skulpt_run").click(function (e) { keymap["Ctrl-Enter"](editor)} );
 
     $("#toggledocs").click(function (e) {
         $("#quickdocs").toggle();
     });
-
-    var exampleCode = function (id, text) {
-        $(id).click(function (e) {
-            editor.setValue(text);
-            editor.focus(); // so that F5 works, hmm
-        });
-    };
-
-    exampleCode('#codeexample1', "print \"Hello, World!\"     # natch");
-    exampleCode('#codeexample2', "for i in range(5):\n    print i\n");
-    exampleCode('#codeexample3', "print [x*x for x in range(20) if x % 2 == 0]");
-    exampleCode('#codeexample4', "print 45**123");
-    exampleCode('#codeexample5', "print \"%s:%r:%d:%x\\n%#-+37.34o\" % (\n        \"dog\",\n        \"cat\",\n        23456,\n        999999999999L,\n        0123456702345670123456701234567L)");
-    exampleCode('#codeexample6', "def genr(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 1\n\nprint list(genr(12))\n");
-    exampleCode('#codeexample7', "# obscure C3 MRO example from Python docs\nclass O(object): pass\nclass A(O): pass\nclass B(O): pass\nclass C(O): pass\nclass D(O): pass\nclass E(O): pass\nclass K1(A,B,C): pass\nclass K2(D,B,E): pass\nclass K3(D,A): pass\nclass Z(K1,K2,K3): pass\nprint Z.__mro__\n");
-    exampleCode('#codeexample8', "import document\n\npre = document.getElementById('edoutput')\npre.innerHTML = '''\n<h1> Skulpt can also access DOM! </h1>\n''' \n");
-
 
     $('#clearoutput').click(function (e) {
         $('#edoutput').text('');

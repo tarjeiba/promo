@@ -5,6 +5,16 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     font-family: "Open Sans", Tahoma, Geneva, sans-serif;
 }
 
+html {background-image: url("../figurer/jul.jpg");}
+
+
+#mycanvas {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 4px;
+    min-height: 600px;
+}
+
 pre  {
     /* border-top: 1px solid #ccc; */
     /* border-bottom: 1px solid #ccc; */
@@ -12,13 +22,15 @@ pre  {
     border-radius: 4px;
     background-color: #ecf0f1;
     padding: 11.5px;
+    padding-right: 0px;
     font-family: "Source Code Pro",  monospace;
+    font-size: 20px;
     font-weight: 400;
     width: 100%;
-    overflow: auto;
-    margin: 0 0 12px;
+    overflow: hidden;
+    margin: 0 0 12px 0;
     display: inline-block;
-    line-height: 1.0em;
+    line-height: 1.5em;
     text-align: left;
     white-space: pre;
 }
@@ -99,7 +111,7 @@ body {
     font-size: 14px;
     line-height: 1.5em;
     padding: 0;
-    margin: 0;
+    margin: 50px;
     font-family: "Open Sans";
 }
 
@@ -159,10 +171,15 @@ table {
 /* @group Layout */
 
 #content {
-    max-width: 70em;
+    width: 70em;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    /* min-width: 50em; */
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     padding: 8px;
+    background-color: #ecf0f1;
 }
 
 
@@ -426,10 +443,10 @@ a:hover {
 /* } */
 
 
-body {
-    color: #333333;
-    background-color: #ecf0f1;
-}
+/* body { */
+/*     color: #333333; */
+/*     background-color: #ecf0f1; */
+/* } */
 .org-bold {
     /* bold */
     font-weight: bold;
