@@ -74,12 +74,17 @@ $(document).ready(function(){
 
     rudolfs.push(
 	{id: "#rudolf8",
-	 tittel: "Rudolf tar kontroll",
-	 text: "",
-	 code: "wn = turtle.Screen()\n\nrudolf.fd(50)\n\nwn.onclick(rudolf.goto)\nwn.listen()",
+	 tittel: "Rudolf ser ikke skogen for bare trær",
+	 text: "Nå har Rudolf gått i firkanter, i trekanter, i stjerner. Rudolf har fargelagt. Rudolf har sett på stjernene. Rudolf er sliten. Rudolf innser at han med litt kreativitet, et ord Rudolf er redd for, kan lage seg et grantre han kan sove under. Dette fortjener du, Rudolf.",
+	 code: "def juletre(n):\n    \"\"\"Lager et n høyt juletre, bestående av tre grønne trekanter og en brun base.\"\"\"\n    # Koden din går her\n",
 	 prepends: importCode});
 
-
+    rudolfs.push(
+	{id: "#rudolf9",
+	 tittel: "Rudolf tar kontroll",
+	 text: "Rudolf har følt seg overarbeidet i det siste. «Gjør dette først, så dette, så dette.» Aldri får Rudolf beskjed om «Ta deg en lur, Rudolf». Rudolf gidder ikke mer. Fra nå av gjør Rudolf som han sjøl vil. God jul, Rudolf!",
+	 code: "wn = turtle.Screen()\n\nrudolf.fd(50)\n\nwn.onclick(rudolf.goto)\nwn.listen()",
+	 prepends: importCode});
 
     for (let rudolf of rudolfs) {
 	exampleCode(rudolf.id, rudolf.tittel, rudolf.text, rudolf.prepends + rudolf.code);
