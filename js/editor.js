@@ -1,5 +1,37 @@
+let predef = `
+import turtle
+
+def oppgave(tur, pos, n=1, r=10):
+    orig = tur.position()
+    tur.pu()
+    tur.goto(pos[0], pos[1]-r)
+    tur.pd()
+    tur.circle(r)
+    tur.pu()
+    tur.goto(pos[0]-r/2, pos[1]-r/2)
+    tur.pd()
+    tur.write(n, font=("Ariel", 16))
+    tur.pu()
+    tur.goto(orig)
+
+opp = turtle.Turtle()
+opp.speed(0)
+opp.hideturtle()
+
+points = [(150, 0), (0, 260), (-150, 0)]
+
+for i, point in enumerate(points):
+    oppgave(opp, point, i+1)
+
+del opp
+
+ivar = turtle.Turtle()
+ivar.showturtle()
+`
+
+
 function runit() {
-    var prog = window.code_editor.getValue(); 
+    var prog = window.code_editor.getValue();
     var mypre = document.getElementById("edoutput"); 
     mypre.innerHTML = ''; 
     Sk.pre = "edoutput";
@@ -7,7 +39,7 @@ function runit() {
     (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
     Sk.TurtleGraphics.height = 600; Sk.TurtleGraphics.width = 800;
     var myPromise = Sk.misceval.asyncToPromise(function() {
-	return Sk.importMainWithBody("<stdin>", false, prog, true);
+	return Sk.importMainWithBody("<stdin>", false, predef + prog, true);
     });
     myPromise.then(function(mod) {
 	console.log('success');
@@ -18,45 +50,25 @@ function runit() {
 		   });
 } 
 
-$(document).ready(function () { // Dette er en jquery-funksjon -- sjekk den ut
+$(document).ready(function () {
     var output = $('#edoutput');
     var outf = function (text) {
         output.text(output.text() + text);
     };
 
-    var keymap = {
-        "Ctrl-Enter" : function (editor) {
-            Sk.configure({output: outf, read: builtinRead});
-            Sk.canvas = "mycanvas";
-            if (editor.getValue().indexOf('turtle') > -1 ) {
-                $('#mycanvas').show();
-            }
-            Sk.pre = "edoutput";
-            (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
-            try {
-                Sk.misceval.asyncToPromise(function() {
-                    return Sk.importMainWithBody("<stdin>",false,editor.getValue(),true);
-                });
-            } catch(e) {
-                outf(e.toString() + "\n")
-            }
-        },
-        "Shift-Enter": function (editor) {
-            Sk.configure({output: outf, read: builtinRead});
-            Sk.canvas = "mycanvas";
-            Sk.pre = "edoutput";
-            if (editor.getValue().indexOf('turtle') > -1 ) {
-                $('#mycanvas').show()
-            }
-            try {
-                Sk.misceval.asyncToPromise(function() {
-                    return Sk.importMainWithBody("<stdin>",false,editor.getValue(),true);
-                });
-            } catch(e) {
-                outf(e.toString() + "\n")
-            }
-        }
-    }
+    Sk.configure({output:outf, read:builtinRead});
+    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+    Sk.TurtleGraphics.height = 600; Sk.TurtleGraphics.width = 800;
+    var initPromise = Sk.misceval.asyncToPromise(function() {
+	return Sk.importMainWithBody("<stdin>", false, predef, true);
+    });
+    initPromise.then(function(mod) {
+	console.log('initialisert');
+    },
+		     function(err) {
+			 console.log(err.toString());
+			 $('#edoutput').text(err.toString());
+		     });
 
     var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
 	// pareserfile: ["parsepython.js"],

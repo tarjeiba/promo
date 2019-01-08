@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-12-12 Wed 20:41 -->
+<!-- 2019-01-08 Tue 19:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Juleverksted</title>
@@ -72,36 +72,44 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">Juleverksted</h1>
 
-<div id="outline-container-org6b18a99" class="outline-2">
-<h2 id="org6b18a99">Scenarioer</h2>
-<div class="outline-text-2" id="text-org6b18a99">
-<a href="#" id="rudolf0">0</a>
-<a href="#" id="rudolf1">1</a>
-<a href="#" id="rudolf2">2</a>
-<a href="#" id="rudolf3">3</a>
-<a href="#" id="rudolf4">4</a>
-<a href="#" id="rudolf5">5</a>
-<a href="#" id="rudolf6">6</a>
-<a href="#" id="rudolf7">7</a>
-<a href="#" id="rudolf8">8</a>
-<a href="#" id="rudolf9">9</a>
-</div>
-</div>
-
-<div id="outline-container-org2e6da9c" class="outline-2">
-<h2 id="scenariotekst"><a id="org2e6da9c"></a>Aller først&#x2026;</h2>
+<div id="outline-container-org0edba26" class="outline-2">
+<h2 id="scenariotekst"><a id="org0edba26"></a>Oppgave</h2>
 <div class="outline-text-2" id="text-scenariotekst">
 <p>
-Begynn med 0, du.
+Skilpadda under heter Ivar. Ivar kan en rekke ord, og du forteller Ivar hva du vil at han skal gjøre ved å skrive <code>ivar.det_han_skal_gjøre(hvor_mye)</code>. Dersom du for eksempel ønsker at Ivar skal gå 50 framover, skriver du enkelt og greit
+</p>
+
+<p>
+<code>ivar.forward(50) # forward er framover på engelsk</code>
+</p>
+
+<p>
+Ivar kan gå framover (<code>forward</code>), bakover (<code>backward</code>), snu seg mot høyre (<code>right</code>), snu seg mot venstre (<code>left</code>), løfte pennen (<code>penup</code>) og sette ned pennen (<code>pendown</code>). Om du ønsker at Ivar skal løfte pennen, gå 40 fram, sette ned pennen, snu seg 90° mot venstre, sette ned pennen og gå 40 fram, kan du altså skrive
+</p>
+
+<pre class="example">
+ivar.penup()
+ivar.forward(40)
+ivar.right(90)
+ivar.pendown()
+ivar.forward(40)
+</pre>
+
+<p>
+Forsøk å skrive dette i kodeområdet under og trykk «Kjør».
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgad45e87" class="outline-2">
-<h2 id="orgad45e87">Snutt</h2>
-<div class="outline-text-2" id="text-orgad45e87">
+<div id="outline-container-org694a27d" class="outline-2">
+<h2 id="org694a27d">Kode</h2>
+<div class="outline-text-2" id="text-org694a27d">
 <textarea id="code" cols="85" rows="35">
-print("Velkommen, Rudolf!")
+ivar.forward(150)   
+ivar.left(60)
+ivar.forward(150)
+ivar.left(120)
+ivar.forward(150)
+
 </textarea>
 <button onclick="runit()">Kjør</button>
 <pre id="edoutput"></pre>
