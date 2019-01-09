@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-11-14 Wed 09:46 -->
+<!-- 2019-01-09 Wed 12:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programmering og modellering X</title>
@@ -73,7 +73,7 @@ for the JavaScript code in this tag.
 */
 
 <!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "2");
+org_html_manager.set("TOC_DEPTH", "1");
 org_html_manager.set("LINK_HOME", "");
 org_html_manager.set("LINK_UP", "");
 org_html_manager.set("LOCAL_TOC", "1");
@@ -161,75 +161,24 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#intro">Introduksjon</a>
-<ul>
-<li><a href="#org2c4eb3e">Et første program</a></li>
-<li><a href="#org99cf12d">Faget</a></li>
-<li><a href="#org58ed3f0">Opplegg</a></li>
-</ul>
-</li>
+<li><a href="#intro">Introduksjon</a></li>
 <li><a href="#bruk">Bruk av nettsida</a></li>
-<li><a href="#matematikkogprogrammering">Matematikk og programmering</a>
-<ul>
-<li><a href="#programmering">Programmering</a></li>
-<li><a href="#matematikk">Matematikk</a></li>
-</ul>
-</li>
-<li><a href="#programmeringsspraak">Programmeringsspråk</a>
-<ul>
-<li><a href="#org96d7702">Valg av språk</a></li>
-<li><a href="#org0b2b313">Ulike typer programmeringsspråk</a></li>
-</ul>
-</li>
-<li><a href="#basispython">Basispython</a>
-<ul>
-<li><a href="#regnerekkefoelgeogkommandolinja">Regnerekkefølge og kommandolinja</a></li>
-<li><a href="#variabler">Variabler</a></li>
-<li><a href="#interaksjon">Interaksjon</a></li>
-<li><a href="#typer">Typer</a></li>
-<li><a href="#basispython-oppgaver">Oppgaver</a></li>
-</ul>
-</li>
-<li><a href="#abstraksjon">Abstraksjon</a>
-<ul>
-<li><a href="#biblioteker">Biblioteker</a></li>
-<li><a href="#funksjoner">Funksjoner</a></li>
-<li><a href="#skop">Skop</a></li>
-<li><a href="#klasser">Klasser</a></li>
-<li><a href="#kjenndineroetter">Kjenn dine røtter</a></li>
-<li><a href="#abstraksjon-oppgaver">Oppgaver</a></li>
-</ul>
-</li>
-<li><a href="#orgf1ed3e7">Intermezzo: Tilfeldige tall</a></li>
-<li><a href="#programflyt">Programflyt</a>
-<ul>
-<li><a href="#logikk">Logikk</a></li>
-<li><a href="#dersomsaa">dersom &#x2026; så &#x2026;&#xa0;&#xa0;&#xa0;<span class="tag"><span class="if">if</span></span></a></li>
-<li><a href="#mensviventer">Mens vi venter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="while">while</span></span></a></li>
-<li><a href="#collatzformodning">Collatz' formodning&#xa0;&#xa0;&#xa0;<span class="tag"><span class="prosjekt">prosjekt</span></span></a></li>
-<li><a href="#loepegjennomeiliste">Løpe gjennom ei liste&#xa0;&#xa0;&#xa0;<span class="tag"><span class="for">for</span></span></a></li>
-<li><a href="#programflyt-oppgaver">Oppgaver</a></li>
-</ul>
-</li>
-<li><a href="#tekstfiler">Tekstfiler</a>
-<ul>
-<li><a href="#leseinntekstfiler">Lese inn tekstfiler</a></li>
-<li><a href="#plottingavdata">Plotting av data</a></li>
-<li><a href="#skrivetiltekstfiler">Skrive til tekstfiler</a></li>
-</ul>
-</li>
-<li><a href="#appendiks-prosjekter">Appendiks: Prosjekter</a>
-<ul>
-<li><a href="#prosjekt_twitterboten">Twitter-boten - Introduksjon</a></li>
-</ul>
-</li>
+<li><a href="#matematikkogprogrammering">Matematikk og programmering</a></li>
+<li><a href="#programmeringsspraak">Programmeringsspråk</a></li>
+<li><a href="#basispython">Basispython</a></li>
+<li><a href="#abstraksjon">Abstraksjon</a></li>
+<li><a href="#org7ab5590">Intermezzo: Tilfeldige tall</a></li>
+<li><a href="#programflyt">Programflyt</a></li>
+<li><a href="#tekstfiler">Tekstfiler</a></li>
+<li><a href="#org51873fa">Modellering</a></li>
+<li><a href="#appendiks-prosjekter">Appendiks: Prosjekter</a></li>
 </ul>
 </div>
 </div>
 <script type="text/javascript" language="JavaScript"> org_html_manager.set("BASE_URL_QUESTIONS", "https://github.com/tarjeiba/promo/issues/new/");</script>
 
-<div id="outline-container-orgbba0f0b" class="outline-2">
-<h2 id="intro"><a id="orgbba0f0b"></a>Introduksjon</h2>
+<div id="outline-container-org3b3f76e" class="outline-2">
+<h2 id="intro"><a id="org3b3f76e"></a>Introduksjon</h2>
 <div class="outline-text-2" id="text-intro">
 <p>
 Prosessoren (CPU-en) i en rimelig datamaskin kan i dag gjennomføre over 10 milliarder desimaltallsoperasjoner hvert sekund. Hold en ball en meter over bakken. Fra du slipper ballen, til den treffer bakken, kan datamaskinen din fylle ut en gangetabell som går fra 1 til 45 000.
@@ -269,9 +218,9 @@ Lykke til!
 </p>
 </div>
 
-<div id="outline-container-org2c4eb3e" class="outline-3">
-<h3 id="org2c4eb3e">Et første program</h3>
-<div class="outline-text-3" id="text-org2c4eb3e">
+<div id="outline-container-org0ed6c80" class="outline-3">
+<h3 id="org0ed6c80">Et første program</h3>
+<div class="outline-text-3" id="text-org0ed6c80">
 <p>
 Før vi gjør noe annet, kan vi ha et kort førstemøte med Python. Om du er på en Windows-maskin med Python installert (er du elev i Osloskolen, skal det være tilfellet) kan du trykke på Windows-knappen på tastaturet, skrive «cmd» i feltet som kommer opp, trykke enter, og forhåpentligvis få opp noe à la følgende.
 </p>
@@ -321,9 +270,9 @@ I så fall, godt jobba! Du har nå begynt å skrive litt Python. Vi kommer snart
 </div>
 </div>
 
-<div id="outline-container-org99cf12d" class="outline-3">
-<h3 id="org99cf12d">Faget</h3>
-<div class="outline-text-3" id="text-org99cf12d">
+<div id="outline-container-org1e036b8" class="outline-3">
+<h3 id="org1e036b8">Faget</h3>
+<div class="outline-text-3" id="text-org1e036b8">
 <p>
 Denne sida er opprinnelig skrevet for faget <i>Programmering og modellering X</i> slik det fremstår ved skolestart høsten 2018. Vi har da følgende læremål å forholde oss til:
 </p>
@@ -365,9 +314,9 @@ Dette er hårete, men gjennomførbare, mål for et «tretimersfag». For de av d
 </div>
 </div>
 
-<div id="outline-container-org58ed3f0" class="outline-3">
-<h3 id="org58ed3f0">Opplegg</h3>
-<div class="outline-text-3" id="text-org58ed3f0">
+<div id="outline-container-org04d1957" class="outline-3">
+<h3 id="org04d1957">Opplegg</h3>
+<div class="outline-text-3" id="text-org04d1957">
 <p>
 Vi legger opp en prosjektbasert gjennomgang. Når man hører om at lister i Python er «muterbare», at funksjoer kan ha «bieffekter» eller at <code>self</code> viser til instansen av klassen som kjører metoden, er det nyttig om du ser behovet for disse fagbegrepene i et arbeid du holder på med.
 </p>
@@ -379,8 +328,8 @@ Vi kommer til å ha to prosjekter på høsten og to på våren. Jeg kommer til �
 </div>
 </div>
 
-<div id="outline-container-org482f9c2" class="outline-2">
-<h2 id="bruk"><a id="org482f9c2"></a>Bruk av nettsida</h2>
+<div id="outline-container-org0b3b060" class="outline-2">
+<h2 id="bruk"><a id="org0b3b060"></a>Bruk av nettsida</h2>
 <div class="outline-text-2" id="text-bruk">
 <p>
 Denne nettsida er bygd opp rund å skulle kunne være fullstendig tastaturnavigerbar.
@@ -415,12 +364,12 @@ Jeg jobber med saken.
 </div>
 </div>
 
-<div id="outline-container-org42726c6" class="outline-2">
-<h2 id="matematikkogprogrammering"><a id="org42726c6"></a>Matematikk og programmering</h2>
+<div id="outline-container-org520d380" class="outline-2">
+<h2 id="matematikkogprogrammering"><a id="org520d380"></a>Matematikk og programmering</h2>
 <div class="outline-text-2" id="text-matematikkogprogrammering">
 </div>
-<div id="outline-container-org3e58f92" class="outline-3">
-<h3 id="programmering"><a id="org3e58f92"></a>Programmering</h3>
+<div id="outline-container-org3b5c2db" class="outline-3">
+<h3 id="programmering"><a id="org3b5c2db"></a>Programmering</h3>
 <div class="outline-text-3" id="text-programmering">
 <p>
 Når vi programmerer, setter vi opp et sett med instrukser til datamaskinen. Disse instruksene er en trinnvis gjennomgang av hvordan maskinen skal løse et problem.
@@ -446,8 +395,8 @@ Hva vil verdien til <code>svar</code> være når dette programmet har kjørt fer
 </div>
 </div>
 
-<div id="outline-container-org43ed563" class="outline-3">
-<h3 id="matematikk"><a id="org43ed563"></a>Matematikk</h3>
+<div id="outline-container-orgf0d999c" class="outline-3">
+<h3 id="matematikk"><a id="orgf0d999c"></a>Matematikk</h3>
 <div class="outline-text-3" id="text-matematikk">
 <p>
 Det forrige eksempelet ville vi løst matematisk ved å skrive opp følgende uttrykk:
@@ -497,8 +446,8 @@ Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av 
 </div>
 </div>
 
-<div id="outline-container-orga28e052" class="outline-2">
-<h2 id="programmeringsspraak"><a id="orga28e052"></a>Programmeringsspråk</h2>
+<div id="outline-container-orgf17e39e" class="outline-2">
+<h2 id="programmeringsspraak"><a id="orgf17e39e"></a>Programmeringsspråk</h2>
 <div class="outline-text-2" id="text-programmeringsspraak">
 <p>
 Vi skal gjennom arbeidet i denne <span class="popup"onclick="myPopupFunction()">boka<span class="popuptext" id="myPopup">jeg kommer ikke på noe bedere å kalle det</span></span> bruke programmeringsspråket Python.
@@ -509,9 +458,9 @@ Det er mange gode grunner til å velge Python, vi skal gå gjennom noen av dem s
 </p>
 </div>
 
-<div id="outline-container-org96d7702" class="outline-3">
-<h3 id="org96d7702">Valg av språk</h3>
-<div class="outline-text-3" id="text-org96d7702">
+<div id="outline-container-org5cb58ef" class="outline-3">
+<h3 id="org5cb58ef">Valg av språk</h3>
+<div class="outline-text-3" id="text-org5cb58ef">
 <p>
 Det finnes et utall programmeringsspråk. Noen språk er bedre egnet enn andre for visse oppgaver, intet språk er best på alt. Om du veit at det eneste du skal jobbe med er statistikk, ville kanskje det rette valget for deg være språket R; om du skal jobbe med Arduino bør du bli kjent med C++; om du ikke liker den imperative fremgangsmåten de fleste språk byr på, men ønsker en mer <i>funksjonell</i> tilnærming, plukk opp Haskell; elsker du parenteser, se nærmere på Lisp; vil du skrive programmer som kjører i nettleseren, lær deg Javascript; hater du deg selv, sett deg ned med Brainfuck (jeg beklager språket).
 </p>
@@ -539,9 +488,9 @@ I dette faget kommer vi til å bruke språket Python. Python er et populært spr
 </div>
 </div>
 
-<div id="outline-container-org0b2b313" class="outline-3">
-<h3 id="org0b2b313">Ulike typer programmeringsspråk</h3>
-<div class="outline-text-3" id="text-org0b2b313">
+<div id="outline-container-org7e5ed94" class="outline-3">
+<h3 id="org7e5ed94">Ulike typer programmeringsspråk</h3>
+<div class="outline-text-3" id="text-org7e5ed94">
 <p>
 I teorien kan alle programmeringsspråk som er såkalt <span class="popup"onclick="myPopupFunction()"><i>turingkomplette</i><span class="popuptext" id="myPopup">Etter Alan Turing, av «The Imitation Game»-berømmelse</span></span> beregne alt som kan beregnes. For at et språk skal være turingkomplett, må det litt forenklet ha mulighet til å gjenta kode om en betingelse ikke er nådd og kunne skrive og lese fra minnet. Dette gjelder i praksis alle programmeringsspråk.
 </p>
@@ -551,9 +500,9 @@ Allikevel er det en voldsom forskjell på de ulike språkene. Et klassisk eksemp
 </p>
 </div>
 
-<div id="outline-container-org493aabe" class="outline-4">
-<h4 id="org493aabe">«Assembly»</h4>
-<div class="outline-text-4" id="text-org493aabe">
+<div id="outline-container-org880e0ab" class="outline-4">
+<h4 id="org880e0ab">«Assembly»</h4>
+<div class="outline-text-4" id="text-org880e0ab">
 <div class="org-src-container">
 <pre class="src src-asm">
         <span class="org-keyword">extern</span> exit, printf
@@ -578,9 +527,9 @@ Allikevel er det en voldsom forskjell på de ulike språkene. Et klassisk eksemp
 </div>
 </div>
 
-<div id="outline-container-orgb5dcc81" class="outline-4">
-<h4 id="orgb5dcc81">C</h4>
-<div class="outline-text-4" id="text-orgb5dcc81">
+<div id="outline-container-org8108e48" class="outline-4">
+<h4 id="org8108e48">C</h4>
+<div class="outline-text-4" id="text-org8108e48">
 <div class="org-src-container">
 <pre class="src src-C"><span class="org-preprocessor">#include</span><span class="org-string">&lt;stdio.h&gt;</span>
 
@@ -597,9 +546,9 @@ Allikevel er det en voldsom forskjell på de ulike språkene. Et klassisk eksemp
 </div>
 </div>
 
-<div id="outline-container-orgd08448a" class="outline-4">
-<h4 id="orgd08448a">Python</h4>
-<div class="outline-text-4" id="text-orgd08448a">
+<div id="outline-container-org2bd682c" class="outline-4">
+<h4 id="org2bd682c">Python</h4>
+<div class="outline-text-4" id="text-org2bd682c">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">print</span>(<span class="org-string">"Hello, world!"</span>)
 </pre>
@@ -611,9 +560,9 @@ Den vanligste utgaven av Python er skrevet i C.
 </div>
 </div>
 
-<div id="outline-container-orgf1367e4" class="outline-4">
-<h4 id="orgf1367e4">Høynivå og lavnivå</h4>
-<div class="outline-text-4" id="text-orgf1367e4">
+<div id="outline-container-org61fc2bf" class="outline-4">
+<h4 id="org61fc2bf">Høynivå og lavnivå</h4>
+<div class="outline-text-4" id="text-org61fc2bf">
 <p>
 Vi ser tydelige forskjeller på eksemplene over. Assembly-koden ligger nære de instruksjonene CPU-en sjøl trenger for å kunne skrive «Hello, world!» på skjermen, mens Python-koden mer eller mindre bare repeterer oppgaveteksten.
 </p>
@@ -624,9 +573,9 @@ Vi sier at assembly er <i>lavnivå</i>-kode, siden man må bruke ressurser på f
 </div>
 </div>
 
-<div id="outline-container-org33ba2f7" class="outline-4">
-<h4 id="org33ba2f7">Imperative og deklarative kode</h4>
-<div class="outline-text-4" id="text-org33ba2f7">
+<div id="outline-container-orgb085a90" class="outline-4">
+<h4 id="orgb085a90">Imperative og deklarative kode</h4>
+<div class="outline-text-4" id="text-orgb085a90">
 <p>
 Felles for de tre eksemplene over er at vi for hver linje i koden forteller programmet hva det skal gjøre, vi sier at kodestilen er <i>imperativ</i>.
 </p>
@@ -665,13 +614,13 @@ Noen språk egner seg dog bedre til visse stiler, vi kommer i all hovedsak til �
 </div>
 </div>
 
-<div id="outline-container-org95d2d5a" class="outline-2">
-<h2 id="basispython"><a id="org95d2d5a"></a>Basispython</h2>
+<div id="outline-container-org85fbf62" class="outline-2">
+<h2 id="basispython"><a id="org85fbf62"></a>Basispython</h2>
 <div class="outline-text-2" id="text-basispython">
 </div>
 
-<div id="outline-container-orgc494975" class="outline-3">
-<h3 id="regnerekkefoelgeogkommandolinja"><a id="orgc494975"></a>Regnerekkefølge og kommandolinja</h3>
+<div id="outline-container-orgaecbd4b" class="outline-3">
+<h3 id="regnerekkefoelgeogkommandolinja"><a id="orgaecbd4b"></a>Regnerekkefølge og kommandolinja</h3>
 <div class="outline-text-3" id="text-regnerekkefoelgeogkommandolinja">
 <p>
 Siden Python-programmer kan oversettes til maskinkode løpende, kan vi jobbe <i>interaktivt</i> med Python, à la slik vi er vant med fra CAS i Geogebra. Vi kan altså, om vi ønsker, skrive en linje med kode, se hva denne gjør, for så å skrive neste.
@@ -725,16 +674,16 @@ Prøv deg fram på vanlig tallregning i Python direkte i <i>interpreteren</i>.
 </div>
 </div>
 
-<div id="outline-container-orgca94a58" class="outline-3">
-<h3 id="variabler"><a id="orgca94a58"></a>Variabler</h3>
+<div id="outline-container-orgbd8dcd0" class="outline-3">
+<h3 id="variabler"><a id="orgbd8dcd0"></a>Variabler</h3>
 <div class="outline-text-3" id="text-variabler">
 <p>
 Vi kan nå gjennomføre enkle regneoperasjoner, men det melder seg raskt et behov for å kunne ta vare på resultatet fra en utregning, for så å kunne bruke dette i en annen utregning seinere. Dette kan vi gjøre via navngitte <i>variabler</i>.
 </p>
 </div>
 
-<div id="outline-container-org2e369bc" class="outline-4">
-<h4 id="hvaeretnavn"><a id="org2e369bc"></a>Hva er et navn?</h4>
+<div id="outline-container-org6e35b1e" class="outline-4">
+<h4 id="hvaeretnavn"><a id="org6e35b1e"></a>Hva er et navn?</h4>
 <div class="outline-text-4" id="text-hvaeretnavn">
 <p>
 I Python viser navn alltid til verdier.
@@ -794,12 +743,12 @@ Dette er fordi C er et språk med <i>statiske</i> typer. Det vil si at om vi har
 </div>
 </div>
 
-<div id="outline-container-orgb4642b4" class="outline-3">
-<h3 id="interaksjon"><a id="orgb4642b4"></a>Interaksjon</h3>
+<div id="outline-container-org6a9bdd0" class="outline-3">
+<h3 id="interaksjon"><a id="org6a9bdd0"></a>Interaksjon</h3>
 <div class="outline-text-3" id="text-interaksjon">
 </div>
-<div id="outline-container-org1c5f457" class="outline-4">
-<h4 id="printing"><a id="org1c5f457"></a>Printing</h4>
+<div id="outline-container-orgdce2a4e" class="outline-4">
+<h4 id="printing"><a id="orgdce2a4e"></a>Printing</h4>
 <div class="outline-text-4" id="text-printing">
 <p>
 Fra de fleste programmer ønsker vi en eller annen form for informasjon ut fra programmet. Dette kan være at programmet lager en graf for oss, at den skriver data til en fil, at interpreteren skriver svaret direkte på mellomregninger, eller at programmet skriver tilbake til kommandolinja.
@@ -864,8 +813,8 @@ Generelt kan vi spesifisere et tall som skal skrives ut ved å bruke tallets tot
 </div>
 </div>
 
-<div id="outline-container-org10b345e" class="outline-4">
-<h4 id="input"><a id="org10b345e"></a>Input</h4>
+<div id="outline-container-org33e4ca2" class="outline-4">
+<h4 id="input"><a id="org33e4ca2"></a>Input</h4>
 <div class="outline-text-4" id="text-input">
 <p>
 Å be brukeren om å taste inn verdier til programmet ditt kan enkelt gjøres ved å bruke <code>input</code>-funksjonen. Om vi er usikre på hvordan denne brukes, kan vi benytte oss av pythons innebygde hjelpefunksjonalitet.
@@ -903,15 +852,15 @@ input(prompt=None, /)
 </div>
 </div>
 
-<div id="outline-container-orgde2574a" class="outline-3">
-<h3 id="typer"><a id="orgde2574a"></a>Typer</h3>
+<div id="outline-container-orgac06494" class="outline-3">
+<h3 id="typer"><a id="orgac06494"></a>Typer</h3>
 <div class="outline-text-3" id="text-typer">
 <p>
 Et pythonprogram er et sett med instruksjoner som handler på ulike <i>objekter</i>. Objekter i Python kommer i to utgaver, skalare objekter og ikke-skalare objekter. Et skalart objekt er udelelig, det er <i>atomene</i> i Python. Ikke-skalare objekter, for eksempel tekststrenger, har en indre struktur. Av de følgende, er <i>boolske verdier</i>, <i>heltall</i> og <i>flyttall</i> skalare objekter.
 </p>
 </div>
-<div id="outline-container-org60516a1" class="outline-4">
-<h4 id="boolskeverdier"><a id="org60516a1"></a>Boolske verdier</h4>
+<div id="outline-container-org54c0d80" class="outline-4">
+<h4 id="boolskeverdier"><a id="org54c0d80"></a>Boolske verdier</h4>
 <div class="outline-text-4" id="text-boolskeverdier">
 <p>
 I kapittelet <a href="datamaskinen.html">Datamaskinen</a> introduserer jeg logiske verdier som enten kan være <i>sanne</i> eller <i>usanne</i>. Disse er nødvendige for at vi skal kunne ha et fullstendig programerbart språk. Når vi seinere skal se på såkalte if-setninger, er vi nødt til å ha en måte å avgjøre om noe er sant eller usant på.
@@ -954,16 +903,16 @@ Her vil først Python <i>evaluere</i> påstanden på høyre side, altså <code>3
 </p>
 </div>
 </div>
-<div id="outline-container-org7c87271" class="outline-4">
-<h4 id="heltall"><a id="org7c87271"></a>Heltall</h4>
+<div id="outline-container-org6624b48" class="outline-4">
+<h4 id="heltall"><a id="org6624b48"></a>Heltall</h4>
 <div class="outline-text-4" id="text-heltall">
 <p>
 Heltall i Python oppgis på vanlig måte. <code>3</code>, <code>112</code> eller <code>1231421124</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org0acdee5" class="outline-4">
-<h4 id="lister"><a id="org0acdee5"></a>Lister</h4>
+<div id="outline-container-org931531e" class="outline-4">
+<h4 id="lister"><a id="org931531e"></a>Lister</h4>
 <div class="outline-text-4" id="text-lister">
 <p>
 Lister eller <a href="https://en.wikipedia.org/wiki/Array_data_structure"><i>arrays</i></a> er en klassisk datastruktur. Vi samler en rekke verdier inn i en liste, for at vi så skal kunne gjøre operasjoner på lista direkte eller elementvis. Lister lages i Python ved å bruke klamme-parenteser, <code>[</code> og <code>]</code>, hvor hvert element er adskilt med komma.
@@ -1021,7 +970,7 @@ Vi kan hente ut elementer fra ei liste ved å bruke <i>slice</i>-notasjonen. Den
 </div>
 
 <ul class="org-ul">
-<li><a id="muterbarhet"></a><a id="orgeb7f3e1"></a>Muterbarhet<br />
+<li><a id="muterbarhet"></a><a id="orgec96a9b"></a>Muterbarhet<br />
 <div class="outline-text-5" id="text-muterbarhet">
 <p>
 Se på følgende snutt, og skriv ned hva du tror vil bli gitt av print-setningen.
@@ -1101,12 +1050,12 @@ Hvordan skal vi så gjøre det? Når vi skal kopiere en liste, kan vi gjøre det
 </div>
 </div>
 
-<div id="outline-container-org62c6f8c" class="outline-3">
-<h3 id="basispython-oppgaver"><a id="org62c6f8c"></a>Oppgaver</h3>
+<div id="outline-container-org66ddee7" class="outline-3">
+<h3 id="basispython-oppgaver"><a id="org66ddee7"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-basispython-oppgaver">
 </div>
-<div id="outline-container-org12eadb4" class="outline-4">
-<h4 id="basispython-kortoppgaver"><a id="org12eadb4"></a>Kortoppgaver</h4>
+<div id="outline-container-orgdbfe620" class="outline-4">
+<h4 id="basispython-kortoppgaver"><a id="orgdbfe620"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-basispython-kortoppgaver">
 <ol class="org-ol">
 <li>Be om et navn, skriv ut "Hei på deg, {navn}"    # Husk print("Hei på deg", navn)</li>
@@ -1116,7 +1065,7 @@ Hvordan skal vi så gjøre det? Når vi skal kopiere en liste, kan vi gjøre det
 <li>Be om to tall, skriv ut summen av dem</li>
 <li>Be om to tall, skriv ut produktet av dem</li>
 <li>Be om to tall, skriv ut det første opphøyd i det andre</li>
-<li><a id="org556fb96"></a>Uten bruk av PC, hva blir&#x2026;
+<li><a id="orgcc10b50"></a>Uten bruk av PC, hva blir&#x2026;
 <ul class="org-ul">
 <li><code>2 + 2 ** 2</code>?</li>
 <li><code>3 * 3 - 3</code>?</li>
@@ -1127,24 +1076,24 @@ Hvordan skal vi så gjøre det? Når vi skal kopiere en liste, kan vi gjøre det
 <li><code>5 // 4</code>?</li>
 <li><code>5 / 2 * 5</code>?</li>
 </ul></li>
-<li>Kontroller svarene dine i oppgave <a href="#org556fb96">8</a> ved å bruke Python.</li>
+<li>Kontroller svarene dine i oppgave <a href="#orgcc10b50">8</a> ved å bruke Python.</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8d1425f" class="outline-2">
-<h2 id="abstraksjon"><a id="org8d1425f"></a>Abstraksjon</h2>
+<div id="outline-container-org9f05fb7" class="outline-2">
+<h2 id="abstraksjon"><a id="org9f05fb7"></a>Abstraksjon</h2>
 <div class="outline-text-2" id="text-abstraksjon">
 </div>
-<div id="outline-container-org4cb886d" class="outline-3">
-<h3 id="biblioteker"><a id="org4cb886d"></a>Biblioteker</h3>
+<div id="outline-container-orgdb34382" class="outline-3">
+<h3 id="biblioteker"><a id="orgdb34382"></a>Biblioteker</h3>
 <div class="outline-text-3" id="text-biblioteker">
 </div>
-<div id="outline-container-orga1535e9" class="outline-4">
-<h4 id="orga1535e9">Et fysikkbibliotek</h4>
-<div class="outline-text-4" id="text-orga1535e9">
+<div id="outline-container-org2963ac1" class="outline-4">
+<h4 id="org2963ac1">Et fysikkbibliotek</h4>
+<div class="outline-text-4" id="text-org2963ac1">
 <pre class="example">
 tabaa004&gt; python -m site --user-site
 C:\Users\tabaa004\AppData\Roaming\Python\Python36\site-packages
@@ -1206,9 +1155,9 @@ Vi kommer til å møte på punktnotasjonen i en situasjon til, for bruk av <i>me
 </div>
 </div>
 
-<div id="outline-container-orgb00ea20" class="outline-4">
-<h4 id="orgb00ea20">Vårt typiske importoppsett</h4>
-<div class="outline-text-4" id="text-orgb00ea20">
+<div id="outline-container-org31e2ffe" class="outline-4">
+<h4 id="org31e2ffe">Vårt typiske importoppsett</h4>
+<div class="outline-text-4" id="text-org31e2ffe">
 <p>
 Du vil noen ganger se anbefalt å bruke en pakke som heter <a href="https://scipy.github.io/old-wiki/pages/PyLab"><code>pylab</code></a>. Dette er en samlepakke for tidligere nevnte <code>scipy</code>, <code>numpy</code> og <code>matplotlib</code>. Dette er en god pakke, men vi kommer ikke til å bruke den her. Grunnen er enkelt og greit at jeg mener den inviterer til dårlige vaner og at brukeren ikke må forholde seg til økosystemet hun jobber i. Pylab oppfordrer til å importere pakken via
 </p>
@@ -1250,8 +1199,8 @@ Legg merke til at vi her ikke lenger har behov for punktnotasjon når vi skal br
 </div>
 </div>
 
-<div id="outline-container-org173b127" class="outline-3">
-<h3 id="funksjoner"><a id="org173b127"></a>Funksjoner</h3>
+<div id="outline-container-org59ad742" class="outline-3">
+<h3 id="funksjoner"><a id="org59ad742"></a>Funksjoner</h3>
 <div class="outline-text-3" id="text-funksjoner">
 <p>
 Vi har nå fått et knippe verktøy for å lage ulike variabler, men vi kommer snart til å se at vi gjentar oss selv mye i programmeringen. Som programmerer bør du være på utkikk etter kode som er gjentagelser av tidligere kode, dette kan som oftes samles i en egen blokk. Vi kaller slike gjenbrukebare blokker av kode for «funksjoner» eller «underrutiner» (<i>subrutines</i>).
@@ -1266,9 +1215,9 @@ Vi har allerede brukt et par funksjoner, spesielt <code>print</code>-funksjonen.
 </p>
 </div>
 
-<div id="outline-container-org4e5052a" class="outline-4">
-<h4 id="org4e5052a">Definisjon og kall</h4>
-<div class="outline-text-4" id="text-org4e5052a">
+<div id="outline-container-orgb826745" class="outline-4">
+<h4 id="orgb826745">Definisjon og kall</h4>
+<div class="outline-text-4" id="text-orgb826745">
 <p>
 De to hovedtingene vi gjør med en funksjon er å definere den og å bruke (kalle) den. Definisjon skjer i Python ved å bruke nøkkelordet <code>def</code>. Et kall fungerer ved at vi skriver funksjonsnavnet og en parentes som inneholder eventuelle paramtere.
 </p>
@@ -1320,9 +1269,9 @@ Modifiser <code>hilsen</code> og <code>hilsen_navngitt</code> til heller å <i>r
 </div>
 </div>
 
-<div id="outline-container-orgd7d37af" class="outline-4">
-<h4 id="orgd7d37af">Ord når vi snakker om funksjoner</h4>
-<div class="outline-text-4" id="text-orgd7d37af">
+<div id="outline-container-org257bcf0" class="outline-4">
+<h4 id="org257bcf0">Ord når vi snakker om funksjoner</h4>
+<div class="outline-text-4" id="text-org257bcf0">
 <p>
 En funksjon <i>defineres</i> og i definisjonen tar funksjonen inn <i>argumenter</i>. Når vi <i>kaller</i> funksjonen, kan vi sende <i>variabler</i> inn som funksjonens <i>parametere</i>.
 </p>
@@ -1384,8 +1333,8 @@ Videre, i <i>funksjonskallet</i> under, hva vil verdien av variabelen <code>regn
 </div>
 </div>
 
-<div id="outline-container-org1a8e049" class="outline-3">
-<h3 id="skop"><a id="org1a8e049"></a>Skop</h3>
+<div id="outline-container-org04e333d" class="outline-3">
+<h3 id="skop"><a id="org04e333d"></a>Skop</h3>
 <div class="outline-text-3" id="text-skop">
 <p>
 Se på følgende programsnutt.
@@ -1499,8 +1448,8 @@ Hva blir skrevet av følgende program?
 </div>
 </div>
 
-<div id="outline-container-org570557c" class="outline-3">
-<h3 id="klasser"><a id="org570557c"></a>Klasser</h3>
+<div id="outline-container-orgec16e70" class="outline-3">
+<h3 id="klasser"><a id="orgec16e70"></a>Klasser</h3>
 <div class="outline-text-3" id="text-klasser">
 <p>
 Funksjonene er <i>verbene</i> i programeringsspråket vårt. De <i>gjør</i> noe med data og kan returnere verdier. Følger vi analogien videre, vil vi da kunne si at så langt er flyttallene, heltallene, listene, tuplene, tekststrengene, og assosiasjonslistene <i>subjektene</i> i språket vårt. Vi har også sett hvordan vi kan lage nye verb ved å definere funksjoner, vi skal nå gå ett skritt videre ved å lage nye subjekter, klasser.
@@ -1577,8 +1526,8 @@ Slik det står nå, er klossen vår en litt kjedelig sak, vi kan, om vi ønsker,
 </div>
 </div>
 
-<div id="outline-container-org633093a" class="outline-3">
-<h3 id="kjenndineroetter"><a id="org633093a"></a>Kjenn dine røtter</h3>
+<div id="outline-container-orgc649ff9" class="outline-3">
+<h3 id="kjenndineroetter"><a id="orgc649ff9"></a>Kjenn dine røtter</h3>
 <div class="outline-text-3" id="text-kjenndineroetter">
 <p>
 Av en eller annen grunn ønsker vi å finne nullpunktet til funksjonen $f(x) = 0.7e<sup>-x</sup> - 5x + 13.$ Du setter deg ned med penn og papir, og innser raskt at du ikke kan det du behøver for å finne en <i>analytisk</i> løsning til oppgaven (se f.eks. løsningen til <a href="http://www.wolframalpha.com/input/?i=0.7e%5E(-x)+-+5x+%2B+13+%3D+0">Wolfram Alpha</a>).
@@ -1731,12 +1680,12 @@ og sette startverdiene til 0.0 og 10.0.
 </div>
 </div>
 
-<div id="outline-container-org32d3c56" class="outline-3">
-<h3 id="abstraksjon-oppgaver"><a id="org32d3c56"></a>Oppgaver</h3>
+<div id="outline-container-org2d199cf" class="outline-3">
+<h3 id="abstraksjon-oppgaver"><a id="org2d199cf"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-abstraksjon-oppgaver">
 </div>
-<div id="outline-container-orgb7f58b9" class="outline-4">
-<h4 id="abstraksjon-kortoppgaver"><a id="orgb7f58b9"></a>Kortoppgaver</h4>
+<div id="outline-container-orgb245c39" class="outline-4">
+<h4 id="abstraksjon-kortoppgaver"><a id="orgb245c39"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-abstraksjon-kortoppgaver">
 <ol class="org-ol">
 <li>Lag en funksjon som dobler et tall</li>
@@ -1749,8 +1698,8 @@ og sette startverdiene til 0.0 og 10.0.
 </div>
 </div>
 
-<div id="outline-container-orgfc2f518" class="outline-4">
-<h4 id="sammeutfall"><a id="orgfc2f518"></a>Samme utfall?</h4>
+<div id="outline-container-orgbf005c4" class="outline-4">
+<h4 id="sammeutfall"><a id="orgbf005c4"></a>Samme utfall?</h4>
 <div class="outline-text-4" id="text-sammeutfall">
 <p>
 Under vises definisjonen av to funksjoner. Beskriv forskjellen på de to funksjonene. Hvordan påvirker det bruken av dem?
@@ -1777,9 +1726,9 @@ Under vises definisjonen av to funksjoner. Beskriv forskjellen på de to funksjo
 </div>
 </div>
 
-<div id="outline-container-orgf1ed3e7" class="outline-2">
-<h2 id="orgf1ed3e7">Intermezzo: Tilfeldige tall</h2>
-<div class="outline-text-2" id="text-orgf1ed3e7">
+<div id="outline-container-org7ab5590" class="outline-2">
+<h2 id="org7ab5590">Intermezzo: Tilfeldige tall</h2>
+<div class="outline-text-2" id="text-org7ab5590">
 <p>
 Å lage tilfeldige tall er vanskeligere enn man skulle tro. Det er kanskje ikke vanlig å kjøpe <a href="https://en.wikipedia.org/wiki/A_Million_Random_Digits_with_100,000_Normal_Deviates">bøker</a> som kun inneholder tilfeldige tall lenger, det var kanskje aldri <i>vanlig</i>, men det er fremdeles et marked for <i>virkelig</i> tilfeldige <a href="https://www.random.org/">tall</a>.
 </p>
@@ -1807,14 +1756,67 @@ rnd.shuffle(alfabetisert)       <span class="org-comment-delimiter"># </span><sp
 Vi lar det være med det inntil videre.
 </p>
 </div>
+
+<div id="outline-container-org90f9651" class="outline-3">
+<h3 id="org90f9651">Tilfeldig π</h3>
+<div class="outline-text-3" id="text-org90f9651">
+<p>
+I alle sirkler er forholdet mellom sirkelens omkrets og diameter omtrent 3. Dette forholdet dukker så ofte opp at det har fått sin egen bokstav, π.
+</p>
+
+<p>
+Dette forholdet er dog et <i>irrasjonelt</i> tall, det kan ikke uttrykkes som en brøk av to heltall. 
+</p>
+
+<p>
+Det er et utall måter å regne ut π på, et enkelt eksempel er å bruke rekken
+</p>
+
+<p>
+\[\pi = 4\left(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \dotsb\right).\]
+</p>
+
+<p>
+Vi kan også gjøre det ved å bruke arealer. Dersom vi har en sirkel med areal \(A_\circ\) og diameter \(D\), omsluttet av et kvadrat med areal \(A_\square\) med sidelengder like store som diameteren \(D\), kan vi uttrykke forholdet mellom de to arealene som
+</p>
+
+<p>
+\[\frac{A_\circ}{A_\square} = \frac{\tfrac{\pi}{4}D^2}{D^2} = \frac{\pi}{4}.\]
+</p>
+
+<p>
+Vi får altså følgende uttrykk for π
+</p>
+
+<p>
+\[\pi = 4 \frac{A_\square}{A_\circ}.\]
+</p>
+
+<p>
+Vi kan så finne et overslag for forholdet mellom disse to arealene ved å bruke tilfeldige tall. Bruk følgende fremgangsmåte:
+</p>
+
+<ol class="org-ol">
+<li>Trekk en tilfeldig verdi mellom -1 og 1 for $x$- og $y$-verdiene (her kan du bruke <code>random.uniform(-1, 1)</code>.</li>
+<li>Dersom punktet har mindre enn avstand 1 fra origo, er det i sirkelen.</li>
+<li>Gjenta 1 og 2 mange ganger</li>
+<li>Finn forholdet mellom totalt antall punkter og antall punkter inni sirkelen, dette blir et overslag for \(\frac{A_\square}{A_\circ}\).</li>
+</ol>
+
+<p>
+<img src="figurer/tilfeldigpi.png" alt="tilfeldigpi.png"/>
+</p>
+</div>
+</div>
 </div>
 
-<div id="outline-container-org53c3db7" class="outline-2">
-<h2 id="programflyt"><a id="org53c3db7"></a>Programflyt</h2>
+
+<div id="outline-container-orgdbd4834" class="outline-2">
+<h2 id="programflyt"><a id="orgdbd4834"></a>Programflyt</h2>
 <div class="outline-text-2" id="text-programflyt">
 </div>
-<div id="outline-container-orgf422c77" class="outline-3">
-<h3 id="logikk"><a id="orgf422c77"></a>Logikk</h3>
+<div id="outline-container-org29a13ab" class="outline-3">
+<h3 id="logikk"><a id="org29a13ab"></a>Logikk</h3>
 <div class="outline-text-3" id="text-logikk">
 <p>
 Hvis <code>a</code> er sann og <code>b</code> er sann, så er <code>a og b</code> sann. Hvis <code>a</code> er sann, men <code>b</code> er usann, så er <code>a og b</code> usann.
@@ -1876,8 +1878,8 @@ Innenfor logikken, er <code>og</code> en svært viktig funksjon.
 </table>
 </div>
 
-<div id="outline-container-orgf028499" class="outline-4">
-<h4 id="sannhetsskjemaer"><a id="orgf028499"></a>Sannhetsskjemaer</h4>
+<div id="outline-container-org05fd914" class="outline-4">
+<h4 id="sannhetsskjemaer"><a id="org05fd914"></a>Sannhetsskjemaer</h4>
 <div class="outline-text-4" id="text-sannhetsskjemaer">
 <p>
 I det følgende betyr 1 <code>True</code> og 0 <code>False</code>.
@@ -2001,8 +2003,8 @@ I det følgende betyr 1 <code>True</code> og 0 <code>False</code>.
 </div>
 </div>
 
-<div id="outline-container-orgfc1223f" class="outline-4">
-<h4 id="logikkregnerekkefoelge"><a id="orgfc1223f"></a>Regnerekkefølge</h4>
+<div id="outline-container-orga3e71b7" class="outline-4">
+<h4 id="logikkregnerekkefoelge"><a id="orga3e71b7"></a>Regnerekkefølge</h4>
 <div class="outline-text-4" id="text-logikkregnerekkefoelge">
 <p>
 I «vanlig» regning har vi en regnerekkefølge på operatorene som bestemmer om \(2\cdot 3 + 1\) betyr \(6 + 1\) eller \(2\cdot 4\). Videre bruker vi parenteser for å endre regnerekkefølgen der nødvendig, eksempelvis ved å sette \(2\cdot (3 + 1)\) om vi ønsker å ta addisjonen før multiplikasjonen her.
@@ -2059,8 +2061,8 @@ Merk, siden <code>2 &lt;= 3</code> <i>evaluerer</i> til <code>True</code> og <co
 </div>
 </div>
 
-<div id="outline-container-org9968665" class="outline-3">
-<h3 id="dersomsaa"><a id="org9968665"></a>dersom &#x2026; så &#x2026;&#xa0;&#xa0;&#xa0;<span class="tag"><span class="if">if</span></span></h3>
+<div id="outline-container-orge1af1e7" class="outline-3">
+<h3 id="dersomsaa"><a id="orge1af1e7"></a>dersom &#x2026; så &#x2026;&#xa0;&#xa0;&#xa0;<span class="tag"><span class="if">if</span></span></h3>
 <div class="outline-text-3" id="text-dersomsaa">
 <p>
 Dersom vi ønsker at programmeringsspråket vårt skal kunne brukes til å regne ut alle beregnbare funksjoner, så må programmeringsspråket vårt ha en måte å ta avgjørelser på. Dersom språket vi har valgt er Python, så kan slike avgjørelser tas med en <code>if</code>-setning.
@@ -2235,8 +2237,8 @@ Vi ser her at vi ender med å gjenta strukturen <code>else: if..:</code> gang p�
 </div>
 </div>
 
-<div id="outline-container-org3082c51" class="outline-3">
-<h3 id="mensviventer"><a id="org3082c51"></a>Mens vi venter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="while">while</span></span></h3>
+<div id="outline-container-org29e26e3" class="outline-3">
+<h3 id="mensviventer"><a id="org29e26e3"></a>Mens vi venter&#xa0;&#xa0;&#xa0;<span class="tag"><span class="while">while</span></span></h3>
 <div class="outline-text-3" id="text-mensviventer">
 <p>
 Vi har allerede i <a href="introduksjon.html#org2a61bc9">Valg av språk</a> sett på ei <code>while</code>-løkke. Denne bruker vi når vi ønsker at en programsnutt skal gjenta seg fram til en gitt betingelse er oppfylt. En <code>while</code>-løkke består av nøkkelordet <code>while</code>, et uttrykk som returnerer en <a href="variabler-datatyper.html#org851a83a">boolsk</a> verdi, og en eller flere setninger som skal kjøres.
@@ -2262,8 +2264,8 @@ Vi har allerede i <a href="introduksjon.html#org2a61bc9">Valg av språk</a> sett
 </div>
 </div>
 
-<div id="outline-container-orge9971d6" class="outline-3">
-<h3 id="collatzformodning"><a id="orge9971d6"></a>Collatz' formodning&#xa0;&#xa0;&#xa0;<span class="tag"><span class="prosjekt">prosjekt</span></span></h3>
+<div id="outline-container-orgf0394fa" class="outline-3">
+<h3 id="collatzformodning"><a id="orgf0394fa"></a>Collatz' formodning&#xa0;&#xa0;&#xa0;<span class="tag"><span class="prosjekt">prosjekt</span></span></h3>
 <div class="outline-text-3" id="text-collatzformodning">
 <p>
 Vurder følgende fremgangsmåte for et vilkårlig, positivt heltall, \(n\):
@@ -2300,12 +2302,12 @@ Bruk <code>if</code>-setninger og en <code>while</code>-løkke for å lage et pr
 </div>
 </div>
 
-<div id="outline-container-org33d2e9e" class="outline-3">
-<h3 id="loepegjennomeiliste"><a id="org33d2e9e"></a>Løpe gjennom ei liste&#xa0;&#xa0;&#xa0;<span class="tag"><span class="for">for</span></span></h3>
+<div id="outline-container-org9f8cafe" class="outline-3">
+<h3 id="loepegjennomeiliste"><a id="org9f8cafe"></a>Løpe gjennom ei liste&#xa0;&#xa0;&#xa0;<span class="tag"><span class="for">for</span></span></h3>
 <div class="outline-text-3" id="text-loepegjennomeiliste">
 </div>
-<div id="outline-container-org9debbad" class="outline-4">
-<h4 id="for-loekka"><a id="org9debbad"></a><code>for</code>-løkka</h4>
+<div id="outline-container-org043a79f" class="outline-4">
+<h4 id="for-loekka"><a id="org043a79f"></a><code>for</code>-løkka</h4>
 <div class="outline-text-4" id="text-for-loekka">
 <p>
 Vi har en liste med alle tallene fra 1 til 10. For hvert av tallene ønsker vi å skrive ut hvorvidt tallet er delelig på 7.
@@ -2329,12 +2331,12 @@ I dette eksempelet brukte vi ei <code>for</code>-løkke. Ei slik løkke gjør no
 </div>
 </div>
 
-<div id="outline-container-orgc278119" class="outline-3">
-<h3 id="programflyt-oppgaver"><a id="orgc278119"></a>Oppgaver</h3>
+<div id="outline-container-orgfed402a" class="outline-3">
+<h3 id="programflyt-oppgaver"><a id="orgfed402a"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-programflyt-oppgaver">
 </div>
-<div id="outline-container-orge280972" class="outline-4">
-<h4 id="programflyt-oppgaver-abc"><a id="orge280972"></a>abc-formelen</h4>
+<div id="outline-container-org0ef37b9" class="outline-4">
+<h4 id="programflyt-oppgaver-abc"><a id="org0ef37b9"></a>abc-formelen</h4>
 <div class="outline-text-4" id="text-programflyt-oppgaver-abc">
 <p>
 En generell andregradslikning kan skrives på formen \[ax^2 + bx + c = 0\]
@@ -2351,8 +2353,8 @@ Egenskapene til en andregradslikning bestemmes av <i>diskriminanten</i>. (Denne 
 </div>
 
 <ul class="org-ul">
-<li><a id="org24838d1"></a>a - Antall løsninger<br />
-<div class="outline-text-5" id="text-org24838d1">
+<li><a id="org7bf0b5f"></a>a - Antall løsninger<br />
+<div class="outline-text-5" id="text-org7bf0b5f">
 <p>
 Lag et program som skriver ut <i>antallet løsninger</i> på en andregradslikning spesifisert av brukeren. Du kan velge å ta utgangspunkt i den delvise løsningen under.
 </p>
@@ -2384,18 +2386,18 @@ Lag et program som skriver ut <i>antallet løsninger</i> på en andregradsliknin
 </div>
 </li>
 
-<li><a id="org0c4e1ed"></a>b - Verdien til løsningene<br />
-<div class="outline-text-5" id="text-org0c4e1ed">
+<li><a id="org27f0d2a"></a>b - Verdien til løsningene<br />
+<div class="outline-text-5" id="text-org27f0d2a">
 <p>
-Utvid programmet fra <a href="#org24838d1">a</a> til også å gi x-verdiene til løsningene
+Utvid programmet fra <a href="#org7bf0b5f">a</a> til også å gi x-verdiene til løsningene
 </p>
 </div>
 </li>
 
-<li><a id="org644efbc"></a>c - Faktoriseringen&#xa0;&#xa0;&#xa0;<span class="tag"><span class="utfordring">utfordring</span></span><br />
-<div class="outline-text-5" id="text-org644efbc">
+<li><a id="org061793c"></a>c - Faktoriseringen&#xa0;&#xa0;&#xa0;<span class="tag"><span class="utfordring">utfordring</span></span><br />
+<div class="outline-text-5" id="text-org061793c">
 <p>
-Utvid programmet fra <a href="#org0c4e1ed">b</a> til å skrive ut hva andregradslingen er faktorisert. En mulig bruk av programmet kan altså da se ut som følger:
+Utvid programmet fra <a href="#org27f0d2a">b</a> til å skrive ut hva andregradslingen er faktorisert. En mulig bruk av programmet kan altså da se ut som følger:
 </p>
 
 <pre class="example">
@@ -2410,9 +2412,9 @@ Den kan faktoriseres 3(x - 2)(x + 3)
 </li>
 </ul>
 </div>
-<div id="outline-container-orgb3cdad1" class="outline-4">
-<h4 id="orgb3cdad1">7-ern</h4>
-<div class="outline-text-4" id="text-orgb3cdad1">
+<div id="outline-container-org7477bc3" class="outline-4">
+<h4 id="org7477bc3">7-ern</h4>
+<div class="outline-text-4" id="text-org7477bc3">
 <p>
 :CUSTOM<sub>ID</sub>: programflyt-oppgaver-7ern
 </p>
@@ -2422,8 +2424,8 @@ Skriv et program som teller oppover fra 1. Få programmet til å hoppe over tall
 </div>
 </div>
 
-<div id="outline-container-org38d2233" class="outline-4">
-<h4 id="programflyt-oppgaver-utvid"><a id="org38d2233"></a><code>def utvid</code></h4>
+<div id="outline-container-org7c0188c" class="outline-4">
+<h4 id="programflyt-oppgaver-utvid"><a id="org7c0188c"></a><code>def utvid</code></h4>
 <div class="outline-text-4" id="text-programflyt-oppgaver-utvid">
 <p>
 Lag en funksjon, <code>utvid</code>, med følgende spesifikasjoner:
@@ -2443,8 +2445,8 @@ Lag en funksjon, <code>utvid</code>, med følgende spesifikasjoner:
 </div>
 </div>
 
-<div id="outline-container-org1f30da1" class="outline-4">
-<h4 id="programflyt-oppgaver-muterendeutvid"><a id="org1f30da1"></a><code>def muterende_utvid</code></h4>
+<div id="outline-container-org82be813" class="outline-4">
+<h4 id="programflyt-oppgaver-muterendeutvid"><a id="org82be813"></a><code>def muterende_utvid</code></h4>
 <div class="outline-text-4" id="text-programflyt-oppgaver-muterendeutvid">
 <p>
 Lag en funksjon, <code>muterende_utvid</code>, med følgende spesifikasjoner:
@@ -2467,8 +2469,8 @@ Lag en funksjon, <code>muterende_utvid</code>, med følgende spesifikasjoner:
 </div>
 </div>
 
-<div id="outline-container-orgf7b3aca" class="outline-4">
-<h4 id="programflyt-oppgaver-glidelaas"><a id="orgf7b3aca"></a><code>def glidelaas</code></h4>
+<div id="outline-container-orga9a4554" class="outline-4">
+<h4 id="programflyt-oppgaver-glidelaas"><a id="orga9a4554"></a><code>def glidelaas</code></h4>
 <div class="outline-text-4" id="text-programflyt-oppgaver-glidelaas">
 <p>
 Lag en funksjon, <code>glidelaas</code>, med følgende spesifikasjoner:
@@ -2492,9 +2494,9 @@ Lag en funksjon, <code>glidelaas</code>, med følgende spesifikasjoner:
 </div>
 </div>
 
-<div id="outline-container-orgc9459a3" class="outline-4">
-<h4 id="orgc9459a3"><code>def er_partall</code></h4>
-<div class="outline-text-4" id="text-orgc9459a3">
+<div id="outline-container-orgff70c44" class="outline-4">
+<h4 id="orgff70c44"><code>def er_partall</code></h4>
+<div class="outline-text-4" id="text-orgff70c44">
 <p>
 :PROPER TIES:
 :custom<sub>id</sub>: programflyt-oppgaver-erpartall
@@ -2515,17 +2517,17 @@ Lag en funksjon, <code>er_partall</code>, med følgende spesifikasjoner:
 </div>
 </div>
 
-<div id="outline-container-org6489270" class="outline-4">
-<h4 id="org6489270">Terningtipperen&#xa0;&#xa0;&#xa0;<span class="tag"><span class="miniprosjekt">miniprosjekt</span></span></h4>
-<div class="outline-text-4" id="text-org6489270">
+<div id="outline-container-orgaf2f054" class="outline-4">
+<h4 id="orgaf2f054">Terningtipperen&#xa0;&#xa0;&#xa0;<span class="tag"><span class="miniprosjekt">miniprosjekt</span></span></h4>
+<div class="outline-text-4" id="text-orgaf2f054">
 <p>
-I denne oppgave bruker vi  <code>random</code>-biblioteket (<a href="#orgf1ed3e7">Intermezzo: Tilfeldige tall</a>).
+I denne oppgave bruker vi  <code>random</code>-biblioteket (<a href="#org7ab5590">Intermezzo: Tilfeldige tall</a>).
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org0943f6e"></a><code>def terningkast</code><br />
-<div class="outline-text-5" id="text-org0943f6e">
+<li><a id="org6b51dc5"></a><code>def terningkast</code><br />
+<div class="outline-text-5" id="text-org6b51dc5">
 <p>
 Lag en funksjon, <code>terningkast</code>, med følgende spesifikasjoner:
 </p>
@@ -2540,8 +2542,8 @@ Lag en funksjon, <code>terningkast</code>, med følgende spesifikasjoner:
 </div>
 </li>
 
-<li><a id="orgad99983"></a>Ett forsøk<br />
-<div class="outline-text-5" id="text-orgad99983">
+<li><a id="orgb70d0bf"></a>Ett forsøk<br />
+<div class="outline-text-5" id="text-orgb70d0bf">
 <p>
 Lag et program som gjør følgende:
 </p>
@@ -2554,8 +2556,8 @@ Lag et program som gjør følgende:
 </div>
 </li>
 
-<li><a id="org59cb337"></a>Uendelig forsøk<br />
-<div class="outline-text-5" id="text-org59cb337">
+<li><a id="org3207254"></a>Uendelig forsøk<br />
+<div class="outline-text-5" id="text-org3207254">
 <p>
 Utvid programmet til å gjøre følgende:
 </p>
@@ -2566,8 +2568,8 @@ Utvid programmet til å gjøre følgende:
 </div>
 </li>
 
-<li><a id="orgecc82e1"></a>To forsøk<br />
-<div class="outline-text-5" id="text-orgecc82e1">
+<li><a id="orga9eeedb"></a>To forsøk<br />
+<div class="outline-text-5" id="text-orga9eeedb">
 <p>
 Utvid programmet til å gjøre følgende:
 </p>
@@ -2581,9 +2583,9 @@ Utvid programmet til å gjøre følgende:
 </div>
 
 
-<div id="outline-container-orgca95697" class="outline-4">
-<h4 id="orgca95697">Fra ett til hundre&#xa0;&#xa0;&#xa0;<span class="tag"><span class="utfordring">utfordring</span></span></h4>
-<div class="outline-text-4" id="text-orgca95697">
+<div id="outline-container-org3d4834b" class="outline-4">
+<h4 id="org3d4834b">Fra ett til hundre&#xa0;&#xa0;&#xa0;<span class="tag"><span class="utfordring">utfordring</span></span></h4>
+<div class="outline-text-4" id="text-org3d4834b">
 <p>
 Lag et gjettespill som trekker et tilfeldig tall fra og med 1 til og med 100. Spillet skal ha følgende spesifikasjoner:
 </p>
@@ -2600,8 +2602,8 @@ La flere personer spille spillet ditt, og noter deg hvor mange forsøk de bruker
 </div>
 </div>
 
-<div id="outline-container-org352b46a" class="outline-2">
-<h2 id="tekstfiler"><a id="org352b46a"></a>Tekstfiler</h2>
+<div id="outline-container-org166d5d1" class="outline-2">
+<h2 id="tekstfiler"><a id="org166d5d1"></a>Tekstfiler</h2>
 <div class="outline-text-2" id="text-tekstfiler">
 <p>
 Under ser du de ti første linjene fra ei fil med måledata fra en posisjonsmåling gjort med en enkel datalogger man har i de fleste fysikklasser. Dataene er lagret i en såkalt «csv»-fil (<i>comma-separated values</i>), en enkel tekstfil hvor dataene samles i kolonner med komma som skilletegn mellom verdiene i hver kolonne.
@@ -2633,15 +2635,15 @@ Dette gjør at slike filer er relativt enkle å lese inn og jobbe med i Python. 
 </p>
 </div>
 
-<div id="outline-container-org99f65d0" class="outline-3">
-<h3 id="leseinntekstfiler"><a id="org99f65d0"></a>Lese inn tekstfiler</h3>
+<div id="outline-container-orgdcd3e3e" class="outline-3">
+<h3 id="leseinntekstfiler"><a id="orgdcd3e3e"></a>Lese inn tekstfiler</h3>
 <div class="outline-text-3" id="text-leseinntekstfiler">
 <p>
 Vi kan enkelt lese inn tekstfiler, som <code>.csv</code>-fila over, i Python.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-ipython"><span class="org-variable-name">posisjonsfil</span> = <span class="org-builtin">open</span>(<span class="org-string">"data/posisjonseksempel.csv"</span>, <span class="org-string">"r"</span>)
+<pre class="src src-ipython"><span class="org-variable-name">posisjonsfil</span> = <span class="org-builtin">open</span>(<span class="org-string">"../data/posisjonseksempel.csv"</span>, <span class="org-string">"r"</span>)
 </pre>
 </div>
 
@@ -2674,8 +2676,8 @@ Når vi åpner en file på denne måte, må vi huske å lukke den før vi avslut
 </div>
 </div>
 
-<div id="outline-container-org4a428dd" class="outline-4">
-<h4 id="alternativinnlesing"><a id="org4a428dd"></a>Alternativ innlesing&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avansert">avansert</span></span></h4>
+<div id="outline-container-org21b0b4b" class="outline-4">
+<h4 id="alternativinnlesing"><a id="org21b0b4b"></a>Alternativ innlesing&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avansert">avansert</span></span></h4>
 <div class="outline-text-4" id="text-alternativinnlesing">
 <p>
 For å unngå å måtte huske å lukke fila, kan vi alternativt jobb med fila innenfor en <code>with</code>-kontekst, det foregående eksempelet blir da som følger:
@@ -2702,8 +2704,8 @@ For å unngå å måtte huske å lukke fila, kan vi alternativt jobb med fila in
 </div>
 </div>
 
-<div id="outline-container-orgacd62d8" class="outline-3">
-<h3 id="plottingavdata"><a id="orgacd62d8"></a>Plotting av data</h3>
+<div id="outline-container-orgb031fa3" class="outline-3">
+<h3 id="plottingavdata"><a id="orgb031fa3"></a>Plotting av data</h3>
 <div class="outline-text-3" id="text-plottingavdata">
 <p>
 Vi så i forrige kapittel på hvordan vi enkelt kan lage grafer ved hjelp av <code>matplotlib</code>. Eksempelet under plotter dataene fra eksempelfila.
@@ -2739,8 +2741,8 @@ plt.savefig(<span class="org-string">"figurer/posisjonseksempel_posisjon.png"</s
 </div>
 </div>
 
-<div id="outline-container-org4c33074" class="outline-3">
-<h3 id="skrivetiltekstfiler"><a id="org4c33074"></a>Skrive til tekstfiler</h3>
+<div id="outline-container-org02bc9d6" class="outline-3">
+<h3 id="skrivetiltekstfiler"><a id="org02bc9d6"></a>Skrive til tekstfiler</h3>
 <div class="outline-text-3" id="text-skrivetiltekstfiler">
 <p>
 Vi skal seinere kjøre simuleringer i egenskrevne programmer. Vi kommer da til å ha behov for å kunne lagre resultatene våre på en hensiktsmessig måte.
@@ -2801,12 +2803,141 @@ Endre terningeksempelet over til å skrive en fjerde kolonne, «Sum», hvor verd
 </div>
 </div>
 </div>
-<div id="outline-container-org658e773" class="outline-2">
-<h2 id="appendiks-prosjekter"><a id="org658e773"></a>Appendiks: Prosjekter</h2>
+<div id="outline-container-org51873fa" class="outline-2">
+<h2 id="org51873fa">Modellering</h2>
+<div class="outline-text-2" id="text-org51873fa">
+<p>
+Vi er nå «utlærte» programmere, i den forstand at vi har vært innom de ulike temaene vi kommer til å ha bruk for i dette faget.
+</p>
+
+<p>
+I det følgende skal vi begynne å lage programmer som på en eller annet måte skal etterligne virkeligheten. Det å bruke matematikk og programmering til å beskrive virkelige prosesser, kalles modellering.
+</p>
+
+<p>
+En enkel modell, er veiformlene du lærte i Fysikk 1, hvor det for eksempel sies at vi en gjenstand med konstant akselerasjon, beveger seg etter formelen
+</p>
+
+<p>
+\[s(t) = s_0 + v_0 t + \tfrac{1}{2} a t^2,\]
+</p>
+
+<p>
+hvor \(s_0\) er startposisjon, \(v_0\) er startfarten, \(a\) er den konstante akselerasjonen og \(t\) er tida etter vi begynte å se på bevegelsen.
+</p>
+
+<p>
+Det er dog relativt få bevegelser som har konstant akselerasjon. Vi går derfor et skritt videre fra denne veiformelen, og innfør en sammenheng mellom kreftene som virker på en gjenstand, og gjenstandens resulterende akselerasjon. Denne sammenhengen kalles Newtons andre lov, og kan uttrykkes
+</p>
+
+<p>
+\[\Sigma F = m a,\]
+</p>
+
+<p>
+for \(\Sigma F\) er summen av kreftene som virker på en gjenstand, \(m\) er gjenstandens masse og \(a\) er den nå ikke nødvendigvis konstante akselerasjonen.
+</p>
+
+<p>
+Et problem med denne sammenhengen, er at den kun virker i én dimensjon. Ønsker vi for eksempel å se på kreftene som virker på en bil i bevegelse gjennom en sving, må vi sette opp en slik ligning for hver dimensjon, eller uttrykke den som en vektorsammenheng, via
+</p>
+
+<p>
+\[\Sigma \vec{F} = m \vec{a}.\]
+</p>
+
+<p>
+Dersom vi for eksempel har et knippe tider og tilhørende posisjoner for en gjenstand, kan vi altså finne summen av kreftene som har virket på gjenstanden, <i>gitt at</i> vi klarer å finne akselerasjonen. Akselerasjon er hvor raskt en gjenstands hastighet endrer seg, og hastighet er hvor raskt en gjenstands posisjon endrer seg. Alle som har hatt Matematikk 1T, veit at <i>endring</i> er det samme som <i>derivasjon</i>. Vi må altså lære å derivere.
+</p>
+</div>
+
+<div id="outline-container-org023c3e8" class="outline-3">
+<h3 id="org023c3e8">Derivasjon</h3>
+<div class="outline-text-3" id="text-org023c3e8">
+<div class="DEFINITION">
+<p>
+Den derivierte til en funksjon \(f\) i punktet \(a\) er <i>stignigstallet</i> til tangenten til \(f\) ved punktet \(a\).
+</p>
+
+<p>
+\[f'(a) = \lim_{\Delta a \to 0} \frac{f(a+\Delta a) - f(a)}{\Delta a}\]
+</p>
+
+</div>
+
+<p>
+La oss se på funksjonen \(f(x) = x^2 + 2\).
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">f</span>(x):
+    <span class="org-keyword">return</span> x ** 2 + 2
+</pre>
+</div>
+
+
+<p>
+Vi kan så forsøke å derivere funksjonen ved
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">f_der_2</span> = (f(2 + 0) - f(2)) / 0
+</pre>
+</div>
+
+<p>
+Det vi derimot kan gjøre, er å gå nær null, men ikke helt til null.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">derivert</span>(funksjon, x, delta_x):
+    <span class="org-doc">"""Returner den deriverte av funksjon ved x"""</span>
+    <span class="org-variable-name">delta_f</span> = (funksjon(x + delta_x) - funksjon(x))
+    <span class="org-keyword">return</span> delta_f / delta_x
+</pre>
+</div>
+
+<p>
+Vi kan nå bruke <code>derivert</code> til å derivere funksjonen over ved <code>x = 2</code>, ved å velge en tilstrekkelig liten <code>delta_x</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">f_der_2</span> = derivert(f, 2, 1E-6)
+
+<span class="org-keyword">print</span>(f<span class="org-string">"Den deriverte av f ved x = 2 er {f_der_2}."</span>)
+</pre>
+</div>
+
+<pre class="example">
+Den deriverte av f ved x = 2 er 4.0000010006480125.
+
+</pre>
+
+<p>
+Vi veit fra matematikken at om \(f(x) = x^2 + 2\) er \(f'(x) = 2x\), altså er \(f'(2) = 4\), så vi ser ut til å være på rett spor med beregningen over.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcc9853c" class="outline-3">
+<h3 id="orgcc9853c">Oppgave</h3>
+<div class="outline-text-3" id="text-orgcc9853c">
+<p>
+Lag et program som skriver ut den deriverte av en enkel polynomdivisjon for ulike verdier av \(\Delta x\). Start programmet med \(\Delta x = 1\cdot 10^{-1}\) og endre tierpotensene ned til \(\Delta x = 1\cdot 10^{-15}\).
+</p>
+
+<p>
+Hva ser ut til å skje?
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga7fcd6f" class="outline-2">
+<h2 id="appendiks-prosjekter"><a id="orga7fcd6f"></a>Appendiks: Prosjekter</h2>
 <div class="outline-text-2" id="text-appendiks-prosjekter">
 </div>
-<div id="outline-container-orgd620d8d" class="outline-3">
-<h3 id="prosjekt_twitterboten"><a id="orgd620d8d"></a>Twitter-boten - Introduksjon</h3>
+<div id="outline-container-orgde262f4" class="outline-3">
+<h3 id="prosjekt_twitterboten"><a id="orgde262f4"></a>Twitter-boten - Introduksjon</h3>
 <div class="outline-text-3" id="text-prosjekt_twitterboten">
 <p>
 Gjennom dette prosjektet skal vi lage en «bot» som skal operere en twitter-konto. Til dette er det et par småting vi må ha på plass, vi må ha..
@@ -2820,9 +2951,9 @@ Gjennom dette prosjektet skal vi lage en «bot» som skal operere en twitter-kon
 </ul>
 </div>
 
-<div id="outline-container-orge558edd" class="outline-4">
-<h4 id="orge558edd">Oppsett</h4>
-<div class="outline-text-4" id="text-orge558edd">
+<div id="outline-container-org860bf6e" class="outline-4">
+<h4 id="org860bf6e">Oppsett</h4>
+<div class="outline-text-4" id="text-org860bf6e">
 <p>
 Registrer en konto på <a href="https://twitter.com">Twitter</a>. Merk, dersom du ikke vil at boten skal tvitre fra din vanlige konto, om du har en, bør du her regisrtere en ny.
 </p>
@@ -2921,9 +3052,9 @@ Nå er det bare litt kode som gjenstår for å få våre python-genererte tweets
 </div>
 </div>
 
-<div id="outline-container-org1e66327" class="outline-4">
-<h4 id="org1e66327">Botens første, spede steg</h4>
-<div class="outline-text-4" id="text-org1e66327">
+<div id="outline-container-org2fb5562" class="outline-4">
+<h4 id="org2fb5562">Botens første, spede steg</h4>
+<div class="outline-text-4" id="text-org2fb5562">
 <p>
 Aller først må vi få autentiseringsnøklene som blei genert for oss da vi opprettet boten under developerkontoen vår inn i programmet vårt.
 </p>
@@ -2965,9 +3096,9 @@ Resultatet av denne kodesnutten er tweeten under.
 </div>
 </div>
 
-<div id="outline-container-org048daa4" class="outline-4">
-<h4 id="org048daa4"><code>api</code>-objektet</h4>
-<div class="outline-text-4" id="text-org048daa4">
+<div id="outline-container-org187704c" class="outline-4">
+<h4 id="org187704c"><code>api</code>-objektet</h4>
+<div class="outline-text-4" id="text-org187704c">
 <p>
 Over har vi linja <code>api = tweepy.API(auth)</code>. Her skjer det mye. Fra venstre, har vi følgende:
 </p>
@@ -3005,9 +3136,9 @@ Om vi ser på <a href="http://docs.tweepy.org/en/v3.5.0/api.html">hjelpedokument
 </div>
 </div>
 
-<div id="outline-container-org6aa3b92" class="outline-4">
-<h4 id="org6aa3b92">Hjelp til hjelp</h4>
-<div class="outline-text-4" id="text-org6aa3b92">
+<div id="outline-container-orga4eca0a" class="outline-4">
+<h4 id="orga4eca0a">Hjelp til hjelp</h4>
+<div class="outline-text-4" id="text-orga4eca0a">
 <p>
 Under lager jeg en enkel <code>for</code>-løkke for å utforske hvilke muligheter vi har med <code>api</code>-objektet.
 </p>
@@ -3145,9 +3276,9 @@ Alt ligger nå til rette for å lage boter som interagerer med Twitter automatis
 </div>
 </div>
 
-<div id="outline-container-org78fcd5e" class="outline-4">
-<h4 id="org78fcd5e">Prosjektbeskrivelse</h4>
-<div class="outline-text-4" id="text-org78fcd5e">
+<div id="outline-container-orgcfbda01" class="outline-4">
+<h4 id="orgcfbda01">Prosjektbeskrivelse</h4>
+<div class="outline-text-4" id="text-orgcfbda01">
 <p>
 Dere kan velge mellom to prosjektalternativer, hvorav det ene anses som programmeringsmessig mer utfordrende å komme i gang med, da dette krever at du programmerer logikken som skal drive spillet ditt.
 </p>

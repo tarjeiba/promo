@@ -1500,6 +1500,57 @@ rnd.shuffle(alfabetisert)       # 'alfabetisert' er neppe alfabetisert lenger
 
 Vi lar det være med det inntil videre.
 
+** Tilfeldig π
+I alle sirkler er forholdet mellom sirkelens omkrets og diameter omtrent 3. Dette forholdet dukker så ofte opp at det har fått sin egen bokstav, π.
+
+Dette forholdet er dog et /irrasjonelt/ tall, det kan ikke uttrykkes som en brøk av to heltall. 
+
+#+BEGIN_SRC python :exports none :results silent
+import matplotlib.pyplot as plt
+import random as rnd
+
+circle = plt.Circle((0,0), 1, edgecolor="black", facecolor="#ecf0f1")
+fig, ax = plt.subplots()
+
+ax.add_artist(circle)
+ax.axis([-1, 1, -1, 1])
+ax.set_aspect('equal')
+ax.xaxis.set_ticks([-1, 0, 1])
+ax.yaxis.set_ticks([-1, 0, 1])
+
+for _ in range(300):
+    x, y = rnd.uniform(-1, 1), rnd.uniform(-1, 1)
+    if x ** 2 + y ** 2 < 1:
+        marker = 'k.'
+    else:
+        marker = 'k+'
+    ax.plot(x, y, marker)
+
+fig.savefig('../figurer/tilfeldigpi.png')
+#+END_SRC
+
+Det er et utall måter å regne ut π på, et enkelt eksempel er å bruke rekken
+
+\[\pi = 4\left(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \dotsb\right).\]
+
+Vi kan også gjøre det ved å bruke arealer. Dersom vi har en sirkel med areal $A_\circ$ og diameter $D$, omsluttet av et kvadrat med areal $A_\square$ med sidelengder like store som diameteren $D$, kan vi uttrykke forholdet mellom de to arealene som
+
+\[\frac{A_\circ}{A_\square} = \frac{\tfrac{\pi}{4}D^2}{D^2} = \frac{\pi}{4}.\]
+
+Vi får altså følgende uttrykk for π
+
+\[\pi = 4 \frac{A_\square}{A_\circ}.\]
+
+Vi kan så finne et overslag for forholdet mellom disse to arealene ved å bruke tilfeldige tall. Bruk følgende fremgangsmåte:
+
+1) Trekk en tilfeldig verdi mellom -1 og 1 for $x$- og $y$-verdiene (her kan du bruke ~random.uniform(-1, 1)~.
+2) Dersom punktet har mindre enn avstand 1 fra origo, er det i sirkelen.
+3) Gjenta 1 og 2 mange ganger
+4) Finn forholdet mellom totalt antall punkter og antall punkter inni sirkelen, dette blir et overslag for $\frac{A_\square}{A_\circ}$.
+
+[[fig:tilfeldigpi.png]]
+
+
 * Programflyt
 :PROPERTIES:
 :CUSTOM_ID: programflyt
@@ -2136,7 +2187,7 @@ Dette gjør at slike filer er relativt enkle å lese inn og jobbe med i Python. 
 Vi kan enkelt lese inn tekstfiler, som ~.csv~-fila over, i Python.
 
 #+BEGIN_SRC ipython :session fil :results silent
-posisjonsfil = open("data/posisjonseksempel.csv", "r")
+posisjonsfil = open("../data/posisjonseksempel.csv", "r")
 #+END_SRC
 
 Vi har nå fått et «filobjekt» kalt ~posisjonsfil~, som er koblet til fila over og åpnet kun med leserettigheter.
@@ -2169,9 +2220,11 @@ Time(s), Position(m)
 
 Når vi åpner en file på denne måte, må vi huske å lukke den før vi avslutter programmet.
 
-#+BEGIN_SRC ipython :session fil
+#+BEGIN_SRC ipython :session fil :exports code
 posisjonsfil.close()
 #+END_SRC
+
+#+RESULTS:
 
 *** Alternativ innlesing                                                          :avansert:
 :PROPERTIES:
@@ -2278,6 +2331,81 @@ Endre terningeksempelet over til å skrive en fjerde kolonne, «Sum», hvor verd
 :PROPERTIES:
 :CUSTOM_ID: bugs
 :END:
+
+* Modellering
+Vi er nå «utlærte» programmere, i den forstand at vi har vært innom de ulike temaene vi kommer til å ha bruk for i dette faget.
+
+I det følgende skal vi begynne å lage programmer som på en eller annet måte skal etterligne virkeligheten. Det å bruke matematikk og programmering til å beskrive virkelige prosesser, kalles modellering.
+
+En enkel modell, er veiformlene du lærte i Fysikk 1, hvor det for eksempel sies at vi en gjenstand med konstant akselerasjon, beveger seg etter formelen
+
+\[s(t) = s_0 + v_0 t + \tfrac{1}{2} a t^2,\]
+
+hvor $s_0$ er startposisjon, $v_0$ er startfarten, $a$ er den konstante akselerasjonen og $t$ er tida etter vi begynte å se på bevegelsen.
+
+Det er dog relativt få bevegelser som har konstant akselerasjon. Vi går derfor et skritt videre fra denne veiformelen, og innfør en sammenheng mellom kreftene som virker på en gjenstand, og gjenstandens resulterende akselerasjon. Denne sammenhengen kalles Newtons andre lov, og kan uttrykkes
+
+\[\Sigma F = m a,\]
+
+for $\Sigma F$ er summen av kreftene som virker på en gjenstand, $m$ er gjenstandens masse og $a$ er den nå ikke nødvendigvis konstante akselerasjonen.
+
+Et problem med denne sammenhengen, er at den kun virker i én dimensjon. Ønsker vi for eksempel å se på kreftene som virker på en bil i bevegelse gjennom en sving, må vi sette opp en slik ligning for hver dimensjon, eller uttrykke den som en vektorsammenheng, via
+
+\[\Sigma \vec{F} = m \vec{a}.\]
+
+Dersom vi for eksempel har et knippe tider og tilhørende posisjoner for en gjenstand, kan vi altså finne summen av kreftene som har virket på gjenstanden, /gitt at/ vi klarer å finne akselerasjonen. Akselerasjon er hvor raskt en gjenstands hastighet endrer seg, og hastighet er hvor raskt en gjenstands posisjon endrer seg. Alle som har hatt Matematikk 1T, veit at /endring/ er det samme som /derivasjon/. Vi må altså lære å derivere.
+
+** Derivasjon
+#+BEGIN_DEFINITION
+Den derivierte til en funksjon $f$ i punktet $a$ er /stignigstallet/ til tangenten til $f$ ved punktet $a$.
+
+\[f'(a) = \lim_{\Delta a \to 0} \frac{f(a+\Delta a) - f(a)}{\Delta a}\]
+#+END_DEFINITION
+
+La oss se på funksjonen $f(x) = x^2 + 2$.
+#+BEGIN_SRC python :session derivert :results silent :exports code
+def f(x):
+    return x ** 2 + 2
+#+END_SRC
+
+
+Vi kan så forsøke å derivere funksjonen ved
+
+#+BEGIN_SRC python :session derivert
+f_der_2 = (f(2 + 0) - f(2)) / 0
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXAMPLE
+ZeroDivisionError: division by zero
+#+END_EXAMPLE
+
+Det vi derimot kan gjøre, er å gå nær null, men ikke helt til null.
+
+#+BEGIN_SRC python :session derivert :exports code :results silent
+def derivert(funksjon, x, delta_x):
+    """Returner den deriverte av funksjon ved x"""
+    delta_f = (funksjon(x + delta_x) - funksjon(x))
+    return delta_f / delta_x
+#+END_SRC
+
+Vi kan nå bruke ~derivert~ til å derivere funksjonen over ved ~x = 2~, ved å velge en tilstrekkelig liten ~delta_x~.
+
+#+BEGIN_SRC python :session derivert :exports both
+f_der_2 = derivert(f, 2, 1E-6)
+
+print(f"Den deriverte av f ved x = 2 er {f_der_2}.")
+#+END_SRC
+
+#+RESULTS:
+: Den deriverte av f ved x = 2 er 4.0000010006480125.
+
+Vi veit fra matematikken at om $f(x) = x^2 + 2$ er $f'(x) = 2x$, altså er $f'(2) = 4$, så vi ser ut til å være på rett spor med beregningen over.
+
+** Oppgave
+Lag et program som skriver ut den deriverte av en enkel polynomdivisjon for ulike verdier av $\Delta x$. Start programmet med $\Delta x = 1\cdot 10^{-1}$ og endre tierpotensene ned til $\Delta x = 1\cdot 10^{-15}$.
+
+Hva ser ut til å skje?
 
 * Appendiks: Prosjekter
 :PROPERTIES:
@@ -2651,7 +2779,9 @@ while True:
 #+END_SRC
 
 * Appendiks: Skilpadder                                                             :noexport:
-#+BEGIN_SRC python
+
+
+#+Begin_SRC python
 from turtle import *
 
 def square(side):
@@ -2668,9 +2798,6 @@ inspi(10, 10, 1)
 #+END_SRC
 
 #+RESULTS:
-
-
-
 
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner
