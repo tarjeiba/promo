@@ -1,6 +1,8 @@
 let predef = `
 import turtle
 
+kstep1 = True
+
 def oppgave(tur, pos, n=1, r=10):
     orig = tur.position()
     tur.pu()
@@ -28,7 +30,11 @@ del opp
 ivar = turtle.Turtle()
 ivar.showturtle()
 `
-
+function kstepscolor(num) {
+    let table = document.getElementById('ksteps');
+    let rows = table.getElementsByTagName('tr');
+    rows[0].cells[num].style.backgroundColor = 'green';
+}	
 
 function runit() {
     var prog = window.code_editor.getValue();
@@ -42,6 +48,17 @@ function runit() {
 	return Sk.importMainWithBody("<stdin>", false, predef + prog, true);
     });
     myPromise.then(function(mod) {
+	let kstep1 = Sk.globals.kstep1.v;
+	if (kstep1) {
+	    kstepscolor(0);
+	};
+	if (kstep2) {
+	    kstepscolor(1);
+	};
+	if (kstep3) {
+	    kstepscolor(2);
+	}
+
 	console.log('success');
     },
 		   function(err) {

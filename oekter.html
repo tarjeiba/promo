@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2018-12-05 Wed 14:38 -->
+<!-- 2019-01-16 Wed 11:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter</title>
@@ -73,7 +73,7 @@ for the JavaScript code in this tag.
 */
 
 <!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "2");
+org_html_manager.set("TOC_DEPTH", "1");
 org_html_manager.set("LINK_HOME", "");
 org_html_manager.set("LINK_UP", "");
 org_html_manager.set("LOCAL_TOC", "1");
@@ -139,61 +139,62 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd2ef6f2">uke 49</a>
-<ul>
-<li><a href="#org9282f6d">Rammeverk for twittersamtale</a></li>
-</ul>
-</li>
+<li><a href="#org1ea98e6">uke 3</a></li>
+<li><a href="#orgd2ef6f2">uke 49</a></li>
 <li><a href="#orgc53b9d8">uke 46</a></li>
-<li><a href="#uke39">uke 39</a>
-<ul>
-<li><a href="#org9f9514d">Oppstartsoppgave</a></li>
-<li><a href="#org1928389">Fjerde ord i en setning</a></li>
-</ul>
-</li>
-<li><a href="#uke38">uke 38</a>
-<ul>
-<li><a href="#orgc9bf55f">Oppstart prosjekt</a></li>
-</ul>
-</li>
-<li><a href="#uke37">uke 37</a>
-<ul>
-<li><a href="#org01cdd42">Oppstartsoppgave 1</a></li>
-<li><a href="#org638aabc">Oppstartsoppgave 2</a></li>
-<li><a href="#orga4ede40">Forventet status så langt</a></li>
-</ul>
-</li>
-<li><a href="#uke36">uke 36&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></a>
-<ul>
-<li><a href="#orgd167c34">Installering</a></li>
-<li><a href="#orgf39e4f2">Avansert <code>print</code></a></li>
-<li><a href="#orgedba113">Boolske variable</a></li>
-<li><a href="#orgd030d0d">En første løkke</a></li>
-<li><a href="#org351d6c0">En løkkketype til</a></li>
-<li><a href="#org49a8b82">Installere git</a></li>
-<li><a href="#org3fbc858">Utfordring</a></li>
-</ul>
-</li>
-<li><a href="#uke35">uke 35&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></a>
-<ul>
-<li><a href="#org645e96e">Definere en funksjon</a></li>
-<li><a href="#orgbf88843">Åpningsoppgaver</a></li>
-<li><a href="#org79adc60">Funksjoner</a></li>
-<li><a href="#org24f220d">«Tallsjekkern»</a></li>
-<li><a href="#orge81cdc2">Kvadratrøtter</a></li>
-<li><a href="#orgbe6fdc4">Oppgaver</a></li>
-</ul>
-</li>
-<li><a href="#uke34">uke 34&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></a>
-<ul>
-<li><a href="#org3da19a4">Introduksjon</a></li>
-<li><a href="#org904e844">Notater</a></li>
-</ul>
-</li>
+<li><a href="#uke39">uke 39</a></li>
+<li><a href="#uke38">uke 38</a></li>
+<li><a href="#uke37">uke 37</a></li>
+<li><a href="#org87e0186">uke 36&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span>&#xa0;<span class=""></span>&#xa0;<span class="PROPERTIES">PROPERTIES</span></span></a></li>
+<li><a href="#uke35">uke 35&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></a></li>
+<li><a href="#uke34">uke 34&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></a></li>
 </ul>
 </div>
 </div>
 
+<div id="outline-container-org1ea98e6" class="outline-2">
+<h2 id="org1ea98e6">uke 3</h2>
+<div class="outline-text-2" id="text-org1ea98e6">
+<p>
+Vi skal nå begynne med numerisk derivasjon og integrasjon, vi er da godt over i modelleringsbiten av faget.
+</p>
+
+<p>
+Denne delen av faget blir ofte mer tydelig om vi har en god måte å visualisere det vi regner ut på. Dersom vi skal se på bokser som kolliderer med hverandre, er det greit faktisk å kunne se boksene. Til dette skal vi bruke spillbiblioteket <code>pygame</code>.
+</p>
+</div>
+
+<div id="outline-container-orgd167c34" class="outline-3">
+<h3 id="orgd167c34">Installering</h3>
+<div class="outline-text-3" id="text-orgd167c34">
+<p>
+Åpne kommandolinja (Windows: windowstasten og skriv <code>cmd</code>. Mac: åpne <code>terminal</code>.). Når du er i kommandolinja, skriv <code>pip install --user pygame</code>. Deretter kan du åpne Spyder og følge tutorialen under.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org735fec2" class="outline-3">
+<h3 id="org735fec2">Introduksjon til pygame</h3>
+<div class="outline-text-3" id="text-org735fec2">
+<p>
+Som en introduksjon til pygame skal du følge tutorialen du finner <a href="https://nerdparadise.com/programming/pygame/part1">her</a>. Du kan starte under overskriften «The anatomy of a Pygame game». Følg tutorialen til bunnen av sida, altså hele «part 1».
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7490863" class="outline-3">
+<h3 id="org7490863">Noe gikk ikke som det skulle</h3>
+<div class="outline-text-3" id="text-org7490863">
+<p>
+Finn meg i makerspacet på fredag, så skal jeg forsøke å hjelpe. Makerspacet er området vis-a-vis bordtennisen, inne i trearbeidsområdet.
+</p>
+
+<p>
+Lykke til!
+</p>
+</div>
+</div>
+</div>
 <div id="outline-container-orgd2ef6f2" class="outline-2">
 <h2 id="orgd2ef6f2">uke 49</h2>
 <div class="outline-text-2" id="text-orgd2ef6f2">
@@ -482,9 +483,9 @@ Oppgaver: <a href="promo.html#programflyt-oppgaver-abc">abc-formelen</a>
 </div>
 </div>
 
-<div id="outline-container-orga38f577" class="outline-4">
-<h4 id="orga38f577">Funksjoner</h4>
-<div class="outline-text-4" id="text-orga38f577">
+<div id="outline-container-org79adc60" class="outline-4">
+<h4 id="org79adc60">Funksjoner</h4>
+<div class="outline-text-4" id="text-org79adc60">
 <p>
 Fagstoff: <a href="promo.html#funksjoner">Funksjoner</a>
 </p>
@@ -518,12 +519,16 @@ Oppgaver:
 </div>
 </div>
 <div id="outline-container-org87e0186" class="outline-2">
-<h2 id="uke36"><a id="org87e0186"></a>uke 36&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></h2>
-<div class="outline-text-2" id="text-uke36">
+<h2 id="org87e0186">uke 36&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span>&#xa0;<span class=""></span>&#xa0;<span class="PROPERTIES">PROPERTIES</span></span></h2>
+<div class="outline-text-2" id="text-org87e0186">
+<p>
+:CUSTOM<sub>ID</sub>: uke36
+:header-args:  :tangle ../py/uke36.py
+</p>
 </div>
-<div id="outline-container-orgd167c34" class="outline-3">
-<h3 id="orgd167c34">Installering</h3>
-<div class="outline-text-3" id="text-orgd167c34">
+<div id="outline-container-org46363e3" class="outline-3">
+<h3 id="org46363e3">Installering</h3>
+<div class="outline-text-3" id="text-org46363e3">
 <ol class="org-ol">
 <li>anaconda (noe som inneholder python, og litt ymse annet)</li>
 <li>pycharm (det dere skal bruke for å skrive python)</li>
@@ -536,7 +541,7 @@ Oppgaver:
 <h3 id="orgf39e4f2">Avansert <code>print</code></h3>
 <div class="outline-text-3" id="text-orgf39e4f2">
 <p>
-<a href="promo.html#org1c5f457"><i>Printing</i> i «boka»</a>
+<a href="promo.html#orgdce2a4e"><i>Printing</i> i «boka»</a>
 </p>
 
 <p>
@@ -749,12 +754,11 @@ Programmet under skal kun skrive ut partall.
 <h3 id="org3fbc858">Utfordring</h3>
 <div class="outline-text-3" id="text-org3fbc858">
 <p>
-Collatz' formodning fra <a href="promo.html#orge9971d6">«boka»</a>.
+Collatz' formodning fra [[<a href="promo.html#orgf0394fa">promo.html#orgf0394fa</a>][«boka»
 </p>
 </div>
 </div>
 </div>
-
 <div id="outline-container-orgacc64fb" class="outline-2">
 <h2 id="uke35"><a id="orgacc64fb"></a>uke 35&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></h2>
 <div class="outline-text-2" id="text-uke35">
@@ -850,11 +854,11 @@ funk3(10) <span class="org-comment-delimiter"># </span><span class="org-comment"
 </div>
 </div>
 
-<div id="outline-container-org79adc60" class="outline-3">
-<h3 id="org79adc60">Funksjoner</h3>
-<div class="outline-text-3" id="text-org79adc60">
+<div id="outline-container-orge87671b" class="outline-3">
+<h3 id="orge87671b">Funksjoner</h3>
+<div class="outline-text-3" id="text-orge87671b">
 <dl class="org-dl">
-<dt>bakgrunnsstoff</dt><dd><a href="promo.html#org173b127">Funksjoner</a></dd>
+<dt>bakgrunnsstoff</dt><dd><a href="promo.html#org59ad742">Funksjoner</a></dd>
 </dl>
 </div>
 </div>

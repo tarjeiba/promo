@@ -5,6 +5,21 @@
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
 #+END_SRC
 
+* uke 3
+Vi skal nå begynne med numerisk derivasjon og integrasjon, vi er da godt over i modelleringsbiten av faget.
+
+Denne delen av faget blir ofte mer tydelig om vi har en god måte å visualisere det vi regner ut på. Dersom vi skal se på bokser som kolliderer med hverandre, er det greit faktisk å kunne se boksene. Til dette skal vi bruke spillbiblioteket ~pygame~.
+
+** Installering
+Åpne kommandolinja (Windows: windowstasten og skriv ~cmd~. Mac: åpne ~terminal~.). Når du er i kommandolinja, skriv ~pip install --user pygame~. Deretter kan du åpne Spyder og følge tutorialen under.
+
+** Introduksjon til pygame
+Som en introduksjon til pygame skal du følge tutorialen du finner [[https://nerdparadise.com/programming/pygame/part1][her]]. Du kan starte under overskriften «The anatomy of a Pygame game». Følg tutorialen til bunnen av sida, altså hele «part 1».
+
+** Noe gikk ikke som det skulle
+Finn meg i makerspacet på fredag, så skal jeg forsøke å hjelpe. Makerspacet er området vis-a-vis bordtennisen, inne i trearbeidsområdet.
+
+Lykke til!
 * uke 49
 ** Rammeverk for twittersamtale
 [[py:twittersamtale.py]]

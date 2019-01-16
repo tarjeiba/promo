@@ -26,6 +26,7 @@ ivar.forward(40)
 #+END_EXAMPLE
 
 Forsøk å få Ivar innom punktene 1, 2 og 3 ved å bruke kodeområdet under. Trykk «Kjør» for å sette Ivar i gang.
+
 * Kode
 #+BEGIN_EXPORT html
 <textarea id="code" cols="85" rows="35">
@@ -38,5 +39,13 @@ ivar.forward(150)
 </textarea>
 <button onclick="runit()">Kjør</button>
 <pre id="edoutput"></pre>
+#+END_EXPORT
+
+#+attr_html: :id ksteps
+| Kstep 1 | Kstep 2 | Kstep 3 |
+
+
+#+BEGIN_EXPORT html
 <div id="mycanvas" height="600" width="800"></div>
 #+END_EXPORT
+

@@ -25,4 +25,3 @@ $(document).ready(function(){
 	exampleCode(oppgave.id, oppgave.tittel, oppgave.text, oppgave.prepends + oppgave.code);
     }
 });
-
