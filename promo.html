@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-01-09 Wed 12:21 -->
+<!-- 2019-03-07 Thu 12:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programmering og modellering X</title>
@@ -1050,12 +1050,12 @@ Hvordan skal vi så gjøre det? Når vi skal kopiere en liste, kan vi gjøre det
 </div>
 </div>
 
-<div id="outline-container-org66ddee7" class="outline-3">
-<h3 id="basispython-oppgaver"><a id="org66ddee7"></a>Oppgaver</h3>
+<div id="outline-container-orgfed402a" class="outline-3">
+<h3 id="basispython-oppgaver"><a id="orgfed402a"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-basispython-oppgaver">
 </div>
-<div id="outline-container-orgdbfe620" class="outline-4">
-<h4 id="basispython-kortoppgaver"><a id="orgdbfe620"></a>Kortoppgaver</h4>
+<div id="outline-container-orgb245c39" class="outline-4">
+<h4 id="basispython-kortoppgaver"><a id="orgb245c39"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-basispython-kortoppgaver">
 <ol class="org-ol">
 <li>Be om et navn, skriv ut "Hei på deg, {navn}"    # Husk print("Hei på deg", navn)</li>
@@ -1680,20 +1680,19 @@ og sette startverdiene til 0.0 og 10.0.
 </div>
 </div>
 
-<div id="outline-container-org2d199cf" class="outline-3">
-<h3 id="abstraksjon-oppgaver"><a id="org2d199cf"></a>Oppgaver</h3>
+<div id="outline-container-org17f7fc9" class="outline-3">
+<h3 id="abstraksjon-oppgaver"><a id="org17f7fc9"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-abstraksjon-oppgaver">
 </div>
-<div id="outline-container-orgb245c39" class="outline-4">
-<h4 id="abstraksjon-kortoppgaver"><a id="orgb245c39"></a>Kortoppgaver</h4>
+<div id="outline-container-org76dd7e3" class="outline-4">
+<h4 id="abstraksjon-kortoppgaver"><a id="org76dd7e3"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-abstraksjon-kortoppgaver">
 <ol class="org-ol">
-<li>Lag en funksjon som dobler et tall</li>
-<li>Lag en funksjon som halverer et tall</li>
-<li>Lag en funksjon som legger sammen to tall</li>
-<li>Lag en funksjon som kvadrer et tall</li>
-<li>Lag en funksjon som opphøyer et tall i et annet</li>
-<li>Lag en funksjon som returnerer en tekstrestreng <code>n</code> ganger</li>
+<li>Lag en funksjon som tar inn et tall og returnerer det dobbelte</li>
+<li>Lag en funksjon som tar inn et tall og returnerer halvpart</li>
+<li>Lag en funksjon som returnerer summen av to tall</li>
+<li>Lag en funksjon som returnerer kvadratet av et tall</li>
+<li>Lag en funksjon som tar inn to tall og returnerer det ene opphøyd i det andre</li>
 </ol>
 </div>
 </div>
@@ -2331,8 +2330,8 @@ I dette eksempelet brukte vi ei <code>for</code>-løkke. Ei slik løkke gjør no
 </div>
 </div>
 
-<div id="outline-container-orgfed402a" class="outline-3">
-<h3 id="programflyt-oppgaver"><a id="orgfed402a"></a>Oppgaver</h3>
+<div id="outline-container-orgbd85daa" class="outline-3">
+<h3 id="programflyt-oppgaver"><a id="orgbd85daa"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-programflyt-oppgaver">
 </div>
 <div id="outline-container-org0ef37b9" class="outline-4">
@@ -2413,11 +2412,8 @@ Den kan faktoriseres 3(x - 2)(x + 3)
 </ul>
 </div>
 <div id="outline-container-org7477bc3" class="outline-4">
-<h4 id="org7477bc3">7-ern</h4>
-<div class="outline-text-4" id="text-org7477bc3">
-<p>
-:CUSTOM<sub>ID</sub>: programflyt-oppgaver-7ern
-</p>
+<h4 id="programflyt-oppgaver-7ern"><a id="org7477bc3"></a>7-ern</h4>
+<div class="outline-text-4" id="text-programflyt-oppgaver-7ern">
 <p>
 Skriv et program som teller oppover fra 1. Få programmet til å hoppe over tallene som er delelige på 7.
 </p>
@@ -2432,7 +2428,7 @@ Lag en funksjon, <code>utvid</code>, med følgende spesifikasjoner:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">utvid</span>(liste1: <span class="org-builtin">list</span>, liste2: <span class="org-builtin">list</span>) -&gt; <span class="org-builtin">list</span>:
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">utvid</span>(liste1, liste2):
     <span class="org-doc">"""Returner sammensl&#229;ingen (&#171;concatination&#187;) av liste1 og liste2."""</span>
     <span class="org-variable-name">res</span> = []
 
@@ -2446,21 +2442,21 @@ Lag en funksjon, <code>utvid</code>, med følgende spesifikasjoner:
 </div>
 
 <div id="outline-container-org82be813" class="outline-4">
-<h4 id="programflyt-oppgaver-muterendeutvid"><a id="org82be813"></a><code>def muterende_utvid</code></h4>
+<h4 id="programflyt-oppgaver-muterendeutvid"><a id="org82be813"></a><code>def muterende_utvid</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avansert">avansert</span></span></h4>
 <div class="outline-text-4" id="text-programflyt-oppgaver-muterendeutvid">
 <p>
 Lag en funksjon, <code>muterende_utvid</code>, med følgende spesifikasjoner:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">muterende_utvid</span>(liste1: <span class="org-builtin">list</span>, liste2: <span class="org-builtin">list</span>) -&gt; <span class="org-constant">None</span>:
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">muterende_utvid</span>(liste1, liste2):
     <span class="org-doc">"""Utvider liste1 med elementene fra liste2.</span>
 
 <span class="org-doc">    liste1 endres &#171;in place&#187;.</span>
 
 <span class="org-doc">    Returnerer None.</span>
 <span class="org-doc">    """</span>
-    fo element <span class="org-keyword">in</span> liste2:
+    <span class="org-keyword">for</span> element <span class="org-keyword">in</span> liste2:
         <span class="org-comment-delimiter"># </span><span class="org-comment">sett inn din kode her</span>
 
     <span class="org-keyword">return</span> <span class="org-constant">None</span>
@@ -2477,7 +2473,7 @@ Lag en funksjon, <code>glidelaas</code>, med følgende spesifikasjoner:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">glidelaas</span>(liste1: <span class="org-builtin">list</span>, liste2: <span class="org-builtin">list</span>) -&gt; <span class="org-builtin">list</span>:
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">glidelaas</span>(liste1, liste2):
     <span class="org-doc">"""liste1 = [elem1_0, elem1_1, elem1_2, ..., elem1_n]</span>
 <span class="org-doc">    liste2 = [elem2_0, elem2_1, elem2_2, ..., elem2_n]</span>
 
@@ -2584,8 +2580,8 @@ Utvid programmet til å gjøre følgende:
 
 
 <div id="outline-container-org3d4834b" class="outline-4">
-<h4 id="org3d4834b">Fra ett til hundre&#xa0;&#xa0;&#xa0;<span class="tag"><span class="utfordring">utfordring</span></span></h4>
-<div class="outline-text-4" id="text-org3d4834b">
+<h4 id="ett_til_hundre"><a id="org3d4834b"></a>Fra ett til hundre&#xa0;&#xa0;&#xa0;<span class="tag"><span class="utfordring">utfordring</span></span></h4>
+<div class="outline-text-4" id="text-ett_til_hundre">
 <p>
 Lag et gjettespill som trekker et tilfeldig tall fra og med 1 til og med 100. Spillet skal ha følgende spesifikasjoner:
 </p>
@@ -3410,6 +3406,351 @@ Felles for alle prosjektene er at vi må ha et program som kjører uten å slutt
         <span class="org-comment-delimiter"># </span><span class="org-comment">kode som skal kj&#248;res om det har kommet nytt svar</span>
 
     time.sleep(5) <span class="org-comment-delimiter"># </span><span class="org-comment">vent i fem sekunder f&#248;r du fortsetter</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org53e88cd" class="outline-3">
+<h3 id="prosjekt_fysikkmotoren"><a id="org53e88cd"></a>Fysikkmotoren</h3>
+<div class="outline-text-3" id="text-prosjekt_fysikkmotoren">
+<ul class="org-ul">
+<li>Lage en fysikkmotor i Pygame</li>
+<li>Grunnlaget for to prosjekter</li>
+<li>Førsteutkastet følger <a href="http://www.petercollingridge.co.uk/tutorials/pygame-physics-simulation/">«Pygame Physics Simulation»</a> mer eller mindre fullstendig</li>
+</ul>
+
+<p>
+Et fullført prosjekt har følgende:
+</p>
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Objekter som beveger seg i et tyngdefelt</li>
+<li class="off"><code>[&#xa0;]</code> Objekter kan kollidere med hverandre</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org276b526" class="outline-4">
+<h4 id="prosjekt_fysikkmotor_vindu"><a id="org276b526"></a>Lage et vindu</h4>
+<div class="outline-text-4" id="text-prosjekt_fysikkmotor_vindu">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> pygame
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-python">(width, height) = (300, 200)
+<span class="org-variable-name">screen</span> = pygame.display.set_mode((width, height))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">pygame.display.set_caption(<span class="org-string">'Pygame: vindu'</span>)
+
+<span class="org-variable-name">background_color</span> = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip() 
+
+<span class="org-variable-name">running</span> = <span class="org-constant">True</span>
+<span class="org-keyword">while</span> running:
+    <span class="org-keyword">for</span> event <span class="org-keyword">in</span> pygame.event.get():
+        <span class="org-keyword">if</span> event.<span class="org-builtin">type</span> == pygame.QUIT:
+            <span class="org-variable-name">running</span> = <span class="org-constant">False</span>
+        <span class="org-keyword">elif</span> event.<span class="org-builtin">type</span> == pygame.KEYDOWN:
+            <span class="org-keyword">if</span> event.key == pygame.K_q:
+                <span class="org-variable-name">running</span> = <span class="org-constant">False</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org521551d" class="outline-4">
+<h4 id="org521551d">Tegne i vinduet</h4>
+<div class="outline-text-4" id="text-org521551d">
+<p>
+Vi fortsetter her med utgangspunktet fra i stad.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> pygame
+
+(width, height) = (300, 200)
+<span class="org-variable-name">screen</span> = pygame.display.set_mode((width, height))
+pygame.display.set_caption(<span class="org-string">'Pygame: vindu'</span>)
+
+<span class="org-variable-name">background_color</span> = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip() 
+
+<span class="org-variable-name">running</span> = <span class="org-constant">True</span>
+<span class="org-keyword">while</span> running:
+    <span class="org-keyword">for</span> event <span class="org-keyword">in</span> pygame.event.get():
+        <span class="org-keyword">if</span> event.<span class="org-builtin">type</span> == pygame.QUIT:
+            <span class="org-variable-name">running</span> = <span class="org-constant">False</span>
+        <span class="org-keyword">elif</span> event.<span class="org-builtin">type</span> == pygame.KEYDOWN:
+            <span class="org-keyword">if</span> event.key == pygame.K_q:
+                <span class="org-variable-name">running</span> = <span class="org-constant">False</span>
+
+    screen.fill(background_color)
+
+    pygame.draw.circle(screen, (0, 0, 255), (150, 50), 15, 1)
+
+    pygame.display.flip()
+
+pygame.<span class="org-constant">quit</span>()
+
+</pre>
+</div>
+
+<p>
+La oss se nærmere på <code>draw.circle</code>-metoden.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-builtin">help</span>(pygame.draw.circle)
+</pre>
+</div>
+
+<p>
+<code>circle</code> er altså en metode (funksjon tilhørende en klasse) som tar inn <code>Surface</code> (vi har gitt denne navnet <code>screen</code>), <code>color</code> (vi gir denne verdien blå (altså (0, 0, 255) i rgb-verdier)), <code>pos</code> (som her får verdien (150, 50) altså 150 piksler fra venstre kant, 50 piksler ned), <code>radius</code> (her 15) og <code>width</code> (her 1, denne har en standardverdi på 0, som vi ser av <code>widht=0</code> i hjelpeteksten).
+</p>
+
+<p>
+Vi kommer etter hvert til å ville ha flere og flere typer partikler eller andre objekter, det kan da være greit å venne seg til å skrive disse som egne klasser.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> pygame
+
+<span class="org-variable-name">width</span>, <span class="org-variable-name">height</span> = (300, 200)
+
+<span class="org-variable-name">screen</span> = pygame.display.set_mode((width, height))
+pygame.display.set_caption(<span class="org-string">'Pygame: tegneklasse'</span>)
+
+<span class="org-variable-name">background_color</span> = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip() 
+</pre>
+</div>
+
+<p>
+Vi kan nå opprette egne partikler ved å «kalle» klassen på tilsvarende måte vi gjør med funksjoner. Når vi kaller en klasse (f.eks. <code>Particle((150, 50), 15)</code> for en partikkel med posisjon i <code>(150, 50)</code> og radius <code>15</code>), returnes det en <i>instans</i> av denne klassen.
+</p>
+
+<p>
+Under er <code>class Particle(object)</code>-linja starten på <i>definisjonen</i> av klassen. Videre er <code>def __init__(self, (x, y), size)</code>-initialiseringsmetoden til klassen. Denne kjøres idet vi kaller klassen (som vi gjør når vi lager 
+<code>my_first_particle</code> til slutt.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Particle</span>(<span class="org-builtin">object</span>):
+    <span class="org-keyword">def</span> <span class="org-function-name">__init__</span>(<span class="org-keyword">self</span>, (x, y), size):
+        <span class="org-keyword">self</span>.x = x
+        <span class="org-keyword">self</span>.y = y
+        <span class="org-keyword">self</span>.size = size
+        <span class="org-keyword">self</span>.color = (0, 0, 255)
+        <span class="org-keyword">self</span>.thickness = 1
+
+<span class="org-variable-name">my_first_particle</span> = Particle((150, 50), 15)
+</pre>
+</div>
+
+<p>
+Den store fordelen med klasser er at vi nå kan holde kode som tilhører en type ting samlet. Vi kaller funksjoner som er spesifikke for en klasser for <i>metoder</i>.
+</p>
+
+<p>
+Under vises hvordan vi kan legge til en <code>display</code>-metode for partiklene våre.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Particle</span>(<span class="org-builtin">object</span>):
+    <span class="org-keyword">def</span> <span class="org-function-name">__init__</span>(<span class="org-keyword">self</span>, pos, size):
+        <span class="org-keyword">self</span>.x = pos[0]
+        <span class="org-keyword">self</span>.y = pos[1]
+        <span class="org-keyword">self</span>.size = size
+        <span class="org-keyword">self</span>.color = (0, 0, 255)
+        <span class="org-keyword">self</span>.thickness = 1
+
+    <span class="org-keyword">def</span> <span class="org-function-name">display</span>(<span class="org-keyword">self</span>):
+        pygame.draw.circle(screen, <span class="org-keyword">self</span>.color, (<span class="org-keyword">self</span>.x, <span class="org-keyword">self</span>.y), <span class="org-keyword">self</span>.size, <span class="org-keyword">self</span>.thickness)
+
+<span class="org-variable-name">my_first_particle</span> = Particle((150, 50), 15)
+my_first_particle.display()
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">running</span> = <span class="org-constant">True</span>
+<span class="org-keyword">while</span> running:
+    <span class="org-keyword">for</span> event <span class="org-keyword">in</span> pygame.event.get():
+        <span class="org-keyword">if</span> event.<span class="org-builtin">type</span> == pygame.QUIT:
+            <span class="org-variable-name">running</span> = <span class="org-constant">False</span>
+        <span class="org-keyword">elif</span> event.<span class="org-builtin">type</span> == pygame.KEYDOWN:
+            <span class="org-keyword">if</span> event.key == pygame.K_q:
+                <span class="org-variable-name">running</span> = <span class="org-constant">False</span>
+
+    pygame.display.flip()
+
+pygame.<span class="org-constant">quit</span>()
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5938a82" class="outline-4">
+<h4 id="org5938a82">Tilfeldigheter og flere objekter</h4>
+<div class="outline-text-4" id="text-org5938a82">
+<p>
+Vi har tidligere sett på tilfeldige tall, og hvordan disse kan brukes for eksempelvis å finne en tilnærming til π, <a href="#org7ab5590">Intermezzo: Tilfeldige tall</a>. Vi kommer nå til å bruke det for å gi modellene våre tilfeldige utgangspunkt.
+</p>
+
+<p>
+Som alltid, for å få tilgang til tilfeldige tall, kommer vi til å bruke <code>random</code>-biblioteket, så vi har nå <code>import</code>-linjene
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> pygame
+<span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
+</pre>
+</div>
+
+<p>
+Typiske funksjoner og hva de <i>returnerer</i>:
+</p>
+<dl class="org-dl">
+<dt><code>random()</code></dt><dd>et tilfeldig tall i spennet [0, 1.0)</dd>
+<dt><code>uniform(a, b)</code></dt><dd>et tilfeldig tall mellom <code>a</code> og <code>b</code></dd>
+<dt><code>randint(a, b)</code></dt><dd>et tilfedig heltall i spennet [a, b]</dd>
+<dt><code>choice(list)</code></dt><dd>et tilfeldig element fra <code>list</code></dd>
+<dt><code>shuffle(list)</code></dt><dd><code>None</code>, men den omrokkerer <code>list</code></dd>
+</dl>
+
+<p>
+I følgende snutt tegner vi en sirkel med radius mellom 10 og 20 piksler og med en tilfeldig plassering på skjermen. For å forsikre oss om at ingen partikler er på utsiden av skjermen, senker vi spennet på mulige plasseringer med den tilfeldige radiusen.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+<span class="org-variable-name">size</span> = rnd.randint(10, 20)
+<span class="org-variable-name">x</span> = rnd.randint(size, width - size)
+<span class="org-variable-name">y</span> = rnd.randint(size, height - size)
+<span class="org-variable-name">my_random_particle</span> = Particle((x, y), size)
+my_random_particle.display()
+
+</pre>
+</div>
+
+
+<p>
+Videre kan vi ønske å tegne flere objekter på skjermen samtidig.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+<span class="org-variable-name">number_of_particles</span> = 10
+<span class="org-variable-name">my_particles</span> = []
+
+<span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(number_of_particles):
+    <span class="org-variable-name">size</span> = rnd.randint(10, 20)
+    <span class="org-variable-name">x</span> = rnd.randint(size, width - size)
+    <span class="org-variable-name">y</span> = rnd.randint(size, height - size)
+    my_particles.append(Particle((x, y), size))
+
+<span class="org-keyword">for</span> particle <span class="org-keyword">in</span> my_particles:
+    particle.display()
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge49b521" class="outline-4">
+<h4 id="orge49b521">Bevegelse</h4>
+<div class="outline-text-4" id="text-orge49b521">
+<p>
+Vi kan representere på flere måter. I grunnen er bevegelse noe man gjør i en retning, med en fart, dette kjenner vi igjen fra matematikken som en <i>vektor</i>. 
+</p>
+
+<p>
+Vi skal kun se på gjenstander i planet, og vi trenger derfor to koordinater, <code>x</code> og <code>y</code>. Bevegelse representeres ved å endre et objekts koordinatverdier fra en runde gjennom programmet til det neste.
+</p>
+
+<p>
+Tidligere ga vi partiklene våre en <code>display</code>-metode. Vi utvider nå klassen med en <code>move</code>-metode. Hele klassedefinisjonen ser da ut som under:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> pygame
+<span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
+
+<span class="org-variable-name">width</span>, <span class="org-variable-name">height</span> = (300, 200)
+
+<span class="org-variable-name">screen</span> = pygame.display.set_mode((width, height))
+pygame.display.set_caption(<span class="org-string">'Pygame: tegneklasse'</span>)
+
+<span class="org-variable-name">background_color</span> = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip()
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">class</span> <span class="org-type">Particle</span>(<span class="org-builtin">object</span>):
+    <span class="org-keyword">def</span> <span class="org-function-name">__init__</span>(<span class="org-keyword">self</span>, pos, size, vel=(0,0)):
+        <span class="org-keyword">self</span>.x = pos[0]
+        <span class="org-keyword">self</span>.y = pos[1]
+        <span class="org-keyword">self</span>.vel_x = vel[0]
+        <span class="org-keyword">self</span>.vel_y = vel[1]
+        <span class="org-keyword">self</span>.size = size
+        <span class="org-keyword">self</span>.color = (0, 0, 255)
+        <span class="org-keyword">self</span>.thickness = 1
+
+    <span class="org-keyword">def</span> <span class="org-function-name">display</span>(<span class="org-keyword">self</span>):
+        pygame.draw.circle(screen, <span class="org-keyword">self</span>.color, (<span class="org-keyword">self</span>.x, <span class="org-keyword">self</span>.y), <span class="org-keyword">self</span>.size, <span class="org-keyword">self</span>.thickness)
+
+    <span class="org-keyword">def</span> <span class="org-function-name">move</span>(<span class="org-keyword">self</span>):
+        <span class="org-keyword">self</span>.x += <span class="org-keyword">self</span>.vel_x
+        <span class="org-keyword">self</span>.y += <span class="org-keyword">self</span>.vel_y
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">number_of_particles</span> = 10
+<span class="org-variable-name">my_particles</span> = []
+
+<span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(number_of_particles):
+    <span class="org-variable-name">size</span> = rnd.randint(10, 20)
+    <span class="org-variable-name">x</span> = rnd.randint(size, width - size)
+    <span class="org-variable-name">y</span> = rnd.randint(size, height - size)
+    <span class="org-variable-name">vel_x</span> = rnd.randint(-10, 10)
+    <span class="org-variable-name">vel_y</span> = rnd.randint(-10, 10)
+    my_particles.append(Particle((x, y), size, (vel_x, vel_y))
+
+<span class="org-keyword">for</span> particle <span class="org-keyword">in</span> my_particles:
+    particle.display()
+
+<span class="org-comment-delimiter">#</span><span class="org-comment">+BEGIN_SRC python :tangle ../py/fysikkmotor_bevegelse.py :results silent</span>
+running = <span class="org-constant">True</span>
+<span class="org-keyword">while</span> running:
+    <span class="org-keyword">for</span> event <span class="org-keyword">in</span> pygame.event.get():
+        <span class="org-keyword">if</span> event.<span class="org-builtin">type</span> == pygame.QUIT:
+            running = <span class="org-constant">False</span>
+        <span class="org-keyword">elif</span> event.<span class="org-builtin">type</span> == pygame.KEYDOWN:
+            <span class="org-keyword">if</span> event.key == pygame.K_q:
+                running = <span class="org-constant">False</span>
+
+    screen.fill(background_color)
+    <span class="org-keyword">for</span> particle <span class="org-keyword">in</span> my_particles:
+        particle.move()
+        particle.display()
+    pygame.display.flip()
+
+pygame.<span class="org-constant">quit</span>()
 </pre>
 </div>
 </div>
