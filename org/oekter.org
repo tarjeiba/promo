@@ -14,6 +14,7 @@ Ifølge vurderingsplanen har vi satt av tid til vurdering onsdag om en uke, 13. 
 - definerer funksjoner (Oppgavene tilhørende [[file:promo.org::#abstraksjon][abstraksjon]] og [[file:promo.org::#programflyt][programflyt]] (mer utfordrende))
 - ~while~-løkker ([[file:promo.org::#programflyt][Fra ett til hundre]] (siste oppgave))
 - ~for~-løkker
+- *Hente eksperimentelle data fra fil* (Gå gjennom avsnittet [[file:promo.org::#tekstfiler][Tekstfiler]], dere har også tilgang til dette på onsdag.)
 
 * uke 5
 ** Ball-simulering
