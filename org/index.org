@@ -1,6 +1,6 @@
 #+SETUPFILE: orgheader_nojs.org
 #+TITLE: Programmering og modellering
 
-- faget ved Edvard Munch :: [[file:faget.org][her]]
-- fagstoff :: [[file:promo.org][her]]
-- Github-repo :: [[https://github.com/tarjeiba/promo][her]]
+| faget ved Edvard Munch | [[file:faget.org][her]] |
+| fagstoff               | [[file:promo.org][her]] |
+| Github-repo            | [[https://github.com/tarjeiba/promo][her]] |

@@ -1451,12 +1451,11 @@ og sette startverdiene til 0.0 og 10.0.
 :PROPERTIES:
 :CUSTOM_ID: abstraksjon-kortoppgaver
 :END:
-1. Lag en funksjon som dobler et tall
-2. Lag en funksjon som halverer et tall
-3. Lag en funksjon som legger sammen to tall
-4. Lag en funksjon som kvadrer et tall
-5. Lag en funksjon som opphøyer et tall i et annet
-6. Lag en funksjon som returnerer en tekstrestreng ~n~ ganger
+1. Lag en funksjon som tar inn et tall og returnerer det dobbelte
+2. Lag en funksjon som tar inn et tall og returnerer halvpart
+3. Lag en funksjon som returnerer summen av to tall
+4. Lag en funksjon som returnerer kvadratet av et tall
+5. Lag en funksjon som tar inn to tall og returnerer det ene opphøyd i det andre
 
 *** Samme utfall?
 :PROPERTIES:
@@ -1985,9 +1984,6 @@ Du ga andregradslikningen
 Den kan faktoriseres 3(x - 2)(x + 3)
 #+END_EXAMPLE
 *** 7-ern
-
-
-
 :PROPERTIES:
 :CUSTOM_ID: programflyt-oppgaver-7ern
 :END:
@@ -2000,7 +1996,7 @@ Skriv et program som teller oppover fra 1. Få programmet til å hoppe over tall
 Lag en funksjon, ~utvid~, med følgende spesifikasjoner:
 
 #+BEGIN_SRC python
-def utvid(liste1: list, liste2: list) -> list:
+def utvid(liste1, liste2):
     """Returner sammenslåingen («concatination») av liste1 og liste2."""
     res = []
 
@@ -2010,21 +2006,21 @@ def utvid(liste1: list, liste2: list) -> list:
 
 #+END_SRC
 
-*** ~def muterende_utvid~
+*** ~def muterende_utvid~ :avansert:
 :PROPERTIES:
 :CUSTOM_ID: programflyt-oppgaver-muterendeutvid
 :END:
 Lag en funksjon, ~muterende_utvid~, med følgende spesifikasjoner:
 
 #+BEGIN_SRC python
-def muterende_utvid(liste1: list, liste2: list) -> None:
+def muterende_utvid(liste1, liste2):
     """Utvider liste1 med elementene fra liste2.
 
     liste1 endres «in place».
 
     Returnerer None.
     """
-    fo element in liste2:
+    for element in liste2:
         # sett inn din kode her
 
     return None
@@ -2037,7 +2033,7 @@ def muterende_utvid(liste1: list, liste2: list) -> None:
 Lag en funksjon, ~glidelaas~, med følgende spesifikasjoner:
 
 #+BEGIN_SRC python
-def glidelaas(liste1: list, liste2: list) -> list:
+def glidelaas(liste1, liste2):
     """liste1 = [elem1_0, elem1_1, elem1_2, ..., elem1_n]
     liste2 = [elem2_0, elem2_1, elem2_2, ..., elem2_n]
 
@@ -2098,6 +2094,10 @@ Utvid programmet til å gjøre følgende:
 
 
 *** Fra ett til hundre                                                          :utfordring:
+:PROPERTIES:
+:ORDERED:  t
+:custom_id: ett_til_hundre
+:END:
 Lag et gjettespill som trekker et tilfeldig tall fra og med 1 til og med 100. Spillet skal ha følgende spesifikasjoner:
 - Spillet skal kunne spilles så mange ganger man vil fram til man velger å avslutte (Tips: Man kan hoppe ut av en ~while~-løkke ved å bruke ~break~)-
 - Spillet forteller deg om du har gjettet for høyt eller for lavt om du ikke gjetter riktig
@@ -2778,6 +2778,379 @@ while True:
     time.sleep(5) # vent i fem sekunder før du fortsetter
 #+END_SRC
 
+
+** Fysikkmotoren
+:PROPERTIES:
+:custom_id: prosjekt_fysikkmotoren
+:END:
+
+- Lage en fysikkmotor i Pygame
+- Grunnlaget for to prosjekter
+- Førsteutkastet følger [[http://www.petercollingridge.co.uk/tutorials/pygame-physics-simulation/][«Pygame Physics Simulation»]] mer eller mindre fullstendig
+
+Et fullført prosjekt har følgende:
+- [ ] Objekter som beveger seg i et tyngdefelt
+- [ ] Objekter kan kollidere med hverandre
+
+
+*** Lage et vindu
+:PROPERTIES:
+:custom_id: prosjekt_fysikkmotor_vindu
+:END:
+
+#+BEGIN_SRC python :session vindu :tangle ../py/fysikkmotor_vindu.py :results silent
+import pygame
+#+END_SRC
+
+
+#+BEGIN_SRC python :session vindu :tangle ../py/fysikkmotor_vindu.py :results silent
+(width, height) = (300, 200)
+screen = pygame.display.set_mode((width, height))
+#+END_SRC
+
+#+BEGIN_SRC python :session vindu :tangle ../py/fysikkmotor_vindu.py :results silent
+pygame.display.set_caption('Pygame: vindu')
+
+background_color = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip() 
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                running = False
+#+END_SRC
+
+*** Tegne i vinduet
+Vi fortsetter her med utgangspunktet fra i stad.
+
+#+BEGIN_SRC python :session tegne :tangle ../py/fysikkmotor_tegne.py :results silent 
+import pygame
+
+(width, height) = (300, 200)
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption('Pygame: vindu')
+
+background_color = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip() 
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                running = False
+
+    screen.fill(background_color)
+
+    pygame.draw.circle(screen, (0, 0, 255), (150, 50), 15, 1)
+
+    pygame.display.flip()
+    
+pygame.quit()
+
+#+END_SRC
+
+La oss se nærmere på ~draw.circle~-metoden.
+
+#+BEGIN_SRC python :session tegne :tangle ../py/fysikkmotor_tegne.py
+help(pygame.draw.circle)
+#+END_SRC
+
+#+RESULTS:
+: Help on built-in function circle in module pygame.draw:
+: 
+: circle(...)
+:     circle(Surface, color, pos, radius, width=0) -> Rect
+:     draw a circle around a point
+
+~circle~ er altså en metode (funksjon tilhørende en klasse) som tar inn ~Surface~ (vi har gitt denne navnet ~screen~), ~color~ (vi gir denne verdien blå (altså (0, 0, 255) i rgb-verdier)), ~pos~ (som her får verdien (150, 50) altså 150 piksler fra venstre kant, 50 piksler ned), ~radius~ (her 15) og ~width~ (her 1, denne har en standardverdi på 0, som vi ser av ~widht=0~ i hjelpeteksten).
+
+Vi kommer etter hvert til å ville ha flere og flere typer partikler eller andre objekter, det kan da være greit å venne seg til å skrive disse som egne klasser.
+
+#+BEGIN_SRC python :session tegneklasse :tangle ../py/fysikkmotor_tegneklasse.py :results silent
+import pygame
+
+width, height = (300, 200)
+
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption('Pygame: tegneklasse')
+
+background_color = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip() 
+#+END_SRC
+
+Vi kan nå opprette egne partikler ved å «kalle» klassen på tilsvarende måte vi gjør med funksjoner. Når vi kaller en klasse (f.eks. ~Particle((150, 50), 15)~ for en partikkel med posisjon i ~(150, 50)~ og radius ~15~), returnes det en /instans/ av denne klassen.
+
+Under er ~class Particle(object)~-linja starten på /definisjonen/ av klassen. Videre er ~def __init__(self, (x, y), size)~-initialiseringsmetoden til klassen. Denne kjøres idet vi kaller klassen (som vi gjør når vi lager 
+~my_first_particle~ til slutt.
+
+#+BEGIN_SRC python :session tegneklasse :results silent 
+class Particle(object):
+    def __init__(self, (x, y), size):
+        self.x = x
+        self.y = y
+        self.size = size
+        self.color = (0, 0, 255)
+        self.thickness = 1
+
+my_first_particle = Particle((150, 50), 15)
+#+END_SRC
+
+Den store fordelen med klasser er at vi nå kan holde kode som tilhører en type ting samlet. Vi kaller funksjoner som er spesifikke for en klasser for /metoder/.
+
+Under vises hvordan vi kan legge til en ~display~-metode for partiklene våre.
+
+#+BEGIN_SRC python :session tegneklasse :tangle ../py/fysikkmotor_tegneklasse.py :results silent 
+class Particle(object):
+    def __init__(self, pos, size):
+        self.x = pos[0]
+        self.y = pos[1]
+        self.size = size
+        self.color = (0, 0, 255)
+        self.thickness = 1
+
+    def display(self):
+        pygame.draw.circle(screen, self.color, (self.x, self.y), self.size, self.thickness)
+
+my_first_particle = Particle((150, 50), 15)
+my_first_particle.display()
+#+END_SRC
+
+#+BEGIN_SRC python :session tegneklasse :tangle ../py/fysikkmotor_tegneklasse.py :results silent
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                running = False
+
+    pygame.display.flip()
+    
+pygame.quit()
+
+#+END_SRC
+
+*** Tilfeldigheter og flere objekter
+Vi har tidligere sett på tilfeldige tall, og hvordan disse kan brukes for eksempelvis å finne en tilnærming til π, [[*Intermezzo: Tilfeldige tall][Intermezzo: Tilfeldige tall]]. Vi kommer nå til å bruke det for å gi modellene våre tilfeldige utgangspunkt.
+
+Som alltid, for å få tilgang til tilfeldige tall, kommer vi til å bruke ~random~-biblioteket, så vi har nå ~import~-linjene
+
+#+BEGIN_SRC python
+import pygame
+import random as rnd
+#+END_SRC
+
+Typiske funksjoner og hva de /returnerer/:
+- ~random()~ :: et tilfeldig tall i spennet [0, 1.0)
+- ~uniform(a, b)~ :: et tilfeldig tall mellom ~a~ og ~b~
+- ~randint(a, b)~ :: et tilfedig heltall i spennet [a, b]
+- ~choice(list)~ :: et tilfeldig element fra ~list~
+- ~shuffle(list)~ :: ~None~, men den omrokkerer ~list~
+
+I følgende snutt tegner vi en sirkel med radius mellom 10 og 20 piksler og med en tilfeldig plassering på skjermen. For å forsikre oss om at ingen partikler er på utsiden av skjermen, senker vi spennet på mulige plasseringer med den tilfeldige radiusen.
+
+#+BEGIN_SRC python :tangle ../py/fysikkmotor_tilfeldig_enkelt.py :results silent :exports none
+import pygame
+import random as rnd
+
+width, height = (300, 200)
+
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption('Pygame: tegneklasse')
+
+background_color = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip()
+
+class Particle(object):
+    def __init__(self, pos, size):
+        self.x = pos[0]
+        self.y = pos[1]
+        self.size = size
+        self.color = (0, 0, 255)
+        self.thickness = 1
+
+    def display(self):
+        pygame.draw.circle(screen, self.color, (self.x, self.y), self.size, self.thickness)
+
+#+END_SRC
+
+
+#+BEGIN_SRC python :tangle ../py/fysikkmotor_tilfeldig_enkelt.py :results silent
+
+size = rnd.randint(10, 20)
+x = rnd.randint(size, width - size)
+y = rnd.randint(size, height - size)
+my_random_particle = Particle((x, y), size)
+my_random_particle.display()
+
+#+END_SRC
+
+
+#+BEGIN_SRC python :tangle ../py/fysikkmotor_tilfeldig_enkelt.py :results silent :exports none
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                running = False
+
+    pygame.display.flip()
+    
+pygame.quit()
+
+#+END_SRC
+
+
+Videre kan vi ønske å tegne flere objekter på skjermen samtidig.
+
+#+BEGIN_SRC python :tangle ../py/fysikkmotor_tilfeldig_flere.py :results silent :exports none
+import pygame
+import random as rnd
+
+width, height = (300, 200)
+
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption('Pygame: tegneklasse')
+
+background_color = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip()
+
+class Particle(object):
+    def __init__(self, pos, size):
+        self.x = pos[0]
+        self.y = pos[1]
+        self.size = size
+        self.color = (0, 0, 255)
+        self.thickness = 1
+
+    def display(self):
+        pygame.draw.circle(screen, self.color, (self.x, self.y), self.size, self.thickness)
+
+#+END_SRC
+
+
+#+BEGIN_SRC python :tangle ../py/fysikkmotor_tilfeldig_flere.py :results silent
+
+number_of_particles = 10
+my_particles = []
+
+for i in range(number_of_particles):
+    size = rnd.randint(10, 20)
+    x = rnd.randint(size, width - size)
+    y = rnd.randint(size, height - size)
+    my_particles.append(Particle((x, y), size))
+
+for particle in my_particles:
+    particle.display()
+#+END_SRC
+
+
+#+BEGIN_SRC python :tangle ../py/fysikkmotor_tilfeldig_flere.py :results silent :exports none
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                running = False
+
+    pygame.display.flip()
+    
+pygame.quit()
+
+#+END_SRC
+*** Bevegelse
+Vi kan representere på flere måter. I grunnen er bevegelse noe man gjør i en retning, med en fart, dette kjenner vi igjen fra matematikken som en /vektor/. 
+
+Vi skal kun se på gjenstander i planet, og vi trenger derfor to koordinater, ~x~ og ~y~. Bevegelse representeres ved å endre et objekts koordinatverdier fra en runde gjennom programmet til det neste.
+
+Tidligere ga vi partiklene våre en ~display~-metode. Vi utvider nå klassen med en ~move~-metode. Hele klassedefinisjonen ser da ut som under:
+#+BEGIN_SRC python :tangle ../py/fysikkmotor_bevegelse.py :results silent
+import pygame
+import random as rnd
+
+width, height = (300, 200)
+
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption('Pygame: tegneklasse')
+
+background_color = (255, 255, 255)
+screen.fill(background_color)
+pygame.display.flip()
+#+END_SRC
+
+#+BEGIN_SRC python :tangle ../py/fysikkmotor_bevegelse.py :results silent
+class Particle(object):
+    def __init__(self, pos, size, vel=(0,0)):
+        self.x = pos[0]
+        self.y = pos[1]
+        self.vel_x = vel[0]
+        self.vel_y = vel[1]
+        self.size = size
+        self.color = (0, 0, 255)
+        self.thickness = 1
+
+    def display(self):
+        pygame.draw.circle(screen, self.color, (self.x, self.y), self.size, self.thickness)
+
+    def move(self):
+        self.x += self.vel_x
+        self.y += self.vel_y
+#+END_SRC
+
+
+#+BEGIN_SRC python :tangle ../py/fysikkmotor_bevegelse.py :results silent
+number_of_particles = 10
+my_particles = []
+
+for i in range(number_of_particles):
+    size = rnd.randint(10, 20)
+    x = rnd.randint(size, width - size)
+    y = rnd.randint(size, height - size)
+    vel_x = rnd.randint(-10, 10)
+    vel_y = rnd.randint(-10, 10)
+    my_particles.append(Particle((x, y), size, (vel_x, vel_y))
+
+for particle in my_particles:
+    particle.display()
+
+,#+BEGIN_SRC python :tangle ../py/fysikkmotor_bevegelse.py :results silent
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                running = False
+                        
+    screen.fill(background_color)
+    for particle in my_particles:
+        particle.move()
+        particle.display()
+    pygame.display.flip()
+    
+pygame.quit()
+#+END_SRC
+*** Størrelse og enheter :noexport:
+
+*** Bevaring av energi :noexport:
 * Appendiks: Skilpadder                                                             :noexport:
 
 

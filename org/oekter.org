@@ -4,7 +4,47 @@
 #+BEGIN_SRC emacs-lisp :eval query-export :exports none
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
 #+END_SRC
+* uke 10
+** Prosjekt
+Nytt prosjekt er omsider på plass. Du finner mer info om det[[file:promo.org::#prosjekt_fysikkmotoren][ her]]. Vi kommer til å bruke nogen lunde samme rammeverk for det siste prosjektet òg, altså en simulering i ~pygame~.
 
+** Vurdering
+Ifølge vurderingsplanen har vi satt av tid til vurdering onsdag om en uke, 13. mars. Denne kommer vi til å benytte oss av. Det blir en relativt enkel vurdering, som settes opp à la ukestestene fra i høst, bare at jeg denne gangen også går inn og ser på koden deres. Ting å forberede seg på:
+
+- definerer funksjoner (Oppgavene tilhørende [[file:promo.org::#abstraksjon][abstraksjon]] og [[file:promo.org::#programflyt][programflyt]] (mer utfordrende))
+- ~while~-løkker ([[file:promo.org::#programflyt][Fra ett til hundre]] (siste oppgave))
+- ~for~-løkker
+
+* uke 5
+** Ball-simulering
+Følg koden i [[http://programarcadegames.com/python_examples/f.php?file=bouncing_balls.py][denne]] nettsiden ved å skrive kode /ordrett/ av. Pass på at koden kjører slik den er.
+
+Jeg ønsker at du tenker over hva hver linje gjør idet du skriver den av, men du kan se bort fra å skulle beskrive «~class Ball():~»-blokken, og «~if __name__ == "__main__":~»-blokken.
+
+Forsøk så å legge til en endring av ballens hastighet ettersom simuleringen går. Dette er å gi ballen en akselerasjon.
+* uke 4
+** Asossiasjonslister -- dictionaries
+#+BEGIN_SRC python :session dict
+
+import math, numpy
+import pygame
+
+pygame.init()
+#>>> (6, 0)
+
+SAMPLERATE = 44100
+
+def tone(freq=1000,volume=16000,length=1):
+    num_steps = length*SAMPLERATE
+    s = []
+    for n in range(num_steps):
+        value = int(math.sin(n * freq * (6.28318/SAMPLERATE) * length)*volume)
+        s.append( [value,value] )
+    x_arr = numpy.array(s, dtype='int8')
+    return x_arr
+
+pygame.sndarray.make_sound(tone())
+#+END_SRC
 * uke 3
 Vi skal nå begynne med numerisk derivasjon og integrasjon, vi er da godt over i modelleringsbiten av faget.
 
