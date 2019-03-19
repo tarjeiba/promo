@@ -2193,7 +2193,7 @@ posisjonsfil = open("../data/posisjonseksempel.csv", "r")
 Vi har nå fått et «filobjekt» kalt ~posisjonsfil~, som er koblet til fila over og åpnet kun med leserettigheter.
 
 #+BEGIN_SRC ipython :session fil :exports both :results silent
-filtekst = posisjonsfil.readlines()
+filtekst = posisjonsfil.read().splitlines()
 #+END_SRC
 
 ~filtekst~ er nå en ~liste~ av tekststrenger, en for hver linje i fila.
@@ -2234,7 +2234,7 @@ For å unngå å måtte huske å lukke fila, kan vi alternativt jobb med fila in
 
 #+BEGIN_SRC ipython :exports both :results output org
 with open("data/posisjonseksempel.csv", "r") as posisjonsfil:
-    filtekst = posisjonsfil.readlines()
+    filtekst = posisjonsfil.read().splitlines()
 
 for linje in filtekst[:5]:
     print(linje)
@@ -3148,6 +3148,66 @@ while running:
     
 pygame.quit()
 #+END_SRC
+*** Grenser :noexport:
+Når vi lager en simulering, ønsker vi ofte å ha den begrenset, for ikke å måtte simulere en uendelig region.
+
+#+BEGIN_TASK
+Heller enn å begrense simuleringen til fysiske vegger, forsøk å «rulle» domenet sammen, slik at en partikkel som forlater den ene siden, kommer tilbake på den andre.
+#+END_TASK
+
+**** Når grenser overskrides
+Vi har fire grenser for domenet vårt:
+- ~x = 0~ (venstre vegg)
+- ~x = width~ (høyre vegg)
+- ~y = 0~ (taket)
+- ~y = height~ (gulvet)
+
+Simuleringen vår går framover i diskrete tidssteg, derfor er det usannsynlig at vi ser på en partikkel idet den treffer en grense, men heller at den har beveget seg et stykke forbi grensen.
+
+Ved lave hastigheter, har den nok ikke kommet seg langt over grensen, men det vi bør ta høyde for det allikevel. Vi begynner da med å regne ut /hvor langt/ over grensen partikkelen har beveget seg (vi kaller denne avstanden ~d~).
+
+#+BEGIN_SRC python
+d = self.x - (width - self.size)
+#+END_SRC
+
+Vi reflekterer så posisjonen ved grensen som
+
+#+BEGIN_SRC python
+self.x = (width - self.size) - d # som igjen kan skrives
+self.x = 2 * (width - self.size) - self.x
+#+END_SRC
+
+For å la en partikkel sprette, kan du legge følgende /metode/ under ~Particle~-klassen:
+
+#+BEGIN_SRC python
+def bounce(self):
+    if self.x > width - self.size:
+        self.x = 2 * (width - self.size) - self.x
+        self.angle *= -1
+
+    elif self.x < self.size:
+        self.x = 2 * self.size - self.x
+        self.angle *= -1
+
+    if self.y > height - self.size:
+        self.y = 2 * (height - self.size) - self.y
+        self.angle = math.pi - self.angle
+
+    elif self.y < self.size:
+        self.y = 2 * self.size - self.y
+        self.angle = math.pi - self.angle
+#+END_SRC
+
+Vi kan så kalle ~bounce~-metoden etter hver gang vi har kalt ~move~-metoden, før vi kaller ~display~.
+
+#+BEGIN_SRC python
+for particle in my_particles:
+    particle.move()
+    particle.bounce()
+    particle.display()
+#+END_SRC
+
+
 *** Størrelse og enheter :noexport:
 
 *** Bevaring av energi :noexport:

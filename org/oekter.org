@@ -4,6 +4,16 @@
 #+BEGIN_SRC emacs-lisp :eval query-export :exports none
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
 #+END_SRC
+* uke 12
+** Løsningsforslag til test
+Jeg har laget et løsningsforslag til forrige ukes test ... forsøksvis som en screencast.
+
+#+BEGIN_EXPORT html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eVJ-hOsjzRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_EXPORT
+
+Du finner løsningsforslaget som [[py:uke11_lf.py][python-fil her]].
+
 * uke 10
 ** Prosjekt
 Nytt prosjekt er omsider på plass. Du finner mer info om det[[file:promo.org::#prosjekt_fysikkmotoren][ her]]. Vi kommer til å bruke nogen lunde samme rammeverk for det siste prosjektet òg, altså en simulering i ~pygame~.
