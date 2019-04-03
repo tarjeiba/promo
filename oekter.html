@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-03-20 Wed 13:21 -->
+<!-- 2019-04-03 Wed 12:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter</title>
@@ -139,6 +139,7 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org7c64f79">uke 14</a></li>
 <li><a href="#orgc3704b1">uke 12</a></li>
 <li><a href="#orgf4376a8">uke 10</a></li>
 <li><a href="#orgd29e5cd">uke 5</a></li>
@@ -153,6 +154,92 @@ for the JavaScript code in this tag.
 <li><a href="#uke35">uke 35&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></a></li>
 <li><a href="#uke34">uke 34&#xa0;&#xa0;&#xa0;<span class="tag"><span class="avholdt">avholdt</span></span></a></li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-org7c64f79" class="outline-2">
+<h2 id="org7c64f79">uke 14</h2>
+<div class="outline-text-2" id="text-org7c64f79">
+</div>
+<div id="outline-container-orgde4b29f" class="outline-3">
+<h3 id="orgde4b29f">Innleveringsoppgave</h3>
+<div class="outline-text-3" id="text-orgde4b29f">
+<p>
+Du kan ta utagangspunk i pythonfila under.
+</p>
+<ul class="org-ul">
+<li><a href="file:///home/tarjei/repos/promo/py/fysikkmotor_partikler.py">fysikkmotor<sub>partikler.py</sub></a></li>
+</ul>
+
+<p>
+Kontroller at fila fungerer i ditt oppsett.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0bddff1" class="outline-3">
+<h3 id="org0bddff1">a) Legg til masse</h3>
+<div class="outline-text-3" id="text-org0bddff1">
+<p>
+Partiklene våre skal ha masse. Legg dette til som en attributt til <code>__init__</code>-metoden til <code>Partikkel</code>-klassen. Gi denne samme verdi som <code>self.strlse</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8f6687b" class="outline-3">
+<h3 id="org8f6687b">b) Endre kollisjoner</h3>
+<div class="outline-text-3" id="text-org8f6687b">
+<p>
+I utagangspunktet har vi i <code>kollider</code>-funksjonen vår følgende <code>if</code>-test:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">if</span> dist &lt; p1.strlse + p2.strlse:
+    <span class="org-variable-name">tangent</span> = math.atan2(dy, dx)
+    <span class="org-variable-name">vinkel</span> = 0.5 * math.pi + tangent
+    
+    <span class="org-variable-name">vinkel1</span> = 2*tangent - p1.vinkel
+    <span class="org-variable-name">vinkel2</span> = 2*tangent - p2.vinkel
+    
+    <span class="org-variable-name">p1.vinkel</span> = vinkel1 
+    <span class="org-variable-name">p2.vinkel</span> = vinkel2
+</pre>
+</div>
+
+<p>
+For å ta hensyn til at partiklene nå har ulik masse, kan vi endre kollisjonskoden til følgende:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">if</span> dist &lt; p1.strlse + p2.strlse:
+    <span class="org-variable-name">vinkel</span> = math.atan2(dy, dx) + 0.5 * math.pi
+    <span class="org-variable-name">total_masse</span> = p1.masse + p2.masse
+    <span class="org-variable-name">p1.vinkel</span>, <span class="org-variable-name">p1.fart</span> = vektorsum(
+        (p1.vinkel, p1.fart * (p1.masse - p2.masse) / total_masse),
+        (vinkel, 2 * p2.fart * p2.masse / total_masse))
+    <span class="org-variable-name">p2.vinkel</span>, <span class="org-variable-name">p2.fart</span> = vektorsum(
+        (p2.vinkel, p2.fart * (p2.masse - p1.masse) / total_masse),
+        (vinkel + math.pi, 2 * p1.fart * p1.masse / total_masse))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc15f79b" class="outline-3">
+<h3 id="orgc15f79b">c) En stor, mange små</h3>
+<div class="outline-text-3" id="text-orgc15f79b">
+<p>
+Lag et oppsett hvor du genererer hundre små partikler og én stor.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org15d67ed" class="outline-3">
+<h3 id="org15d67ed">d) Tegn kun den store</h3>
+<div class="outline-text-3" id="text-org15d67ed">
+<p>
+Gjør så du kun tegner den store partikelen.
+</p>
+</div>
 </div>
 </div>
 
@@ -270,9 +357,9 @@ Denne delen av faget blir ofte mer tydelig om vi har en god måte å visualisere
 </p>
 </div>
 
-<div id="outline-container-orgae8b2b0" class="outline-3">
-<h3 id="orgae8b2b0">Installering</h3>
-<div class="outline-text-3" id="text-orgae8b2b0">
+<div id="outline-container-org994d298" class="outline-3">
+<h3 id="org994d298">Installering</h3>
+<div class="outline-text-3" id="text-org994d298">
 <p>
 Åpne kommandolinja (Windows: windowstasten og skriv <code>cmd</code>. Mac: åpne <code>terminal</code>.). Når du er i kommandolinja, skriv <code>pip install --user pygame</code>. Deretter kan du åpne Spyder og følge tutorialen under.
 </p>
@@ -589,9 +676,9 @@ Oppgaver: <a href="promo.html#programflyt-oppgaver-abc">abc-formelen</a>
 </div>
 </div>
 
-<div id="outline-container-org7def181" class="outline-4">
-<h4 id="org7def181">Funksjoner</h4>
-<div class="outline-text-4" id="text-org7def181">
+<div id="outline-container-orgb25698a" class="outline-4">
+<h4 id="orgb25698a">Funksjoner</h4>
+<div class="outline-text-4" id="text-orgb25698a">
 <p>
 Fagstoff: <a href="promo.html#funksjoner">Funksjoner</a>
 </p>
@@ -632,9 +719,9 @@ Oppgaver:
 :header-args:  :tangle ../py/uke36.py
 </p>
 </div>
-<div id="outline-container-org994d298" class="outline-3">
-<h3 id="org994d298">Installering</h3>
-<div class="outline-text-3" id="text-org994d298">
+<div id="outline-container-org03ccd0b" class="outline-3">
+<h3 id="org03ccd0b">Installering</h3>
+<div class="outline-text-3" id="text-org03ccd0b">
 <ol class="org-ol">
 <li>anaconda (noe som inneholder python, og litt ymse annet)</li>
 <li>pycharm (det dere skal bruke for å skrive python)</li>
@@ -960,9 +1047,9 @@ funk3(10) <span class="org-comment-delimiter"># </span><span class="org-comment"
 </div>
 </div>
 
-<div id="outline-container-orgb25698a" class="outline-3">
-<h3 id="orgb25698a">Funksjoner</h3>
-<div class="outline-text-3" id="text-orgb25698a">
+<div id="outline-container-org227a6f0" class="outline-3">
+<h3 id="org227a6f0">Funksjoner</h3>
+<div class="outline-text-3" id="text-org227a6f0">
 <dl class="org-dl">
 <dt>bakgrunnsstoff</dt><dd><a href="promo.html#org59ad742">Funksjoner</a></dd>
 </dl>
