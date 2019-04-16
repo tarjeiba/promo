@@ -2,14 +2,6 @@
 #+PROPERTY: header-args :eval never-export :results output
 #+TITLE: Programmering og modellering X
 
-#+BEGIN_EXPORT html
-<script type="text/javascript" language="JavaScript"> org_html_manager.set("BASE_URL_QUESTIONS", "https://github.com/tarjeiba/promo/issues/new/");</script>
-#+END_EXPORT
-
-#+BEGIN_SRC emacs-lisp :eval query-export :exports none
-(add-to-list 'org-html-infojs-options '(sdepth . "2"))
-#+END_SRC
-
 * Introduksjon
 :PROPERTIES:
 :CUSTOM_ID: intro
@@ -27,16 +19,6 @@ Personlig tror jeg ikke det er essensielt at hver og en av oss må kunne program
 Programmering i seg selv er en ferdighet uten andre krav til forkunskaper enn at du må kunne lese og skrive. For de fleste byr allikevel programmering på en bratt læringskurve. Datamaskiner er ufattelig gode til noen ting, spesielt regning, og tilsvarende dårlig til andre. Der vi kan lese en setning som «dnene steningen ihonnelder neon fiel», vil ~if x == 2~ og ~if x = 2~ kunne være forskjellen på et dataprogram som fungerer og et som ikke fungerer.
 
 Som spirende programmerer kommer du til å kjenne på både frustrasjon og irritasjon, men forhåpentligvis en overvekt av mestringsfølelse og glede. I starten bruker vi gjerne tre timer på å automatisere en jobb det ville tatt oss fem minutter å gjøre for hånd. Tro meg uansett når jeg sier at følelsen når kodesnutten kjører uten feilmelding etter tre timers jobb gjør det mer enn verdt investeringa.
-
-Her er det en endring.
-
-#+BEGIN_SRC python
-import math
-
-math.sqrt(2)
-#+END_SRC
-
-
 
 Lykke til!
 
@@ -81,53 +63,28 @@ I så fall, godt jobba! Du har nå begynt å skrive litt Python. Vi kommer snart
 Denne sida er opprinnelig skrevet for faget /Programmering og modellering X/ slik det fremstår ved skolestart høsten 2018. Vi har da følgende læremål å forholde oss til:
 
 *Grunnleggende programmering*
-- gjøre rede for overgangen mellom høynivåkode og lavnivåkode
-- omgjøre problemstillinger til konkrete delproblemer, vurdere hvilke delproblemer som lar seg løse digitalt, og utforme løsninger for disse
-- bruke grunnleggende programmering som variabler, datatyper, løkker, tester, plotting, tilfeldige tall, funksjoner og enkel brukerinteraksjon
-- lage strukturerte og oversiktlige programmer med hensiktsmessige kommentarer
+- <<lma0>>gjøre rede for overgangen mellom høynivåkode og lavnivåkode
+- <<lma1>>omgjøre problemstillinger til konkrete delproblemer, vurdere hvilke delproblemer som lar seg løse digitalt, og utforme løsninger for disse
+- <<lma2>>bruke grunnleggende programmering som variabler, datatyper, løkker, tester, plotting, tilfeldige tall, funksjoner og enkel brukerinteraksjon
+- <<lma3>>lage strukturerte og oversiktlige programmer med hensiktsmessige kommentarer
 
 *Matematiske metoder*
-- lage programskisser og algoritmer med utgansgpunkt i et matematisk problem
-- bruke og utlede numeriske metoder for å derivere og integrere funksjoner
-- bruke og utlede metoder for å finne nullpunter til funksjoner
-- bruke og utlede numeriske metoder til å løse differensiallikninger
-- sammenligne noen analytiske og numeriske metoder
+- <<lmb0>>lage programskisser og algoritmer med utgansgpunkt i et matematisk problem
+- <<lmb1>>bruke og utlede numeriske metoder for å derivere og integrere funksjoner
+- <<lmb2>>bruke og utlede metoder for å finne nullpunter til funksjoner
+- <<lmb3>>bruke og utlede numeriske metoder til å løse differensiallikninger
+- <<lmb4>>sammenligne noen analytiske og numeriske metoder
 
 *Modellering*
-- utforme matematiske modeller med utgangspunkt i praktiske problemstillinger og vurdere modellene
-- gjøre rede for modellbegrepet og drøfte ulemper og fordeler ved noen modeller
-- sammenligne resultater fra simuleringer med eksperimentelle data
-- planlegge, utføre, drøfte og presentere et selvstendig arbeid knyttet til modellering
-
-Dette er hårete, men gjennomførbare, mål for et «tretimersfag». For de av dere som har gledet seg til å lære å programmere, er det /grunnleggende programmering/ som i hovedsak dekker dette. Her skal vi lære ting som er essensielle for /all/ programmering, uavhengig av bruksområde. Gjennom arbeidet innenfor disse temaene, skal vi forsøke å legge et solid programmeringsgrunnlag, som du skal kunne bruke på hjemmeprosjekter, når du sitter på studiebenken og har valgt informatikk som fagfelt eller når du jobber som ingeniør.
+- <<lmc0>>utforme matematiske modeller med utgangspunkt i praktiske problemstillinger og vurdere modellene
+- <<lmc1>>gjøre rede for modellbegrepet og drøfte ulemper og fordeler ved noen modeller
+- <<lmc2>>sammenligne resultater fra simuleringer med eksperimentelle data
+- <<lmc3>>planlegge, utføre, drøfte og presentere et selvstendig arbeid knyttet til modellering
 
 ** Opplegg
 Vi legger opp en prosjektbasert gjennomgang. Når man hører om at lister i Python er «muterbare», at funksjoer kan ha «bieffekter» eller at ~self~ viser til instansen av klassen som kjører metoden, er det nyttig om du ser behovet for disse fagbegrepene i et arbeid du holder på med.
 
 Vi kommer til å ha to prosjekter på høsten og to på våren. Jeg kommer til å legge noen anbefalinger for hvilke prosjekter dette kan være, men jeg er åpen for forslag om du har noe annet du kunne tenkt deg å se nærmere på.
-
-* Bruk av nettsida
-:PROPERTIES:
-:CUSTOM_ID: bruk
-:END:
-Denne nettsida er bygd opp rund å skulle kunne være fullstendig tastaturnavigerbar.
-
-Du kan til enhver tid skrive «?» på tastaturet for å få opp en hjelpeside. /Bruk den./
-
-Jeg har med vilje ikke lagt inn noe kommentarfelt til hvert kapittel, men ønsker at du flittig bruker spørrefunksjonen som har tastatursnarvei «q». Du vil da tas til [[https://github.com][Github]], en sosial nettside for programmering, hvor denne sida ligger lagret. Still spørsmålet ditt der, så vil forhåpentligvis noen snarlig kunne hjelpe deg. Spesielt relevante spørsmål legger jeg lenke til ved de temaene det gjelder.
-
-Koden til hvert kapittel ligger tilgjengelig som egen fil under hver kapitteloverskrift. Jeg anbefaler dog at du kun bruker denne direkte om du virkelig står fast. Forsøk først å skrive av eventuell kode direkte fra nettsida, da dette gjør at du får en bedre forståelse av hva programmet gjør og hvordan det fungerer.
-
-#+BEGIN_QUOTE
-Hvorfor i all verden ser den så dårlig ut på mobil?
--- ukjent elev, 2018
-#+END_QUOTE
-
-
-#+BEGIN_QUOTE
-Jeg jobber med saken.
--- Tarjei Bærland, 2018
-#+END_QUOTE
 
 * Matematikk og programmering
 :PROPERTIES:
@@ -190,14 +147,14 @@ Et enkelt matematisk spørsmål kan for eksempel være at «hva er produktet av 
 :PROPERTIES:
 :CUSTOM_ID: programmeringsspraak
 :END:
-Vi skal gjennom arbeidet i denne [[popup:jeg kommer ikke på noe bedere å kalle det][boka]] bruke programmeringsspråket Python.
+Vi skal gjennom dette arbeidet bruke programmeringsspråket Python.
 
-Det er mange gode grunner til å velge Python, vi skal gå gjennom noen av dem straks, men vit med sikkerhet det at vi like så godt kunne valgt et annet språk.
+Det er mange gode grunner til å velge Python ... og mange gode grunner til å velge noe annet.
 
 ** Valg av språk
 Det finnes et utall programmeringsspråk. Noen språk er bedre egnet enn andre for visse oppgaver, intet språk er best på alt. Om du veit at det eneste du skal jobbe med er statistikk, ville kanskje det rette valget for deg være språket R; om du skal jobbe med Arduino bør du bli kjent med C++; om du ikke liker den imperative fremgangsmåten de fleste språk byr på, men ønsker en mer /funksjonell/ tilnærming, plukk opp Haskell; elsker du parenteser, se nærmere på Lisp; vil du skrive programmer som kjører i nettleseren, lær deg Javascript; hater du deg selv, sett deg ned med Brainfuck (jeg beklager språket).
 
-I dette faget kommer vi til å bruke språket Python. Python er et populært språk av mange grunner, og dets populæritet gjør at man kan bruke det innenfor mange fagdisiplinerer. En av fordelene med Python, er at overgangen fra /pseudokode/ til kjørende program ofte er lite. Under ser vi pseudokoden fra tidligere oversatt til Python.
+I dette faget kommer vi til å bruke språket Python. Python er et populært språk, noe som både fører til og er på grunn av at det kan brukes innenfo mange fagdisiplinerer. En av fordelene med Python, er at overgangen fra /pseudokode/ til kjørende program ofte er lite. Under ser vi pseudokoden fra [[#programmering][tidligere («Programmering»)]] oversatt til Python.
 #+BEGIN_SRC python :exports both
 a = 5
 b = 3
@@ -216,13 +173,12 @@ print(svar)
 #+END_SRC
 
 ** Ulike typer programmeringsspråk
-I teorien kan alle programmeringsspråk som er såkalt [[popup:Etter Alan Turing, av «The Imitation Game»-berømmelse][/turingkomplette/]] beregne alt som kan beregnes. For at et språk skal være turingkomplett, må det litt forenklet ha mulighet til å gjenta kode om en betingelse ikke er nådd og kunne skrive og lese fra minnet. Dette gjelder i praksis alle programmeringsspråk.
+I teorien kan alle programmeringsspråk som er såkalt [[popup:Etter Alan Turing, av «The Imitation Game»-berømmelse][/turingkomplette/]] beregne alt som kan beregnes. For at et språk skal være turingkomplett, må det litt forenklet ha mulighet til å gjenta kode om en betingelse ikke er nådd og ha en form for hukommelse. Dette gjelder i praksis alle programmeringsspråk.
 
 Allikevel er det en voldsom forskjell på de ulike språkene. Et klassisk eksempel de fleste programmere har vært innom, er å få maskinen til å si "Hello, world!". La oss se på det for tre ulike språk.
 
 *** «Assembly»
 #+BEGIN_SRC asm
-
 	extern exit, printf
 
 	section .data
@@ -257,7 +213,6 @@ int main() {
 print("Hello, world!")
 #+END_SRC
 
-Den vanligste utgaven av Python er skrevet i C.
 
 *** Høynivå og lavnivå
 Vi ser tydelige forskjeller på eksemplene over. Assembly-koden ligger nære de instruksjonene CPU-en sjøl trenger for å kunne skrive «Hello, world!» på skjermen, mens Python-koden mer eller mindre bare repeterer oppgaveteksten.
@@ -287,9 +242,6 @@ Her er det mange ord du ikke har sett før. Noen av dem kommer du til å bli sv�
 
 Noen språk egner seg dog bedre til visse stiler, vi kommer i all hovedsak til å skrive /imperativ/ kode i Python.
 ** Semantikk og syntaks                                                            :noexport:
-:LOGBOOK:
-CLOCK: [2018-07-29 søn. 09:49]--[2018-07-29 søn. 10:21] =>  0:32
-:END:
 Hvert programmeringsspråk har et sett med «primitive constructs» (Guttag, s. 4), en syntaks, statisk semantikk og semnantikk. Om vi tenker på et naturlig språk (f.eks. norsk) er /primitivene/ ord, syntaksen forteller oss hvilke ord som lager velformede setninger, den statiske semantikken definerer hvilke setninger som er meningsfulle, og semantikken forteller til slutt hva meningen til de setningene er.
 
 I Python har vi blant annet primitivene /literals/ (f.eks. tallet ~42.3~ og tekststrengen ~hei på deg~, og [[popup:%C2%ABinfiks%C2%BB%20fordi%20vi%20setter%20dem%20inn%20/mellom/%20to%20verdier][/infiksoperatorer/]] som ~+~ og ~*~). På norsk er tekststrengen «Stol hodet kne.» ikke en syntaktisk gyldig setning, siden vi på norsk ikke kan ha setninger på formen ~<substantiv> <substantiv> <substantiv>~. I Python er sekvensen av primitiver ~3.2 + 42.3~ syntaktisk velformulert, mens sekvensen ~3.2 42.3~ ikke er det.
@@ -325,26 +277,6 @@ Når et program har feil, og oppfører seg på en utilsiktet måte?
 Av disse tre feiltypene, hvor alle er uønsket, er uten tvil den siste den verste. Det er her formuer tapes, biler kjører av veien, pasienter blir gitt for høye doser stråling og fly går i bakken.
 
 Når mulig, bør programmer skrives på en slik måte at om de ikke fungerer på den måten man har tenkt at de skal, skal dette være tydelig. Vi kommer til å forsøke å legge inn systemer som passer på dette gjennom det følgende arbeidet.
-
-#+BEGIN_TASK
-Dataprogrammer er til tider plagsomet bokstavelige.
-
-Du har to punkter på et kart. Forsøk å beskrive et program, en algoritme, som skal få deg fra det ene punktet til det andre i bil.
-
-Hvor mange fartsbøter ville programmet ditt fått?
-#+END_TASK
-
-* Datamaskinen                                                                      :noexport:
-** Historikk                                                                       :noexport:
-*** Claude Shannon
-*** Alan Touring
-*** Jon von Neumann
-
-** Logikk                                                                          :noexport:
-*** Syllogismer
-*** Boolsk
-
-** En minneblokk fra logiske porter                                                :noexport:
 
 ** Verdier
 *** Totallssystemet
@@ -401,7 +333,6 @@ Til dagligdags regning, har ikke dette noe særlig betydning, vi må dog ha det 
 :PROPERTIES:
 :CUSTOM_ID: basispython
 :END:
-
 ** Regnerekkefølge og kommandolinja
 :PROPERTIES:
 :CUSTOM_ID: regnerekkefoelgeogkommandolinja
@@ -926,7 +857,7 @@ En slik importeringssetning kommer vi til å se i de aller fleste programmene vi
 
 I eksempelet over er ~fysikk~ et slikt bibliotek. Vi kommer seinere til å bruke et knippe biblioteker, spesielt [[https://docs.python.org/2/library/math.html][~math~]], [[http://www.numpy.org/][~numpy~]], [[https://www.scipy.org/][~scipy~]], og [[https://matplotlib.org/][~matplotlib~]].
 
-En del slike biblioteker er en del av Pythons /standardbibliotek/. Det vil enkelt og greit si at utviklerne av Python også tar seg av å holde disse modulene (les: bibliotekene) ved like. En del av standardbiblioteket er [[popup:Dette er funksjoner som er tilgjengelig uten noen form for ~import~-setning, f.eks. funksjonen ~sorted~, som sorterer ei liste][innebygde funksjoner]], men det er også egne moduler man må importere, slik som [[popup:~math~ trenger vi fort, dette biblioteket inneholder både ~sqrt~ og ~factorial~.][~math~]].
+En del slike biblioteker er en del av Pythons /standardbibliotek/. Det vil enkelt og greit si at utviklerne av Python også tar seg av å holde disse modulene (les: bibliotekene) vedlike. En del av standardbiblioteket er [[popup:Dette er funksjoner som er tilgjengelig uten noen form for ~import~-setning, f.eks. funksjonen ~sorted~, som sorterer ei liste][innebygde funksjoner]], men det er også egne moduler man må importere, slik som [[popup:~math~ trenger vi fort, dette biblioteket inneholder både ~sqrt~ og ~factorial~.][~math~]].
 
 Vårt første møte ~import~-setninger blir også vårt første møte «punktnotasjon» eller /dot notation/. Vi skriver ~fy.g~ for vi ønsker å bruke ~g~ fra ~fysikk~-modulen, som vi her har valgt å gi kallenavnet («alias»-et) ~fy~. Vi ser av feilmeldingen under at om vi forsøker å bruke ~g~ direkte, får vi beskjed om at denne ikke er definert.
 
@@ -1206,81 +1137,6 @@ print h(2)
 
 #+END_TASK
 
-** Klasser
-:PROPERTIES:
-:CUSTOM_ID: klasser
-:END:
-Funksjonene er /verbene/ i programeringsspråket vårt. De /gjør/ noe med data og kan returnere verdier. Følger vi analogien videre, vil vi da kunne si at så langt er flyttallene, heltallene, listene, tuplene, tekststrengene, og assosiasjonslistene /subjektene/ i språket vårt. Vi har også sett hvordan vi kan lage nye verb ved å definere funksjoner, vi skal nå gå ett skritt videre ved å lage nye subjekter, klasser.
-
-Området vi nå er på vei over i, kalles /objektorientert programmering/. Som nevnt tidligere, er det ikke strengt nødvendig med klasser for å kunne løse problemer, men det gjør mye av programmeringen langt enklere og mer oversiktlig. I tillegg virker klasser som et /abstraksjonsnivå/ mellom den som skriver og den som bruker et program.
-
-#+BEGIN_SRC python :session kloss :exports code
-  class Kloss(object):
-      """En kloss som glir på et underlag og kan kollidere med andre klosser
-      Klosser initieres med en masse, startposisjon og startfart, alle flyttall.
-      """
-
-      def __init__(self, masse, startposisjon, startfart):
-          self.masse = masse
-          self.posisjon = startposisjon
-          self.fart = startfart
-#+END_SRC
-
-#+RESULTS:
-#+BEGIN_SRC org
-#+END_SRC
-
-Det er kanskje ikke helt tydelig hva denne snutten gjør ennå. Her lager vi oss en ny /klasse/ som vi kaller ~Kloss~. Overse ~(object)~ inntil videre. Vi sier så at klossen skal lages, «initieres» med en masse, startposisjon, og startfart, alle disse er flyttall. Ønsker vi å lage en kloss med masse 1.0 kg, startposisjon 0.0 m og startfart 1.0 m/s, kan vi gjøre dette som 
-
-#+BEGIN_SRC python :session kloss :exports both
-kloss = Kloss(1.0, 0.0, 1.0)
-print(type(kloss))
-#+END_SRC
-
-#+RESULTS:
-#+BEGIN_SRC org
-<class '__main__.Kloss'>
-#+END_SRC
-
-Men ... hva skjedde med ~__init__~-argumentet ~self~? Vel, dette dukker opp gjennom hele klossens levetid som klossen selv. Når vi skal lage funksjoner for klossen (kalt «metoder») kommer vi til å bruke punktnotasjon for å kalle disse metodene.
-
-Slik det står nå, er klossen vår en litt kjedelig sak, vi kan, om vi ønsker, hente ut egenskapene dens, men vi kan vanskelig få den til å gjøre stort. La oss gi den en måte å bevege seg på.
-
-#+BEGIN_SRC python :session kloss_b
-  class Kloss(object):
-      """En kloss som glir på et underlag og kan kollidere med andre klosser
-      Klosser initieres med en masse, startposisjon og startfart, alle flyttall.
-      """
-
-      def __init__(self, masse, startposisjon, startfart):
-          self.masse = masse
-          self.posisjon = startposisjon
-          self.fart = startfart
-
-      def beveg(self, delta_t):
-          self.posisjon += self.fart * delta_t
-#+END_SRC
-
-#+RESULTS:
-#+BEGIN_SRC org
-#+END_SRC
-
-#+BEGIN_SRC python :session kloss_b
-kloss = Kloss(1.0, 0.0, 1.0)
-
-t = 0
-delta_t = 0.1
-
-while t <= 1:
-    kloss.beveg(delta_t)
-    print(kloss.posisjon)
-    t += delta_t
-#+END_SRC
-
-#+RESULTS:
-#+BEGIN_SRC org
-#+END_SRC
-
 ** Kjenn dine røtter
 :PROPERTIES:
 :CUSTOM_ID: kjenndineroetter
@@ -1548,7 +1404,6 @@ Vi kan så finne et overslag for forholdet mellom disse to arealene ved å bruke
 4) Finn forholdet mellom totalt antall punkter og antall punkter inni sirkelen, dette blir et overslag for $\frac{A_\square}{A_\circ}$.
 
 [[fig:tilfeldigpi.png]]
-
 
 * Programflyt
 :PROPERTIES:
@@ -1924,12 +1779,6 @@ for kvadrattall in kvadrattallene:
 :PROPERTIES:
 :CUSTOM_ID: programflyt-oppgaver
 :END:
-*** Kortoppgaver                                                                  :noexport:
-:PROPERTIES:
-:custom_id: programflyt-kortoppgaver
-:END:
-1. Lag sannhetsskjema for $\neg a \wedge b$
-
 *** abc-formelen
 :PROPERTIES:
 :custom_id: programflyt-oppgaver-abc
@@ -1983,6 +1832,39 @@ Gi c: -18
 Du ga andregradslikningen 
 Den kan faktoriseres 3(x - 2)(x + 3)
 #+END_EXAMPLE
+
+*** ~def abc~
+:PROPERTIES:
+:CUSTOM_ID: programflyt_oppgaver_defabc
+:END:
+Lag en funksjon, ~abc~, med følgende spesifikasjoner:
+
+#+BEGIN_SRC python :exports code :results silent
+def abs(a, b, c):
+    """Returnerer en liste av løsningene til andregradslikningen
+    a * x**2 + b * x + c = 0
+
+    Skriver "Likningen har ingen reelle løsninger" og returnerer None dersom likningen
+    ikke har noen reelle løsninger.
+
+    Eksempler:
+    abc(1, -2, 1) => [1]
+    abc(1, -5, 6) => [2, 3]
+    abc(1,  0, 1) => None (og printet "Likningen har ingen reelle løsninger")
+    """
+    loesninger = []
+    # sett inn din kode her
+
+    return loesninger
+#+END_SRC
+
+
+Lagre denne funksjonen i mattebiblioketet ditt, slik at du seinere kan skrive følgende for å løse en andregradslikning.
+#+BEGIN_SRC python :exports code :results silent
+from matte import abc
+
+loesninger = abc(-3, 2, 1)   # loeser likningen -3x**2 + 2x + 1 = 0
+#+END_SRC
 *** 7-ern
 :PROPERTIES:
 :CUSTOM_ID: programflyt-oppgaver-7ern
@@ -2092,7 +1974,6 @@ Utvid programmet til å gjøre følgende:
 - Brukeren har to forsøk til å gjette verdien
 - Programmet forteller brukeren «~For lavt~» dersom hun gjetter en for lav verdi, og «~For høyt~» om hun gjetter en for høy verdi
 
-
 *** Fra ett til hundre                                                          :utfordring:
 :PROPERTIES:
 :ORDERED:  t
@@ -2103,6 +1984,59 @@ Lag et gjettespill som trekker et tilfeldig tall fra og med 1 til og med 100. Sp
 - Spillet forteller deg om du har gjettet for høyt eller for lavt om du ikke gjetter riktig
 
 La flere personer spille spillet ditt, og noter deg hvor mange forsøk de bruker. Eller se på [[#tekstfiler][Tekstfiler]]-kapittelet for inspirasjon til hvordan du kan holde en «high score»-liste.
+
+*** Største felles divisor :noexport:
+:PROPERTIES:
+:CUSTOM_ID: appendiks-prosjekter-gcd
+:END:
+Innenfor tallteori er to talls største felles divisor (/greates common divisor/) en vesentlig egenskap å kunne avgjøre. Målet med denne oppgaven er å lage en funksjoner ~sfd~, med to argumenter ~a~ og ~b~, som returnerer ~a~ og ~b~ sine største felles divisor.
+
+**** Oppgave
+Vi har et rom som er 221 dm bredt og 595 dm langt. Om vi skal flislegge gulvet i dette rommet med hele kvadratiske fliser, hva er den største sidelengden flisene kan ha?
+
+**** En elementær tilnærming
+For to tall, ~a~ og ~b~, hvor ~b < a~, kan deres /sfd/ være maksimalt ~b/2~.
+
+#+BEGIN_TASK
+Argumenter for foregående setning.
+#+END_TASK
+
+Dersom ~sfd(a,b) == 1~ har ~a~ og ~b~ /ingen/ felles divisorer større enn én, vi sier da at ~a~ og ~b~ /relativt primistiske/. For å finne en eventuell /sfd/ for ~a~ og ~b~, kan vi da teste alle tall fra 1 til ~b/2~.
+
+#+BEGIN_SRC python
+def sfd_elementaer(a, b):
+    """Returner største felles divisor for heltallene a og b."""
+
+    if a > b:
+        a, b = b, a
+
+    sfd = 1                     # Holder denne verdien er a og b relativt primistiske
+    test = 1
+    
+    while test <= b/2:
+        if a % test == 0 and b % test == 0:
+            sfd = test
+        test += 1
+
+    return sfd
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+17
+#+END_SRC
+
+#+BEGIN_TASK
+Denne testen er ineffektiv. Blant annet sjekker den alle partall, uavhengig av om ~a~ eller ~b~ er oddetall. Endre funksjonen til å være slik ~test~ økes med 2 i oddetallssteg (1, 3, 5, ...) dersom  enten ~a~ eller ~b~ er oddetall.
+#+END_TASK
+
+#+BEGIN_TASK
+Lag en predikatfunksjon som svarer på hvorvidt ~a~ og ~b~ er relativt primistiske.
+#+END_TASK
+
+
+**** Kilder
+[[https://no.wikipedia.org/wiki/St%C3%B8rste_felles_divisor][Største felles divisor]]
 
 * Plotting                                                                          :noexport:
 :PROPERTIES:
@@ -2402,78 +2336,17 @@ print(f"Den deriverte av f ved x = 2 er {f_der_2}.")
 
 Vi veit fra matematikken at om $f(x) = x^2 + 2$ er $f'(x) = 2x$, altså er $f'(2) = 4$, så vi ser ut til å være på rett spor med beregningen over.
 
+** Eulers metode
+:PROPERTIES:
+:CUSTOM_ID: modellering_eulersmetode
+:END:
+
 ** Oppgave
 Lag et program som skriver ut den deriverte av en enkel polynomdivisjon for ulike verdier av $\Delta x$. Start programmet med $\Delta x = 1\cdot 10^{-1}$ og endre tierpotensene ned til $\Delta x = 1\cdot 10^{-15}$.
 
 Hva ser ut til å skje?
 
-* Appendiks: Prosjekter
-:PROPERTIES:
-:CUSTOM_ID: appendiks-prosjekter
-:END:
-** Største felles divisor                                                          :noexport:
-:PROPERTIES:
-:CUSTOM_ID: appendiks-prosjekter-gcd
-:END:
-Innenfor tallteori er to talls største felles divisor (/greates common divisor/) en vesentlig egenskap å kunne avgjøre. Målet med denne oppgaven er å lage en funksjoner ~sfd~, med to argumenter ~a~ og ~b~, som returnerer ~a~ og ~b~ sine største felles divisor.
-
-*** Oppgave
-Vi har et rom som er 221 dm bredt og 595 dm langt. Om vi skal flislegge gulvet i dette rommet med hele kvadratiske fliser, hva er den største sidelengden flisene kan ha?
-
-*** En elementær tilnærming
-For to tall, ~a~ og ~b~, hvor ~b < a~, kan deres /sfd/ være maksimalt ~b/2~.
-
-#+BEGIN_TASK
-Argumenter for foregående setning.
-#+END_TASK
-
-Dersom ~sfd(a,b) == 1~ har ~a~ og ~b~ /ingen/ felles divisorer større enn én, vi sier da at ~a~ og ~b~ /relativt primistiske/. For å finne en eventuell /sfd/ for ~a~ og ~b~, kan vi da teste alle tall fra 1 til ~b/2~.
-
-#+BEGIN_SRC python
-def sfd_elementaer(a, b):
-    """Returner største felles divisor for heltallene a og b."""
-
-    if a > b:
-        a, b = b, a
-
-    sfd = 1                     # Holder denne verdien er a og b relativt primistiske
-    test = 1
-    
-    while test <= b/2:
-        if a % test == 0 and b % test == 0:
-            sfd = test
-        test += 1
-
-    return sfd
-#+END_SRC
-
-#+RESULTS:
-#+BEGIN_SRC org
-17
-#+END_SRC
-
-#+BEGIN_TASK
-Denne testen er ineffektiv. Blant annet sjekker den alle partall, uavhengig av om ~a~ eller ~b~ er oddetall. Endre funksjonen til å være slik ~test~ økes med 2 i oddetallssteg (1, 3, 5, ...) dersom  enten ~a~ eller ~b~ er oddetall.
-#+END_TASK
-
-#+BEGIN_TASK
-Lag en predikatfunksjon som svarer på hvorvidt ~a~ og ~b~ er relativt primistiske.
-#+END_TASK
-
-*** Kilder
-[[https://no.wikipedia.org/wiki/St%C3%B8rste_felles_divisor][Største felles divisor]]
-
-** Sykkeldata                                                                      :noexport:
-:PROPERTIES:
-:CUSTOM_ID: appendiks-prosjekter-sykkeldata
-:END:
-
-** Dating-algoritmen                                                               :noexport:
-:PROPERTIES:
-:CUSTOM_ID: appendiks-prosjekter-datingalgoritmen
-:END:
-
-** Twitter-boten - Introduksjon
+* Prosjekt: Twitter-boten
 :PROPERTIES:
 :custom_id: prosjekt_twitterboten
 :END:
@@ -2485,7 +2358,7 @@ Gjennom dette prosjektet skal vi lage en «bot» som skal operere en twitter-kon
 - lagd en app som skal få jobbe mot vår nye utviklerkonto ([[https://developer.twitter.com][developer.twitter.com]])
 - hentet autoriserings- og forbruker-kodene som blei laget for vår bot og twitter-konto
 
-*** Oppsett
+** Oppsett
 Registrer en konto på [[https://twitter.com][Twitter]]. Merk, dersom du ikke vil at boten skal tvitre fra din vanlige konto, om du har en, bør du her regisrtere en ny.
 
 Deretter, gå gjennom [[https://developer.twitter.com/en/apply-for-access][Apply for access]] på [[https://developer.twitter.com][developer.twitter.com]]. Målet her er å få regisrtert brukeren din som en utvikler. Vær oppriktig i svarfeltene, om at du skal bruke kontoen i studeiesammenheng, og at du både vil søke opp andre tweets, samt sende ut dine egne.
@@ -2514,7 +2387,7 @@ Nå gjenstår det bare å finne autoriseringsnøklene som er blitt generert for 
 
 Nå er det bare litt kode som gjenstår for å få våre python-genererte tweets ut i verden.
 
-*** Botens første, spede steg
+** Botens første, spede steg
 #+BEGIN_SRC python :exports none :session twitterbot :tangle ../py/twitter_oppdatering.py :results silent
 import tweepy
 import json
@@ -2573,7 +2446,7 @@ Resultatet av denne kodesnutten er tweeten under.
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 #+END_EXPORT
 
-*** ~api~-objektet
+** ~api~-objektet
 Over har vi linja ~api = tweepy.API(auth)~. Her skjer det mye. Fra venstre, har vi følgende:
 
 1) Vi lager et variabelnavn, ~api~
@@ -2596,7 +2469,7 @@ Der det vi får igjen av å kalle ~sqrt~-funksjonen er et tall, som vi kan gjør
 
 Om vi ser på [[http://docs.tweepy.org/en/v3.5.0/api.html][hjelpedokumentasjonen]] til api-objektet, ser vi at vi har mange «metoder» (funksjoner vi kaller via en notasjon som ~api.update_status()~) tilgjengelig. Om vi videre ønsker å utforske disse metodene videre, er det spesielt tre funksjoner vi har behov for kunne bruke, ~dir~, ~type~, og ~help~. La oss bruke dem til å forstå mer av ~update_class~-metoden.
 
-*** Hjelp til hjelp
+** Hjelp til hjelp
 
 Under lager jeg en enkel ~for~-løkke for å utforske hvilke muligheter vi har med ~api~-objektet.
 #+BEGIN_SRC python :exports both :results output org :session twitterbot ../py/twitter_oppdatering.py
@@ -2704,7 +2577,7 @@ Vi får da følgende, meningstunge utveksling:
 
 Alt ligger nå til rette for å lage boter som interagerer med Twitter automatisk.
 
-*** Prosjektbeskrivelse
+** Prosjektbeskrivelse
 Dere kan velge mellom to prosjektalternativer, hvorav det ene anses som programmeringsmessig mer utfordrende å komme i gang med, da dette krever at du programmerer logikken som skal drive spillet ditt.
 
 *Alternativ 1 -- Samtaleboten*
@@ -2778,8 +2651,7 @@ while True:
     time.sleep(5) # vent i fem sekunder før du fortsetter
 #+END_SRC
 
-
-** Fysikkmotoren
+* Prosjekt: Fysikkmotoren
 :PROPERTIES:
 :custom_id: prosjekt_fysikkmotoren
 :END:
@@ -2792,8 +2664,82 @@ Et fullført prosjekt har følgende:
 - [ ] Objekter som beveger seg i et tyngdefelt
 - [ ] Objekter kan kollidere med hverandre
 
+** Klasser
+:PROPERTIES:
+:CUSTOM_ID: klasser
+:END:
+Funksjonene er /verbene/ i programeringsspråket vårt. De /gjør/ noe med data og kan returnere verdier. Følger vi analogien videre, vil vi da kunne si at så langt er flyttallene, heltallene, listene, tuplene, tekststrengene, og assosiasjonslistene /subjektene/ i språket vårt. Vi har også sett hvordan vi kan lage nye verb ved å definere funksjoner, vi skal nå gå ett skritt videre ved å lage nye subjekter, klasser.
 
-*** Lage et vindu
+Området vi nå er på vei over i, kalles /objektorientert programmering/. Som nevnt tidligere, er det ikke strengt nødvendig med klasser for å kunne løse problemer, men det gjør mye av programmeringen langt enklere og mer oversiktlig. I tillegg virker klasser som et /abstraksjonsnivå/ mellom den som skriver og den som bruker et program.
+
+#+BEGIN_SRC python :session kloss :exports code
+  class Kloss(object):
+      """En kloss som glir på et underlag og kan kollidere med andre klosser
+      Klosser initieres med en masse, startposisjon og startfart, alle flyttall.
+      """
+
+      def __init__(self, masse, startposisjon, startfart):
+          self.masse = masse
+          self.posisjon = startposisjon
+          self.fart = startfart
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+#+END_SRC
+
+Det er kanskje ikke helt tydelig hva denne snutten gjør ennå. Her lager vi oss en ny /klasse/ som vi kaller ~Kloss~. Overse ~(object)~ inntil videre. Vi sier så at klossen skal lages, «initieres» med en masse, startposisjon, og startfart, alle disse er flyttall. Ønsker vi å lage en kloss med masse 1.0 kg, startposisjon 0.0 m og startfart 1.0 m/s, kan vi gjøre dette som 
+
+#+BEGIN_SRC python :session kloss :exports both
+kloss = Kloss(1.0, 0.0, 1.0)
+print(type(kloss))
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+<class '__main__.Kloss'>
+#+END_SRC
+
+Men ... hva skjedde med ~__init__~-argumentet ~self~? Vel, dette dukker opp gjennom hele klossens levetid som klossen selv. Når vi skal lage funksjoner for klossen (kalt «metoder») kommer vi til å bruke punktnotasjon for å kalle disse metodene.
+
+Slik det står nå, er klossen vår en litt kjedelig sak, vi kan, om vi ønsker, hente ut egenskapene dens, men vi kan vanskelig få den til å gjøre stort. La oss gi den en måte å bevege seg på.
+
+#+BEGIN_SRC python :session kloss_b
+  class Kloss(object):
+      """En kloss som glir på et underlag og kan kollidere med andre klosser
+      Klosser initieres med en masse, startposisjon og startfart, alle flyttall.
+      """
+
+      def __init__(self, masse, startposisjon, startfart):
+          self.masse = masse
+          self.posisjon = startposisjon
+          self.fart = startfart
+
+      def beveg(self, delta_t):
+          self.posisjon += self.fart * delta_t
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+#+END_SRC
+
+#+BEGIN_SRC python :session kloss_b
+kloss = Kloss(1.0, 0.0, 1.0)
+
+t = 0
+delta_t = 0.1
+
+while t <= 1:
+    kloss.beveg(delta_t)
+    print(kloss.posisjon)
+    t += delta_t
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+#+END_SRC
+
+** Lage et vindu
 :PROPERTIES:
 :custom_id: prosjekt_fysikkmotor_vindu
 :END:
@@ -2825,7 +2771,7 @@ while running:
                 running = False
 #+END_SRC
 
-*** Tegne i vinduet
+** Tegne i vinduet
 Vi fortsetter her med utgangspunktet fra i stad.
 
 #+BEGIN_SRC python :session tegne :tangle ../py/fysikkmotor_tegne.py :results silent 
@@ -2941,7 +2887,7 @@ pygame.quit()
 
 #+END_SRC
 
-*** Tilfeldigheter og flere objekter
+** Tilfeldigheter og flere objekter
 Vi har tidligere sett på tilfeldige tall, og hvordan disse kan brukes for eksempelvis å finne en tilnærming til π, [[*Intermezzo: Tilfeldige tall][Intermezzo: Tilfeldige tall]]. Vi kommer nå til å bruke det for å gi modellene våre tilfeldige utgangspunkt.
 
 Som alltid, for å få tilgang til tilfeldige tall, kommer vi til å bruke ~random~-biblioteket, så vi har nå ~import~-linjene
@@ -3075,7 +3021,7 @@ while running:
 pygame.quit()
 
 #+END_SRC
-*** Bevegelse
+** Bevegelse
 Vi kan representere på flere måter. I grunnen er bevegelse noe man gjør i en retning, med en fart, dette kjenner vi igjen fra matematikken som en /vektor/. 
 
 Vi skal kun se på gjenstander i planet, og vi trenger derfor to koordinater, ~x~ og ~y~. Bevegelse representeres ved å endre et objekts koordinatverdier fra en runde gjennom programmet til det neste.
@@ -3148,14 +3094,14 @@ while running:
     
 pygame.quit()
 #+END_SRC
-*** Grenser :noexport:
+** Grenser :noexport:
 Når vi lager en simulering, ønsker vi ofte å ha den begrenset, for ikke å måtte simulere en uendelig region.
 
 #+BEGIN_TASK
 Heller enn å begrense simuleringen til fysiske vegger, forsøk å «rulle» domenet sammen, slik at en partikkel som forlater den ene siden, kommer tilbake på den andre.
 #+END_TASK
 
-**** Når grenser overskrides
+*** Når grenser overskrides
 Vi har fire grenser for domenet vårt:
 - ~x = 0~ (venstre vegg)
 - ~x = width~ (høyre vegg)
@@ -3207,30 +3153,106 @@ for particle in my_particles:
     particle.display()
 #+END_SRC
 
+** Størrelse og enheter :noexport:
 
-*** Størrelse og enheter :noexport:
+** Bevaring av energi :noexport:
 
-*** Bevaring av energi :noexport:
-* Appendiks: Skilpadder                                                             :noexport:
+* Prosjekt: Ballkast
+Vi står på en slette og skal kaste en ball, og ballen forlater hånda var 1,7 meter over bakken.
 
+#+include: ../py/ballkast.py :lines "10-18" src python
 
-#+Begin_SRC python
-from turtle import *
+Vi lager så to funksjoner, en for posisjonen til ballen i /x/-retning, og en for posisjonen til ballen i /y/-retning.
 
-def square(side):
-    for _ in range(4):
-        forward(side)
-        right(90)
+#+include: ../py/ballkast.py :lines "19-26" src python
 
-def inspi(step, angle, inc):
-    forward(step)
-    right(angle)
-    inspi(step+inc, angle+inc, inc+1)
+La oss teste funksjonen for et par av verdiene.
 
-inspi(10, 10, 1)
+#+BEGIN_SRC python :preamble :dir ../py :preamble from ballkast import * :exports both
+from numpy import linspace
+
+print("| Tid (s) |  x(t)  |  y(t)  |")
+print("-----------------------------")
+for t in linspace(0, 5, 11):
+    print(f"| {t:7.2f} |{x(t):7.1f} |{y(t):7.1f} | ")
 #+END_SRC
 
 #+RESULTS:
+#+begin_example
+| Tid (s) |  x(t)  |  y(t)  |
+-----------------------------
+|    0.00 |    0.0 |    1.7 | 
+|    0.50 |    4.5 |    8.3 | 
+|    1.00 |    9.0 |   12.4 | 
+|    1.50 |   13.5 |   14.0 | 
+|    2.00 |   18.0 |   13.3 | 
+|    2.50 |   22.5 |   10.0 | 
+|    3.00 |   27.0 |    4.3 | 
+|    3.50 |   31.5 |   -3.8 | 
+|    4.00 |   36.0 |  -14.4 | 
+|    4.50 |   40.5 |  -27.5 | 
+|    5.00 |   45.0 |  -43.0 | 
+#+end_example
+
+Vi ser at ballens /y/-posisjon går fra å være positiv til negativ i intervallet 3,0 til 3,5 sekunder. Da får vi en lengde på kastet på rundt tretti meter. (Dette leser vi av i ~x(t)~-kolonna.
+
+#+include: ../py/ballkast.py :lines "16-17" src python
+
+Vi skal nå se på tre måter vi kan finne dette nullpunktet på.
+
+** Analytisk
+Når vi finner en /analytisk/ løsning, har vi løst likningene på «vanlig» måte. For vårt eksempel, kan det da se ut som følger:
+
+Løser $y(t)=0$ for å finne hvor ballen treffer bakken.
+
+\begin{align*}
+y(t) &= -\frac{1}{2} gt^2 + 18\cdot \sin(60^\circ) \cdot t + y_0 \\
+y(t) &= 0 \\
+t = 3.28 &\vee t = -0.11
+\end{align*}
+
+Her har vi funnet løsningene ved å bruke abc-løseren fra oppgave [[#programflyt_oppgaver_defabc][~def abc~]].
+
+#+BEGIN_SRC python :dir ../py :exports both
+from fysikk import g
+from matte import abc
+from math import sin, radians
+
+a = -0.5 * g
+b = 18 * sin(radians(60))
+c = 1.7
+
+loesninger = abc(a, b, c)
+
+print(loesninger)
+#+END_SRC
+
+#+RESULTS:
+: [3.2836244370914915, -0.10554956081832266]
+
+Løsningen $t=-0.11\,\textrm{s}$ er ugyldig, da kastet vårt kun gjelder for positive verdier av $t$, men $t=3.28\,\textrm{s}$ stemmer godt overens med antydningen vi fikk fra tabellen over.
+
+Vi kan så sette dette inn i likningen for $x$-posisjonen, og få at $x(3.28) = 18\cdot \cos (60^\circ)\cdot 3.28 = 29.5$. Om vi løser likningene direkte, får vi altså at kastet er på 29.5 meter.
+
+** Nummerisk løsning av likning
+Om vi ønsker å løse liknignene nummerisk, kan vi selv velge hvilken metode vi vil bruke ([[*Halveringsmetoden][halverigsmetoden]]). Under løser vi det med halverningsmetoden.
+
+#+include: ../py/ballkast.py :lines "32-49" :src python
+
+Vi ser at ved å bruke halveringsmetoden, en strategi for å løse likninger numerisk, får vi et svar hvor funksjonsverdien i nullpunktet ikke vil være lengre fra null enn vi setter ~epsilon~.
+
+*** Halveringsmetoden
+Vi ønsker å finne en $x$-verdi som gjør at $f(x)=0$. Velg to startverdier ($x_0$) og ($x_1$), en hvor $f(x) < 0$ og en hvor $f(x)>0$. Dersom $f(x)$ er kontinuerlig, må altså $f(x) = 0$ for minst én $x$ mellom $x_0$ og $x_1$. Forsøk med midtpunktet mellom $x_0$ og $x_1$, $x_\texrm{m}$. Dersom $f(x_\textrm{m})$ er tilstrekkelig nære 0, er $x_\texrm{m}$ løsningen vår, hvis ikke, bytter du ut $x_0$ eller $x_1$ med $x_\textrm{m}$ slik at du har én positiv og én negativ funksjonsverdi.
+
+[[fig:halveringsmetoden.png]]
+
+** Modellert
+Om vi skal «regne oss framover» fra utgangsposisjonen, kan vi gjøre dette ved å bruke [[*Eulers metode][Eulers metode]].
+
+#+include: ../py/ballkast.py :lines "51-72" :src python
+
+*** Påvirkning fra Δt
+Dersom vi endrer steglengden vår her, får vi ulike svar for kastelengden.
 
 * Gjøremål                                                                          :noexport:
 ** TODO Opprette plotfunksjon for matematiske funksjoner
@@ -3251,31 +3273,6 @@ https://www.w3schools.com/howto/howto_js_popup.asp
 
 Dette var opprinnelig hentet fra w3schools. For berdre å få dette til få fungere, kan jeg sende en id-en til javascriptfunksjonen. Dette for å sørge for at alt er unikt.
 * Notater                                                                           :noexport:
-** Latex-chart
-
-#+BEGIN_SRC latex :file fsa.pdf :packages '(("" "tikz")) :vorder 1em :results raw
-\usetikzlibrary{shapes,arrows}
-\tikzstyle{astate} = [circle, draw, text centered, font=\footnotesize, fill=blue!25]
-\tikzstyle{rstate} = [circle, draw, text centered, font=\footnotesize, fill=red!25]
-
-\begin{tikzpicture}[->, >=stealth', shorten >=1pt, auto, node distance=2.8cm, semithick]
-  \node [astate] (1) at (0,0) {1};
-  \node [astate] (2) at (1,0) {2};
-  \node [rstate] (3) at (2m9) {3};
-  \path (1) edge [bend left] node {b} (2)
-  (2) edge node {b} (3)
-  (2) edge [bend left] node {a} (1)
-  (3) edge [loop above] node {(a, b)} (3);
-  \end{tikzpicture}
-#+END_SRC
-
-** svarknapper
-#+BEGIN_EXPORT html
-<label for='txt'>static text
-    <input type="text" id='txt' value="" />
-</label>
-#+END_EXPORT
-
 ** Arbeidsminnet i titallssystemet
 I «arbeidsminnet» i en datamaskin, representeres koeffisientene som spenningsnivåer. Det ville her i utgangspunktet ikke vært noe i veien for å sette ti ulike spenningsnivåer, og dermed la datamaskinen jobbe med titallsystemet den òg. Problemet er da at det ville vært lite som skulle til for at en verdien var feil. Om vi setter minimumspenningen til 0 V og maksimumsspenningen til 5 V, får altså hver verdi et spenn på 0,5 V som er «sitt». Det skal da lite til at en verdi som 1,6 V faller under 1,5 V, og dermed at en 4-er brått er en 3-er.
 
@@ -3305,8 +3302,282 @@ print(c(9))
 11
 #+END_SRC
 
+** Etter læremål
+Dette er hårete, men gjennomførbare, mål for et «tretimersfag». For de av dere som har gledet seg til å lære å programmere, er det /grunnleggende programmering/ som i hovedsak dekker dette. Her skal vi lære ting som er essensielle for /all/ programmering, uavhengig av bruksområde. Gjennom arbeidet innenfor disse temaene, skal vi forsøke å legge et solid programmeringsgrunnlag, som du skal kunne bruke på hjemmeprosjekter, når du sitter på studiebenken og har valgt informatikk som fagfelt eller når du jobber som ingeniør.
+** Tilfeldige tall
+*** Forventningsverdi maks av dobbelterning
+Finn gjennomsnittet av maksverdien til to terninger kastet.
+
+#+BEGIN_SRC ipython
+import random as rnd
+
+antall_kast = 100000
+antall_terninger = 2
+sum_maks = 0
+kast = 0
+
+while kast <= antall_kast:
+    kastene = [rnd.randint(1, 6) for _ in range(antall_terninger)]
+    sum_maks += max(kastene)
+    kast += 1
+
+print(sum_maks / kast)
+#+END_SRC
+
+** Myntkast
+*** Kast mynten
+Lag en funksjon som returnerer ~True~ dersom et kall av ~rnd.random()~ blir over 0.5.
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent
+import random as rnd
 
 
-** Twitter-bot
-1. Lag en twitter-konto
-2. Søk om å få den som /utviklerkonto/ på developers.twitter.com
+def myntkast() -> bool:
+    """Returer True med sannsynlighet på 50 %,
+    False hvis ikke.
+    """
+    return rnd.random() > 0.5
+
+#+END_SRC
+
+*** Antall kron på rad
+I det følgende setter vi et myntkast til å være kron hvis ~myntkast()~ returnerer ~True~. (Vi kunne like så godt sagt det motsatte.)
+
+Lag en funksjon som starter et myntkast, og fortsetter å kaste så lenge den får kron. Funksjonen ~kronsekvens~ returnerer antall kron på rad, null hvis første kast blir mynt.
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent
+def kronsekvens() -> int:
+    """Kast en mynt og tell opp antall kron på rad.
+
+    Returner antallet.
+    """
+    antall = 0
+    while myntkast():
+        antall += 1
+    return antall
+#+END_SRC
+
+#+BEGIN_SRC ipython :session mynt :exports both :results org
+antall = kronsekvens()
+print(f"På dette forsøket fikk vi {antall} kron på rad.")
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+På dette forsøket fikk vi 2 kron på rad.
+#+END_SRC
+*** Antall forsøk før ti på rad
+Lag en funksjon, ~tiersekvens~, som teller antall ganger den må kalle ~kronsekvens~ før den får ti kron på rad.
+
+~tiersekvens~ skal returnerer antallet ganger.
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent 
+def tiersekvens() -> int:
+    """Returner antall forsøk før minst ti kron på rad."""
+    antall = 0
+    while kronsekvens() < 10:
+        antall += 1
+    return antall
+#+END_SRC
+
+#+BEGIN_SRC ipython :session mynt :exports both :results org :preamble "# -*- coding: utf-8 -*-"
+antall = tiersekvens()
+print(f"Denne gangen tok det {antall} forsøk for å få minst ti kron på rad.")
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+Denne gangen tok det 1360 forsøk for å få minst ti kron på rad.
+#+END_SRC
+
+*** Ti på rad tusen ganger
+Lag en funksjon, ~tusen_tiersekvenser~, som returnerer ei liste med resultatene av tusen kjøringer av ~tiersekvens~.
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent
+def tusen_tiersekvenser() -> list:
+    """Returner ei liste med resultatene av tusen kall på tiersekvens."""
+    antall = 1000
+    resultater = []
+    while antall > 0:
+        resultater.append(tiersekvens())
+    return resultater
+#+END_SRC
+
+*** Histogrammet
+
+#+BEGIN_SRC ipython :session mynt :tangle mynt.py
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+
+ax.hist(results, range=(0, 5000), edgecolor='black')
+ax.set_title("Forsøk på å få ti kron på rad.")
+ax.set_xlabel("Antall forsøk")
+ax.set_ylabel("Antall ganger det tok så x forsøk.")
+ax.hist(tusen_tiersekvenser())
+fig.savefig('mynt.png')
+
+#+END_SRC
+
+* Syntaks
+Det følgende er en blanding av egenskrevet materiale og materiale sterkt inspirert av https://learnxinyminutes.com/docs/python/, gitt ut under en [[https://creativecommons.org/licenses/by-sa/3.0/deed.no][Creative Commons-DelPåSammeVilkår]]-lisens. Det følgende er derfor lisensiert på tilsvarende måte.
+
+** Kommentarer
+#+BEGIN_SRC python
+# Enkeltlinjekommentarer starter etter #-tegnet
+a = 42 # og de kan komme sammen med en vanlig programlinje
+
+# Blokkommanterer går
+# over flere linjer
+
+""" De kan også skrives ved å bruke trippelsitater, enten
+    med "- eller '-tegnene.
+"""
+#+END_SRC
+
+** Tall og primitive datatyper
+#+BEGIN_SRC python
+# Tall evaluerer til seg sjøl
+
+42 # -> 42
+3.14 # -> 3.14
+
+# Utregninger er som forventet
+1 + 1 # -> 2
+9 - 2 # -> 7
+21 * 7 # -> 147
+21 / 7 # -> 3
+3 ** 3 # -> 27
+25 // 7 # -> 3 # // gir heltallsdivisjon med svaret rundet ned
+
+# Vi finner resten i et delestykke med modulo-operatoren
+25 % 7 # -> 4
+# her er 25 = 3 * 7 + 4, altså er 25 // 7 = 3 med 4 i rest
+
+# Regnerekkefølge kan endres med parenteser
+(1 + 7) * 4 # -> 32
+
+# Boolske operatorer
+True and False # -> False
+False or True # -> True
+
+# vi negerer med not
+not True # -> False
+not False # -> True
+
+# likhet sjekkes med ==
+True == True # -> True
+True == False # -> False
+False == False # -> True
+1 == 1 # -> True
+
+# ulikhet sjekkes med !=
+1 != 1 # -> False
+True != False # -> True
+
+# størrelser kan sammenlignes
+1 < 2 # -> True
+1 > 2 # -> False
+1 < 1 # -> False
+1 <= 1 # -> True
+1 > 1 # -> False
+1 >= 1 # -> True
+
+# Tekststrenger
+'kan lages med "-tegnet'
+"eller '-tegnet"
+
+# Strenger kan legges sammen
+"Hei, " + "verden!" # -> "Hei, verden!"
+
+# Strenger kan ganges med heltall
+"Hei!" * 3 # -> "Hei!Hei!Hei!"
+
+# Strenger oppfører seg som en liste av bokstaver
+#Hei, verden!"[2] # -> "i"
+
+# Vi kan finne lengden av en streng
+len("Hei,verden!") # -> 11
+
+# Vi kan «formatere» strenger ved å lage f-strenger
+a = "eple"
+b = "appelsin"
+
+f"Mine favorittfrukter er {a} og {b}." # "> "Mine favorittfrukter er eple og appelsin."
+#+END_SRC
+
+** Variabler og samlinger
+#+BEGIN_SRC python
+# Python har en print-funksjon
+print("Afrikanske svaler er ikke trekkfugler.") # -> Afrikanske svaler er ikke trekkfugler
+
+# Vi kan motta en streng fra brukeren via input
+variabelnavn = input("En prompt til brukeren: ")
+
+# lister lagrer sekvenser av elementer
+liste = []
+# vi kan opprette en liste med elementer
+annen_liste = [2, 3, 4, 5]
+
+# legg til elementer i enden av en liste med append
+liste.append(2)  # liste er nå [2]
+liste.append(5)  # liste er nå [2, 5]
+liste.append(42) # liste er nå [2, 5, 42]
+# returner og fjern det siste elementet med pop
+liste.pop() #-> 42 # liste er nå [2, 5]
+# vi legger inn et par verdier til
+liste.append(5) # liste er nå [2, 5, 5]
+liste.append(42) # liste er nå [2, 5, 5, 42]
+
+# vi adressere elementer i ei liste med indeks
+liste[0] # -> 2 # 0 er indeksen til det første elementet
+# vi kan gi nye verdier til elementene ved å bruke indeksering
+liste[1] = 7 # liste er nå [2, 7, 5, 42]
+# vi kan se på det siste elementet
+liste[-1] # -> 5
+
+# om vi forsøker å se utenfor ei liste, får vi en IndexError
+liste[3] # hever en IndexError
+
+# i kan hente ut deler av ei liste med slice-notasjon
+# (for de som har R1, er dette et lukket/åpent-intervall
+liste[1:3] # -> [7, 5]
+# Hoppe over begynnelsen
+liste[1:] # -> [7, 5, 42]
+# Hoppe over slutten
+liste[:-1] # -> [2, 7, 5]
+# Hoppe over annethvert element
+liste[::2] # -> [2, 5]
+# Reverser lista
+liste[::-1] # -> [42, 5, 7, 2]
+# Slicer oppgis altså som listenavn[start_inkludert:slutt_ekskludert:steg]
+
+# Legg sammen to lister med +
+annen_liste + liste # -> [2, 3, 4, 5, 2, 7, 42] # merk at begge listene er uendrede
+
+# Utvid en liste med extend
+liste.extend(annen_liste) # -> [2, 7, 42, 2, 3, 4, 5] # liste er nå endret
+
+# Fjern første tilfellet av en verdi
+liste.remove(3) # liste er nå [2, 7, 42, 2, 4, 5]
+# liste.remove(3) # hever en ValueError siden 3 ikke lenger er i lista
+
+# Vi kan sette inn et element ved ønsket indeks med insert
+liste.insert(4, 3) # liste er nå [2, 7, 42, 2, 3, 4, 5] igjen
+
+# Få indeksen av det første elementet funnet
+liste.index(42)
+# liste.index(43) # Hever en ValueError siden 43 ikke er i liste
+
+# Sjekk om et element er i en liste med in
+42 in liste # -> True
+43 in liste # -> False
+
+# Få lengden til en liste med len
+len(liste) # -> 7
+
+# Vi kan returnere en sortert liste
+sorted(liste) # -> [2, 2, 3, 4, 5, 5, 7, 42]
+# liste er fortsatt [2, 7, 5, 42, 3, 2, 4, 5]
+# om vi ønsker å endre liste «in place», kan vi bruke sort()
+liste.sort() # liste er nå [2, 2, 3, 4, 5, 5, 7, 42]
+#+END_SRC

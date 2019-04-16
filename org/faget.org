@@ -1,2 +1,0 @@
-#+SETUPFILE: orgheader.org
-#+TITLE: Faget ved Edvard Munch

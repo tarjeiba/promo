@@ -4,6 +4,82 @@
 #+BEGIN_SRC emacs-lisp :eval query-export :exports none
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
 #+END_SRC
+* uke 16
+** En statusoppdatering
+Grunnet mais mange helligdager, og deres instidighet vedrørende heldagsprøver, har vi kun tre økter igjen før karakterene deres skal settes 29. mai. Dette er to økter færre enn  jeg hadde planlagt for, en brøler jeg tar fullt og helt på mine skuldre.
+
+** 8. mai
+Her jobber vi med å finne nullpunkter til likninger. Dette er nyttig innenfor mange deler av numerikken (matematikk hvor vi gjør utregninger heller enn å løse oppgavene algebraisk), og vi skal se spesielt på to metoder. Halveringsmetoden og Newton-Raphson-metoden.
+
+Dette er en fortsettelse på ballsimulatoren vi lagde etter vinterferien, og jeg har startet på en gjennomgang av ulike modeller for løsning av et skrått kast [[file:promo.org::*Prosjekt:%20Ballkast][her (Prosjekt: Ballkast)]].
+
+** 15. mai
+Differensiallikninger, likninger hvor den derivert dukker opp som en ukjent, løses via en form for numerisk integrasjon.
+
+Denne økta blir ulik avhengig av om dere har matematikk R2 eller ei.
+
+Vi kommer uansett til å skulle løse en modell av à la harer-og-rever-i-et-økosystem, som dere hadde om i naturfag. Her blir det også en videreføring av partikkelmodellen med kolisjoner vi har jobbet med de siste ukene. (Partiklenes farge kan representere hva slags art, kollisjoner mellom to gjenstander med lik farge gjør én ting, ulik farge noe annet.)
+
+** 29. mai
+Avslutning, «mappegjennomgang» og karaktersetting.
+
+** Forventninger
+*Til meg*
+Før 8. mai, og rett etter 8. og 15. mai spiller jeg inn en tilbakemeldingsvideo til hver av dere om hva dere skal gjøre den neste uka.
+
+*Til dere*
+Dere setter av et par timer til å jobbe med tilbakemeldingene mellom hver økt. 
+
+
+** Konsekvens
+Konsekvensen av alt dette er at vi ikke får hatt et forsøk hvor dere får sammenlignet modelleringsdata med forsøksdata, så dette er noe vi kan gjøre i perioden mellom karaktersetting og eksamen.
+
+God ferie, programører!
+
+* uke 14
+** Innleveringsoppgave
+Du kan ta utagangspunk i pythonfila under.
+- [[py:fysikkmotor_partikler.py]]
+
+Kontroller at fila fungerer i ditt oppsett.
+
+** a) Legg til masse
+Partiklene våre skal ha masse. Legg dette til som en attributt til ~__init__~-metoden til ~Partikkel~-klassen. Gi denne samme verdi som ~self.strlse~.
+
+** b) Endre kollisjoner
+I utagangspunktet har vi i ~kollider~-funksjonen vår følgende ~if~-test:
+#+BEGIN_SRC python
+if dist < p1.strlse + p2.strlse:
+    tangent = math.atan2(dy, dx)
+    vinkel = 0.5 * math.pi + tangent
+    
+    vinkel1 = 2*tangent - p1.vinkel
+    vinkel2 = 2*tangent - p2.vinkel
+    
+    p1.vinkel = vinkel1 
+    p2.vinkel = vinkel2
+#+END_SRC
+
+For å ta hensyn til at partiklene nå har ulik masse, kan vi endre kollisjonskoden til følgende:
+
+#+BEGIN_SRC python
+if dist < p1.strlse + p2.strlse:
+    vinkel = math.atan2(dy, dx) + 0.5 * math.pi
+    total_masse = p1.masse + p2.masse
+    p1.vinkel, p1.fart = vektorsum(
+        (p1.vinkel, p1.fart * (p1.masse - p2.masse) / total_masse),
+        (vinkel, 2 * p2.fart * p2.masse / total_masse))
+    p2.vinkel, p2.fart = vektorsum(
+        (p2.vinkel, p2.fart * (p2.masse - p1.masse) / total_masse),
+        (vinkel + math.pi, 2 * p1.fart * p1.masse / total_masse))
+#+END_SRC
+
+** c) En stor, mange små
+Lag et oppsett hvor du genererer hundre små partikler og én stor.
+
+** d) Tegn kun den store
+Gjør så du kun tegner den store partikelen.
+
 * uke 12
 ** Løsningsforslag til test
 Jeg har laget et løsningsforslag til forrige ukes test ... forsøksvis som en screencast.
