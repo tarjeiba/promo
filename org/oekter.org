@@ -4,6 +4,19 @@
 #+BEGIN_SRC emacs-lisp :eval query-export :exports none
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
 #+END_SRC
+* uke 19
+** Utregninger av pi
+Se på videoen under og skriv av koden mens den går (Youtube har pauseknapp). Til den tredje oppgaven trenger du papir og noe å tegne med, fortrinnsvis en relativt tjukk tusj.
+
+#+BEGIN_EXPORT html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BWlR9YDb2I0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_EXPORT
+
+«Muntligoppgaver» dere ville fått til oppgaver à la denne:
+- Utvid det første programmet til først å gi seg når vi har kommet så nærme som vi ønsker. For eksempel, gå først ut av ~while~-løkka når endringen gjennom to iterasjoner er tilstrekkelig liten.
+- Utvid det andre programmet til å først samle de tilfeldige ~x~- og ~y~-verdiene i hver sine lister, som du så plotter til slutt, etter hele ~while~-løkka. Forklar hvorfor det gjør at programmet da går mye raskere.
+- Dersom vi kun «cropper» bildet, uten å endre fargesammensetningen, hvordan påvirker vaget av «er svart»-verdi (her ~0.5~) hva vi får som utregnet π? (Her må du kjøre programmet flere ganger, eller lage en ny løkke, hvor du endrer grensen gradvis og rapporterer utregnet verdi.)
+
 * uke 16
 ** En statusoppdatering
 Grunnet mais mange helligdager, og deres instidighet vedrørende heldagsprøver, har vi kun tre økter igjen før karakterene deres skal settes 29. mai. Dette er to økter færre enn  jeg hadde planlagt for, en brøler jeg tar fullt og helt på mine skuldre.

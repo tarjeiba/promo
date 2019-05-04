@@ -1137,11 +1137,11 @@ print h(2)
 
 #+END_TASK
 
-** Kjenn dine røtter
+** Kjenn dine røtter - halveringsmetoden
 :PROPERTIES:
 :CUSTOM_ID: kjenndineroetter
 :END:
-Av en eller annen grunn ønsker vi å finne nullpunktet til funksjonen $f(x) = 0.7e^{-x} - 5x + 13.$ Du setter deg ned med penn og papir, og innser raskt at du ikke kan det du behøver for å finne en /analytisk/ løsning til oppgaven (se f.eks. løsningen til [[http://www.wolframalpha.com/input/?i=0.7e%255E(-x)+-+5x+%252B+13+%253D+0][Wolfram Alpha]]).
+Av en eller annen grunn ønsker vi å finne nullpunktet til funksjonen $f(x) = 0.7e^{-x} - 5x + 13$. Du setter deg ned med penn og papir, og innser raskt at du ikke kan det du behøver for å finne en /analytisk/ løsning til oppgaven (se f.eks. løsningen til [[http://www.wolframalpha.com/input/?i=0.7e%255E(-x)+-+5x+%252B+13+%253D+0][Wolfram Alpha]]).
 
 Du tar derfor fram det digitale millimeterpapiret, Geogebra, tegner grafen, trykker «skjæring mellom to objekt», velger grafen og x-aksen og får opp at nullpunktet ligger ved $x=2.61$.
 
@@ -1298,6 +1298,20 @@ def f(x):
 
 og sette startverdiene til 0.0 og 10.0.
 #+END_TASK
+
+** Kjenn dine røtter - Newton-Raphsons metode
+Atter en gang ønsker vi å finne eventuelle nullpunkter til funksjonen $f(x) = 0.7e^{-x} - 5x + 13$. Vi velger oss ett startsted og en /gjetning/ om at et av nullpunktene ligger i retning av tangenten i punktet. Det er med andre ord en tanke om at «jeg veit ikke bedre enn at du (les: funksjonen) fortsetter som du gjør akkurat nå».
+
+#+BEGIN_SRC python :dir ../py :preamble from newton_raphson import newton_raphson
+import math
+def f(x):
+    return 0.7 * math.exp(-x) - 5 * x + 13
+
+print(newton_raphson(f, 0))
+#+END_SRC
+
+#+RESULTS:
+: 2.610291831895619
 
 ** Oppgaver
 :PROPERTIES:
@@ -3168,7 +3182,7 @@ Vi lager så to funksjoner, en for posisjonen til ballen i /x/-retning, og en fo
 
 La oss teste funksjonen for et par av verdiene.
 
-#+BEGIN_SRC python :preamble :dir ../py :preamble from ballkast import * :exports both
+#+BEGIN_SRC python :dir ../py 
 from numpy import linspace
 
 print("| Tid (s) |  x(t)  |  y(t)  |")
@@ -3177,22 +3191,6 @@ for t in linspace(0, 5, 11):
     print(f"| {t:7.2f} |{x(t):7.1f} |{y(t):7.1f} | ")
 #+END_SRC
 
-#+RESULTS:
-#+begin_example
-| Tid (s) |  x(t)  |  y(t)  |
------------------------------
-|    0.00 |    0.0 |    1.7 | 
-|    0.50 |    4.5 |    8.3 | 
-|    1.00 |    9.0 |   12.4 | 
-|    1.50 |   13.5 |   14.0 | 
-|    2.00 |   18.0 |   13.3 | 
-|    2.50 |   22.5 |   10.0 | 
-|    3.00 |   27.0 |    4.3 | 
-|    3.50 |   31.5 |   -3.8 | 
-|    4.00 |   36.0 |  -14.4 | 
-|    4.50 |   40.5 |  -27.5 | 
-|    5.00 |   45.0 |  -43.0 | 
-#+end_example
 
 Vi ser at ballens /y/-posisjon går fra å være positiv til negativ i intervallet 3,0 til 3,5 sekunder. Da får vi en lengde på kastet på rundt tretti meter. (Dette leser vi av i ~x(t)~-kolonna.
 

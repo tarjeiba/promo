@@ -1,35 +1,84 @@
 let predef = `
 import turtle
+from turtle import Turtle
+        
+class KikoraTurtle(Turtle):
+    def __init__(self, history = []):
+        Turtle.__init__(self)
+        self.fd = self.forward
+    
+    def _check(self, kstepsobj, r = 10):
+        if self.distancesquared(kstepsobj.posarray[kstepsobj.unvisited]) < r ** 2:
+            kstepsobj.visitedarray[kstepsobj.unvisited] = True
+            kstepsobj.unvisited += 1
+            return True
+        else:
+            return False
 
-kstep1 = True
+    def distancesquared(self, point):
+        pos = self.position()
+        return (pos[0] - point[0]) ** 2 + (pos[1] - point[1]) ** 2
 
-def oppgave(tur, pos, n=1, r=10):
-    orig = tur.position()
-    tur.pu()
-    tur.goto(pos[0], pos[1]-r)
-    tur.pd()
-    tur.circle(r)
-    tur.pu()
-    tur.goto(pos[0]-r/2, pos[1]-r/2)
-    tur.pd()
-    tur.write(n, font=("Ariel", 16))
-    tur.pu()
-    tur.goto(orig)
+    def forward(self, distance):
+        self._check(ksteps)
+        Turtle.forward(self, distance)
 
-opp = turtle.Turtle()
-opp.speed(0)
-opp.hideturtle()
+    def backward(self, distance):
+        Turtle.backward(self, distance)
 
-points = [(150, 0), (0, 260), (-150, 0)]
+class TaskTurtle(Turtle):
+    def __init__(self, ksteps):
+        Turtle.__init__(self)
+        self.speed(0)
+        self.hideturtle()
+        self.fd = self.forward
+        self._draw_tasks(ksteps.posarray)
 
-for i, point in enumerate(points):
-    oppgave(opp, point, i+1)
+    def _draw_tasks(self, posarray):
+        orig = self.position()
+        for n, pos in enumerate(posarray):
+            self._draw_task(n, pos)
+        self.goto(orig)
 
-del opp
+    def _draw_task(self, n, pos, r=10):
+        self.pu()
+        self.goto(pos[0], pos[1]-r)
+        self.pd()
+        self.circle(r)
+        self.pu()
+        self.goto(pos[0]-r/2, pos[1]-r/2)
+        self.pd()
+        self.write(n, font=("Ariel", 16))
+        self.pu()
 
-ivar = turtle.Turtle()
+class Ksteps(object):
+    def __init__(self, posarray):
+        self.posarray = posarray
+        self.visitedarray = [False for _ in posarray]
+        self.unvisited = 0  # index of first unvisited point
+
+
+    def check(self, tur, n, err=1):
+        """Check whether turtle is inside nth kstep area."""
+        pos = tur.position()
+
+def unvisited(steps):
+    for i, step in enumerate(steps):
+        if step[0]:
+            return i
+
+ksteps = Ksteps([(150, 0), (0, 260), (-150, 0)])
+
+
+
+
+tasks_turtle = TaskTurtle(ksteps)
+del tasks_turtle
+
+ivar = KikoraTurtle()
 ivar.showturtle()
 `
+
 function kstepscolor(num) {
     let table = document.getElementById('ksteps');
     let rows = table.getElementsByTagName('tr');
@@ -43,6 +92,7 @@ function runit() {
     Sk.pre = "edoutput";
     Sk.configure({output:outf, read:builtinRead}); 
     (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+    Sk.canvas = 'mycanvas';
     Sk.TurtleGraphics.height = 600; Sk.TurtleGraphics.width = 800;
     var myPromise = Sk.misceval.asyncToPromise(function() {
 	return Sk.importMainWithBody("<stdin>", false, predef + prog, true);

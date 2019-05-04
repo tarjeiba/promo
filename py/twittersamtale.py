@@ -25,8 +25,7 @@ api = tweepy.API(auth)
 
 min_id = 1072837266496765952
 
-
-while True:
+if partall:
     print("Oppdaterer tidslinje.")
     tidslinje = api.home_timeline()
     for tweet in tidslinje:

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-04-16 Tue 09:05 -->
+<!-- 2019-04-17 Wed 20:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programmering og modellering X</title>
@@ -1058,12 +1058,12 @@ Hvordan skal vi så gjøre det? Når vi skal kopiere en liste, kan vi gjøre det
 </div>
 </div>
 
-<div id="outline-container-orgc0be230" class="outline-3">
-<h3 id="basispython-oppgaver"><a id="orgc0be230"></a>Oppgaver</h3>
+<div id="outline-container-orgd3cd10f" class="outline-3">
+<h3 id="basispython-oppgaver"><a id="orgd3cd10f"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-basispython-oppgaver">
 </div>
-<div id="outline-container-org7454e3b" class="outline-4">
-<h4 id="basispython-kortoppgaver"><a id="org7454e3b"></a>Kortoppgaver</h4>
+<div id="outline-container-orgd9963a6" class="outline-4">
+<h4 id="basispython-kortoppgaver"><a id="orgd9963a6"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-basispython-kortoppgaver">
 <ol class="org-ol">
 <li>Be om et navn, skriv ut "Hei på deg, {navn}"    # Husk print("Hei på deg", navn)</li>
@@ -1456,11 +1456,11 @@ Hva blir skrevet av følgende program?
 </div>
 </div>
 
-<div id="outline-container-orga3489d1" class="outline-3">
-<h3 id="kjenndineroetter"><a id="orga3489d1"></a>Kjenn dine røtter</h3>
+<div id="outline-container-org421b1b1" class="outline-3">
+<h3 id="kjenndineroetter"><a id="org421b1b1"></a>Kjenn dine røtter - halveringsmetoden</h3>
 <div class="outline-text-3" id="text-kjenndineroetter">
 <p>
-Av en eller annen grunn ønsker vi å finne nullpunktet til funksjonen $f(x) = 0.7e<sup>-x</sup> - 5x + 13.$ Du setter deg ned med penn og papir, og innser raskt at du ikke kan det du behøver for å finne en <i>analytisk</i> løsning til oppgaven (se f.eks. løsningen til <a href="http://www.wolframalpha.com/input/?i=0.7e%5E(-x)+-+5x+%2B+13+%3D+0">Wolfram Alpha</a>).
+Av en eller annen grunn ønsker vi å finne nullpunktet til funksjonen \(f(x) = 0.7e^{-x} - 5x + 13\). Du setter deg ned med penn og papir, og innser raskt at du ikke kan det du behøver for å finne en <i>analytisk</i> løsning til oppgaven (se f.eks. løsningen til <a href="http://www.wolframalpha.com/input/?i=0.7e%5E(-x)+-+5x+%2B+13+%3D+0">Wolfram Alpha</a>).
 </p>
 
 <p>
@@ -1610,12 +1610,30 @@ og sette startverdiene til 0.0 og 10.0.
 </div>
 </div>
 
-<div id="outline-container-org7f342dc" class="outline-3">
-<h3 id="abstraksjon-oppgaver"><a id="org7f342dc"></a>Oppgaver</h3>
+<div id="outline-container-org06a78da" class="outline-3">
+<h3 id="org06a78da">Kjenn dine røtter - Newton-Raphsons metode</h3>
+<div class="outline-text-3" id="text-org06a78da">
+<p>
+Atter en gang ønsker vi å finne eventuelle nullpunkter til funksjonen \(f(x) = 0.7e^{-x} - 5x + 13\). Vi velger oss ett startsted og en <i>gjetning</i> om at et av nullpunktene ligger i retning av tangenten i punktet. Det er med andre ord en tanke om at «jeg veit ikke bedre enn at du (les: funksjonen) fortsetter som du gjør akkurat nå».
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> math
+<span class="org-keyword">def</span> <span class="org-function-name">f</span>(x):
+    <span class="org-keyword">return</span> 0.7 * math.exp(-x) - 5 * x + 13
+
+<span class="org-keyword">print</span>(newton_raphson(f, 0))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4a7d644" class="outline-3">
+<h3 id="abstraksjon-oppgaver"><a id="org4a7d644"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-abstraksjon-oppgaver">
 </div>
-<div id="outline-container-orgd9963a6" class="outline-4">
-<h4 id="abstraksjon-kortoppgaver"><a id="orgd9963a6"></a>Kortoppgaver</h4>
+<div id="outline-container-org6f6ea68" class="outline-4">
+<h4 id="abstraksjon-kortoppgaver"><a id="org6f6ea68"></a>Kortoppgaver</h4>
 <div class="outline-text-4" id="text-abstraksjon-kortoppgaver">
 <ol class="org-ol">
 <li>Lag en funksjon som tar inn et tall og returnerer det dobbelte</li>
@@ -2259,8 +2277,8 @@ I dette eksempelet brukte vi ei <code>for</code>-løkke. Ei slik løkke gjør no
 </div>
 </div>
 
-<div id="outline-container-orgd3cd10f" class="outline-3">
-<h3 id="programflyt-oppgaver"><a id="orgd3cd10f"></a>Oppgaver</h3>
+<div id="outline-container-org5cd1eb6" class="outline-3">
+<h3 id="programflyt-oppgaver"><a id="org5cd1eb6"></a>Oppgaver</h3>
 <div class="outline-text-3" id="text-programflyt-oppgaver">
 </div>
 <div id="outline-container-org29bff7d" class="outline-4">
@@ -3852,6 +3870,20 @@ La oss teste funksjonen for et par av verdiene.
 </div>
 
 <pre class="example">
+3.75
+3.125
+3.4375
+3.28125
+3.359375
+3.3203125
+3.30078125
+3.291015625
+3.2861328125
+3.28369140625
+Fant løsning ved t = 3.28,
+lengden på kastet er da 29.55 m
+Fant løsning ved t = 3.29
+lengden på kastet er da 29.70 m
 | Tid (s) |  x(t)  |  y(t)  |
 -----------------------------
 |    0.00 |    0.0 |    1.7 | 

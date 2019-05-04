@@ -24,4 +24,11 @@ $(document).ready(function(){
     for (let oppgave of oppgaver) {
 	exampleCode(oppgave.id, oppgave.tittel, oppgave.text, oppgave.prepends + oppgave.code);
     }
+
+    let workspace = Blockly.inject('blocklyDiv',
+				   {toolbox: document.getElementById('toolbox')});
+
+
+
 });
+
