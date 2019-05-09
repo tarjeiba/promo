@@ -5,6 +5,21 @@
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
 #+END_SRC
 * uke 19
+** Mappeinnlevering
+Som sagt under gårsdagens time, skal «mappa» deres leveres til førsteutkastsvurdering onsdag om ei uke. Lagre alle filene i en ~zip~-fil og send denne til meg på e-post [[mailto:tabaa004@osloskolen.no][tabaa004@osloskolen.no]]. I mappa legger dere minst følgende:
+
+- twitterbotbesvarelsen deres
+- sprettballsimuleringen deres
+- gasspartikkelsimulering (eller en utvidet utgave som viser brownsk bevegelse)
+- difflikningløsningen fra i går ([[https://www.youtube.com/watch?v=p_di4Zn4wz4][3Blue1Brown på Youtube]]) eller [[*Utregninger av pi][π-utregninger]].
+
+Jeg kommer til å gi tilbakemelding i løpet av eksamensuka deres, så dere har én uke fra 22. til 29. mai med å gjøre eventuelle utbedringer. Karakteren settes i løpet av timen 29. mai.
+
+Tilbakemeldingen kommer til å være i form av en videogjennomgang av koden deres, hvor dere kommer til å få oppfølgingsoppgaver. Jeg kommer til å la hovedtyngden av av videoen knytte seg til ett program, fortell meg hvilket program dette skal være, om du har noen formening.
+
+** Vurderingskriterier
+Ved en eventuell eksamen i faget, kommer dere til å bli vurdert etter disse [[pdf:pmx_v19_vurderingskriterier.pdf][vurderingskritereiene]].
+
 ** Utregninger av pi
 Se på videoen under og skriv av koden mens den går (Youtube har pauseknapp). Til den tredje oppgaven trenger du papir og noe å tegne med, fortrinnsvis en relativt tjukk tusj.
 
@@ -422,7 +437,7 @@ Fagstoff: [[file:promo.org::#mensviventer][Mens vi venter]]
 Oppgaver:
 - [[file:promo.org::#collatzformodning][Collatz' formodning]]
 - 
-* uke 36                                                                             :avholdt::PROPERTIES:
+* uke 36                                                                           :avholdt:
 :CUSTOM_ID: uke36
 :header-args:  :tangle ../py/uke36.py
 :END:
