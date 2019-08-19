@@ -1,0 +1,8 @@
+#+SETUPFILE: orgheader.org
+#+TITLE: Økter i Programmering og modellering
+
+#+BEGIN_SRC emacs-lisp :eval query-export :exports none
+(add-to-list 'org-html-infojs-options '(sdepth . "2"))
+#+END_SRC
+
+* uke 34
