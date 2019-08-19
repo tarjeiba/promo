@@ -2301,7 +2301,7 @@ Et problem med denne sammenhengen, er at den kun virker i én dimensjon. Ønsker
 
 \[\Sigma \vec{F} = m \vec{a}.\]
 
-Dersom vi for eksempel har et knippe tider og tilhørende posisjoner for en gjenstand, kan vi altså finne summen av kreftene som har virket på gjenstanden, /gitt at/ vi klarer å finne akselerasjonen. Akselerasjon er hvor raskt en gjenstands hastighet endrer seg, og hastighet er hvor raskt en gjenstands posisjon endrer seg. Alle som har hatt Matematikk 1T, veit at /endring/ er det samme som /derivasjon/. Vi må altså lære å derivere.
+Dersom vi for eksempel har et knippe tider og tilhørende posisjoner for en gjenstand, kan vi altså finne summen av kreftene som har virket på gjenstanden, /gitt at/ vi klarer å finne akselerasjonen. Akselerasjon er hvor raskt en gjenstands hastighet endrer seg, og hastighet er hvor raskt en gjenstands posisjon endrer seg. Alle som har hatt Matematikk 1T, veit at /endring/ ofte medfører /derivasjon/. Vi må altså lære å derivere.
 
 ** Derivasjon
 #+BEGIN_DEFINITION
