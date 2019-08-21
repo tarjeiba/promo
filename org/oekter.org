@@ -1,8 +1,54 @@
 #+SETUPFILE: orgheader.org
 #+TITLE: Økter i Programmering og modellering
-
+#+BIND: org-time-stamp-custom-formats '("<%Y uke %W: %e.%m>" . "<%Y uke %W: %e. %m %H:%M>")
+#+BIND: org-display-custom-times t
 #+BEGIN_SRC emacs-lisp :eval query-export :exports none
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
 #+END_SRC
 
-* uke 34
+#+RESULTS:
+#+BEGIN_SRC org
+#+END_SRC
+
+
+* Grunnleggende regning
+<2019-08-21 Wed>
+- Basisregning
+- ~.py~-filer
+- Typer
+- Funksjoner og funksjonssignaturer
+
+[[pdf:33_innlevering][Innleveringsoppgaver]]
+** Innleveringsoppgaver uke 33 :noexport:
+:properties:
+:export_file_name: ../pdf/33_innlevering.pdf
+:end:
+Lever en fil ~uke33_ditt_navn.py~ hvor du regner ut og skriver ut svarene til følgende oppgaver:
+
+1) $2\cdot2$
+2) $2 + 3^{51} - 17$
+3) Antall tegn i teksstrengen «dette er en mellomlang setning som er skrevet via innfallsmetoden».
+4) $\sqrt{17}$ med tre siffer etter desimaltegnet.
+
+Svarene dine skal altså se ut som følger:
+#+BEGIN_SRC python :exports results
+from math import sqrt
+print(2 * 2)
+print(2 + 3 ** 51 - 17)
+print(len("dette er en mellomlang setning som er skrevet via innfallsmetoden"))
+print(f"{sqrt(17):.3f}")
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+4
+2153693963075557766310732
+65
+4.123
+#+END_SRC
+
+Lykke til!
+
+* Lagring av filer og starten på biblioteker
+<2019-08-28 Wed>
+** Innleveringsoppgaver

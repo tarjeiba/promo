@@ -1,7 +1,6 @@
-#+DATE: <2017-08-23 on>
 #+AUTHOR: Tarjei Bærland
 #+EMAIL: tabaa004@osloskolen.no
-#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t broken-links:nil c:nil
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:nil broken-links:nil c:nil
 #+OPTIONS: creator:nil d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:nil p:nil pri:nil
 #+OPTIONS: prop:nil stat:t tags:t tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t html-style:nil
 #+LANGUAGE: no
