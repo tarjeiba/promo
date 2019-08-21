@@ -18,7 +18,7 @@
 - Typer
 - Funksjoner og funksjonssignaturer
 
-[[pdf:33_innlevering][Innleveringsoppgaver]]
+[[pdf:33_innlevering.pdf][Innleveringsoppgaver]]
 ** Innleveringsoppgaver uke 33 :noexport:
 :properties:
 :export_file_name: ../pdf/33_innlevering.pdf
