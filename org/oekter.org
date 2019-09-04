@@ -10,18 +10,41 @@
 #+BEGIN_SRC org
 #+END_SRC
 
+* Forgreining
+<2019-09-04 Wed>
+- [ ] Recap om basisregning
+- [ ] Input fra bruker
+- [ ] ~if~-setninger
+- [ ] Indentering og blokkstruktur
+
+[[pdf:36_innlevering.pdf][Innleveringsoppgaver]]
+
+** Kommentarer fra sist
+- Husk å importere biblioteker i fila du leverer, det du gjør i konsollen følger ikke med leveringa.
+
+** Innleveringsoppgaver uke 36 :noexport:
+:properties:
+:export_file_name: ../pdf/36_innlevering.pdf
+:end:
+*** Andregradsløser
+Lever en fil ~uke36_ditt_navn.py~ hvor du løser følgende oppgave:
+
+Du skal lage et program som ber brukeren om tre tall, ~a~, ~b~, og ~c~. Programmet ditt skal så løse likningen \[ax^2 + bx + c = 0\] og skrive svaret eller svarene ut for brukeren.
+
+*** Tilleggsutfordring: Faktorisering 
+Utvid programmet slik at det skriver ut det faktoriserte uttrykket for brukeren.
 
 * Grunnleggende regning
 <2019-08-21 Wed>
-- Basisregning
-- ~.py~-filer
-- Typer
-- Funksjoner og funksjonssignaturer
+- [X] Basisregning
+- [X] ~.py~-filer
+- [X] Typer
+- [ ] Funksjoner og funksjonssignaturer
 
 [[pdf:33_innlevering.pdf][Innleveringsoppgaver]]
-** Innleveringsoppgaver uke 33 :noexport:
+** Innleveringsoppgaver uke 34 :noexport:
 :properties:
-:export_file_name: ../pdf/33_innlevering.pdf
+:export_file_name: ../pdf/34_innlevering.pdf
 :end:
 Lever en fil ~uke33_ditt_navn.py~ hvor du regner ut og skriver ut svarene til følgende oppgaver:
 
@@ -48,7 +71,3 @@ print(f"{sqrt(17):.3f}")
 #+END_SRC
 
 Lykke til!
-
-* Lagring av filer og starten på biblioteker
-<2019-08-28 Wed>
-** Innleveringsoppgaver
