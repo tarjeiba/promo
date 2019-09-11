@@ -10,12 +10,44 @@
 #+BEGIN_SRC org
 #+END_SRC
 
+* Løkker
+<2019-09-11 Wed>
+- [X] Recap fra sist
+- [ ] ~While~-løkker
+
+[[pdf:37_innlevering.pdf][Innleveringsoppgaver]]
+
+** Innleveringsoppgaver uke 37 :noexport:
+:properties:
+:export_file_name: ../pdf/37_innlevering.pdf
+:end:
+*** Collatz' formodning
+Lag et program som ber brukeren om et tall, og som skriver ut tallene som følger fra dette tallet fra Collatz' formodning.
+
+#+BEGIN_DEFINITION
+Collatz' formodning
+
+Hvis $n$ er et partall, del det på 2. Hvis $n$ er et oddetall, gang det med 3 og legg til 1.
+#+END_DEFINITION
+
+#+BEGIN_EXAMPLE
+>>> n = 5
+5
+16
+8
+4
+2
+1
+#+END_EXAMPLE
+
+*** Utfordring
+Eksempelet over viser at ~5~ går innom seks verdier før det lander på ~1~ (~5 16 8 4 2 1~). Hvilket tall under 10000 går innom flest verdier før det lander på ~1~?
 * Forgreining
 <2019-09-04 Wed>
-- [ ] Recap om basisregning
-- [ ] Input fra bruker
-- [ ] ~if~-setninger
-- [ ] Indentering og blokkstruktur
+- [X] Recap om basisregning
+- [X] Input fra bruker
+- [X] ~if~-setninger
+- [X] Indentering og blokkstruktur
 
 [[pdf:36_innlevering.pdf][Innleveringsoppgaver]]
 
