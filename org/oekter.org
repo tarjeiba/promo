@@ -13,10 +13,11 @@
 * Løkker
 <2019-09-11 Wed>
 - [X] Recap fra sist
-- [ ] ~While~-løkker
+- [X] ~While~-løkker
 
 [[pdf:37_innlevering.pdf][Innleveringsoppgaver]]
 
+Her er et foreslått [[py:uke37_lf.py][løsningsforslag]] til innleveringsoppgavene.
 ** Innleveringsoppgaver uke 37 :noexport:
 :properties:
 :export_file_name: ../pdf/37_innlevering.pdf
