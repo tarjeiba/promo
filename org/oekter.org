@@ -10,6 +10,30 @@
 #+BEGIN_SRC org
 #+END_SRC
 
+
+* Boolsk algebra og lister
+- [X] Repetisjon fra sist
+- [ ] Funksjoner uten «bieffekter»
+- [ ] Funksjoner som enkelt repeterbare kodeblokker
+- [ ] Lister
+- [ ] Et første plot med lister
+
+[[pdf:uke38_innlevering.pdf][Innleveringsoppgaver]]
+** Innleveringsoppgaver uke 38 :noexport:
+:properties:
+:export_file_name: ../pdf/38_innlevering.pdf
+:end:
+
+Ved å bruke designmønsteret fra [[py:uke38_sqrt.py][kvadratrotutregningene]] lag et program som gjør følgende:
+- Ber brukeren om to /heltall/
+- Regner ut /produktet/ av de to tallene
+- Regner ut /kvotienten/ til de to tallene (det første delt på det andre, hvor du bruker heltallsdivisjon)
+- Regner ut /resten/ til divisjonen av det første delt på det andre tallet
+
+Her må du tenke etter hvilken test du ønsker å bruke.
+
+Av regneoperasjoner, får du kun bruke /addisjon/ og /subtraksjon/.
+
 * Løkker
 <2019-09-11 Wed>
 - [X] Recap fra sist
