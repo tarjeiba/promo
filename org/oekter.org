@@ -132,7 +132,7 @@ Legg merke til at det aller meste av koden her går til å skrive ut informasjon
 Når vi oppdaterer med \[x_{n+1} = \frac{x_n + \frac{S}{x_n}}{2},\] altså at den oppdaterte gjetningen $x_{n+1}$ er gjennomsnittet av $x_n$ og $\frac{S}{x_n}$ bruker vi følgende argumentasjon:
 
 - Dersom $x_n$ er en /for lav/ gjetning, altså at $x_n^2 < S$, vil $\frac{S}{x_n}$ være en /for høy/ gjetning. Altså er løsningen et sted mellom de to.
-- Dersom $x_n$ er en /for høy/ gjetning, altså at $x_n^2 < S$, vil $\frac{S}{x_n}$ være en /for lav/ gjetning. Altså er løsningen et sted mellom de to.
+- Dersom $x_n$ er en /for høy/ gjetning, altså at $x_n^2 > S$, vil $\frac{S}{x_n}$ være en /for lav/ gjetning. Altså er løsningen et sted mellom de to.
 
 Vi kan dermed komme oss nærmere en faktisk løsning ved å teste ut gjennomsnittet av de to.
 
