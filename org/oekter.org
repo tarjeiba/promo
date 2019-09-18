@@ -11,7 +11,7 @@
 #+END_SRC
 
 
-* Boolsk algebra og lister
+* Algoritmer
 - [X] Repetisjon fra sist
 - [ ] Funksjoner uten «bieffekter»
 - [ ] Funksjoner som enkelt repeterbare kodeblokker
@@ -19,6 +19,123 @@
 - [ ] Et første plot med lister
 
 [[pdf:uke38_innlevering.pdf][Innleveringsoppgaver]]
+
+** Tillegg fra undervisningen
+Det blei mye knoting rundt kvadrotutregningene denne økta. Her er en gjennomgang gjennomgang av det jeg ønsket å få ut av den initielle delen.
+
+Dette er for øvrig en algoritme for utregning av kvadratrøtter som kalles /babylonsk tilnærming/, og den første kjente nedtegnelsen er fra år 60 evt.
+
+[[https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method][Wikipedia]] for de spesielt interesserte.
+
+*** Motivasjon
+I en datamaskin er det en del regning som gjøres direkte på maskinvaren. I moderne maskiner er det for eksempel egne kretser som regner ut summen av to tall eller produktet av to tall. Det er dog et utall regneoperasjoner maskinen må kjøre flere ganger gjennom ulike kretser for å komme fram til. Si vi for eksempel ønsker å finne $\sqrt{13}$, eller $\sqrt[3]{13}$, eller generelt $\sqrt[48]{13}$, her må maskinen gjøre en serie med operasjoner, den må følge en /algoritme/, for å finne svaret.
+
+*** Enkelt implementert i Python
+Vi er heldige, vi skriver ikke koden direkte til maskinen, vi skriver koden i python som så oversettes via en del trinn til kode som kjøres på maskinen. Dette forenkler ting voldsomt. Om vi ønsker å finne løsningene over, er ikke det værre enn å gjøre noe à la følgende:
+
+#+BEGIN_SRC python :exports both
+from math import sqrt
+kvadratrot = sqrt(13)
+tredjerot  = 13 ** (1 / 3)
+foertiaattenderot = 13 ** (1 / 48)
+
+print(f"Kvadratroten av 13 er {kvadratrot}.")
+print(f"Tredjeroten av 13 er {tredjerot}.")
+print(f"48.-roten av 13 er {foertiaattenderot}.")
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+Kvadratroten av 13 er 3.605551275463989.
+Tredjeroten av 13 er 2.3513346877207573.
+48.-roten av 13 er 1.0548899460507581.
+#+END_SRC
+
+Hva skal vi gjøre om vi kun kan opphøye i heltall?
+
+*** En vanskeligere implementasjon i Python
+Om vi skal finne $\sqrt{S}$, kan vi tenke oss at det vi skal finne er løsningen på likninga \[S = x^2.\] Vi lar fremgangsmåten vår være som følger:
+
+1) Gjør en gjetning for $x_0$ ($0$ markerer at dette er utgangspunktet, vi setter her $x_0 = 1$)
+2) Sjekk om nåværende gjetning er tilstrekkelig nærme løsningen ved å regne ut $x_n^2$ og sammenligne dette med $S$, hvor $x_n$ er nåværende gjetning.
+3) Hvis $x_n$ var tilstrekkelig nærme, du er ferdig; hvis ikke, oppdater til $x_{n+1}$ ved å bruke $x_{n+1} = \frac{x_n + \frac{S}{x_n}}{2}$.
+4) Gå tilbake til punkt 2.
+
+Punkt 2 til punkt 4 dekker vi i Python ved å bruke en ~while~-løkke, hvor testen i løkka er hvorvidt gjetningen nå er «tilstrekkelig nære». Hva skal vi sette til å være «tilstrekkelig nære»? Vel ... det er helt opp til deg. Dersom vi lar forskjellen mellom $x_n^2$ og $S$ være «feilen» i gjetningen vår, kan vi si at vi kjører algoritmen til denne feilen har blitt liten nok. Vi bryr oss ikke om feilen er positiv eller negativ, vi er kun interessert i hvor stor den er.
+
+Om vi skriver inn hele dette programmet i python, kan det se ut som følger:
+
+#+BEGIN_SRC python :exports both
+
+S = 13            # verdien vi skal finne kvadratroten av
+x = 1             # vår initielle gjetning på løsningen
+epsilon = 0.00001 # hva vi godkjenner som "nære nok"
+i = 0             # bruker denne for å holde orden på antall runder i løkka
+
+print(f"Starter med gjetningen {x}.")
+print("--------------------------------------------------------")
+
+
+while abs(S - x**2) > epsilon:      # Her sjekker vi om nåværende gjetning er nære nok
+    i += 1                          # Merker oss at vi går inn i løkka nok en gang
+    x = (x + S/x) / 2               # Denne linja er kommentert i et eget avsnitt under
+    print(f"Runde nr. {i} gjennom løkka.")
+    print(f"Nåværende gjetning er {x}, etter oppdatering.")
+    print(f"Dette er egentlig kvadratroten av {x**2}.")
+    print(f"Feilen vår er dermed nå {abs(S - x**2)}.")
+    print("--------------------------------------------------------")
+
+# Vi har nå kommet oss ut av while-løkka
+# altså må gjetningen ha blitt god nok
+print(f"Kvadratroten av {S} er {x}.")
+print(f"Vi har da fått en feil på {abs(S - x**2)}.")
+print(f"Vi var gjennom løkka {i} ganger.")
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+Starter med gjetningen 1.
+--------------------------------------------------------
+Runde nr. 1 gjennom løkka.
+Nåværende gjetning er 7.0, etter oppdatering.
+Dette er egentlig kvadratroten av 49.0.
+Feilen vår er dermed nå 36.0.
+--------------------------------------------------------
+Runde nr. 2 gjennom løkka.
+Nåværende gjetning er 4.428571428571429, etter oppdatering.
+Dette er egentlig kvadratroten av 19.612244897959187.
+Feilen vår er dermed nå 6.612244897959187.
+--------------------------------------------------------
+Runde nr. 3 gjennom løkka.
+Nåværende gjetning er 3.6820276497695854, etter oppdatering.
+Dette er egentlig kvadratroten av 13.557327613667736.
+Feilen vår er dermed nå 0.5573276136677361.
+--------------------------------------------------------
+Runde nr. 4 gjennom løkka.
+Nåværende gjetning er 3.6063454894655185, etter oppdatering.
+Dette er egentlig kvadratroten av 13.00572778938829.
+Feilen vår er dermed nå 0.005727789388290105.
+--------------------------------------------------------
+Runde nr. 5 gjennom løkka.
+Nåværende gjetning er 3.6055513629176015, etter oppdatering.
+Dette er egentlig kvadratroten av 13.000000630636974.
+Feilen vår er dermed nå 6.306369737529849e-07.
+--------------------------------------------------------
+Kvadratroten av 13 er 3.6055513629176015.
+Vi har da fått en feil på 6.306369737529849e-07.
+Vi var gjennom løkka 5 ganger.
+#+END_SRC
+
+Legg merke til at det aller meste av koden her går til å skrive ut informasjon til brukeren.
+
+*** Hvorfor fungerer oppdateringen?
+Når vi oppdaterer med \[x_{n+1} = \frac{x_n + \frac{S}{x_n}}{2},\] altså at den oppdaterte gjetningen $x_{n+1}$ er gjennomsnittet av $x_n$ og $\frac{S}{x_n}$ bruker vi følgende argumentasjon:
+
+- Dersom $x_n$ er en /for lav/ gjetning, altså at $x_n^2 < S$, vil $\frac{S}{x_n}$ være en /for høy/ gjetning. Altså er løsningen et sted mellom de to.
+- Dersom $x_n$ er en /for høy/ gjetning, altså at $x_n^2 < S$, vil $\frac{S}{x_n}$ være en /for lav/ gjetning. Altså er løsningen et sted mellom de to.
+
+Vi kan dermed komme oss nærmere en faktisk løsning ved å teste ut gjennomsnittet av de to.
+
 ** Innleveringsoppgaver uke 38 :noexport:
 :properties:
 :export_file_name: ../pdf/38_innlevering.pdf

@@ -570,6 +570,10 @@ Hva heter du? von Neumann    # Her har brukeren skrevet inn «von Neumann»
 Du heter von Neumann.
 #+END_SRC
 
+Når vi kjører prgrammet over, lagres altså det brukeren taster inn med variabelnavn ~navn~.
+
+Vær obs på at om vi sjekker /typen/ til variabelen nå, er dette en ~str~ altså en tekststreng.
+
 ** Typer
 :PROPERTIES:
 :CUSTOM_ID: typer
@@ -823,6 +827,22 @@ print(id(enere))
    - ~5 // 4~?
    - ~5 / 2 * 5~?
 9. Kontroller svarene dine i oppgave [[forrige]] ved å bruke Python.
+
+*** En merkelig utregning
+I programmet under har du forsøkt å be brukeren om et tall, hvor du skal regne ut hva dette tallet er ganget med tre.
+
+#+BEGIN_SRC python :results silent :exports code
+# Her ber du brukeren om et tall og lagrer det i variabelen 'tall'
+tall = input(">>> Tast inn et tall: ")
+
+# Her regner du ut hva tallet er ganget med tre.
+trippeltall = 3 * tall
+
+# Du skriver så ut resultatet til brukeren.
+print(f"Tallet du ga, {tall}, ganger tre er {trippeltall}.")
+#+END_SRC
+
+Forsøk å kjøre programmet over. Hva ser du? Gir programmet den forventede utregningen?
 
 * Abstraksjon
 :PROPERTIES:
@@ -1884,6 +1904,12 @@ loesninger = abc(-3, 2, 1)   # loeser likningen -3x**2 + 2x + 1 = 0
 :CUSTOM_ID: programflyt-oppgaver-7ern
 :END:
 Skriv et program som teller oppover fra 1. Få programmet til å hoppe over tallene som er delelige på 7.
+*** 7-ern med siffersjekk
+:PROPERTIES:
+:CUSTOM_ID: programflyt-oppgave-7ernoverhopp
+:END:
+Skriv et program som teller oppover fra 1. Få programmet til å hoppe over tallene som er delelige med 7 eller har sifferet sju i seg.
+
 
 *** ~def utvid~
 :PROPERTIES:

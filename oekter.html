@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-09-18 Wed 14:28 -->
+<!-- 2019-09-18 Wed 20:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter i Programmering og modellering</title>
@@ -130,6 +130,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -138,16 +160,16 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbb5321e">Boolsk algebra og lister</a></li>
+<li><a href="#orgef6b3a6">Algoritmer</a></li>
 <li><a href="#orgd4632ba">Løkker</a></li>
 <li><a href="#org8af8979">Forgreining</a></li>
 <li><a href="#org844f350">Grunnleggende regning</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbb5321e" class="outline-2">
-<h2 id="orgbb5321e">Boolsk algebra og lister</h2>
-<div class="outline-text-2" id="text-orgbb5321e">
+<div id="outline-container-orgef6b3a6" class="outline-2">
+<h2 id="orgef6b3a6">Algoritmer</h2>
+<div class="outline-text-2" id="text-orgef6b3a6">
 <ul class="org-ul">
 <li class="on"><code>[X]</code> Repetisjon fra sist</li>
 <li class="off"><code>[&#xa0;]</code> Funksjoner uten «bieffekter»</li>
@@ -159,6 +181,172 @@ for the JavaScript code in this tag.
 <p>
 <a href="pdf/uke38_innlevering.pdf">Innleveringsoppgaver</a>
 </p>
+</div>
+
+<div id="outline-container-org87a7f06" class="outline-3">
+<h3 id="org87a7f06">Tillegg fra undervisningen</h3>
+<div class="outline-text-3" id="text-org87a7f06">
+<p>
+Det blei mye knoting rundt kvadrotutregningene denne økta. Her er en gjennomgang gjennomgang av det jeg ønsket å få ut av den initielle delen.
+</p>
+
+<p>
+Dette er for øvrig en algoritme for utregning av kvadratrøtter som kalles <i>babylonsk tilnærming</i>, og den første kjente nedtegnelsen er fra år 60 evt.
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method">Wikipedia</a> for de spesielt interesserte.
+</p>
+</div>
+
+<div id="outline-container-orgc9f4048" class="outline-4">
+<h4 id="orgc9f4048">Motivasjon</h4>
+<div class="outline-text-4" id="text-orgc9f4048">
+<p>
+I en datamaskin er det en del regning som gjøres direkte på maskinvaren. I moderne maskiner er det for eksempel egne kretser som regner ut summen av to tall eller produktet av to tall. Det er dog et utall regneoperasjoner maskinen må kjøre flere ganger gjennom ulike kretser for å komme fram til. Si vi for eksempel ønsker å finne \(\sqrt{13}\), eller \(\sqrt[3]{13}\), eller generelt \(\sqrt[48]{13}\), her må maskinen gjøre en serie med operasjoner, den må følge en <i>algoritme</i>, for å finne svaret.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9a50407" class="outline-4">
+<h4 id="org9a50407">Enkelt implementert i Python</h4>
+<div class="outline-text-4" id="text-org9a50407">
+<p>
+Vi er heldige, vi skriver ikke koden direkte til maskinen, vi skriver koden i python som så oversettes via en del trinn til kode som kjøres på maskinen. Dette forenkler ting voldsomt. Om vi ønsker å finne løsningene over, er ikke det værre enn å gjøre noe à la følgende:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> math <span class="org-keyword">import</span> sqrt
+<span class="org-variable-name">kvadratrot</span> = sqrt(13)
+<span class="org-variable-name">tredjerot</span>  = 13 ** (1 / 3)
+<span class="org-variable-name">foertiaattenderot</span> = 13 ** (1 / 48)
+
+<span class="org-keyword">print</span>(f<span class="org-string">"Kvadratroten av 13 er {kvadratrot}."</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">"Tredjeroten av 13 er {tredjerot}."</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">"48.-roten av 13 er {foertiaattenderot}."</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">Kvadratroten av 13 er 3.605551275463989.
+Tredjeroten av 13 er 2.3513346877207573.
+48.-roten av 13 er 1.0548899460507581.
+</pre>
+</div>
+
+<p>
+Hva skal vi gjøre om vi kun kan opphøye i heltall?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdff042d" class="outline-4">
+<h4 id="orgdff042d">En vanskeligere implementasjon i Python</h4>
+<div class="outline-text-4" id="text-orgdff042d">
+<p>
+Om vi skal finne \(\sqrt{S}\), kan vi tenke oss at det vi skal finne er løsningen på likninga \[S = x^2.\] Vi lar fremgangsmåten vår være som følger:
+</p>
+
+<ol class="org-ol">
+<li>Gjør en gjetning for \(x_0\) (\(0\) markerer at dette er utgangspunktet, vi setter her \(x_0 = 1\))</li>
+<li>Sjekk om nåværende gjetning er tilstrekkelig nærme løsningen ved å regne ut \(x_n^2\) og sammenligne dette med \(S\), hvor \(x_n\) er nåværende gjetning.</li>
+<li>Hvis \(x_n\) var tilstrekkelig nærme, du er ferdig; hvis ikke, oppdater til \(x_{n+1}\) ved å bruke \(x_{n+1} = \frac{x_n + \frac{S}{x_n}}{2}\).</li>
+<li>Gå tilbake til punkt 2.</li>
+</ol>
+
+<p>
+Punkt 2 til punkt 4 dekker vi i Python ved å bruke en <code>while</code>-løkke, hvor testen i løkka er hvorvidt gjetningen nå er «tilstrekkelig nære». Hva skal vi sette til å være «tilstrekkelig nære»? Vel &#x2026; det er helt opp til deg. Dersom vi lar forskjellen mellom \(x_n^2\) og \(S\) være «feilen» i gjetningen vår, kan vi si at vi kjører algoritmen til denne feilen har blitt liten nok. Vi bryr oss ikke om feilen er positiv eller negativ, vi er kun interessert i hvor stor den er.
+</p>
+
+<p>
+Om vi skriver inn hele dette programmet i python, kan det se ut som følger:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+<span class="org-variable-name">S</span> = 13            <span class="org-comment-delimiter"># </span><span class="org-comment">verdien vi skal finne kvadratroten av</span>
+<span class="org-variable-name">x</span> = 1             <span class="org-comment-delimiter"># </span><span class="org-comment">v&#229;r initielle gjetning p&#229; l&#248;sningen</span>
+<span class="org-variable-name">epsilon</span> = 0.00001 <span class="org-comment-delimiter"># </span><span class="org-comment">hva vi godkjenner som "n&#230;re nok"</span>
+<span class="org-variable-name">i</span> = 0             <span class="org-comment-delimiter"># </span><span class="org-comment">bruker denne for &#229; holde orden p&#229; antall runder i l&#248;kka</span>
+
+<span class="org-keyword">print</span>(f<span class="org-string">"Starter med gjetningen {x}."</span>)
+<span class="org-keyword">print</span>(<span class="org-string">"--------------------------------------------------------"</span>)
+
+
+<span class="org-keyword">while</span> <span class="org-builtin">abs</span>(S - x**2) &gt; epsilon:      <span class="org-comment-delimiter"># </span><span class="org-comment">Her sjekker vi om n&#229;v&#230;rende gjetning er n&#230;re nok</span>
+    <span class="org-variable-name">i</span> += 1                          <span class="org-comment-delimiter"># </span><span class="org-comment">Merker oss at vi g&#229;r inn i l&#248;kka nok en gang</span>
+    <span class="org-variable-name">x</span> = (x + S/x) / 2               <span class="org-comment-delimiter"># </span><span class="org-comment">Denne linja er kommentert i et eget avsnitt under</span>
+    <span class="org-keyword">print</span>(f<span class="org-string">"Runde nr. {i} gjennom l&#248;kka."</span>)
+    <span class="org-keyword">print</span>(f<span class="org-string">"N&#229;v&#230;rende gjetning er {x}, etter oppdatering."</span>)
+    <span class="org-keyword">print</span>(f<span class="org-string">"Dette er egentlig kvadratroten av {x**2}."</span>)
+    <span class="org-keyword">print</span>(f<span class="org-string">"Feilen v&#229;r er dermed n&#229; {abs(S - x**2)}."</span>)
+    <span class="org-keyword">print</span>(<span class="org-string">"--------------------------------------------------------"</span>)
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Vi har n&#229; kommet oss ut av while-l&#248;kka</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">alts&#229; m&#229; gjetningen ha blitt god nok</span>
+<span class="org-keyword">print</span>(f<span class="org-string">"Kvadratroten av {S} er {x}."</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">"Vi har da f&#229;tt en feil p&#229; {abs(S - x**2)}."</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">"Vi var gjennom l&#248;kka {i} ganger."</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">Starter med gjetningen 1.
+--------------------------------------------------------
+Runde nr. 1 gjennom l&#248;kka.
+N&#229;v&#230;rende gjetning er 7.0, etter oppdatering.
+Dette er egentlig kvadratroten av 49.0.
+Feilen v&#229;r er dermed n&#229; 36.0.
+--------------------------------------------------------
+Runde nr. 2 gjennom l&#248;kka.
+N&#229;v&#230;rende gjetning er 4.428571428571429, etter oppdatering.
+Dette er egentlig kvadratroten av 19.612244897959187.
+Feilen v&#229;r er dermed n&#229; 6.612244897959187.
+--------------------------------------------------------
+Runde nr. 3 gjennom l&#248;kka.
+N&#229;v&#230;rende gjetning er 3.6820276497695854, etter oppdatering.
+Dette er egentlig kvadratroten av 13.557327613667736.
+Feilen v&#229;r er dermed n&#229; 0.5573276136677361.
+--------------------------------------------------------
+Runde nr. 4 gjennom l&#248;kka.
+N&#229;v&#230;rende gjetning er 3.6063454894655185, etter oppdatering.
+Dette er egentlig kvadratroten av 13.00572778938829.
+Feilen v&#229;r er dermed n&#229; 0.005727789388290105.
+--------------------------------------------------------
+Runde nr. 5 gjennom l&#248;kka.
+N&#229;v&#230;rende gjetning er 3.6055513629176015, etter oppdatering.
+Dette er egentlig kvadratroten av 13.000000630636974.
+Feilen v&#229;r er dermed n&#229; 6.306369737529849e-07.
+--------------------------------------------------------
+Kvadratroten av 13 er 3.6055513629176015.
+Vi har da f&#229;tt en feil p&#229; 6.306369737529849e-07.
+Vi var gjennom l&#248;kka 5 ganger.
+</pre>
+</div>
+
+<p>
+Legg merke til at det aller meste av koden her går til å skrive ut informasjon til brukeren.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8c961ad" class="outline-4">
+<h4 id="org8c961ad">Hvorfor fungerer oppdateringen?</h4>
+<div class="outline-text-4" id="text-org8c961ad">
+<p>
+Når vi oppdaterer med \[x_{n+1} = \frac{x_n + \frac{S}{x_n}}{2},\] altså at den oppdaterte gjetningen \(x_{n+1}\) er gjennomsnittet av \(x_n\) og \(\frac{S}{x_n}\) bruker vi følgende argumentasjon:
+</p>
+
+<ul class="org-ul">
+<li>Dersom \(x_n\) er en <i>for lav</i> gjetning, altså at \(x_n^2 < S\), vil \(\frac{S}{x_n}\) være en <i>for høy</i> gjetning. Altså er løsningen et sted mellom de to.</li>
+<li>Dersom \(x_n\) er en <i>for høy</i> gjetning, altså at \(x_n^2 < S\), vil \(\frac{S}{x_n}\) være en <i>for lav</i> gjetning. Altså er løsningen et sted mellom de to.</li>
+</ul>
+
+<p>
+Vi kan dermed komme oss nærmere en faktisk løsning ved å teste ut gjennomsnittet av de to.
+</p>
+</div>
+</div>
 </div>
 </div>
 
