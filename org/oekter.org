@@ -2,16 +2,120 @@
 #+TITLE: Økter i Programmering og modellering
 #+BIND: org-time-stamp-custom-formats '("<%Y uke %W: %e.%m>" . "<%Y uke %W: %e. %m %H:%M>")
 #+BIND: org-display-custom-times t
-#+BEGIN_SRC emacs-lisp :eval query-export :exports none
+#+BEGIN_SRC emacs-lisp :exports none :results silent
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
+; Her hadde jeg tidligere med tillegget :eval query-export
 #+END_SRC
 
-#+RESULTS:
-#+BEGIN_SRC org
+
+
+* Videre med algoritmer
+<2019-09-25 Wed>
+- [ ] Repetisjon fra sist
+- [ ] En tilnærming til likningsløsning
+
+- [[pdf:39_innlevering.pdf][Innleveringsoppgaver]]
+- [[pdf:39_repetisjon.pdf][Repetisjonsoppgaver]]
+- [[pdf:39_innlevering_alternativ.pdf][Alternative innleveringsoppgaver]] (mer krevende)
+
+** Repetisjonsoppgaver uke 39 :noexport:
+:properties:
+:export_file_name: ../pdf/39_repetisjon.pdf
+:end:
+
+Ved siden av å gå gjennom de tidligere innleveringsoppgavene, kan du sjekke om du er ajour med faget ved å prøve deg på følgende oppgaver. Om du ønsker besvarelsen din kommentert, kan du levere den filvis som angitt i slutten av hver del.
+
+*** Enkel regning og konsollen
+Bruk konsollen til å regne ut følgende:
+1. $3^2 - 15 + \frac{1}{4}$
+2. Resten av delestykket $\frac{11233212332}{43434}$
+3. Lag en variabel ~a~, gi den verdien 5,  og sjekk om den er større enn 3.
+4. Sjekk om variabelen ~a~ er delelig på 2 eller om den er større enn 2.
+
+Fasit:
+1. $-5,75$
+2. $7214$
+3. ~True~
+4. ~True~
+
+*** input og printing
+Skriv et program der du ber brukeren om to heltall. Bruk ulike regneoperasjoner og skriv svarene tilbake til brukeren. For eksempel:
+
+#+BEGIN_SRC python :exports code
+# Be brukeren om tallene tall1 og tall2 her
+# husk å endre til heltall
+
+prod = tall1 * tall2
+
+print(f"Produktet av {tall1} og {tall2} er {prod}.")
 #+END_SRC
+
+Filnavn ~uke39_rep_inputprint_fornavn.py~.
+
+*** Forgreining
+Skriv et program som ber brukeren om to heltall, skriv tilbake hvilket tall som er størst og hvilket som er minst.
+
+Filnavn ~uke39_rep_forgreining_fornavn.py~.
+
+*** Løkker
+Skriv et program som ber brukeren om et tall, og som deretter teller fra 0 opp til tallet brukeren har tastet inn.
+
+Utvid programmet til å hoppe over alle tallene som er i 7-gangeren.
+
+
+Filnavn ~uke39_rep_loekker.py~.
+
+** Innleveringsoppgaver uke 39 :noexport:
+:properties:
+:export_file_name: ../pdf/39_innlevering.pdf
+:end:
+Skriv et program som bruker halveringsmetoden til å løse en selvvalgt likning. Pass på å skrive i dokumentasjonen hva programmet skal løse. Starten på et eksempel kan se ut som følger:
+
+#+BEGIN_SRC python :exports code
+# Dette programmet bruker halveringsmetoden til å løse likningen
+# 
+# x**5 - 3*x**2 = 15, som altså kan omformes til
+# x**5 - 3*x**2 - 15 = 0
+#
+# Det er skrevet av Tarjei, 25. september 2019.
+
+
+# Velger en startverdi for løsningen som forsikrer at venstre
+# side er _negativ_
+x0 = 0
+
+# Velger en startverdi for løsningen som forsikrer at venstre
+# side er _positiv_
+x1 = 10
+
+# Velger en godkjent 'feil', altså hvor nøyaktig jeg mener svaret må være.
+epsilon = 1E-7
+
+while abs(x1-x0) > epsilon:
+    m = (x1 + x0)/2
+    # Her gjør du utregningene dine.
+
+print(f"Løsningen av likningen er {m}".)
+#+END_SRC
+
+Lever oppgaven som ~uke39_fornavn.py~.
+
+** Alternative innleveringsoppgaver uke 39 :noexport:
+:properties:
+:export_file_name: ../pdf/39_innlevering_alternativ.pdf
+:end:
+Vi kan bruke en ~while~-løkke til å løse en generell likning via halveringsmetoden. Om du ikke husker hvordan dette gjøres, se på de andre oppgavene først.
+
+Du skal lage et program hvor du bruker halveringsmetoden til å gjøre følgende:
+- Regne ut vilkårlige røtter for vilkårlige tall, altså $\sqrt[b]{a}$.
+- Regne ut tierlogaritmen for et vilkårlig tall, altså $\lg{a}$.
+- Regne ut den naturlige logaritmen for et vilkårlig tall, altså $\ln{a}$.
+- Regne ut en vilkårlig logaritme for et vilkårlig tall, altså $\log_b{a}$.
+
 
 
 * Algoritmer
+<2019-09-18 Wed>
 - [X] Repetisjon fra sist
 - [ ] Funksjoner uten «bieffekter»
 - [ ] Funksjoner som enkelt repeterbare kodeblokker
