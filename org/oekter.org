@@ -1,17 +1,372 @@
 #+SETUPFILE: orgheader.org
 #+TITLE: Økter i Programmering og modellering
-#+BIND: org-time-stamp-custom-formats '("<%Y uke %W: %e.%m>" . "<%Y uke %W: %e. %m %H:%M>")
-#+BIND: org-display-custom-times t
 #+BEGIN_SRC emacs-lisp :exports none :results silent
 (add-to-list 'org-html-infojs-options '(sdepth . "2"))
 ; Her hadde jeg tidligere med tillegget :eval query-export
 #+END_SRC
 
+* Hjemmearbeid med funksjoner
+<2019-10-16 Wed>
 
+- [[pdf:42_innlevering.pdf][Innleveringsoppgaver]]
+
+** Innleveringsoppgaver uke 42 :pdf:
+:properties:
+:export_file_name: ../pdf/42_innlevering.pdf
+:end:
+*** Tester :noexport:
+#+tblname: absoluttdifferansetester
+| ~ledd1~ | ~ledd2~ |
+|---------+---------|
+|       1 |       1 |
+|      -5 |      15 |
+|      15 |      -5 |
+|     -15 |      -5 |
+|       0 |      -5 |
+
+*** Introduksjon
+Framover, dersom jeg ber deg om å «lage en funksjon ~absolutt_differanse~ som tar to paramaterer og returnerer absoluttverdien av de to parameternes differanse», kan det formelt oversettes til følgende pythonkode:
+
+#+BEGIN_SRC python :session absoluttdifferanse :results silent
+def absolutt_differanse(ledd1, ledd2):
+    """Returnererer absoluttverdien til differanse mellom 'ledd1' og 'ledd2'."""
+    diff = ledd1 - ledd2
+    return abs(diff)
+#+END_SRC
+
+Etter at du har kjørt programmet, kan du sjekke at funksjonen er opprettet ved å skrive ~help(absolutt_differanse)~ i konsollen. Du skal da få ut noe à la følgende:
+
+#+BEGIN_SRC python :results output code :session absoluttdifferanse :exports results 
+print(help(absolutt_differanse))
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+Help on function absolutt_differanse in module __main__:
+
+absolutt_differanse(ledd1, ledd2)
+    Returnererer absoluttverdien til differanse mellom 'ledd1' og 'ledd2'.
+#+END_SRC
+
+Videre kommer jeg til å gi tester funksjonen skal bestå, eksempelvis som i tabellen under.
+
+
+#+BEGIN_SRC python :var tester=absoluttdifferansetester :session absoluttdifferanse :results raw output :exports results
+print("| ~ledd1~ | ~ledd2~ | ~absolutt_differanse(ledd1, ledd2)~ |")
+print("|---|")
+for test in tester:
+    print(f"| {test[0]} | {test[1]} | {absolutt_differanse(test[0], test[1])} |")
+#+END_SRC
+
+#+RESULTS:
+| ~ledd1~ | ~ledd2~ | ~absolutt_differanse(ledd1, ledd2)~ |
+|---------+---------+-------------------------------------|
+|       1 |       1 |                                   0 |
+|      -5 |      15 |                                  20 |
+|      15 |      -5 |                                  20 |
+|     -15 |      -5 |                                  10 |
+|       0 |      -5 |                                   5 |
+
+Du kan da teste funksjonen din ved å kontrollere at den returnerer riktige verdier, ved for eksempel å skrive i konsollen ~absolutt_differanse(-5, 15)~ for å se at det evaluerer til verdien ~20~.
+
+*** Matematiske funksjoner
+#+BEGIN_SRC python :tangle ../py/uke42_matfunk_lf.py :exports none
+"""Dette programmet skriver ut en enkel funksjonstabell
+for den matematiske funksjonen
+f(x) = 3 * x ** 2 * lg(x) - 15
+
+Laget av Tarjei
+"""
+
+#+END_SRC
+Som andre navn i python, tilstreber vi at også funksjonsnavnene er så beskrivende som mulig. Bokstaver er billige, og du har lettere for å forstå hva funksjonen ~kvadratrot~ gjør, enn ~frt~.
+
+Unntaket til dette er når vi definere enkle matematiske funksjoner, som $f(x) = 3x^2\cdot\lg x - 15$. Vi ville altså fått:
+
+#+BEGIN_SRC python :session matfunk :exports code :results silent :tangle ../py/uke42_matfunk_lf.py
+import math
+
+def f(x):
+    return 3 * x ** 2 * math.log10(x) - 15
+#+END_SRC
+
+(Her har jeg også droppet å ta med en dokumentasjonsstreng.)
+
+#+begin_task
+Bruk funksjonen over og lag et program som skriver ut ti \(x\)- og tilhørende \(f(x)\)-verdier for funksjonen over.
+#+end_task
+
+For \(x\)-verdiene fra og med 20, til og med 29, får vi altså følgende utskrift:
+#+BEGIN_SRC python :session matfunk :exports results :results output code :tangle ../py/uke42_matfunk_lf.py
+x = 20
+print("   x     --     f(x)   ")
+print("-----------------------")
+while x <= 29:
+    f_av_x = f(x)
+    print(f"{x}    --    {f_av_x:.1f}")
+    x += 1
+     
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+x     --     f(x)   
+-----------------------
+20    --    1546.2
+21    --    1734.3
+22    --    1934.2
+23    --    2146.1
+24    --    2370.0
+25    --    2606.1
+26    --    2854.6
+27    --    3115.4
+28    --    3388.7
+29    --    3674.6
+#+END_SRC
+
+Kall fila ~f"uke42_{fornavn}_matfunk.py"~ (altså, ~uke41_trond_matfunk.py~, om du er så heldig å hete Trond).
+
+*** Typer og funksjonstyper
+#+BEGIN_SRC python :tangle ../py/uke42_typer_lf.py :exports none
+"""Dette programmet lister opp typen til noen ulike verdier.
+
+Laget av Tarjei
+"""
+def utregning(x):
+    """Tar inn et tall x, og gjør litt matte."""
+    dobbel_x = 2 * x
+    litt_mindre = dobbel_x - 5
+    return litt_mindre * dobbel_x
+
+def er_stort(testtall, stort_tall):
+    """Tar inn to tall og returnerer hvorvidt 'testtall'
+    er større enn 'stort_tall'.
+    """
+    returverdi = False
+    if testtall > stort_tall:
+        returverdi = True
+    return returverdi
+
+
+# I alle linjene under, fyll ut det som står i anførselstegn
+# når du skriver venstre side inn i konsollen.
+
+# Eksempel:
+# type(3.1) == 'float'
+# siden
+# >>> type(3.1)
+# <class 'float'>
+
+# Oppgaver:
+# type(3) == 'int'
+# type(2 + 2) == 'int'
+# type(utregning(5)) == 'int'
+
+svar = utregning(5)
+
+# type(svar) == 'int'
+# type(er_stort(3, 2)) == 'bool'
+# type(er_stort(2, 3)) == 'bool'
+# type(er_stort) == 'function'
+#+END_SRC
+
+Vi har tidligere snakket om at ulike verdier har ulike /type/. For eksempel er ~3~ av typen ~int~, altså et heltall eller «integer». Vi skal nå se på litt flere typer, blant annet /funksjoner/.
+
+#+begin_task
+Skriv av det følgende pythonprogrammet og fyll ut det som står de doble likhetstegnene, lever fila som ~f"uke42_{fornavn}_typer.py~.
+#+end_task
+
+#+BEGIN_SRC python :exports code
+def utregning(x):
+    """Tar inn et tall x, og gjør litt matte."""
+    dobbel_x = 2 * x
+    litt_mindre = dobbel_x - 5
+    return litt_mindre * dobbel_x
+
+def er_stort(testtall, stort_tall):
+    """Tar inn to tall og returnerer hvorvidt 'testtall'
+    er større enn 'stort_tall'.
+    """
+    returverdi = False
+    if testtall > stort_tall:
+        returverdi = True
+    return returverdi
+
+
+# I alle linjene under, fyll ut det som står i anførselstegn
+# når du skriver venstre side inn i konsollen.
+
+# Eksempel:
+# type(3.1) == 'float'
+# siden
+# >>> type(3.1)
+# <class 'float'>
+
+# Oppgaver:
+# type(3) == 
+# type(2 + 2) ==
+# type(utregning(5)) ==
+
+svar = utregning(5)
+
+# type(svar) ==
+# type(er_stort(3, 2)) ==
+# type(er_stort(2, 3)) == 
+# type(er_stort) == 
+#+END_SRC
+
+*** Derivering av funksjoner
+#+BEGIN_SRC python :tangle ../py/uke42_framoverdiff_lf.py :exports none
+"""Dette programmet regner ut den deriverte av en enkel matematiske funksjon
+ved en del ulike x-verdier.
+
+Laget av Tarjei
+"""
+#+END_SRC
+
+Fra matematikken er vi vant til å innføre den deriverte via dens /definisjon/.
+
+#+begin_definition
+Den derivert til funksjonen $f(x)$ ved punktet $x=a$ finner vi som \[f(x) = \lim_{\Delta x \to 0}\frac{f(x+\Delta x) - f(x)}{\Delta x}\]
+#+end_definition
+
+Vi skal nå bruke denne definisjonen til å regne ut den deriverte for en matematisk funksjon, \(f(x) = 3x^2 \cdot \lg x - 15\).
+
+Om jeg ønsker å finne verdien til den deriverte av denne funksjonen i, for eksempel, \(x = 4\), kan vi finne et bedre og bedre overslag for dette ved å bruke mindre og mindre verdier for $\Delta x$.
+
+#+BEGIN_SRC python :session framoverdiff :exports both :tangle ../py/uke42_framoverdiff_lf.py :results output code
+import math
+
+def f(x):
+    return 3 * x ** 2 * math.log10(x) - 15
+
+delta_x = 0.001    # velger en veldig liten verdi for delta x
+eval_x = 4
+delta_f = f(eval_x + delta_x) - f(eval_x)
+
+derivert = delta_f / delta_x
+
+print(f"Den deriverte av funksjonen ved x = {eval_x} er omtrent {derivert:.2f}.")
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+Den deriverte av funksjonen ved x = 4 er omtrent 19.66.
+#+END_SRC
+
+Denne måten å regne ut en derivert på kalles en /framoverdifferanse/, siden vi finner den deriverte i \(x\) ved å /legge til/ \(\Delta x\).
+
+#+begin_task
+Utvid tabellen fra forrige oppgave til også å ha en kolonne for den deriverte av funksjonen ved de ulike \(x\)-verdiene. Bruk /framoverdifferanse/ for å finne den deriverte. Lever fila som ~f"uke42_{fornavn}_framoverdiff.py~.
+#+end_task
+
+#+BEGIN_SRC python :session framoverdiff :exports results :results output code :tangle ../py/uke42_framoverdiff_lf.py
+
+x = 20
+print("   x     --     f(x)     --     f'(x)")
+print("-------------------------------------")
+while x <= 29:
+    f_av_x = f(x)
+    der_av_f_ved_x = (f(x+delta_x) - f(x)) / delta_x
+    print(f"{x}    --    {f_av_x:.1f}    --    {der_av_f_ved_x:.2f}")
+    x += 1
+     
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+x     --     f(x)     --     f'(x)
+-------------------------------------
+20    --    1546.2    --    182.19
+21    --    1734.3    --    193.97
+22    --    1934.2    --    205.87
+23    --    2146.1    --    217.89
+24    --    2370.0    --    230.03
+25    --    2606.1    --    242.27
+26    --    2854.6    --    254.62
+27    --    3115.4    --    267.07
+28    --    3388.7    --    279.61
+29    --    3674.6    --    292.25
+#+END_SRC
+
+*** Utfordring: Derivasjonsfunksjon
+#+begin_src python :exports none :results silent :tangle ../py/uke42_framoverdiffunk_lf.py
+"""Dette programmet regner ut den deriverte av en enkel matematisk funksjon
+ved å å bruke en egen derivasjonsfunksjon.
+
+Laget av Tarjei
+"""
+import math
+
+def derivert_av_funk_ved_x(funksjon, x):
+    """Returnerer den numeriske verdien av den deriverte av funksjonen
+    'funksjon' når x er 'x'.
+
+    Bruk en 'framoverdifferanse' (se forrige oppgave) med 'delta_x = 0.0001'.
+
+    Eksempel:
+    def f(x):
+        return x ** 2
+
+    >>> derivert_av_funk_ved_x(f, 2)   =>  4.0001000000078335
+
+    """
+    delta_x = 0.0001
+    return (funksjon(x + delta_x) - funksjon(x)) / delta_x
+
+
+# Vi kan nå teste funksjonen for de samme verdiene av x, med vår gamle f
+
+def f(x):
+    return 3 * x ** 2 * math.log10(x) - 15
+
+x = 20
+print("   x     --     f(x)     --     f'(x)")
+print("-------------------------------------")
+while x <= 29:
+    f_av_x = f(x)
+    der_av_f_ved_x = derivert_av_funk_ved_x(f, x)
+    print(f"{x}    --    {f_av_x:.1f}    --    {der_av_f_ved_x:.2f}")
+    x += 1
+
+#+end_src
+
+Lag en funksjon med følgende spesifikasjon:
+
+#+BEGIN_SRC python
+def derivert_av_funk_ved_x(funksjon, x):
+    """Returnerer den numeriske verdien av den deriverte av funksjonen
+    'funksjon' når x er 'x'.
+
+    Bruk en 'framoverdifferanse' (se forrige oppgave) med 'delta_x = 0.0001'.
+
+    Eksempel:
+    def f(x):
+        return x ** 2
+
+    >>> derivert_av_funk_ved_x(f, 2)   =>  4.0001000000078335
+
+    """
+
+    # Her gjør du utregningene dine
+#+END_SRC
+
+Merk, her sender vi /navnet til en funksjon/ inn som en parameter til funksjonen.
+
+#+begin_task
+Lag en funksjon som tar inn navnet på en funksjon og en \(x\)-verdi. Returner et overslag for den deriverte til funksjonen ved denne \(x\)-verdien ved hjelp av framoverdifferanse med en \(Delta x = 0.0001\). Lever fila som ~f"uke42_{fornavn}_framoverdiffunk.py~.
+#+end_task
+
+
+* Introduksjon til funksjoner
+<2019-10-09 Wed>
+- [X] :: Abstraksjon som et alternativ til kodenivå
+- [X] :: Hvordan lage («definere») en funksjon i Python
+- [X] :: Hvordan bruke («kalle») en funksjon i Python
 
 * Videre med algoritmer
 <2019-09-25 Wed>
-- [ ] Repetisjon fra sist
+- [X] Repetisjon fra sist
 - [ ] En tilnærming til likningsløsning
 
 - [[pdf:39_innlevering.pdf][Innleveringsoppgaver]]
@@ -112,8 +467,6 @@ Du skal lage et program hvor du bruker halveringsmetoden til å gjøre følgende
 - Regne ut den naturlige logaritmen for et vilkårlig tall, altså $\ln{a}$.
 - Regne ut en vilkårlig logaritme for et vilkårlig tall, altså $\log_b{a}$.
 
-
-
 * Algoritmer
 <2019-09-18 Wed>
 - [X] Repetisjon fra sist
@@ -197,7 +550,6 @@ print(f"Vi var gjennom løkka {i} ganger.")
 #+END_SRC
 
 #+RESULTS:
-#+BEGIN_SRC org
 Starter med gjetningen 1.
 --------------------------------------------------------
 Runde nr. 1 gjennom løkka.
@@ -228,7 +580,7 @@ Feilen vår er dermed nå 6.306369737529849e-07.
 Kvadratroten av 13 er 3.6055513629176015.
 Vi har da fått en feil på 6.306369737529849e-07.
 Vi var gjennom løkka 5 ganger.
-#+END_SRC
+
 
 Legg merke til at det aller meste av koden her går til å skrive ut informasjon til brukeren.
 

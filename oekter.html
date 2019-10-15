@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-09-25 Wed 14:32 -->
+<!-- 2019-10-15 Tue 21:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter i Programmering og modellering</title>
@@ -160,22 +160,52 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbe54c1e">Videre med algoritmer</a></li>
-<li><a href="#orgef6b3a6">Algoritmer</a></li>
-<li><a href="#orgd4632ba">Løkker</a></li>
-<li><a href="#org8af8979">Forgreining</a></li>
-<li><a href="#org844f350">Grunnleggende regning</a></li>
+<li><a href="#org34e77f0">Hjemmearbeid med funksjoner</a></li>
+<li><a href="#org946f40e">Introduksjon til funksjoner</a></li>
+<li><a href="#orga214fab">Videre med algoritmer</a></li>
+<li><a href="#org2a0076e">Algoritmer</a></li>
+<li><a href="#orge6f95b2">Løkker</a></li>
+<li><a href="#orge0d5d77">Forgreining</a></li>
+<li><a href="#org222b2f4">Grunnleggende regning</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbe54c1e" class="outline-2">
-<h2 id="orgbe54c1e">Videre med algoritmer</h2>
-<div class="outline-text-2" id="text-orgbe54c1e">
+<div id="outline-container-org34e77f0" class="outline-2">
+<h2 id="org34e77f0">Hjemmearbeid med funksjoner</h2>
+<div class="outline-text-2" id="text-org34e77f0">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-10-16 Wed&gt;</span></span>
+</p>
+
+<ul class="org-ul">
+<li><a href="pdf/42_innlevering.pdf">Innleveringsoppgaver</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org946f40e" class="outline-2">
+<h2 id="org946f40e">Introduksjon til funksjoner</h2>
+<div class="outline-text-2" id="text-org946f40e">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-10-09 Wed&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> :: Abstraksjon som et alternativ til kodenivå</li>
+<li class="on"><code>[X]</code> :: Hvordan lage («definere») en funksjon i Python</li>
+<li class="on"><code>[X]</code> :: Hvordan bruke («kalle») en funksjon i Python</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga214fab" class="outline-2">
+<h2 id="orga214fab">Videre med algoritmer</h2>
+<div class="outline-text-2" id="text-orga214fab">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-09-25 Wed&gt;</span></span>
 </p>
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> Repetisjon fra sist</li>
+<li class="on"><code>[X]</code> Repetisjon fra sist</li>
 <li class="off"><code>[&#xa0;]</code> En tilnærming til likningsløsning</li>
 
 <li><a href="pdf/39_innlevering.pdf">Innleveringsoppgaver</a></li>
@@ -185,11 +215,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-
-
-<div id="outline-container-orgef6b3a6" class="outline-2">
-<h2 id="orgef6b3a6">Algoritmer</h2>
-<div class="outline-text-2" id="text-orgef6b3a6">
+<div id="outline-container-org2a0076e" class="outline-2">
+<h2 id="org2a0076e">Algoritmer</h2>
+<div class="outline-text-2" id="text-org2a0076e">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-09-18 Wed&gt;</span></span>
 </p>
@@ -206,9 +234,9 @@ for the JavaScript code in this tag.
 </p>
 </div>
 
-<div id="outline-container-org87a7f06" class="outline-3">
-<h3 id="org87a7f06">Tillegg fra undervisningen</h3>
-<div class="outline-text-3" id="text-org87a7f06">
+<div id="outline-container-orgc04d39c" class="outline-3">
+<h3 id="orgc04d39c">Tillegg fra undervisningen</h3>
+<div class="outline-text-3" id="text-orgc04d39c">
 <p>
 Det blei mye knoting rundt kvadrotutregningene denne økta. Her er en gjennomgang gjennomgang av det jeg ønsket å få ut av den initielle delen.
 </p>
@@ -222,18 +250,18 @@ Dette er for øvrig en algoritme for utregning av kvadratrøtter som kalles <i>b
 </p>
 </div>
 
-<div id="outline-container-orgc9f4048" class="outline-4">
-<h4 id="orgc9f4048">Motivasjon</h4>
-<div class="outline-text-4" id="text-orgc9f4048">
+<div id="outline-container-orgb2e985e" class="outline-4">
+<h4 id="orgb2e985e">Motivasjon</h4>
+<div class="outline-text-4" id="text-orgb2e985e">
 <p>
 I en datamaskin er det en del regning som gjøres direkte på maskinvaren. I moderne maskiner er det for eksempel egne kretser som regner ut summen av to tall eller produktet av to tall. Det er dog et utall regneoperasjoner maskinen må kjøre flere ganger gjennom ulike kretser for å komme fram til. Si vi for eksempel ønsker å finne \(\sqrt{13}\), eller \(\sqrt[3]{13}\), eller generelt \(\sqrt[48]{13}\), her må maskinen gjøre en serie med operasjoner, den må følge en <i>algoritme</i>, for å finne svaret.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9a50407" class="outline-4">
-<h4 id="org9a50407">Enkelt implementert i Python</h4>
-<div class="outline-text-4" id="text-org9a50407">
+<div id="outline-container-orgefc08b9" class="outline-4">
+<h4 id="orgefc08b9">Enkelt implementert i Python</h4>
+<div class="outline-text-4" id="text-orgefc08b9">
 <p>
 Vi er heldige, vi skriver ikke koden direkte til maskinen, vi skriver koden i python som så oversettes via en del trinn til kode som kjøres på maskinen. Dette forenkler ting voldsomt. Om vi ønsker å finne løsningene over, er ikke det værre enn å gjøre noe à la følgende:
 </p>
@@ -263,9 +291,9 @@ Hva skal vi gjøre om vi kun kan opphøye i heltall?
 </div>
 </div>
 
-<div id="outline-container-orgdff042d" class="outline-4">
-<h4 id="orgdff042d">En vanskeligere implementasjon i Python</h4>
-<div class="outline-text-4" id="text-orgdff042d">
+<div id="outline-container-org3899fc3" class="outline-4">
+<h4 id="org3899fc3">En vanskeligere implementasjon i Python</h4>
+<div class="outline-text-4" id="text-org3899fc3">
 <p>
 Om vi skal finne \(\sqrt{S}\), kan vi tenke oss at det vi skal finne er løsningen på likninga \[S = x^2.\] Vi lar fremgangsmåten vår være som følger:
 </p>
@@ -353,9 +381,9 @@ Legg merke til at det aller meste av koden her går til å skrive ut informasjon
 </div>
 </div>
 
-<div id="outline-container-org8c961ad" class="outline-4">
-<h4 id="org8c961ad">Hvorfor fungerer oppdateringen?</h4>
-<div class="outline-text-4" id="text-org8c961ad">
+<div id="outline-container-org1751850" class="outline-4">
+<h4 id="org1751850">Hvorfor fungerer oppdateringen?</h4>
+<div class="outline-text-4" id="text-org1751850">
 <p>
 Når vi oppdaterer med \[x_{n+1} = \frac{x_n + \frac{S}{x_n}}{2},\] altså at den oppdaterte gjetningen \(x_{n+1}\) er gjennomsnittet av \(x_n\) og \(\frac{S}{x_n}\) bruker vi følgende argumentasjon:
 </p>
@@ -373,9 +401,9 @@ Vi kan dermed komme oss nærmere en faktisk løsning ved å teste ut gjennomsnit
 </div>
 </div>
 
-<div id="outline-container-orgd4632ba" class="outline-2">
-<h2 id="orgd4632ba">Løkker</h2>
-<div class="outline-text-2" id="text-orgd4632ba">
+<div id="outline-container-orge6f95b2" class="outline-2">
+<h2 id="orge6f95b2">Løkker</h2>
+<div class="outline-text-2" id="text-orge6f95b2">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-09-11 Wed&gt;</span></span>
 </p>
@@ -393,9 +421,9 @@ Her er et foreslått <a href="py/uke37_lf.py">løsningsforslag</a> til innleveri
 </p>
 </div>
 </div>
-<div id="outline-container-org8af8979" class="outline-2">
-<h2 id="org8af8979">Forgreining</h2>
-<div class="outline-text-2" id="text-org8af8979">
+<div id="outline-container-orge0d5d77" class="outline-2">
+<h2 id="orge0d5d77">Forgreining</h2>
+<div class="outline-text-2" id="text-orge0d5d77">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-09-04 Wed&gt;</span></span>
 </p>
@@ -411,9 +439,9 @@ Her er et foreslått <a href="py/uke37_lf.py">løsningsforslag</a> til innleveri
 </p>
 </div>
 
-<div id="outline-container-org65ea0ba" class="outline-3">
-<h3 id="org65ea0ba">Kommentarer fra sist</h3>
-<div class="outline-text-3" id="text-org65ea0ba">
+<div id="outline-container-orgc50eb40" class="outline-3">
+<h3 id="orgc50eb40">Kommentarer fra sist</h3>
+<div class="outline-text-3" id="text-orgc50eb40">
 <ul class="org-ul">
 <li>Husk å importere biblioteker i fila du leverer, det du gjør i konsollen følger ikke med leveringa.</li>
 </ul>
@@ -421,9 +449,9 @@ Her er et foreslått <a href="py/uke37_lf.py">løsningsforslag</a> til innleveri
 </div>
 </div>
 
-<div id="outline-container-org844f350" class="outline-2">
-<h2 id="org844f350">Grunnleggende regning</h2>
-<div class="outline-text-2" id="text-org844f350">
+<div id="outline-container-org222b2f4" class="outline-2">
+<h2 id="org222b2f4">Grunnleggende regning</h2>
+<div class="outline-text-2" id="text-org222b2f4">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-21 Wed&gt;</span></span>
 </p>

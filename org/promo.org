@@ -173,7 +173,7 @@ print(svar)
 #+END_SRC
 
 ** Ulike typer programmeringsspråk
-I teorien kan alle programmeringsspråk som er såkalt [[popup:Etter Alan Turing, av «The Imitation Game»-berømmelse][/turingkomplette/]] beregne alt som kan beregnes. For at et språk skal være turingkomplett, må det litt forenklet ha mulighet til å gjenta kode om en betingelse ikke er nådd og ha en form for hukommelse. Dette gjelder i praksis alle programmeringsspråk.
+I teorien kan alle programmeringsspråk som er såkalt /turingkomplette/ beregne alt som kan beregnes. For at et språk skal være turingkomplett, må det litt forenklet ha mulighet til å gjenta kode om en betingelse ikke er nådd og ha en form for hukommelse. Dette gjelder i praksis alle programmeringsspråk.
 
 Allikevel er det en voldsom forskjell på de ulike språkene. Et klassisk eksempel de fleste programmere har vært innom, er å få maskinen til å si "Hello, world!". La oss se på det for tre ulike språk.
 
@@ -244,7 +244,7 @@ Noen språk egner seg dog bedre til visse stiler, vi kommer i all hovedsak til �
 ** Semantikk og syntaks                                                            :noexport:
 Hvert programmeringsspråk har et sett med «primitive constructs» (Guttag, s. 4), en syntaks, statisk semantikk og semnantikk. Om vi tenker på et naturlig språk (f.eks. norsk) er /primitivene/ ord, syntaksen forteller oss hvilke ord som lager velformede setninger, den statiske semantikken definerer hvilke setninger som er meningsfulle, og semantikken forteller til slutt hva meningen til de setningene er.
 
-I Python har vi blant annet primitivene /literals/ (f.eks. tallet ~42.3~ og tekststrengen ~hei på deg~, og [[popup:%C2%ABinfiks%C2%BB%20fordi%20vi%20setter%20dem%20inn%20/mellom/%20to%20verdier][/infiksoperatorer/]] som ~+~ og ~*~). På norsk er tekststrengen «Stol hodet kne.» ikke en syntaktisk gyldig setning, siden vi på norsk ikke kan ha setninger på formen ~<substantiv> <substantiv> <substantiv>~. I Python er sekvensen av primitiver ~3.2 + 42.3~ syntaktisk velformulert, mens sekvensen ~3.2 42.3~ ikke er det.
+I Python har vi blant annet primitivene /literals/ (f.eks. tallet ~42.3~ og tekststrengen ~hei på deg~, og /infiksoperatorer/ som ~+~ og ~*~). På norsk er tekststrengen «Stol hodet kne.» ikke en syntaktisk gyldig setning, siden vi på norsk ikke kan ha setninger på formen ~<substantiv> <substantiv> <substantiv>~. I Python er sekvensen av primitiver ~3.2 + 42.3~ syntaktisk velformulert, mens sekvensen ~3.2 42.3~ ikke er det.
 
 Den statiske semantikken forteller oss hvilke syntaktisk korrekte sekvenser som faktisk gir mening. På norsk er sekvensen «kua er store» på formen ~<subjekt> <verbal> <adverbial>~, noe som er en syntaktisk akseptabel setning, men ~kua~ er i entall og ~store~ viser til flertall, så det er fremdeles ikke gyldig norsk. Dette er da en statisk-semantisk feil. I Python er sekvensen ~42.3 / "hei på deg"~ syntaktisk gyldig, men den gir en statisk semantisk feil siden det ikke gir mening å dele et tall på en tekststreng.
 
@@ -316,7 +316,7 @@ Regn følgende bytes over til titallssystemet:
 *** Håndtering av desimaltall                                                     :noexport:
 Vi har nå sett på hvordan en datamaskin kan representere tallene 0 og 1 via ledninger det ikke går eller går strøm i, og hvordan disse 0-ene og 1-erne kan brukes til å bygge opp alle heltall ved hjelp av totallssystemet.
 
-Hva så med tallet 0.5? Hva med [[popup:når vi snakker om programmering, mener vi titallssystemet når vi sier «desimaltall», om vi ønsker å si «tall med komma», kaller vi det flyttall][flyttallene]]?
+Hva så med tallet 0.5? Hva med flyttallene?
 
 Flyttall representeres i all hovedsak som en slags variaent av tall på standardform når det er i minnet. I Python er det holdt av 64 bits til hvert flyttall. Når vi programmerer, må vi kan det dog være nødvendig å passe på når vi jobber med flyttall, da det her blir tydelige forskjeller på to- og titallssystemene.
 
@@ -877,7 +877,7 @@ En slik importeringssetning kommer vi til å se i de aller fleste programmene vi
 
 I eksempelet over er ~fysikk~ et slikt bibliotek. Vi kommer seinere til å bruke et knippe biblioteker, spesielt [[https://docs.python.org/2/library/math.html][~math~]], [[http://www.numpy.org/][~numpy~]], [[https://www.scipy.org/][~scipy~]], og [[https://matplotlib.org/][~matplotlib~]].
 
-En del slike biblioteker er en del av Pythons /standardbibliotek/. Det vil enkelt og greit si at utviklerne av Python også tar seg av å holde disse modulene (les: bibliotekene) vedlike. En del av standardbiblioteket er [[popup:Dette er funksjoner som er tilgjengelig uten noen form for ~import~-setning, f.eks. funksjonen ~sorted~, som sorterer ei liste][innebygde funksjoner]], men det er også egne moduler man må importere, slik som [[popup:~math~ trenger vi fort, dette biblioteket inneholder både ~sqrt~ og ~factorial~.][~math~]].
+En del slike biblioteker er en del av Pythons /standardbibliotek/. Det vil enkelt og greit si at utviklerne av Python også tar seg av å holde disse modulene (les: bibliotekene) vedlike. En del av standardbiblioteket er innebygde funksjoner, men det er også egne moduler man må importere, slik som ~math~, hvor vi for eksempel finner ~sqrt~-funksjonen.
 
 Vårt første møte ~import~-setninger blir også vårt første møte «punktnotasjon» eller /dot notation/. Vi skriver ~fy.g~ for vi ønsker å bruke ~g~ fra ~fysikk~-modulen, som vi her har valgt å gi kallenavnet («alias»-et) ~fy~. Vi ser av feilmeldingen under at om vi forsøker å bruke ~g~ direkte, får vi beskjed om at denne ikke er definert.
 
@@ -1701,7 +1701,7 @@ Vurder følgende fremgangsmåte for et vilkårlig, positivt heltall, $n$:
 - Hvis $n$ er et partall, del det på to
 - Hvis $n$ er et oddetall, gang det med tre og legg til en
 
-Collatz' [[popup:%C2%ABFormodning,%20innen%20matematikk,%20en%20antatt%20sann%20setning%20som%20enn%C3%A5%20ikke%20har%20blitt%20bevist.%C2%BB%20(Store%20norske%20leksikon)][formodning]] sier at om du så tar tallet du får gjennom samme prosess, og så tar tallet du får /da/ gjennom samme prosses, og så videre, og så videre, vil du til slutt få tallet 1. /Uansett/ hvilket positive heltall du startet på. En del tall har blitt sjekket, men ikke [[popup:Alle%20tall%20til%20$20\cdot2^{58}\approx%205.7646\cdot%2010^18$%20er%20sjekket.(https://sweet.ua.pt/tos/bib/3.5.html)][alle]].
+Collatz' formodning sier at om du så tar tallet du får gjennom samme prosess, og så tar tallet du får /da/ gjennom samme prosses, og så videre, og så videre, vil du til slutt få tallet 1. /Uansett/ hvilket positive heltall du startet på. En del tall har blitt sjekket, men ikke alle.
 Under vises rekka av collatz-tall om man starter på 17. Tall nummer to blir da 52, siden $1\cdot 3 + 1 = 52$.
 
 #+BEGIN_SRC python :exports results :session none
@@ -2125,7 +2125,7 @@ fig.savefig("test.png")
 :PROPERTIES:
 :CUSTOM_ID: tekstfiler
 :END:
-#+BEGIN_SRC ipython :exports none :results silent
+#+BEGIN_SRC python :exports none :results silent
 import random as rnd
 import numpy as np
 
@@ -2159,19 +2159,19 @@ Dette gjør at slike filer er relativt enkle å lese inn og jobbe med i Python. 
 :END:
 Vi kan enkelt lese inn tekstfiler, som ~.csv~-fila over, i Python.
 
-#+BEGIN_SRC ipython :session fil :results silent
+#+BEGIN_SRC python :session fil :results silent
 posisjonsfil = open("../data/posisjonseksempel.csv", "r")
 #+END_SRC
 
 Vi har nå fått et «filobjekt» kalt ~posisjonsfil~, som er koblet til fila over og åpnet kun med leserettigheter.
 
-#+BEGIN_SRC ipython :session fil :exports both :results silent
+#+BEGIN_SRC python :session fil :exports both :results silent
 filtekst = posisjonsfil.read().splitlines()
 #+END_SRC
 
 ~filtekst~ er nå en ~liste~ av tekststrenger, en for hver linje i fila.
 
-#+BEGIN_SRC ipython :session fil :results output python
+#+BEGIN_SRC python :session fil :results output python
 for linje in filtekst[:11]:
     print(linje)
 #+END_SRC
@@ -2193,7 +2193,7 @@ Time(s), Position(m)
 
 Når vi åpner en file på denne måte, må vi huske å lukke den før vi avslutter programmet.
 
-#+BEGIN_SRC ipython :session fil :exports code
+#+BEGIN_SRC python :session fil :exports code
 posisjonsfil.close()
 #+END_SRC
 
@@ -2205,7 +2205,7 @@ posisjonsfil.close()
 :END:
 For å unngå å måtte huske å lukke fila, kan vi alternativt jobb med fila innenfor en ~with~-kontekst, det foregående eksempelet blir da som følger:
 
-#+BEGIN_SRC ipython :exports both :results output org
+#+BEGIN_SRC python :exports both :results output org
 with open("data/posisjonseksempel.csv", "r") as posisjonsfil:
     filtekst = posisjonsfil.read().splitlines()
 
@@ -2228,7 +2228,7 @@ Time(s), Position(m)
 :END:
 Vi så i forrige kapittel på hvordan vi enkelt kan lage grafer ved hjelp av ~matplotlib~. Eksempelet under plotter dataene fra eksempelfila.
 
-#+BEGIN_SRC ipython :results silent
+#+BEGIN_SRC python :results silent
 import matplotlib.pyplot as plt
 
 with open("data/posisjonseksempel.csv", "r") as posisjonsfil:
@@ -2260,7 +2260,7 @@ plt.savefig("figurer/posisjonseksempel_posisjon.png")
 :END:
 Vi skal seinere kjøre simuleringer i egenskrevne programmer. Vi kommer da til å ha behov for å kunne lagre resultatene våre på en hensiktsmessig måte.
 
-#+BEGIN_SRC ipython :results silent :exports code
+#+BEGIN_SRC python :results silent :exports code
 import random as rnd
 
 kasttittel = "Kast nr."
@@ -2986,10 +2986,6 @@ https://matplotlib.org/examples/pylab_examples/spine_placement_demo.html#pylab-e
 
 20180725 22:46
 
-** TODO Popup fungerer bare for ett ord av gangen
-https://www.w3schools.com/howto/howto_js_popup.asp
-
-Dette var opprinnelig hentet fra w3schools. For berdre å få dette til få fungere, kan jeg sende en id-en til javascriptfunksjonen. Dette for å sørge for at alt er unikt.
 * Notater                                                                           :noexport:
 ** Arbeidsminnet i titallssystemet
 I «arbeidsminnet» i en datamaskin, representeres koeffisientene som spenningsnivåer. Det ville her i utgangspunktet ikke vært noe i veien for å sette ti ulike spenningsnivåer, og dermed la datamaskinen jobbe med titallsystemet den òg. Problemet er da at det ville vært lite som skulle til for at en verdien var feil. Om vi setter minimumspenningen til 0 V og maksimumsspenningen til 5 V, får altså hver verdi et spenn på 0,5 V som er «sitt». Det skal da lite til at en verdi som 1,6 V faller under 1,5 V, og dermed at en 4-er brått er en 3-er.
@@ -3026,7 +3022,7 @@ Dette er hårete, men gjennomførbare, mål for et «tretimersfag». For de av d
 *** Forventningsverdi maks av dobbelterning
 Finn gjennomsnittet av maksverdien til to terninger kastet.
 
-#+BEGIN_SRC ipython
+#+BEGIN_SRC python
 import random as rnd
 
 antall_kast = 100000
@@ -3046,7 +3042,7 @@ print(sum_maks / kast)
 *** Kast mynten
 Lag en funksjon som returnerer ~True~ dersom et kall av ~rnd.random()~ blir over 0.5.
 
-#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent
+#+BEGIN_SRC python :session mynt :tangle mynt.py :exports none :results silent
 import random as rnd
 
 
@@ -3063,7 +3059,7 @@ I det følgende setter vi et myntkast til å være kron hvis ~myntkast()~ return
 
 Lag en funksjon som starter et myntkast, og fortsetter å kaste så lenge den får kron. Funksjonen ~kronsekvens~ returnerer antall kron på rad, null hvis første kast blir mynt.
 
-#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent
+#+BEGIN_SRC python :session mynt :tangle mynt.py :exports none :results silent
 def kronsekvens() -> int:
     """Kast en mynt og tell opp antall kron på rad.
 
@@ -3075,7 +3071,7 @@ def kronsekvens() -> int:
     return antall
 #+END_SRC
 
-#+BEGIN_SRC ipython :session mynt :exports both :results org
+#+BEGIN_SRC python :session mynt :exports both :results org
 antall = kronsekvens()
 print(f"På dette forsøket fikk vi {antall} kron på rad.")
 #+END_SRC
@@ -3089,7 +3085,7 @@ Lag en funksjon, ~tiersekvens~, som teller antall ganger den må kalle ~kronsekv
 
 ~tiersekvens~ skal returnerer antallet ganger.
 
-#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent 
+#+BEGIN_SRC python :session mynt :tangle mynt.py :exports none :results silent 
 def tiersekvens() -> int:
     """Returner antall forsøk før minst ti kron på rad."""
     antall = 0
@@ -3098,7 +3094,7 @@ def tiersekvens() -> int:
     return antall
 #+END_SRC
 
-#+BEGIN_SRC ipython :session mynt :exports both :results org :preamble "# -*- coding: utf-8 -*-"
+#+BEGIN_SRC python :session mynt :exports both :results org :preamble "# -*- coding: utf-8 -*-"
 antall = tiersekvens()
 print(f"Denne gangen tok det {antall} forsøk for å få minst ti kron på rad.")
 #+END_SRC
@@ -3111,7 +3107,7 @@ Denne gangen tok det 1360 forsøk for å få minst ti kron på rad.
 *** Ti på rad tusen ganger
 Lag en funksjon, ~tusen_tiersekvenser~, som returnerer ei liste med resultatene av tusen kjøringer av ~tiersekvens~.
 
-#+BEGIN_SRC ipython :session mynt :tangle mynt.py :exports none :results silent
+#+BEGIN_SRC python :session mynt :tangle mynt.py :exports none :results silent
 def tusen_tiersekvenser() -> list:
     """Returner ei liste med resultatene av tusen kall på tiersekvens."""
     antall = 1000
@@ -3123,7 +3119,7 @@ def tusen_tiersekvenser() -> list:
 
 *** Histogrammet
 
-#+BEGIN_SRC ipython :session mynt :tangle mynt.py
+#+BEGIN_SRC python :session mynt :tangle mynt.py
 import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
 
