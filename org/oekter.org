@@ -5,14 +5,100 @@
 ; Her hadde jeg tidligere med tillegget :eval query-export
 #+END_SRC
 
+
+* Lister og plotting
+
+** Innleveringsoppgaver uke 43 :pdf:
+:properties:
+:export_file_name: ../pdf/uke43_innlevering.pdf
+:end:
+
+*** Et enkelt, dobbelt plot
+
+Velg to funksjoner og plot de innenfor de samme x-verdiene.
+
+Lever fila som ~f"uke43_{fornavn}_dobbelplot.py~ og den resulterende grafen som ~f"uke43_{fornavn}_dobbelplot.png~.
+
+*** Starten på utforsking av framoverdifferansen
+Velg én av funksjonene fra forrige oppgave, denne skal du nå gjøre følgende med:
+
+1) Finn funksjonens deriverte /analytisk/, og opprett denne som en egen funksjon
+2) Lag et plot som sammenligner den analytiske løsningen med den numeriske tilnærmingen du finner ved å bruke /framoverdifferanse/-metoden fra sist uke.
+
+*** Et eksempel på plotting
+#+begin_src python :tangle ../py/uke42_plotting.py :exports none
+"""Denne fila er en kort introduksjon til tegning av grafer
+i python ved å bruke matplotlib.
+
+
+Laget av Tarjei.
+"""
+#+end_src
+
+Om du har tre lister med verdier som skal plottes, en med x-verdier og to med y-verdier, kan du bruke en fremgangsmåte à la følgende for å få til dette.
+
+Inntil videre kan du bruke den følgende fremgangsmåten ukritisk. Bruk hjelpesystemet aktivt om du ønsker å finne andre ting du kan endre med plottene dine, tilstreb ikke å google problemer du eventuelt støter på.
+
+
+#+begin_src python :tangle ../py/uke42_plotting.py :exports code :results silent
+import matplotlib.pyplot as plt
+
+def f(x):
+    return x ** 2 - 5
+
+def g(x):
+    return x ** 3 + 13
+
+
+# Vi lager oss en liste [-10, -9, ..., 0, ... 9, 10]
+x_verdier = list(range(-10, 11))
+
+# Vi oppretter tomme lister som skal holde y-verdiene våre
+y_verdier1 = []
+y_verdier2 = []
+
+# Vi legger funksjonsverdiene til y-verdilistene
+for x in x_verdier:
+    y_verdier1.append(f(x))
+    y_verdier2.append(g(x))
+
+# Vi oppretter et tomt plot
+fig, ax = plt.subplots()
+
+# Vi lager oss to linjer, en for hver liste av y-verdier. Legg merke til kommaet
+linje1, = ax.plot(x_verdier, y_verdier1)
+linje2, = ax.plot(x_verdier, y_verdier2)
+
+ax.set_xlabel('x-verdier')
+ax.set_ylabel('y-verdier')
+ax.set_xlim(-14, 14)
+ax.set_ylim(-500, 600)
+
+# Vi setter navn på linjene våre
+ax.legend([linje1, linje2], ['f(x)', 'g(x)'])
+
+fig.savefig('eksempelplot.png')
+fig.show()
+#+end_src
+
+#+begin_src sh :exports none
+mv eksempelplot.png ../figurer/uke42_eksempelplot.png
+#+end_src
+
+Som produserer følgende plot: 
+
+#+caption: Et enkelt, dobbelt plot
+[[file:../figurer/uke42_eksempelplot.png]]
+
+
 * Hjemmearbeid med funksjoner
 <2019-10-16 Wed>
 
-- [[pdf:42_innlevering.pdf][Innleveringsoppgaver]]
+- [[pdf:uke42_innlevering.pdf][Innleveringsoppgaver]]
 
 ** Innleveringsoppgaver uke 42 :pdf:
 :properties:
-:export_file_name: ../pdf/42_innlevering.pdf
+:export_file_name: ../pdf/uke42_innlevering.pdf
 :end:
 *** Tester :noexport:
 #+tblname: absoluttdifferansetester
@@ -357,7 +443,6 @@ Merk, her sender vi /navnet til en funksjon/ inn som en parameter til funksjonen
 Lag en funksjon som tar inn navnet på en funksjon og en \(x\)-verdi. Returner et overslag for den deriverte til funksjonen ved denne \(x\)-verdien ved hjelp av framoverdifferanse med en \(Delta x = 0.0001\). Lever fila som ~f"uke42_{fornavn}_framoverdiffunk.py~.
 #+end_task
 
-
 * Introduksjon til funksjoner
 <2019-10-09 Wed>
 - [X] :: Abstraksjon som et alternativ til kodenivå
@@ -369,13 +454,13 @@ Lag en funksjon som tar inn navnet på en funksjon og en \(x\)-verdi. Returner e
 - [X] Repetisjon fra sist
 - [ ] En tilnærming til likningsløsning
 
-- [[pdf:39_innlevering.pdf][Innleveringsoppgaver]]
-- [[pdf:39_repetisjon.pdf][Repetisjonsoppgaver]]
-- [[pdf:39_innlevering_alternativ.pdf][Alternative innleveringsoppgaver]] (mer krevende)
+- [[pdf:uke39_innlevering.pdf][Innleveringsoppgaver]]
+- [[pdf:uke39_repetisjon.pdf][Repetisjonsoppgaver]]
+- [[pdf:uke39_innlevering_alternativ.pdf][Alternative innleveringsoppgaver]] (mer krevende)
 
 ** Repetisjonsoppgaver uke 39 :noexport:
 :properties:
-:export_file_name: ../pdf/39_repetisjon.pdf
+:export_file_name: ../pdf/uke39_repetisjon.pdf
 :end:
 
 Ved siden av å gå gjennom de tidligere innleveringsoppgavene, kan du sjekke om du er ajour med faget ved å prøve deg på følgende oppgaver. Om du ønsker besvarelsen din kommentert, kan du levere den filvis som angitt i slutten av hver del.
@@ -422,7 +507,7 @@ Filnavn ~uke39_rep_loekker.py~.
 
 ** Innleveringsoppgaver uke 39 :noexport:
 :properties:
-:export_file_name: ../pdf/39_innlevering.pdf
+:export_file_name: ../pdf/uke39_innlevering.pdf
 :end:
 Skriv et program som bruker halveringsmetoden til å løse en selvvalgt likning. Pass på å skrive i dokumentasjonen hva programmet skal løse. Starten på et eksempel kan se ut som følger:
 
@@ -457,7 +542,7 @@ Lever oppgaven som ~uke39_fornavn.py~.
 
 ** Alternative innleveringsoppgaver uke 39 :noexport:
 :properties:
-:export_file_name: ../pdf/39_innlevering_alternativ.pdf
+:export_file_name: ../pdf/uke39_innlevering_alternativ.pdf
 :end:
 Vi kan bruke en ~while~-løkke til å løse en generell likning via halveringsmetoden. Om du ikke husker hvordan dette gjøres, se på de andre oppgavene først.
 
@@ -594,7 +679,7 @@ Vi kan dermed komme oss nærmere en faktisk løsning ved å teste ut gjennomsnit
 
 ** Innleveringsoppgaver uke 38 :noexport:
 :properties:
-:export_file_name: ../pdf/38_innlevering.pdf
+:export_file_name: ../pdf/uke38_innlevering.pdf
 :end:
 
 Ved å bruke designmønsteret fra [[py:uke38_sqrt.py][kvadratrotutregningene]] lag et program som gjør følgende:
@@ -612,23 +697,23 @@ Av regneoperasjoner, får du kun bruke /addisjon/ og /subtraksjon/.
 - [X] Recap fra sist
 - [X] ~While~-løkker
 
-[[pdf:37_innlevering.pdf][Innleveringsoppgaver]]
+[[pdf:uke37_innlevering.pdf][Innleveringsoppgaver]]
 
 Her er et foreslått [[py:uke37_lf.py][løsningsforslag]] til innleveringsoppgavene.
 ** Innleveringsoppgaver uke 37 :noexport:
 :properties:
-:export_file_name: ../pdf/37_innlevering.pdf
+:export_file_name: ../pdf/uke37_innlevering.pdf
 :end:
 *** Collatz' formodning
 Lag et program som ber brukeren om et tall, og som skriver ut tallene som følger fra dette tallet fra Collatz' formodning.
 
-#+BEGIN_DEFINITION
+#+begin_definition
 Collatz' formodning
 
 Hvis $n$ er et partall, del det på 2. Hvis $n$ er et oddetall, gang det med 3 og legg til 1.
-#+END_DEFINITION
+#+end_definition
 
-#+BEGIN_EXAMPLE
+#+begin_example
 >>> n = 5
 5
 16
@@ -636,7 +721,7 @@ Hvis $n$ er et partall, del det på 2. Hvis $n$ er et oddetall, gang det med 3 o
 4
 2
 1
-#+END_EXAMPLE
+#+end_example
 
 *** Utfordring
 Eksempelet over viser at ~5~ går innom seks verdier før det lander på ~1~ (~5 16 8 4 2 1~). Hvilket tall under 10000 går innom flest verdier før det lander på ~1~?
@@ -647,14 +732,14 @@ Eksempelet over viser at ~5~ går innom seks verdier før det lander på ~1~ (~5
 - [X] ~if~-setninger
 - [X] Indentering og blokkstruktur
 
-[[pdf:36_innlevering.pdf][Innleveringsoppgaver]]
+[[pdf:uke36_innlevering.pdf][Innleveringsoppgaver]]
 
 ** Kommentarer fra sist
 - Husk å importere biblioteker i fila du leverer, det du gjør i konsollen følger ikke med leveringa.
 
 ** Innleveringsoppgaver uke 36 :noexport:
 :properties:
-:export_file_name: ../pdf/36_innlevering.pdf
+:export_file_name: ../pdf/uke36_innlevering.pdf
 :end:
 *** Andregradsløser
 Lever en fil ~uke36_ditt_navn.py~ hvor du løser følgende oppgave:
@@ -671,12 +756,12 @@ Utvid programmet slik at det skriver ut det faktoriserte uttrykket for brukeren.
 - [X] Typer
 - [ ] Funksjoner og funksjonssignaturer
 
-[[pdf:33_innlevering.pdf][Innleveringsoppgaver]]
+[[pdf:uke33_innlevering.pdf][Innleveringsoppgaver]]
 ** Innleveringsoppgaver uke 34 :noexport:
 :properties:
-:export_file_name: ../pdf/34_innlevering.pdf
+:export_file_name: ../pdf/uke34_innlevering.pdf
 :end:
-Lever en fil ~uke33_ditt_navn.py~ hvor du regner ut og skriver ut svarene til følgende oppgaver:
+Lever en fil ~uke34_ditt_navn.py~ hvor du regner ut og skriver ut svarene til følgende oppgaver:
 
 1) $2\cdot2$
 2) $2 + 3^{51} - 17$

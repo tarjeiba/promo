@@ -14,6 +14,7 @@
 #+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.1 (<a href="http://orgmode.org">Org</a> mode 9.1.13)
 #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+LATEX_HEADER: \usepackage{amsthm}
+#+LATEX_HEADER: \usepackage[norsk]{babel}
 #+LATEX_HEADER: \theoremstyle{definition}
 #+LATEX_HEADER: \newtheorem{definition}{Definisjon}
 #+LATEX_HEADER: \newtheorem{task}{Oppgave}

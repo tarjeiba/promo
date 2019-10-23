@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-10-15 Tue 21:56 -->
+<!-- 2019-10-16 Wed 14:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter i Programmering og modellering</title>
@@ -75,11 +75,11 @@ for the JavaScript code in this tag.
 org_html_manager.set("TOC_DEPTH", "1");
 org_html_manager.set("LINK_HOME", "");
 org_html_manager.set("LINK_UP", "");
-org_html_manager.set("LOCAL_TOC", "0");
+org_html_manager.set("LOCAL_TOC", "1");
 org_html_manager.set("VIEW_BUTTONS", "0");
 org_html_manager.set("MOUSE_HINT", "underline");
 org_html_manager.set("FIXED_TOC", "0");
-org_html_manager.set("TOC", "1");
+org_html_manager.set("TOC", "0");
 org_html_manager.set("VIEW", "info");
 org_html_manager.setup();  // activate after the parameters are set
 /*]]>*///-->
@@ -341,39 +341,51 @@ Om vi skriver inn hele dette programmet i python, kan det se ut som følger:
 </pre>
 </div>
 
-<div class="org-src-container">
-<pre class="src src-org">Starter med gjetningen 1.
---------------------------------------------------------
-Runde nr. 1 gjennom l&#248;kka.
-N&#229;v&#230;rende gjetning er 7.0, etter oppdatering.
+<p>
+Starter med gjetningen 1.
+</p>
+<hr />
+<p>
+Runde nr. 1 gjennom løkka.
+Nåværende gjetning er 7.0, etter oppdatering.
 Dette er egentlig kvadratroten av 49.0.
-Feilen v&#229;r er dermed n&#229; 36.0.
---------------------------------------------------------
-Runde nr. 2 gjennom l&#248;kka.
-N&#229;v&#230;rende gjetning er 4.428571428571429, etter oppdatering.
+Feilen vår er dermed nå 36.0.
+</p>
+<hr />
+<p>
+Runde nr. 2 gjennom løkka.
+Nåværende gjetning er 4.428571428571429, etter oppdatering.
 Dette er egentlig kvadratroten av 19.612244897959187.
-Feilen v&#229;r er dermed n&#229; 6.612244897959187.
---------------------------------------------------------
-Runde nr. 3 gjennom l&#248;kka.
-N&#229;v&#230;rende gjetning er 3.6820276497695854, etter oppdatering.
+Feilen vår er dermed nå 6.612244897959187.
+</p>
+<hr />
+<p>
+Runde nr. 3 gjennom løkka.
+Nåværende gjetning er 3.6820276497695854, etter oppdatering.
 Dette er egentlig kvadratroten av 13.557327613667736.
-Feilen v&#229;r er dermed n&#229; 0.5573276136677361.
---------------------------------------------------------
-Runde nr. 4 gjennom l&#248;kka.
-N&#229;v&#230;rende gjetning er 3.6063454894655185, etter oppdatering.
+Feilen vår er dermed nå 0.5573276136677361.
+</p>
+<hr />
+<p>
+Runde nr. 4 gjennom løkka.
+Nåværende gjetning er 3.6063454894655185, etter oppdatering.
 Dette er egentlig kvadratroten av 13.00572778938829.
-Feilen v&#229;r er dermed n&#229; 0.005727789388290105.
---------------------------------------------------------
-Runde nr. 5 gjennom l&#248;kka.
-N&#229;v&#230;rende gjetning er 3.6055513629176015, etter oppdatering.
+Feilen vår er dermed nå 0.005727789388290105.
+</p>
+<hr />
+<p>
+Runde nr. 5 gjennom løkka.
+Nåværende gjetning er 3.6055513629176015, etter oppdatering.
 Dette er egentlig kvadratroten av 13.000000630636974.
-Feilen v&#229;r er dermed n&#229; 6.306369737529849e-07.
---------------------------------------------------------
+Feilen vår er dermed nå 6.306369737529849e-07.
+</p>
+<hr />
+<p>
 Kvadratroten av 13 er 3.6055513629176015.
-Vi har da f&#229;tt en feil p&#229; 6.306369737529849e-07.
-Vi var gjennom l&#248;kka 5 ganger.
-</pre>
-</div>
+Vi har da fått en feil på 6.306369737529849e-07.
+Vi var gjennom løkka 5 ganger.
+</p>
+
 
 <p>
 Legg merke til at det aller meste av koden her går til å skrive ut informasjon til brukeren.
