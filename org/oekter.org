@@ -6,6 +6,27 @@
 #+END_SRC
 
 
+* Lesing av og skriving til filer
+
+- [[pdf:uke44_innlevering.pdf][Innleveringsoppgaver]]
+- [[data:posisjonseksempel.csv][Eksempeldata]]
+
+** Innleveringsoppgaver uke 44 :pdf:
+:properties:
+:export_file_name: ../pdf/uke44_innlevering.pdf
+:end:
+
+*** Innlesing av eksempelfil
+Les inn eksempelfila og lagre verdiene i to lister, $tverdier$ og $sverdier$.
+
+*** Plotting av eksempelfil
+Plot verdiene fra fila, kall første-aksen for $t (s)$ og andreaksen for $s (m)$. 
+
+*** Derivasjon av eksempelfil
+Bruk framoverdifferanse på verdiene fra de foregående oppgavene til å finne en ny liste $vverdier$, merk at denne kommer til å bli ett element kortere enn de to foregående listene.
+
+Plot også disse verdiene, gjerne i samme koordinatsystem.
+
 * Lister og plotting
 
 ** Innleveringsoppgaver uke 43 :pdf:
@@ -89,7 +110,6 @@ Som produserer følgende plot:
 
 #+caption: Et enkelt, dobbelt plot
 [[file:../figurer/uke42_eksempelplot.png]]
-
 
 * Hjemmearbeid med funksjoner
 <2019-10-16 Wed>
