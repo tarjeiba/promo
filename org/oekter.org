@@ -10,7 +10,7 @@
 Dette prosjektet jobber vi med fram til jul, og kommer til å være hovedgrunnlaget for terminkarakteren din.
 
 ** Installere bibliotek
-- Last ned [[py:~/repos/munch/promo/py/arduino_serial.py][arduino_serial.py]], og legg denne i arbeidsmappa di.
+- Last ned [[py:arduino_serial.py][arduino_serial.py]], og legg denne i arbeidsmappa di.
 - Koble til en arduino med ~Trigger~ satt til pin 13, ~Echo~ til pin 11, ~Gnd~ til gnd og ~Vcc~ til 5 V.
 - Kjør det minimale eksempelet under og sjekk at eksempelplot blir laget.
 
