@@ -7,6 +7,10 @@
 
 
 * Terminprosjekt
+  :PROPERTIES:
+  :custom_id: termin1prosjekt
+  :END:
+
 Dette prosjektet jobber vi med fram til jul, og kommer til å være hovedgrunnlaget for terminkarakteren din.
 
 ** Installere bibliotek
