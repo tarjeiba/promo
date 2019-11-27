@@ -6,6 +6,50 @@
 #+END_SRC
 
 
+* Terminprosjekt
+Dette prosjektet jobber vi med fram til jul, og kommer til å være hovedgrunnlaget for terminkarakteren din.
+
+** Installere bibliotek
+- Last ned [[file:~/repos/munch/promo/py/arduino_serial.py][arduino_serial.py]], og legg denne i arbeidsmappa di.
+- Koble til en arduino med ~Trigger~ satt til pin 13, ~Echo~ til pin 11, ~Gnd~ til gnd og ~Vcc~ til 5 V.
+- Kjør det minimale eksempelet under og sjekk at eksempelplot blir laget.
+
+** Minimalt eksempel
+#+begin_src python
+from arduino_serial import collect_data
+import matplotlib.pyplot as plt
+
+tider, ekkotider = collect_data(runtime=5000, delay=2000)
+
+fig, ax = plt.subplots()
+
+graf, = ax.plot(tider, ekkotider)
+
+ax.legend([graf], ["Ekkotider"])
+ax.set_xlabel("Eksperimenttid (ms)")
+ax.set_ylabel("Måletid (μs)")
+
+fig.savefig('eksempelplot.png')
+#+end_src
+
+Her skal vi ha laget oss et 
+
+** Nødvendig utstyr
+- Et Arduino-kort
+- Ultralydssensor
+- Ledninger
+
+** Grovskisse av prosjektoppgave
+Du skal utforske numerisk derivasjon (ved for eksempel framoverdifferanse) basert på dataene du får fra Arduino-loggeren.
+
+
+
+** Foreslåtte tillegg
+- Lage boks med 3D-printer eller laserkutter
+- Gjøre målestasjonen trådløs
+- Gjøre andre målinger
+- Sanntidsvisualisering i Pygame
+
 * Lesing av og skriving til filer
 
 - [[pdf:uke44_innlevering.pdf][Innleveringsoppgaver]]

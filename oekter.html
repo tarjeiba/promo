@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-10-30 Wed 13:28 -->
+<!-- 2019-11-27 Wed 11:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter i Programmering og modellering</title>
@@ -160,6 +160,7 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org2334566">Terminprosjekt</a></li>
 <li><a href="#orgb4dcdac">Lesing av og skriving til filer</a></li>
 <li><a href="#orgce8ddf9">Lister og plotting</a></li>
 <li><a href="#org34e77f0">Hjemmearbeid med funksjoner</a></li>
@@ -172,6 +173,87 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+<div id="outline-container-org2334566" class="outline-2">
+<h2 id="org2334566">Terminprosjekt</h2>
+<div class="outline-text-2" id="text-org2334566">
+<p>
+Dette prosjektet jobber vi med fram til jul, og kommer til å være hovedgrunnlaget for terminkarakteren din.
+</p>
+</div>
+
+<div id="outline-container-orga4db530" class="outline-3">
+<h3 id="orga4db530">Installere bibliotek</h3>
+<div class="outline-text-3" id="text-orga4db530">
+<ul class="org-ul">
+<li>Last ned <a href="file:///home/tarjei/repos/munch/promo/py/arduino_serial.py">arduino<sub>serial.py</sub></a>, og legg denne i arbeidsmappa di.</li>
+<li>Koble til en arduino med <code>Trigger</code> satt til pin 13, <code>Echo</code> til pin 11, <code>Gnd</code> til gnd og <code>Vcc</code> til 5 V.</li>
+<li>Kjør det minimale eksempelet under og sjekk at eksempelplot blir laget.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfabba6f" class="outline-3">
+<h3 id="orgfabba6f">Minimalt eksempel</h3>
+<div class="outline-text-3" id="text-orgfabba6f">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> arduino_serial <span class="org-keyword">import</span> collect_data
+<span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
+
+<span class="org-variable-name">tider</span>, <span class="org-variable-name">ekkotider</span> = collect_data(runtime=5000, delay=2000)
+
+<span class="org-variable-name">fig</span>, <span class="org-variable-name">ax</span> = plt.subplots()
+
+graf, = ax.plot(tider, ekkotider)
+
+ax.legend([graf], [<span class="org-string">"Ekkotider"</span>])
+ax.set_xlabel(<span class="org-string">"Eksperimenttid (ms)"</span>)
+ax.set_ylabel(<span class="org-string">"M&#229;letid (&#956;s)"</span>)
+
+fig.savefig(<span class="org-string">'eksempelplot.png'</span>)
+</pre>
+</div>
+
+<p>
+Her skal vi ha laget oss et 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge45f140" class="outline-3">
+<h3 id="orge45f140">Nødvendig utstyr</h3>
+<div class="outline-text-3" id="text-orge45f140">
+<ul class="org-ul">
+<li>Et Arduino-kort</li>
+<li>Ultralydssensor</li>
+<li>Ledninger</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6a8ff2a" class="outline-3">
+<h3 id="org6a8ff2a">Grovskisse av prosjektoppgave</h3>
+<div class="outline-text-3" id="text-org6a8ff2a">
+<p>
+Du skal utforske numerisk derivasjon (ved for eksempel framoverdifferanse) basert på dataene du får fra Arduino-loggeren.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgfe58e63" class="outline-3">
+<h3 id="orgfe58e63">Foreslåtte tillegg</h3>
+<div class="outline-text-3" id="text-orgfe58e63">
+<ul class="org-ul">
+<li>Lage boks med 3D-printer eller laserkutter</li>
+<li>Gjøre målestasjonen trådløs</li>
+<li>Gjøre andre målinger</li>
+<li>Sanntidsvisualisering i Pygame</li>
+</ul>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgb4dcdac" class="outline-2">
 <h2 id="orgb4dcdac">Lesing av og skriving til filer</h2>
 <div class="outline-text-2" id="text-orgb4dcdac">
