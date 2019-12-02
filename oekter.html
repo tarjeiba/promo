@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-11-27 Wed 12:46 -->
+<!-- 2019-12-02 Mon 10:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter i Programmering og modellering</title>
@@ -160,6 +160,7 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#klasseturinfo">Videre med terminprosjekt og klassetursinformasjon</a></li>
 <li><a href="#termin1prosjekt">Terminprosjekt</a></li>
 <li><a href="#orgb4dcdac">Lesing av og skriving til filer</a></li>
 <li><a href="#orgce8ddf9">Lister og plotting</a></li>
@@ -173,6 +174,79 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+<div id="outline-container-org14d4fb9" class="outline-2">
+<h2 id="klasseturinfo"><a id="org14d4fb9"></a>Videre med terminprosjekt og klassetursinformasjon</h2>
+<div class="outline-text-2" id="text-klasseturinfo">
+</div>
+
+<div id="outline-container-org3900eb8" class="outline-3">
+<h3 id="org3900eb8">Klassetur</h3>
+<div class="outline-text-3" id="text-org3900eb8">
+<p>
+Vi har vært så heldige å få innvilget en klassetur til programmingsklassen. Det ser ut til at opplegget blir noe à la følgende:
+</p>
+</div>
+
+<div id="outline-container-orgc0361a3" class="outline-4">
+<h4 id="orgc0361a3">Sted</h4>
+<div class="outline-text-4" id="text-orgc0361a3">
+<p>
+<a href="https://www.nosenyoga.no/">Nøsen yoga</a> i Valdres.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbb9b22a" class="outline-4">
+<h4 id="orgbb9b22a">Når</h4>
+<div class="outline-text-4" id="text-orgbb9b22a">
+<p>
+Tirsdag 4. februar til fredag 7. februar 2020.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgea85937" class="outline-4">
+<h4 id="orgea85937">Hva?</h4>
+<div class="outline-text-4" id="text-orgea85937">
+<p>
+Vi skal jobbe med programmeringsprosjekter som er spesielt egnet i fjellheimen. Dere vil få individuelle prosjekter, delvis tilpasset interesser, helvis tilpasset sted og tidspress. Dersom dere har spesifikke ønsker, kom med dem så snart som mulig.
+</p>
+
+<p>
+Videre kommer det til å være daglige yogaøkter og muligens noen andre aktiviteter. Det blir også tid til å slappe av og nyte fjellheimen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeeffb6b" class="outline-4">
+<h4 id="orgeeffb6b">Hva trenger jeg av dere?</h4>
+<div class="outline-text-4" id="text-orgeeffb6b">
+<p>
+En e-post til <a href="mailto:tabaa004@osloskolen.no">tabaa004@osloskolen.no</a> i løpet av tirsdag 3. desember dersom dere <i>ikke</i> har mulighet til å være med.
+</p>
+
+<p>
+Jeg godtar også korte beskjeder av typen, «Flott, jeg gleder meg!». Det gjør jeg, i det minste, gleder meg.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga78aa6b" class="outline-3">
+<h3 id="orga78aa6b">Fravær på onsdag</h3>
+<div class="outline-text-3" id="text-orga78aa6b">
+<p>
+Jeg skal på strategiseminar på onsdag, så terminprosjektet dere nå jobber med blir egenarbeid på torsdag. Jeg legger ut videre oppgaver og veiledninger i løpet av tirsdag. Jeg legger også ut eksempelkode som får dere <i>up to scratch</i> til dit vi kom forrige uke.
+</p>
+
+<p>
+Avslutter med å minne om at for mange av dere nærmer dere dere nå <i>et halvt års erfaring</i> med noe som er konseptuelt svært krevende, programmering. Vær så snill ikke å bli stressa om faget fremdeles virker <i>svært vanskelig</i> og uoversiktelig. Etter som vi framover vil bruke byggeklossene vi til nå har hatt til flere og flere ulike problemer, vil eventuelle knuter løsne i tid til sommeren &#x2013; stol på meg.
+</p>
+</div>
+</div>
+</div>
+
+
 <div id="outline-container-org2334566" class="outline-2">
 <h2 id="termin1prosjekt"><a id="org2334566"></a>Terminprosjekt</h2>
 <div class="outline-text-2" id="text-termin1prosjekt">
@@ -199,7 +273,7 @@ Dette prosjektet jobber vi med fram til jul, og kommer til å være hovedgrunnla
 <pre class="src src-python"><span class="org-keyword">from</span> arduino_serial <span class="org-keyword">import</span> collect_data
 <span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
 
-<span class="org-variable-name">tider</span>, <span class="org-variable-name">ekkotider</span> = collect_data(runtime=5000, delay=2000)
+<span class="org-variable-name">tider</span>, <span class="org-variable-name">ekkotider</span> = collect_data(runtime=5000, delay=2000, comport=<span class="org-string">"COM4"</span>)
 
 <span class="org-variable-name">fig</span>, <span class="org-variable-name">ax</span> = plt.subplots()
 
@@ -237,9 +311,41 @@ Her skal vi ha laget oss et
 Du skal utforske numerisk derivasjon (ved for eksempel framoverdifferanse) basert på dataene du får fra Arduino-loggeren.
 </p>
 </div>
+
+<div id="outline-container-org5637020" class="outline-4">
+<h4 id="org5637020">Del 1 &#x2013; En omregning av ekkotid</h4>
+<div class="outline-text-4" id="text-org5637020">
+<p>
+Lag en funksjon (for eksempel <code>ekko_til_avstand</code>) som tar inn et tall (ekkotiden) og returerer tilsvarende avstand i meter. Du kan bruke at lydfarten i luft er 340 m/s.
+</p>
+
+<p>
+<b>Testdata</b>
+</p>
+<table id="orga8c4e52" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Tabell 1</span> Testdata for ekkotidsfunksjonen</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ekkotid (μs)</th>
+<th scope="col" class="org-left">Avstand (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-
+</div>
+</div>
 
 <div id="outline-container-orgfe58e63" class="outline-3">
 <h3 id="orgfe58e63">Foreslåtte tillegg</h3>
@@ -251,6 +357,10 @@ Du skal utforske numerisk derivasjon (ved for eksempel framoverdifferanse) baser
 <li>Sanntidsvisualisering i Pygame</li>
 </ul>
 </div>
+</div>
+
+<div id="outline-container-orgc0b3649" class="outline-3">
+<h3 id="orgc0b3649">Levering</h3>
 </div>
 </div>
 

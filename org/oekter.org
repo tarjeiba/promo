@@ -6,6 +6,36 @@
 #+END_SRC
 
 
+* Videre med terminprosjekt og klassetursinformasjon
+  :PROPERTIES:
+  :custom_id: klasseturinfo
+  :END:
+
+** Klassetur
+Vi har vært så heldige å få innvilget en klassetur til programmingsklassen. Det ser ut til at opplegget blir noe à la følgende:
+
+*** Sted
+[[https://www.nosenyoga.no/][Nøsen yoga]] i Valdres.
+
+*** Når
+Tirsdag 4. februar til fredag 7. februar 2020.
+
+*** Hva?
+Vi skal jobbe med programmeringsprosjekter som er spesielt egnet i fjellheimen. Dere vil få individuelle prosjekter, delvis tilpasset interesser, helvis tilpasset sted og tidspress. Dersom dere har spesifikke ønsker, kom med dem så snart som mulig.
+
+Videre kommer det til å være daglige yogaøkter og muligens noen andre aktiviteter. Det blir også tid til å slappe av og nyte fjellheimen.
+
+*** Hva trenger jeg av dere?
+En e-post til [[mailto:tabaa004@osloskolen.no][tabaa004@osloskolen.no]] i løpet av tirsdag 3. desember dersom dere /ikke/ har mulighet til å være med.
+
+Jeg godtar også korte beskjeder av typen, «Flott, jeg gleder meg!». Det gjør jeg, i det minste, gleder meg.
+
+** Fravær på onsdag
+Jeg skal på strategiseminar på onsdag, så terminprosjektet dere nå jobber med blir egenarbeid på torsdag. Jeg legger ut videre oppgaver og veiledninger i løpet av tirsdag. Jeg legger også ut eksempelkode som får dere /up to scratch/ til dit vi kom forrige uke.
+
+Avslutter med å minne om at for mange av dere nærmer dere dere nå /et halvt års erfaring/ med noe som er konseptuelt svært krevende, programmering. Vær så snill ikke å bli stressa om faget fremdeles virker /svært vanskelig/ og uoversiktelig. Etter som vi framover vil bruke byggeklossene vi til nå har hatt til flere og flere ulike problemer, vil eventuelle knuter løsne i tid til sommeren -- stol på meg.
+
+
 * Terminprosjekt
   :PROPERTIES:
   :custom_id: termin1prosjekt
@@ -23,7 +53,7 @@ Dette prosjektet jobber vi med fram til jul, og kommer til å være hovedgrunnla
 from arduino_serial import collect_data
 import matplotlib.pyplot as plt
 
-tider, ekkotider = collect_data(runtime=5000, delay=2000)
+tider, ekkotider = collect_data(runtime=5000, delay=2000, comport="COM4")
 
 fig, ax = plt.subplots()
 
@@ -46,13 +76,23 @@ Her skal vi ha laget oss et
 ** Grovskisse av prosjektoppgave
 Du skal utforske numerisk derivasjon (ved for eksempel framoverdifferanse) basert på dataene du får fra Arduino-loggeren.
 
+*** Del 1 -- En omregning av ekkotid
+Lag en funksjon (for eksempel ~ekko_til_avstand~) som tar inn et tall (ekkotiden) og returerer tilsvarende avstand i meter. Du kan bruke at lydfarten i luft er 340 m/s.
 
+*Testdata*
+#+NAME: ekkotidsdata
+#+CAPTION: Testdata for ekkotidsfunksjonen
+| Ekkotid (μs) | Avstand (m) |
+|--------------+-------------|
+|              |             |
 
 ** Foreslåtte tillegg
 - Lage boks med 3D-printer eller laserkutter
 - Gjøre målestasjonen trådløs
 - Gjøre andre målinger
 - Sanntidsvisualisering i Pygame
+
+** Levering
 
 * Lesing av og skriving til filer
 

@@ -101,17 +101,17 @@ class Arduino(serial.Serial):
     def send_value(self, value):
         self.write(str(value).encode('ASCII'))
 
-    def get_message(self):
+    def get_message(self, wait_time=0.1):
         print("Waiting for Arduino.", end="")
         while self.inWaiting == 0:
-            time.sleep(delta_wait)
+            time.sleep(wait_time)
             print(".", end="")
         print()
         message = self.readline().decode()
         print(f"Got message: {message}")
 
 
-def collect_data(choice=1, runtime=5000, delay=3000):
+def collect_data(choice=1, runtime=5000, delay=3000, measure_period=50, comport=None):
     """Run the chosen Arduino function and return the data.
 
     Choices:
@@ -119,9 +119,10 @@ def collect_data(choice=1, runtime=5000, delay=3000):
                   trigger at ping 13 and echo at pin 11.
 
     """
+    if comport == None:
+        com_arduino = prts.comports()[0]
+        com_name = com_arduino.device
 
-    com_arduino = prts.comports()[0]
-    com_name = com_arduino.device
     times = []
     echos = []
 
@@ -130,7 +131,7 @@ def collect_data(choice=1, runtime=5000, delay=3000):
         arduino.flushInput()
         arduino.get_message()
 
-        for value in [delay, runtime, choice]:
+        for value in [delay, runtime, choice, measure_period]:
             arduino.send_value(value)
             arduino.get_message()
 
@@ -154,6 +155,6 @@ if __name__ == "__main__":
     current_time = datetime.now()
     timestamp = current_time.strftime("%Y%m%d%H%M%S")
     FIGNAME = f"test-{timestamp}.png"
-    times, echos = collect_data(choice=1, delay=300, runtime=1000)
+    times, echos = collect_data(choice=1, delay=300, runtime=5000)
     plt.plot(times, echos)
     plt.savefig(FIGNAME)
