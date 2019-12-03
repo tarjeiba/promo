@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-12-02 Mon 10:28 -->
+<!-- 2019-12-03 Tue 08:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter i Programmering og modellering</title>
@@ -246,7 +246,6 @@ Avslutter med å minne om at for mange av dere nærmer dere dere nå <i>et halvt
 </div>
 </div>
 
-
 <div id="outline-container-org2334566" class="outline-2">
 <h2 id="termin1prosjekt"><a id="org2334566"></a>Terminprosjekt</h2>
 <div class="outline-text-2" id="text-termin1prosjekt">
@@ -304,9 +303,9 @@ Her skal vi ha laget oss et
 </div>
 </div>
 
-<div id="outline-container-org6a8ff2a" class="outline-3">
-<h3 id="org6a8ff2a">Grovskisse av prosjektoppgave</h3>
-<div class="outline-text-3" id="text-org6a8ff2a">
+<div id="outline-container-orgde59f21" class="outline-3">
+<h3 id="orgde59f21">Skisse av prosjektoppgave</h3>
+<div class="outline-text-3" id="text-orgde59f21">
 <p>
 Du skal utforske numerisk derivasjon (ved for eksempel framoverdifferanse) basert på dataene du får fra Arduino-loggeren.
 </p>
@@ -320,29 +319,66 @@ Lag en funksjon (for eksempel <code>ekko_til_avstand</code>) som tar inn et tall
 </p>
 
 <p>
-<b>Testdata</b>
+Du kan teste funksjonen din med å sjekke at du får en avstand på 0.51 m om du regner med en ekkotid på 3000 μs.
 </p>
-<table id="orga8c4e52" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption class="t-above"><span class="table-number">Tabell 1</span> Testdata for ekkotidsfunksjonen</caption>
+</div>
+</div>
 
-<colgroup>
-<col  class="org-left" />
+<div id="outline-container-org5714852" class="outline-4">
+<h4 id="org5714852">Del 2 &#x2013; Plotting av avstand</h4>
+<div class="outline-text-4" id="text-org5714852">
+<p>
+Fra eksempelet over har vi fått en liste med ekkotider, kalt <code>ekkotider</code>. Det vi ønsker å gjøre er å bruke funksjonen <code>ekko_til_avstand</code> på <i>hver ekkotid</i> i lista <code>ekkotider</code>.
+</p>
 
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Ekkotid (μs)</th>
-<th scope="col" class="org-left">Avstand (m)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-</tbody>
-</table>
+<p>
+Dersom vi ønsker å bruke en funksjon på hvert element i en liste, kan det gjøres som foreslått under.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> math
+
+<span class="org-keyword">def</span> <span class="org-function-name">f</span>(x):
+    <span class="org-keyword">return</span> 2 * x
+
+<span class="org-variable-name">tall</span> = [1, 2, 5, -5, 18, 17.3, math.pi]
+<span class="org-variable-name">dobbelttall</span> = []
+
+<span class="org-keyword">for</span> t <span class="org-keyword">in</span> tall:
+    dobbelttall.append( f(t) )
+
+<span class="org-keyword">print</span>(dobbelttall)
+</pre>
+</div>
+
+<p>
+Gjør tilsvarende, men med <code>ekkotider</code>, <code>avstander</code> og <code>ekko_til_avstand</code>.
+</p>
+
+<p>
+Du skal så lage en graf hvor du har den nye <code>avstander</code>-lista di som y-verdier og <code>tider</code> (merk, ikke <code>ekkotider</code>) på x-aksen. Du ønsker altså en graf hvor du viser posisjonen til gjenstanden foran sensoren avhengig av tid ut i målingene.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org43d587f" class="outline-4">
+<h4 id="org43d587f">Del 3 &#x2013; Utforskning av sensorens grenser</h4>
+<div class="outline-text-4" id="text-org43d587f">
+<p>
+Før vi kan begynne å bruke sensoren til å ta ordentlige målinger, må vi finne ut av hvorvidt den er til å stole på eller ei. Du skal nå forsøke å gjøre et forsøk for å kartlegge dette. Merk deg at det kan være avvik mellom de uike sensorene, så du kan gjerne samarbeide med noen, men må gjøre dine egne målinger.
+</p>
+
+<ul class="org-ul">
+<li>Du gjør rundt ti målinger.</li>
+<li>Du bruker kjente avstander, fra rundt ti centimeter til rundt to meter.</li>
+<li>Du varierer vinkelen ut fra sensoren</li>
+<li>Gjør en fullstendig gjennomkjøring for hvert målepunkt, men du kan bruke kort måletid. For eksempel vil det holde med <code>collect_data(runtime=1500)</code> for kun å ta målinger i halvannet sekund</li>
+<li>Tegn opphvordan sensorens målte verdier samsvarer med virkelige verdier (dette kan du gjøre for hånd)</li>
+</ul>
+
+<p>
+Lykke til!
+</p>
 </div>
 </div>
 </div>

@@ -111,7 +111,7 @@ class Arduino(serial.Serial):
         print(f"Got message: {message}")
 
 
-def collect_data(choice=1, runtime=5000, delay=3000, measure_period=50, comport=None):
+def collect_data(choice=1, runtime=5000, delay=3000, comport=None):
     """Run the chosen Arduino function and return the data.
 
     Choices:
@@ -131,7 +131,7 @@ def collect_data(choice=1, runtime=5000, delay=3000, measure_period=50, comport=
         arduino.flushInput()
         arduino.get_message()
 
-        for value in [delay, runtime, choice, measure_period]:
+        for value in [delay, runtime, choice]:
             arduino.send_value(value)
             arduino.get_message()
 

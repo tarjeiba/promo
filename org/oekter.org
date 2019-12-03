@@ -35,7 +35,6 @@ Jeg skal på strategiseminar på onsdag, så terminprosjektet dere nå jobber me
 
 Avslutter med å minne om at for mange av dere nærmer dere dere nå /et halvt års erfaring/ med noe som er konseptuelt svært krevende, programmering. Vær så snill ikke å bli stressa om faget fremdeles virker /svært vanskelig/ og uoversiktelig. Etter som vi framover vil bruke byggeklossene vi til nå har hatt til flere og flere ulike problemer, vil eventuelle knuter løsne i tid til sommeren -- stol på meg.
 
-
 * Terminprosjekt
   :PROPERTIES:
   :custom_id: termin1prosjekt
@@ -73,18 +72,53 @@ Her skal vi ha laget oss et
 - Ultralydssensor
 - Ledninger
 
-** Grovskisse av prosjektoppgave
+** Skisse av prosjektoppgave
 Du skal utforske numerisk derivasjon (ved for eksempel framoverdifferanse) basert på dataene du får fra Arduino-loggeren.
 
 *** Del 1 -- En omregning av ekkotid
 Lag en funksjon (for eksempel ~ekko_til_avstand~) som tar inn et tall (ekkotiden) og returerer tilsvarende avstand i meter. Du kan bruke at lydfarten i luft er 340 m/s.
 
-*Testdata*
-#+NAME: ekkotidsdata
-#+CAPTION: Testdata for ekkotidsfunksjonen
-| Ekkotid (μs) | Avstand (m) |
-|--------------+-------------|
-|              |             |
+Du kan teste funksjonen din med å sjekke at du får en avstand på 0.51 m om du regner med en ekkotid på 3000 μs.
+
+*** Del 2 -- Plotting av avstand
+Fra eksempelet over har vi fått en liste med ekkotider, kalt ~ekkotider~. Det vi ønsker å gjøre er å bruke funksjonen ~ekko_til_avstand~ på /hver ekkotid/ i lista ~ekkotider~.
+
+Dersom vi ønsker å bruke en funksjon på hvert element i en liste, kan det gjøres som foreslått under.
+
+#+begin_src python
+import math
+
+def f(x):
+    return 2 * x
+
+tall = [1, 2, 5, -5, 18, 17.3, math.pi]
+dobbelttall = []
+
+for t in tall:
+    dobbelttall.append( f(t) )
+
+print(dobbelttall)
+#+end_src
+
+#+RESULTS:
+#+BEGIN_SRC org
+[2, 4, 10, -10, 36, 34.6, 6.283185307179586]
+#+END_SRC
+
+Gjør tilsvarende, men med ~ekkotider~, ~avstander~ og ~ekko_til_avstand~.
+
+Du skal så lage en graf hvor du har den nye ~avstander~-lista di som y-verdier og ~tider~ (merk, ikke ~ekkotider~) på x-aksen. Du ønsker altså en graf hvor du viser posisjonen til gjenstanden foran sensoren avhengig av tid ut i målingene.
+
+*** Del 3 -- Utforskning av sensorens grenser
+Før vi kan begynne å bruke sensoren til å ta ordentlige målinger, må vi finne ut av hvorvidt den er til å stole på eller ei. Du skal nå forsøke å gjøre et forsøk for å kartlegge dette. Merk deg at det kan være avvik mellom de uike sensorene, så du kan gjerne samarbeide med noen, men må gjøre dine egne målinger.
+
+- Du gjør rundt ti målinger.
+- Du bruker kjente avstander, fra rundt ti centimeter til rundt to meter.
+- Du varierer vinkelen ut fra sensoren
+- Gjør en fullstendig gjennomkjøring for hvert målepunkt, men du kan bruke kort måletid. For eksempel vil det holde med ~collect_data(runtime=1500)~ for kun å ta målinger i halvannet sekund
+- Tegn opphvordan sensorens målte verdier samsvarer med virkelige verdier (dette kan du gjøre for hånd)
+
+Lykke til!
 
 ** Foreslåtte tillegg
 - Lage boks med 3D-printer eller laserkutter
