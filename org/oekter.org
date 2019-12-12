@@ -1,10 +1,81 @@
 #+SETUPFILE: orgheader.org
 #+TITLE: Økter i Programmering og modellering
-#+BEGIN_SRC emacs-lisp :exports none :results silent
-(add-to-list 'org-html-infojs-options '(sdepth . "2"))
-; Her hadde jeg tidligere med tillegget :eval query-export
+
+* Statuslevering på terminprosjekt og to øvrige leveringer
+Onsdag 18. desember skal du lever tre python programfiler, den ene er en status for prosjektet ditt så langt, de to andre svarer på oppgavene gitt under. I tillegg til dette skal du levere et kort pdf-dokument, som spesifisert under.
+
+*OBS!* Sørg for å ha dokumentasjonsstrenger til funksjonene dine samt at du har hensiktsmessige kommentarer i koden. Dersom du ikke helt er sikker på hva jeg legger i «hensiktsmessig», få en medeleve til å se over koden din, og kommenterer eventuelle steder denne ikke forstår hvorfor du har gjort som du har gjort.
+
+Et eksempel på en helt ålreit dokumentasjonsstreng ser du under.
+#+begin_src python
+def avstand(fart, tid):
+    """Tar inn fart i kilometer i timen og tid i timer og returnerer avstanden i kilometer. 
+
+    Regnet ut ved å bruke at avstand = fart * tid, altså antas det null akselerasjon.
+    """
+    return fart * tid
+#+end_src
+
+** Statuslevering for terminprosjekt
+Lever en python-fil hvor du har eller i det minste har forsøkt å implementere følgende:
+- en funksjon som regner fra en ekkotid til tilhørende avstandsberegning, den skal altså ta inn et tall i mikrosekunder, og returnere avstanden til gjenstanden i meter.
+- en utregning av fart basert på framoverdifferanse, hvor du altså bruker at farten til en gjenstand er den tidsderiverte av posisjonen. (Altså at en gjenstands fart er hvor mye posisjonen endrer seg per tid.)
+
+I tillegg leverer du en pdf-fil (denne kan du skrive i word, men det er *essensielt* at du lagrer som ~pdf~) hvor du legger fram plot du har laget av posisjonen og farten til gjenstanden. Koden du har brukt for å generere plottene bør komme fram i python-fila nevnt over. 
+
+** Frivillig format
+Har du et program du er spesielt fornøyd med i år, og ønsker at jeg tar med i kommenteringen for terminkarakteren? Da kan du levere med dette. *Hvis ikke*, lag et pythonprogram hvor du gjør følgende, og legg heller med det.
+
+- be brukeren om et tall og to ord
+- skriv ut til brukeren hvorvidt summen av vokalene i de to ordene er større enn tallet eller ikke.
+
+Eksempel på bruk av programmet kan være som følger:
+#+begin_example
+>>> Gi meg et tall, takk.
+8
+>>> Gi meg et ord, takk.
+hei
+>>> Gi meg et ord til, takk.
+hvorfor
+
+Summen av antall vokaler i ordene 'hei' og 'hvorfor' er 4, dette er mindre enn 8. Hadet!
+#+end_example
+
+Tips:
+- Implementer noe enklere først, ta kun ett ord, tell kun en type vokal
+- Du kan iterere over en tekststreng på samme måte som vi gjør i en liste, se under.
+- Du kan sjekke om en bokstav er i et ord ved å bruke ~in~, se under.
+
+#+begin_src python
+for bokstav in "liten tekst":
+    print(bokstav)
+#+end_src
+
+#+RESULTS:
+#+BEGIN_SRC org
+l
+i
+t
+e
+n
+ 
+t
+e
+k
+s
+t
 #+END_SRC
 
+#+begin_src python
+tekst = "liten tekst"
+if 'i' in tekst:
+    print("Bokstaven 'i' er i teksten.")
+#+end_src
+
+#+RESULTS:
+#+BEGIN_SRC org
+Bokstaven 'i' er i teksten.
+#+END_SRC
 
 * Videre med terminprosjekt og klassetursinformasjon
   :PROPERTIES:
@@ -119,6 +190,8 @@ Før vi kan begynne å bruke sensoren til å ta ordentlige målinger, må vi fin
 - Tegn opphvordan sensorens målte verdier samsvarer med virkelige verdier (dette kan du gjøre for hånd)
 
 Lykke til!
+
+*** Del 4 -- Fra posisjon til fart, fra fart til aksellerasjon
 
 ** Foreslåtte tillegg
 - Lage boks med 3D-printer eller laserkutter

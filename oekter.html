@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2019-12-03 Tue 08:32 -->
+<!-- 2019-12-12 Thu 15:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Økter i Programmering og modellering</title>
@@ -160,6 +160,7 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org7e28195">Statuslevering på terminprosjekt og to øvrige leveringer</a></li>
 <li><a href="#klasseturinfo">Videre med terminprosjekt og klassetursinformasjon</a></li>
 <li><a href="#termin1prosjekt">Terminprosjekt</a></li>
 <li><a href="#orgb4dcdac">Lesing av og skriving til filer</a></li>
@@ -174,6 +175,100 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org7e28195" class="outline-2">
+<h2 id="org7e28195">Statuslevering på terminprosjekt og to øvrige leveringer</h2>
+<div class="outline-text-2" id="text-org7e28195">
+<p>
+Onsdag 18. desember skal du lever tre python programfiler, den ene er en status for prosjektet ditt så langt, de to andre svarer på oppgavene gitt under. I tillegg til dette skal du levere et kort pdf-dokument, som spesifisert under.
+</p>
+
+<p>
+<b>OBS!</b> Sørg for å ha dokumentasjonsstrenger til funksjonene dine samt at du har hensiktsmessige kommentarer i koden. Dersom du ikke helt er sikker på hva jeg legger i «hensiktsmessig», få en medeleve til å se over koden din, og kommenterer eventuelle steder denne ikke forstår hvorfor du har gjort som du har gjort.
+</p>
+
+<p>
+Et eksempel på en helt ålreit dokumentasjonsstreng ser du under.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">avstand</span>(fart, tid):
+    <span class="org-doc">"""Tar inn fart i kilometer i timen og tid i timer og returnerer avstanden i kilometer. </span>
+
+<span class="org-doc">    Regnet ut ved &#229; bruke at avstand = fart * tid, alts&#229; antas det null akselerasjon.</span>
+<span class="org-doc">    """</span>
+    <span class="org-keyword">return</span> fart * tid
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5d7945d" class="outline-3">
+<h3 id="org5d7945d">Statuslevering for terminprosjekt</h3>
+<div class="outline-text-3" id="text-org5d7945d">
+<p>
+Lever en python-fil hvor du har eller i det minste har forsøkt å implementere følgende:
+</p>
+<ul class="org-ul">
+<li>en funksjon som regner fra en ekkotid til tilhørende avstandsberegning, den skal altså ta inn et tall i mikrosekunder, og returnere avstanden til gjenstanden i meter.</li>
+<li>en utregning av fart basert på framoverdifferanse, hvor du altså bruker at farten til en gjenstand er den tidsderiverte av posisjonen. (Altså at en gjenstands fart er hvor mye posisjonen endrer seg per tid.)</li>
+</ul>
+
+<p>
+I tillegg leverer du en pdf-fil (denne kan du skrive i word, men det er <b>essensielt</b> at du lagrer som <code>pdf</code>) hvor du legger fram plot du har laget av posisjonen og farten til gjenstanden. Koden du har brukt for å generere plottene bør komme fram i python-fila nevnt over. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org10c6db4" class="outline-3">
+<h3 id="org10c6db4">Frivillig format</h3>
+<div class="outline-text-3" id="text-org10c6db4">
+<p>
+Har du et program du er spesielt fornøyd med i år, og ønsker at jeg tar med i kommenteringen for terminkarakteren? Da kan du levere med dette. <b>Hvis ikke</b>, lag et pythonprogram hvor du gjør følgende, og legg heller med det.
+</p>
+
+<ul class="org-ul">
+<li>be brukeren om et tall og to ord</li>
+<li>skriv ut til brukeren hvorvidt summen av vokalene i de to ordene er større enn tallet eller ikke.</li>
+</ul>
+
+<p>
+Eksempel på bruk av programmet kan være som følger:
+</p>
+<pre class="example">
+&gt;&gt;&gt; Gi meg et tall, takk.
+8
+&gt;&gt;&gt; Gi meg et ord, takk.
+hei
+&gt;&gt;&gt; Gi meg et ord til, takk.
+hvorfor
+
+Summen av antall vokaler i ordene 'hei' og 'hvorfor' er 4, dette er mindre enn 8. Hadet!
+</pre>
+
+<p>
+Tips:
+</p>
+<ul class="org-ul">
+<li>Implementer noe enklere først, ta kun ett ord, tell kun en type vokal</li>
+<li>Du kan iterere over en tekststreng på samme måte som vi gjør i en liste, se under.</li>
+<li>Du kan sjekke om en bokstav er i et ord ved å bruke <code>in</code>, se under.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">for</span> bokstav <span class="org-keyword">in</span> <span class="org-string">"liten tekst"</span>:
+    <span class="org-keyword">print</span>(bokstav)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">tekst</span> = <span class="org-string">"liten tekst"</span>
+<span class="org-keyword">if</span> <span class="org-string">'i'</span> <span class="org-keyword">in</span> tekst:
+    <span class="org-keyword">print</span>(<span class="org-string">"Bokstaven 'i' er i teksten."</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org14d4fb9" class="outline-2">
 <h2 id="klasseturinfo"><a id="org14d4fb9"></a>Videre med terminprosjekt og klassetursinformasjon</h2>
 <div class="outline-text-2" id="text-klasseturinfo">
@@ -380,6 +475,10 @@ Før vi kan begynne å bruke sensoren til å ta ordentlige målinger, må vi fin
 Lykke til!
 </p>
 </div>
+</div>
+
+<div id="outline-container-org67662e5" class="outline-4">
+<h4 id="org67662e5">Del 4 &#x2013; Fra posisjon til fart, fra fart til aksellerasjon</h4>
 </div>
 </div>
 
