@@ -77,6 +77,13 @@ if 'i' in tekst:
 Bokstaven 'i' er i teksten.
 #+END_SRC
 
+** Løsningsforslag: Frivillig format
+Under er en video hvor jeg lager et løsningsforslag til oppgaven:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/exQLowWfq0w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Du finner den resulterende fila [[py:vokalteller.py][her (vokalteller.py)]].
+
 * Videre med terminprosjekt og klassetursinformasjon
   :PROPERTIES:
   :custom_id: klasseturinfo
