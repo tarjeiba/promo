@@ -80,7 +80,9 @@ Bokstaven 'i' er i teksten.
 ** Løsningsforslag: Frivillig format
 Under er en video hvor jeg lager et løsningsforslag til oppgaven:
 
+#+begin_export html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/exQLowWfq0w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+end_export
 
 Du finner den resulterende fila [[py:vokalteller.py][her (vokalteller.py)]].
 
