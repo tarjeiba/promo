@@ -5,7 +5,6 @@ Dette er i hovedsak et fåfengt forsøk på en lærebok i faget Programmering og
 
 Du kommer deg rett til førstesida ved bruke url-en [[https://tarjeiba.github.io/promo/promo.html]].
 
-
 * Filer
 #+BEGIN_EXAMPLE
 -> css
@@ -39,10 +38,10 @@ prosjekter.html            # publisert html
 yntaks.html                # publisert html
 #+END_EXAMPLE
 
-*  Oppsett av Emacs
+* Oppsett av Emacs
 Nødvendig emacs-konfigurasjon finner du [[https://github.com/tarjeiba/konfig/blob/master/emacs-konfig.org#promo][her]].
  Alternativer
 - «Programmering og modellering» av Andreas Haraldsrud :: Læreboka til Andreas Haraldsrud er per dags dato en langt mer fullstendig gjennomgang av temaene i faget. Du finner den via [[https://www.realfagsforlaget.no/publikasjoner][nettsidene]] til Realfagsforlaget.
 - Jupyter Notebooks :: Jupyter (tidligere iPython) Notebooks er et enkelt og svært godt alternativ for å lage en lærebok eller 
-*  Lisens
+* Lisens
 © 2018 Tarjei Bærland, under en [[https://www.gnu.org/licenses/gpl-3.0.txt][GPL3]]-lisens.

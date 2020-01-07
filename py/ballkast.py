@@ -47,7 +47,6 @@ while abs(verdi) > epsilon:
 
 print(f"Fant løsning ved t = {t_gjetning:.2f},\nlengden på kastet er da {x(t_gjetning):.2f} m")
 
-
 # Modellering
 v = radians(60)                     # utgangsvinkelen i radianer
 xpos, ypos = (0, 1.7)               # initialbetingelser
