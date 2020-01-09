@@ -10,18 +10,18 @@ Laget av Tarjei
 8. januar
 """
 
-tekst_1 = "Du våkner klokken 5:32 og føler deg våken, men vurderer å forsøke å fortsette å sove. Du ..."
+tekst = "Du våkner klokken 5:32 og føler deg våken, men vurderer å forsøke å fortsette å sove. Du ..."
 
-valg_1a = "står opp"
-tekst_1a = "... står opp og ser en gammel bok i bokhylla. Du ..."
+valg_a = "står opp"
+tekst_a = "... står opp og ser en gammel bok i bokhylla. Du ..."
 
-valg_1aa = "leser"
-tekst_1aa = "... får en fin start på dagen med en spennende bok."
-valg_1ab = "lar være"
-tekst_1ab = "... kjenner på en tomhetsfølelse som følger deg gjennom dagen."
+valg_aa = "leser"
+tekst_aa = "... får en fin start på dagen med en spennende bok."
+valg_ab = "lar være"
+tekst_ab = "... kjenner på en tomhetsfølelse som følger deg gjennom dagen."
 
-valg_1b = "sover videre"
-tekst_1b = "... sover og drømmer om et liv hvor muligheter gripes."
+valg_b = "sover videre"
+tekst_b = "... sover og drømmer om et liv hvor muligheter gripes."
 
 error = "Det var jommen et ugyldig valg, fysikkens lover er brutt."
 
@@ -44,20 +44,20 @@ def be_om_input(alt1, alt2):
     return valgt
     
 
-print(tekst_1)
-valg = be_om_input(valg_1a, valg_1b)
+print(tekst)
+valg = be_om_input(valg_a, valg_b)
 
-if valg == valg_1a:
-    print(tekst_1a)
-    valg = be_om_input(valg_1aa, valg_1ab)
-    if valg == valg_1aa:
-        print(tekst_1aa)
-    elif valg == valg_1ab:
-        print(tekst_1ab)
+if valg == valg_a:
+    print(tekst_a)
+    valg = be_om_input(valg_aa, valg_ab)
+    if valg == valg_aa:
+        print(tekst_aa)
+    elif valg == valg_ab:
+        print(tekst_ab)
     else:
         print(error)
 
-elif valg == valg_1b:
-    print(tekst_1b)
+elif valg == valg_b:
+    print(tekst_b)
 else:
     print(error)
