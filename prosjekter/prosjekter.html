@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-01-18 Sat 14:08 -->
+<!-- 2020-01-22 Wed 13:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hovedside for prosjekter</title>
@@ -385,19 +385,48 @@ Programmet over kan lastes ned <a href="tekstbasert_steinsakspapir.py">her (teks
 <h3 id="org1862120">En ny struktur</h3>
 <div class="outline-text-3" id="text-org1862120">
 <div class="org-src-container">
-<pre class="src src-python"><span class="org-comment-delimiter"># </span><span class="org-comment">-*- coding: utf-8 -*-</span>
-<span class="org-doc">"""</span>
-<span class="org-doc">Dette programmet g&#229;r gjennom et enkelt lite tekstbasert spill, som til</span>
-<span class="org-doc">tross for sin manglende lengde inneholder spenningsmomenter og skuffelser.</span>
+<pre class="src src-python"><span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
 
-<span class="org-doc">Dette er ment som en forbedring til 'tekstbasert_feilhaandtering', da det n&#229;</span>
-<span class="org-doc">ogs&#229; er lagt med en neglebitende kamp.</span>
+<span class="org-keyword">def</span> <span class="org-function-name">be_om_input</span>(alternativer):
+    <span class="org-doc">"""Ber spilleren om &#229; taste inn input til spillet, og gir seg f&#248;rst n&#229;r</span>
+<span class="org-doc">    spilleren har tastet inn noe gyldig.</span>
+<span class="org-doc">    </span>
+<span class="org-doc">    Returnerer valget brukeren tastet inn n&#229;r dette er gyldig.</span>
 
-<span class="org-doc">Laget av Tarjei</span>
-<span class="org-doc">8. januar</span>
-<span class="org-doc">"""</span>
+<span class="org-doc">    Eksempel p&#229; bruk:</span>
+<span class="org-doc">    valg = be_om_input('g&#229;', 'l&#248;p')</span>
 
-<span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
+<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;r</span>
+<span class="org-doc">    Ugyldig alternativ, pr&#248;v igjen.</span>
+<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;     # valg er n&#229; 'g&#229;'</span>
+<span class="org-doc">    """</span>
+    <span class="org-variable-name">valgt</span> = <span class="org-constant">None</span>
+    <span class="org-variable-name">alternativstrenger</span> = [f<span class="org-string">" {num+1}) '{alternativ}'"</span> <span class="org-keyword">for</span> num, alternativ <span class="org-keyword">in</span> <span class="org-builtin">enumerate</span>(alternativer)]
+    <span class="org-variable-name">alternativstreng</span> = <span class="org-string">"\n"</span>.join(alternativstrenger)
+    <span class="org-variable-name">idx</span> = -1
+    <span class="org-keyword">while</span> idx == -1:
+        <span class="org-variable-name">valgt</span> = <span class="org-builtin">input</span>(alternativstreng + <span class="org-string">" \n"</span>).lower().strip()
+        <span class="org-keyword">try</span>:
+            <span class="org-variable-name">idx</span> = <span class="org-builtin">int</span>(valgt) - 1
+            <span class="org-keyword">if</span> idx <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(alternativer)):
+                <span class="org-keyword">break</span>
+            <span class="org-keyword">else</span>:
+                <span class="org-variable-name">idx</span> = -1
+                <span class="org-keyword">continue</span>
+        <span class="org-keyword">except</span> <span class="org-type">ValueError</span>:
+            <span class="org-keyword">pass</span>
+        <span class="org-keyword">try</span>:
+            <span class="org-variable-name">idx</span> = alternativer.index(valgt)
+        <span class="org-keyword">except</span> <span class="org-type">ValueError</span>:
+            <span class="org-keyword">pass</span>
+    <span class="org-keyword">return</span> idx
+
+<span class="org-keyword">def</span> <span class="org-function-name">hent_valg_idx</span>(scenario):
+    <span class="org-variable-name">idx</span> = be_om_input(scenario[<span class="org-string">'alternativer'</span>])
+    <span class="org-keyword">return</span> idx
+
+<span class="org-keyword">def</span> <span class="org-function-name">ferdig</span>():
+    <span class="org-keyword">print</span>(<span class="org-string">"Du er ferdig."</span>)
 
 <span class="org-keyword">def</span> <span class="org-function-name">avgjoer</span>(vaapen1, vaapen2):
     <span class="org-doc">"""Tar inn to strenger, hver enten 'stein', 'saks', eller 'papir'.</span>
@@ -464,7 +493,11 @@ Programmet over kan lastes ned <a href="tekstbasert_steinsakspapir.py">her (teks
         <span class="org-keyword">else</span>:
             <span class="org-keyword">print</span>(<span class="org-string">"Vi klarte visst ikke helt dette, du og jeg."</span>)
 
-<span class="org-variable-name">tekst</span> = <span class="org-string">"Du v&#229;kner klokken 5:32 og f&#248;ler deg v&#229;ken, men vurderer &#229; fors&#248;ke &#229; fortsette &#229; sove. Du ..."</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">tekst</span> = <span class="org-string">"Du v&#229;kner klokken 5:32 og f&#248;ler deg v&#229;ken, men vurderer &#229; fors&#248;ke &#229; fortsette &#229; sove. Du ..."</span>
 
 <span class="org-variable-name">valg_a</span> = <span class="org-string">"st&#229;r opp"</span>
 <span class="org-variable-name">tekst_a</span> = <span class="org-string">"... st&#229;r opp og ser en gammel bok i bokhylla. Du ..."</span>
@@ -493,8 +526,7 @@ Programmet over kan lastes ned <a href="tekstbasert_steinsakspapir.py">her (teks
           <span class="org-string">'alternativer'</span>: [<span class="org-string">"fortsett &#229; sove"</span>, <span class="org-string">"st&#229; opp"</span>],
           <span class="org-string">'videre'</span>: [[<span class="org-string">"Du fortsetter &#229; sove, kjedelig dag."</span>, <span class="org-constant">False</span>],
                      [<span class="org-string">"Du st&#229;r opp og er klar for en ny dag"</span>, 1]],
-          <span class="org-string">'fiende'</span>: <span class="org-constant">False</span>
-}
+          <span class="org-string">'fiende'</span>: <span class="org-constant">False</span>}
 
 <span class="org-variable-name">kjoekken</span> = {<span class="org-string">'tekst'</span>: <span class="org-string">"Du g&#229;r inn p&#229; kj&#248;kkenet, her ser du masse ting."</span>,
             <span class="org-string">'alternativer'</span>: [<span class="org-string">"fortsett"</span>, <span class="org-string">"ikke"</span>],
@@ -504,37 +536,11 @@ Programmet over kan lastes ned <a href="tekstbasert_steinsakspapir.py">her (teks
 
 <span class="org-variable-name">scenarioer</span> = [vaakne, kjoekken]
 <span class="org-variable-name">idx</span> = 0       <span class="org-comment-delimiter"># </span><span class="org-comment">Vi starter i f&#248;rste scenario i sceneriolista</span>
+</pre>
+</div>
 
-<span class="org-keyword">def</span> <span class="org-function-name">be_om_input</span>(alternativer):
-    <span class="org-doc">"""Ber spilleren om &#229; taste inn input til spillet, og gir seg f&#248;rst n&#229;r</span>
-<span class="org-doc">    spilleren har tastet inn noe gyldig.</span>
-<span class="org-doc">    </span>
-<span class="org-doc">    Returnerer valget brukeren tastet inn n&#229;r dette er gyldig.</span>
-
-<span class="org-doc">    Eksempel p&#229; bruk:</span>
-<span class="org-doc">    valg = be_om_input('g&#229;', 'l&#248;p')</span>
-
-<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;r</span>
-<span class="org-doc">    Ugyldig alternativ, pr&#248;v igjen.</span>
-<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;     # valg er n&#229; 'g&#229;'</span>
-<span class="org-doc">    """</span>
-    <span class="org-variable-name">valgt</span> = <span class="org-constant">None</span>
-    <span class="org-variable-name">alternativstrenger</span> = [f<span class="org-string">"'{alternativ}'"</span> <span class="org-keyword">for</span> alternativ <span class="org-keyword">in</span> alternativer]
-    <span class="org-variable-name">alternativstreng</span> = <span class="org-string">" / "</span>.join(alternativstrenger)
-    <span class="org-variable-name">idx</span> = -1
-    <span class="org-keyword">while</span> idx == -1:
-        <span class="org-variable-name">valgt</span> = <span class="org-builtin">input</span>(alternativstreng + <span class="org-string">" \n"</span>).lower().strip()
-        <span class="org-variable-name">idx</span> = alternativer.index(valgt)
-    <span class="org-keyword">return</span> idx
-
-<span class="org-keyword">def</span> <span class="org-function-name">hent_valg_idx</span>(scenario):
-    <span class="org-variable-name">idx</span> = be_om_input(scenario[<span class="org-string">'alternativer'</span>])
-    <span class="org-keyword">return</span> idx
-
-<span class="org-keyword">def</span> <span class="org-function-name">ferdig</span>():
-    <span class="org-keyword">print</span>(<span class="org-string">"Du er ferdig."</span>)
-
-<span class="org-variable-name">TEKSTIDX</span> = 0
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">TEKSTIDX</span> = 0
 <span class="org-variable-name">NESTEIDX</span> = 1
 
 <span class="org-keyword">while</span> <span class="org-constant">True</span>:
