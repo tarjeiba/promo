@@ -3,45 +3,7 @@
 * Hva er dette?
 Dette er i hovedsak et fåfengt forsøk på en lærebok i faget Programmering og modellering X. Dette arbeidet blei påbegynt sommeren 2018.
 
-Du kommer deg rett til førstesida ved bruke url-en [[https://tarjeiba.github.io/promo/promo.html]].
+Du kommer deg rett til førstesida ved bruke url-en [[https://tarjeiba.github.io/index.html]].
 
-* Filer
-#+BEGIN_EXAMPLE
--> css
-    stylesheet.css
--> data
-    .                      # datafiler brukt til numerisk analyse
--> figurer
-    .                      # figurer brukt gjennom sida
--> js
-    -> org-info-js-nb      # eget repository https://github.com/tarjeiba/org-info-js-nb
-        .
-    popup.js               # javascript for popup-lenker
--> org
-    edvardmunch.org        # spesifikt for gjennomgangen ved Edvard Munch videregående skole
-    faget.org              # om oppsettet av faget, skal fjernes
-    index.org              # kort indeks
-    ommeg.org              # kort (ikke-eksisterende) «om meg»
-    orgheader.org          # brukt for å sette alternativer for publisering
-    orgheader_nojs.org     # brukt for sidene som skal publiseres uten org-info-js-nb
-    promo.org              # selve sida
-    prosjekter.org         # side med prosjektene vi skal jobbe med
-    syntaks.org            # syntaksside, hentet fra https://learnxinyminutes.com/docs/python/
-    tanker-og-todos.org    # om videre arbeid med sida
-README.org                 # denne README-en, formaters automatisk av Github
-edvardmunch.html           # publisert html
-faget.html                 # publisert html
-index.html                 # publisert html
-ommeg.html                 # publisert html
-promo.html                 # publisert html
-prosjekter.html            # publisert html
-yntaks.html                # publisert html
-#+END_EXAMPLE
-
-* Oppsett av Emacs
-Nødvendig emacs-konfigurasjon finner du [[https://github.com/tarjeiba/konfig/blob/master/emacs-konfig.org#promo][her]].
- Alternativer
-- «Programmering og modellering» av Andreas Haraldsrud :: Læreboka til Andreas Haraldsrud er per dags dato en langt mer fullstendig gjennomgang av temaene i faget. Du finner den via [[https://www.realfagsforlaget.no/publikasjoner][nettsidene]] til Realfagsforlaget.
-- Jupyter Notebooks :: Jupyter (tidligere iPython) Notebooks er et enkelt og svært godt alternativ for å lage en lærebok eller 
 * Lisens
 © 2018 Tarjei Bærland, under en [[https://www.gnu.org/licenses/gpl-3.0.txt][GPL3]]-lisens.

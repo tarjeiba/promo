@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-01-23 Thu 10:36 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Økter</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="tarjei" />
+<link rel="stylesheet" type="text/css" href="styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="styles/readtheorg/css/readtheorg.css"/>
+<script type="text/javascript" src="styles/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="styles/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Økter</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd5c911f">Overgang til prosjektbasert arbeid</a>
+<ul>
+<li><a href="#orgdb87617">Kompetansemål i faget</a></li>
+<li><a href="#org5af5e46">Opplegget så langt</a></li>
+<li><a href="#org3de5a64">Opplegget videre</a></li>
+</ul>
+</li>
+<li><a href="#org3fe5f66">Statuslevering på terminprosjekt og to øvrige leveringer</a>
+<ul>
+<li><a href="#org8b55188">Statuslevering for terminprosjekt</a></li>
+<li><a href="#orgd0bf653">Frivillig format</a></li>
+<li><a href="#org049e21c">Løsningsforslag: Frivillig format</a></li>
+<li><a href="#orgbe59204">Foreslåtte videre oppgaver</a></li>
+</ul>
+</li>
+<li><a href="#klasseturinfo">Videre med terminprosjekt og klassetursinformasjon</a>
+<ul>
+<li><a href="#orgd30efa3">Klassetur</a></li>
+<li><a href="#org4e50a50">Fravær på onsdag</a></li>
+</ul>
+</li>
+<li><a href="#termin1prosjekt">Terminprosjekt</a>
+<ul>
+<li><a href="#orgcc57fa9">Installere bibliotek</a></li>
+<li><a href="#orgcad9e3e">Minimalt eksempel</a></li>
+<li><a href="#org9504620">Nødvendig utstyr</a></li>
+<li><a href="#orgf772836">Skisse av prosjektoppgave</a></li>
+<li><a href="#org5c9325b">Foreslåtte tillegg</a></li>
+<li><a href="#org1601ae4">Levering</a></li>
+</ul>
+</li>
+<li><a href="#org64fac66">Lesing av og skriving til filer</a>
+<ul>
+<li><a href="#orgb554926">Innleveringsoppgaver uke 44&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></a></li>
+</ul>
+</li>
+<li><a href="#org2fd1bb2">Lister og plotting</a>
+<ul>
+<li><a href="#orgbf8396b">Innleveringsoppgaver uke 43&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></a></li>
+</ul>
+</li>
+<li><a href="#orgb88901b">Hjemmearbeid med funksjoner</a>
+<ul>
+<li><a href="#org5797c19">Innleveringsoppgaver uke 42&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></a></li>
+</ul>
+</li>
+<li><a href="#org7af71e7">Introduksjon til funksjoner</a></li>
+<li><a href="#org2b23055">Videre med algoritmer</a></li>
+<li><a href="#org065f7dc">Algoritmer</a>
+<ul>
+<li><a href="#orgeae47fa">Tillegg fra undervisningen</a></li>
+</ul>
+</li>
+<li><a href="#org125ad87">Løkker</a></li>
+<li><a href="#org5cb5fe0">Forgreining</a>
+<ul>
+<li><a href="#org0349bf1">Kommentarer fra sist</a></li>
+</ul>
+</li>
+<li><a href="#org535967f">Grunnleggende regning</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd5c911f" class="outline-2">
+<h2 id="orgd5c911f">Overgang til prosjektbasert arbeid</h2>
+<div class="outline-text-2" id="text-orgd5c911f">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Gjennomgang av kompetansemål</li>
+<li class="off"><code>[&#xa0;]</code> Opplegget videre</li>
+</ul>
+</div>
+
+<div id="outline-container-orgdb87617" class="outline-3">
+<h3 id="orgdb87617">Kompetansemål i faget</h3>
+<div class="outline-text-3" id="text-orgdb87617">
+<p>
+Lenke til Udirs sider <a href="https://www.udir.no/kl06/PRM1-01/Hele/Kompetansemaal/programmering-og-modellering-x">her</a>.
+</p>
+
+<p>
+Les gjennom målene.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5af5e46" class="outline-3">
+<h3 id="org5af5e46">Opplegget så langt</h3>
+<div class="outline-text-3" id="text-org5af5e46">
+<ul class="org-ul">
+<li>Har ikke tatt nytte av at vi er få elever i klassen.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3de5a64" class="outline-3">
+<h3 id="org3de5a64">Opplegget videre</h3>
+<div class="outline-text-3" id="text-org3de5a64">
+<p>
+Du velger et prosjekt innenfor et tema du synes er interessant. Du kan selv velge om du vil jobbe med Python eller Arduino, eller noe annet.
+</p>
+
+<p>
+Forslag:
+</p>
+</div>
+<div id="outline-container-org6b87097" class="outline-4">
+<h4 id="org6b87097">Python</h4>
+<div class="outline-text-4" id="text-org6b87097">
+<ul class="org-ul">
+<li>GPS-data fra telefon, finne fart og hastigheter.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgacd17c2" class="outline-4">
+<h4 id="orgacd17c2">Arduino</h4>
+<div class="outline-text-4" id="text-orgacd17c2">
+<ul class="org-ul">
+<li>fartsmålinger</li>
+<li>akselerasjonsmålinger med akselerometer (holdt av til Nøsen)</li>
+<li>temperaturmålinger i endo- og eksoterme reaksjoner</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge950dc5" class="outline-4">
+<h4 id="orge950dc5">Begge</h4>
+<div class="outline-text-4" id="text-orge950dc5">
+<ul class="org-ul">
+<li>Fysikkbasert spill med Arduino som «håndkontroll»</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org45067c2" class="outline-4">
+<h4 id="org45067c2">Krav</h4>
+<div class="outline-text-4" id="text-org45067c2">
+<ul class="org-ul">
+<li>Ukentlig logg i en fil kalt <code>logg.txt</code></li>
+<li>Fortsatt ukentlige innleveringer, disse er ment til å ta rundt tjue minutter</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3fe5f66" class="outline-2">
+<h2 id="org3fe5f66">Statuslevering på terminprosjekt og to øvrige leveringer</h2>
+<div class="outline-text-2" id="text-org3fe5f66">
+<p>
+Onsdag 18. desember skal du lever tre python programfiler, den ene er en status for prosjektet ditt så langt, de to andre svarer på oppgavene gitt under. I tillegg til dette skal du levere et kort pdf-dokument, som spesifisert under.
+</p>
+
+<p>
+<b>OBS!</b> Sørg for å ha dokumentasjonsstrenger til funksjonene dine samt at du har hensiktsmessige kommentarer i koden. Dersom du ikke helt er sikker på hva jeg legger i «hensiktsmessig», få en medeleve til å se over koden din, og kommenterer eventuelle steder denne ikke forstår hvorfor du har gjort som du har gjort.
+</p>
+
+<p>
+Et eksempel på en helt ålreit dokumentasjonsstreng ser du under.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">avstand</span>(fart, tid):
+    <span class="org-doc">"""Tar inn fart i kilometer i timen og tid i timer og returnerer avstanden i kilometer. </span>
+
+<span class="org-doc">    Regnet ut ved &#229; bruke at avstand = fart * tid, alts&#229; antas det null akselerasjon.</span>
+<span class="org-doc">    """</span>
+    <span class="org-keyword">return</span> fart * tid
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8b55188" class="outline-3">
+<h3 id="org8b55188">Statuslevering for terminprosjekt</h3>
+<div class="outline-text-3" id="text-org8b55188">
+<p>
+Lever en python-fil hvor du har eller i det minste har forsøkt å implementere følgende:
+</p>
+<ul class="org-ul">
+<li>en funksjon som regner fra en ekkotid til tilhørende avstandsberegning, den skal altså ta inn et tall i mikrosekunder, og returnere avstanden til gjenstanden i meter.</li>
+<li>en utregning av fart basert på framoverdifferanse, hvor du altså bruker at farten til en gjenstand er den tidsderiverte av posisjonen. (Altså at en gjenstands fart er hvor mye posisjonen endrer seg per tid.)</li>
+</ul>
+
+<p>
+I tillegg leverer du en pdf-fil (denne kan du skrive i word, men det er <b>essensielt</b> at du lagrer som <code>pdf</code>) hvor du legger fram plot du har laget av posisjonen og farten til gjenstanden. Koden du har brukt for å generere plottene bør komme fram i python-fila nevnt over. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd0bf653" class="outline-3">
+<h3 id="orgd0bf653">Frivillig format</h3>
+<div class="outline-text-3" id="text-orgd0bf653">
+<p>
+Har du et program du er spesielt fornøyd med i år, og ønsker at jeg tar med i kommenteringen for terminkarakteren? Da kan du levere med dette. <b>Hvis ikke</b>, lag et pythonprogram hvor du gjør følgende, og legg heller med det.
+</p>
+
+<ul class="org-ul">
+<li>be brukeren om et tall og to ord</li>
+<li>skriv ut til brukeren hvorvidt summen av vokalene i de to ordene er større enn tallet eller ikke.</li>
+</ul>
+
+<p>
+Eksempel på bruk av programmet kan være som følger:
+</p>
+<pre class="example">
+&gt;&gt;&gt; Gi meg et tall, takk.
+8
+&gt;&gt;&gt; Gi meg et ord, takk.
+hei
+&gt;&gt;&gt; Gi meg et ord til, takk.
+hvorfor
+
+Summen av antall vokaler i ordene 'hei' og 'hvorfor' er 4, dette er mindre enn 8. Hadet!
+</pre>
+
+<p>
+Tips:
+</p>
+<ul class="org-ul">
+<li>Implementer noe enklere først, ta kun ett ord, tell kun en type vokal</li>
+<li>Du kan iterere over en tekststreng på samme måte som vi gjør i en liste, se under.</li>
+<li>Du kan sjekke om en bokstav er i et ord ved å bruke <code>in</code>, se under.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">for</span> bokstav <span class="org-keyword">in</span> <span class="org-string">"liten tekst"</span>:
+    <span class="org-keyword">print</span>(bokstav)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">tekst</span> = <span class="org-string">"liten tekst"</span>
+<span class="org-keyword">if</span> <span class="org-string">'i'</span> <span class="org-keyword">in</span> tekst:
+    <span class="org-keyword">print</span>(<span class="org-string">"Bokstaven 'i' er i teksten."</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org049e21c" class="outline-3">
+<h3 id="org049e21c">Løsningsforslag: Frivillig format</h3>
+<div class="outline-text-3" id="text-org049e21c">
+<p>
+Under er en video hvor jeg lager et løsningsforslag til oppgaven:
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/exQLowWfq0w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>
+Du finner den resulterende fila <a href="/py/vokalteller.py">her (vokalteller.py)</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbe59204" class="outline-3">
+<h3 id="orgbe59204">Foreslåtte videre oppgaver</h3>
+<div class="outline-text-3" id="text-orgbe59204">
+<dl class="org-dl">
+<dt>Basis</dt><dd><a href="promo.html#basispython-kortoppgaver">Kortoppgaver</a></dd>
+<dt>Funksjoner</dt><dd><a href="promo.html#abstraksjon-kortoppgaver">Kortoppgaver</a></dd>
+<dt>Lister og løkker</dt><dd><a href="promo.html#programflyt-oppgaver">Oppgaver</a></dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1833593" class="outline-2">
+<h2 id="klasseturinfo">Videre med terminprosjekt og klassetursinformasjon</h2>
+<div class="outline-text-2" id="text-klasseturinfo">
+</div>
+
+<div id="outline-container-orgd30efa3" class="outline-3">
+<h3 id="orgd30efa3">Klassetur</h3>
+<div class="outline-text-3" id="text-orgd30efa3">
+<p>
+Vi har vært så heldige å få innvilget en klassetur til programmingsklassen. Det ser ut til at opplegget blir noe à la følgende:
+</p>
+</div>
+
+<div id="outline-container-orge6380de" class="outline-4">
+<h4 id="orge6380de">Sted</h4>
+<div class="outline-text-4" id="text-orge6380de">
+<p>
+<a href="https://www.nosenyoga.no/">Nøsen yoga</a> i Valdres.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7e6868a" class="outline-4">
+<h4 id="org7e6868a">Når</h4>
+<div class="outline-text-4" id="text-org7e6868a">
+<p>
+Tirsdag 4. februar til fredag 7. februar 2020.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb3cb727" class="outline-4">
+<h4 id="orgb3cb727">Hva?</h4>
+<div class="outline-text-4" id="text-orgb3cb727">
+<p>
+Vi skal jobbe med programmeringsprosjekter som er spesielt egnet i fjellheimen. Dere vil få individuelle prosjekter, delvis tilpasset interesser, helvis tilpasset sted og tidspress. Dersom dere har spesifikke ønsker, kom med dem så snart som mulig.
+</p>
+
+<p>
+Videre kommer det til å være daglige yogaøkter og muligens noen andre aktiviteter. Det blir også tid til å slappe av og nyte fjellheimen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8d14946" class="outline-4">
+<h4 id="org8d14946">Hva trenger jeg av dere?</h4>
+<div class="outline-text-4" id="text-org8d14946">
+<p>
+En e-post til <a href="mailto:tabaa004@osloskolen.no">tabaa004@osloskolen.no</a> i løpet av tirsdag 3. desember dersom dere <i>ikke</i> har mulighet til å være med.
+</p>
+
+<p>
+Jeg godtar også korte beskjeder av typen, «Flott, jeg gleder meg!». Det gjør jeg, i det minste, gleder meg.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4e50a50" class="outline-3">
+<h3 id="org4e50a50">Fravær på onsdag</h3>
+<div class="outline-text-3" id="text-org4e50a50">
+<p>
+Jeg skal på strategiseminar på onsdag, så terminprosjektet dere nå jobber med blir egenarbeid på torsdag. Jeg legger ut videre oppgaver og veiledninger i løpet av tirsdag. Jeg legger også ut eksempelkode som får dere <i>up to scratch</i> til dit vi kom forrige uke.
+</p>
+
+<p>
+Avslutter med å minne om at for mange av dere nærmer dere dere nå <i>et halvt års erfaring</i> med noe som er konseptuelt svært krevende, programmering. Vær så snill ikke å bli stressa om faget fremdeles virker <i>svært vanskelig</i> og uoversiktelig. Etter som vi framover vil bruke byggeklossene vi til nå har hatt til flere og flere ulike problemer, vil eventuelle knuter løsne i tid til sommeren &#x2013; stol på meg.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org10e9293" class="outline-2">
+<h2 id="termin1prosjekt">Terminprosjekt</h2>
+<div class="outline-text-2" id="text-termin1prosjekt">
+<p>
+Dette prosjektet jobber vi med fram til jul, og kommer til å være hovedgrunnlaget for terminkarakteren din.
+</p>
+</div>
+
+<div id="outline-container-orgcc57fa9" class="outline-3">
+<h3 id="orgcc57fa9">Installere bibliotek</h3>
+<div class="outline-text-3" id="text-orgcc57fa9">
+<ul class="org-ul">
+<li>Last ned <a href="/py/arduino_serial.py">arduino_serial.py</a>, og legg denne i arbeidsmappa di.</li>
+<li>Koble til en arduino med <code>Trigger</code> satt til pin 13, <code>Echo</code> til pin 11, <code>Gnd</code> til gnd og <code>Vcc</code> til 5 V.</li>
+<li>Kjør det minimale eksempelet under og sjekk at eksempelplot blir laget.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcad9e3e" class="outline-3">
+<h3 id="orgcad9e3e">Minimalt eksempel</h3>
+<div class="outline-text-3" id="text-orgcad9e3e">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> arduino_serial <span class="org-keyword">import</span> collect_data
+<span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
+
+<span class="org-variable-name">tider</span>, <span class="org-variable-name">ekkotider</span> = collect_data(runtime=5000, delay=2000, comport=<span class="org-string">"COM4"</span>)
+
+<span class="org-variable-name">fig</span>, <span class="org-variable-name">ax</span> = plt.subplots()
+
+graf, = ax.plot(tider, ekkotider)
+
+ax.legend([graf], [<span class="org-string">"Ekkotider"</span>])
+ax.set_xlabel(<span class="org-string">"Eksperimenttid (ms)"</span>)
+ax.set_ylabel(<span class="org-string">"M&#229;letid (&#956;s)"</span>)
+
+fig.savefig(<span class="org-string">'eksempelplot.png'</span>)
+</pre>
+</div>
+
+<p>
+Her skal vi ha laget oss et 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9504620" class="outline-3">
+<h3 id="org9504620">Nødvendig utstyr</h3>
+<div class="outline-text-3" id="text-org9504620">
+<ul class="org-ul">
+<li>Et Arduino-kort</li>
+<li>Ultralydssensor</li>
+<li>Ledninger</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf772836" class="outline-3">
+<h3 id="orgf772836">Skisse av prosjektoppgave</h3>
+<div class="outline-text-3" id="text-orgf772836">
+<p>
+Du skal utforske numerisk derivasjon (ved for eksempel framoverdifferanse) basert på dataene du får fra Arduino-loggeren.
+</p>
+</div>
+
+<div id="outline-container-org4d8ce26" class="outline-4">
+<h4 id="org4d8ce26">Del 1 &#x2013; En omregning av ekkotid</h4>
+<div class="outline-text-4" id="text-org4d8ce26">
+<p>
+Lag en funksjon (for eksempel <code>ekko_til_avstand</code>) som tar inn et tall (ekkotiden) og returerer tilsvarende avstand i meter. Du kan bruke at lydfarten i luft er 340 m/s.
+</p>
+
+<p>
+Du kan teste funksjonen din med å sjekke at du får en avstand på 0.51 m om du regner med en ekkotid på 3000 μs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcce10d1" class="outline-4">
+<h4 id="orgcce10d1">Del 2 &#x2013; Plotting av avstand</h4>
+<div class="outline-text-4" id="text-orgcce10d1">
+<p>
+Fra eksempelet over har vi fått en liste med ekkotider, kalt <code>ekkotider</code>. Det vi ønsker å gjøre er å bruke funksjonen <code>ekko_til_avstand</code> på <i>hver ekkotid</i> i lista <code>ekkotider</code>.
+</p>
+
+<p>
+Dersom vi ønsker å bruke en funksjon på hvert element i en liste, kan det gjøres som foreslått under.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> math
+
+<span class="org-keyword">def</span> <span class="org-function-name">f</span>(x):
+    <span class="org-keyword">return</span> 2 * x
+
+<span class="org-variable-name">tall</span> = [1, 2, 5, -5, 18, 17.3, math.pi]
+<span class="org-variable-name">dobbelttall</span> = []
+
+<span class="org-keyword">for</span> t <span class="org-keyword">in</span> tall:
+    dobbelttall.append( f(t) )
+
+<span class="org-keyword">print</span>(dobbelttall)
+</pre>
+</div>
+
+<p>
+Gjør tilsvarende, men med <code>ekkotider</code>, <code>avstander</code> og <code>ekko_til_avstand</code>.
+</p>
+
+<p>
+Du skal så lage en graf hvor du har den nye <code>avstander</code>-lista di som y-verdier og <code>tider</code> (merk, ikke <code>ekkotider</code>) på x-aksen. Du ønsker altså en graf hvor du viser posisjonen til gjenstanden foran sensoren avhengig av tid ut i målingene.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org37a50da" class="outline-4">
+<h4 id="org37a50da">Del 3 &#x2013; Utforskning av sensorens grenser</h4>
+<div class="outline-text-4" id="text-org37a50da">
+<p>
+Før vi kan begynne å bruke sensoren til å ta ordentlige målinger, må vi finne ut av hvorvidt den er til å stole på eller ei. Du skal nå forsøke å gjøre et forsøk for å kartlegge dette. Merk deg at det kan være avvik mellom de uike sensorene, så du kan gjerne samarbeide med noen, men må gjøre dine egne målinger.
+</p>
+
+<ul class="org-ul">
+<li>Du gjør rundt ti målinger.</li>
+<li>Du bruker kjente avstander, fra rundt ti centimeter til rundt to meter.</li>
+<li>Du varierer vinkelen ut fra sensoren</li>
+<li>Gjør en fullstendig gjennomkjøring for hvert målepunkt, men du kan bruke kort måletid. For eksempel vil det holde med <code>collect_data(runtime=1500)</code> for kun å ta målinger i halvannet sekund</li>
+<li>Tegn opphvordan sensorens målte verdier samsvarer med virkelige verdier (dette kan du gjøre for hånd)</li>
+</ul>
+
+<p>
+Lykke til!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org512db54" class="outline-4">
+<h4 id="org512db54">Del 4 &#x2013; Fra posisjon til fart, fra fart til aksellerasjon</h4>
+</div>
+</div>
+
+<div id="outline-container-org5c9325b" class="outline-3">
+<h3 id="org5c9325b">Foreslåtte tillegg</h3>
+<div class="outline-text-3" id="text-org5c9325b">
+<ul class="org-ul">
+<li>Lage boks med 3D-printer eller laserkutter</li>
+<li>Gjøre målestasjonen trådløs</li>
+<li>Gjøre andre målinger</li>
+<li>Sanntidsvisualisering i Pygame</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1601ae4" class="outline-3">
+<h3 id="org1601ae4">Levering</h3>
+</div>
+</div>
+
+<div id="outline-container-org64fac66" class="outline-2">
+<h2 id="org64fac66">Lesing av og skriving til filer</h2>
+<div class="outline-text-2" id="text-org64fac66">
+<ul class="org-ul">
+<li><a href="pdf/uke44_innlevering.pdf">Innleveringsoppgaver</a></li>
+<li><a href="data/posisjonseksempel.csv">Eksempeldata</a></li>
+</ul>
+</div>
+
+<div id="outline-container-orgb554926" class="outline-3">
+<h3 id="orgb554926">Innleveringsoppgaver uke 44&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></h3>
+<div class="outline-text-3" id="text-orgb554926">
+</div>
+
+<div id="outline-container-org39b8d03" class="outline-4">
+<h4 id="org39b8d03">Innlesing av eksempelfil</h4>
+<div class="outline-text-4" id="text-org39b8d03">
+<p>
+Les inn eksempelfila og lagre verdiene i to lister, \(tverdier\) og \(sverdier\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbe34c8d" class="outline-4">
+<h4 id="orgbe34c8d">Plotting av eksempelfil</h4>
+<div class="outline-text-4" id="text-orgbe34c8d">
+<p>
+Plot verdiene fra fila, kall første-aksen for \(t (s)\) og andreaksen for \(s (m)\). 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org07756f8" class="outline-4">
+<h4 id="org07756f8">Derivasjon av eksempelfil</h4>
+<div class="outline-text-4" id="text-org07756f8">
+<p>
+Bruk framoverdifferanse på verdiene fra de foregående oppgavene til å finne en ny liste \(vverdier\), merk at denne kommer til å bli ett element kortere enn de to foregående listene.
+</p>
+
+<p>
+Plot også disse verdiene, gjerne i samme koordinatsystem.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2fd1bb2" class="outline-2">
+<h2 id="org2fd1bb2">Lister og plotting</h2>
+<div class="outline-text-2" id="text-org2fd1bb2">
+</div>
+<div id="outline-container-orgbf8396b" class="outline-3">
+<h3 id="orgbf8396b">Innleveringsoppgaver uke 43&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></h3>
+<div class="outline-text-3" id="text-orgbf8396b">
+</div>
+
+<div id="outline-container-org0b81b73" class="outline-4">
+<h4 id="org0b81b73">Et enkelt, dobbelt plot</h4>
+<div class="outline-text-4" id="text-org0b81b73">
+<p>
+Velg to funksjoner og plot de innenfor de samme x-verdiene.
+</p>
+
+<p>
+Lever fila som <code>f"uke43_{fornavn}_dobbelplot.py</code> og den resulterende grafen som <code>f"uke43_{fornavn}_dobbelplot.png</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7118292" class="outline-4">
+<h4 id="org7118292">Starten på utforsking av framoverdifferansen</h4>
+<div class="outline-text-4" id="text-org7118292">
+<p>
+Velg én av funksjonene fra forrige oppgave, denne skal du nå gjøre følgende med:
+</p>
+
+<ol class="org-ol">
+<li>Finn funksjonens deriverte <i>analytisk</i>, og opprett denne som en egen funksjon</li>
+<li>Lag et plot som sammenligner den analytiske løsningen med den numeriske tilnærmingen du finner ved å bruke <i>framoverdifferanse</i>-metoden fra sist uke.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga676c8c" class="outline-4">
+<h4 id="orga676c8c">Et eksempel på plotting</h4>
+<div class="outline-text-4" id="text-orga676c8c">
+<p>
+Om du har tre lister med verdier som skal plottes, en med x-verdier og to med y-verdier, kan du bruke en fremgangsmåte à la følgende for å få til dette.
+</p>
+
+<p>
+Inntil videre kan du bruke den følgende fremgangsmåten ukritisk. Bruk hjelpesystemet aktivt om du ønsker å finne andre ting du kan endre med plottene dine, tilstreb ikke å google problemer du eventuelt støter på.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> matplotlib.pyplot <span class="org-keyword">as</span> plt
+
+<span class="org-keyword">def</span> <span class="org-function-name">f</span>(x):
+    <span class="org-keyword">return</span> x ** 2 - 5
+
+<span class="org-keyword">def</span> <span class="org-function-name">g</span>(x):
+    <span class="org-keyword">return</span> x ** 3 + 13
+
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Vi lager oss en liste [-10, -9, ..., 0, ... 9, 10]</span>
+<span class="org-variable-name">x_verdier</span> = <span class="org-builtin">list</span>(<span class="org-builtin">range</span>(-10, 11))
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Vi oppretter tomme lister som skal holde y-verdiene v&#229;re</span>
+<span class="org-variable-name">y_verdier1</span> = []
+<span class="org-variable-name">y_verdier2</span> = []
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Vi legger funksjonsverdiene til y-verdilistene</span>
+<span class="org-keyword">for</span> x <span class="org-keyword">in</span> x_verdier:
+    y_verdier1.append(f(x))
+    y_verdier2.append(g(x))
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Vi oppretter et tomt plot</span>
+<span class="org-variable-name">fig</span>, <span class="org-variable-name">ax</span> = plt.subplots()
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Vi lager oss to linjer, en for hver liste av y-verdier. Legg merke til kommaet</span>
+linje1, = ax.plot(x_verdier, y_verdier1)
+linje2, = ax.plot(x_verdier, y_verdier2)
+
+ax.set_xlabel(<span class="org-string">'x-verdier'</span>)
+ax.set_ylabel(<span class="org-string">'y-verdier'</span>)
+ax.set_xlim(-14, 14)
+ax.set_ylim(-500, 600)
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Vi setter navn p&#229; linjene v&#229;re</span>
+ax.legend([linje1, linje2], [<span class="org-string">'f(x)'</span>, <span class="org-string">'g(x)'</span>])
+
+fig.savefig(<span class="org-string">'eksempelplot.png'</span>)
+fig.show()
+</pre>
+</div>
+
+<p>
+Som produserer følgende plot: 
+</p>
+
+
+<div class="figure">
+<p><img src="../figurer/uke42_eksempelplot.png" alt="uke42_eksempelplot.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Et enkelt, dobbelt plot</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb88901b" class="outline-2">
+<h2 id="orgb88901b">Hjemmearbeid med funksjoner</h2>
+<div class="outline-text-2" id="text-orgb88901b">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-10-16 Wed&gt;</span></span>
+</p>
+
+<ul class="org-ul">
+<li><a href="pdf/uke42_innlevering.pdf">Innleveringsoppgaver</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org5797c19" class="outline-3">
+<h3 id="org5797c19">Innleveringsoppgaver uke 42&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></h3>
+<div class="outline-text-3" id="text-org5797c19">
+</div>
+<div id="outline-container-org1df1a19" class="outline-4">
+<h4 id="org1df1a19">Introduksjon</h4>
+<div class="outline-text-4" id="text-org1df1a19">
+<p>
+Framover, dersom jeg ber deg om å «lage en funksjon <code>absolutt_differanse</code> som tar to paramaterer og returnerer absoluttverdien av de to parameternes differanse», kan det formelt oversettes til følgende pythonkode:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">absolutt_differanse</span>(ledd1, ledd2):
+    <span class="org-doc">"""Returnererer absoluttverdien til differanse mellom 'ledd1' og 'ledd2'."""</span>
+    <span class="org-variable-name">diff</span> = ledd1 - ledd2
+    <span class="org-keyword">return</span> <span class="org-builtin">abs</span>(diff)
+</pre>
+</div>
+
+<p>
+Etter at du har kjørt programmet, kan du sjekke at funksjonen er opprettet ved å skrive <code>help(absolutt_differanse)</code> i konsollen. Du skal da få ut noe à la følgende:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">Help on function absolutt_differanse <span class="org-keyword">in</span> module __main__:
+
+absolutt_differanse(ledd1, ledd2)
+    Returnererer absoluttverdien til differanse mellom <span class="org-string">'ledd1'</span> og <span class="org-string">'ledd2'</span>.
+</pre>
+</div>
+
+<p>
+Videre kommer jeg til å gi tester funksjonen skal bestå, eksempelvis som i tabellen under.
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right"><code>ledd1</code></th>
+<th scope="col" class="org-right"><code>ledd2</code></th>
+<th scope="col" class="org-right"><code>absolutt_differanse(ledd1, ledd2)</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">-5</td>
+<td class="org-right">15</td>
+<td class="org-right">20</td>
+</tr>
+
+<tr>
+<td class="org-right">15</td>
+<td class="org-right">-5</td>
+<td class="org-right">20</td>
+</tr>
+
+<tr>
+<td class="org-right">-15</td>
+<td class="org-right">-5</td>
+<td class="org-right">10</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">-5</td>
+<td class="org-right">5</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Du kan da teste funksjonen din ved å kontrollere at den returnerer riktige verdier, ved for eksempel å skrive i konsollen <code>absolutt_differanse(-5, 15)</code> for å se at det evaluerer til verdien <code>20</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5d40b0d" class="outline-4">
+<h4 id="org5d40b0d">Matematiske funksjoner</h4>
+<div class="outline-text-4" id="text-org5d40b0d">
+<p>
+Som andre navn i python, tilstreber vi at også funksjonsnavnene er så beskrivende som mulig. Bokstaver er billige, og du har lettere for å forstå hva funksjonen <code>kvadratrot</code> gjør, enn <code>frt</code>.
+</p>
+
+<p>
+Unntaket til dette er når vi definere enkle matematiske funksjoner, som \(f(x) = 3x^2\cdot\lg x - 15\). Vi ville altså fått:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> math
+
+<span class="org-keyword">def</span> <span class="org-function-name">f</span>(x):
+    <span class="org-keyword">return</span> 3 * x ** 2 * math.log10(x) - 15
+</pre>
+</div>
+
+<p>
+(Her har jeg også droppet å ta med en dokumentasjonsstreng.)
+</p>
+
+<div class="task">
+<p>
+Bruk funksjonen over og lag et program som skriver ut ti \(x\)- og tilhørende \(f(x)\)-verdier for funksjonen over.
+</p>
+
+</div>
+
+<p>
+For \(x\)-verdiene fra og med 20, til og med 29, får vi altså følgende utskrift:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">x     --     f(x)   
+-----------------------
+20    --    1546.2
+21    --    1734.3
+22    --    1934.2
+23    --    2146.1
+24    --    2370.0
+25    --    2606.1
+26    --    2854.6
+27    --    3115.4
+28    --    3388.7
+29    --    3674.6
+</pre>
+</div>
+
+<p>
+Kall fila <code>f"uke42_{fornavn}_matfunk.py"</code> (altså, <code>uke41_trond_matfunk.py</code>, om du er så heldig å hete Trond).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9fe8038" class="outline-4">
+<h4 id="org9fe8038">Typer og funksjonstyper</h4>
+<div class="outline-text-4" id="text-org9fe8038">
+<p>
+Vi har tidligere snakket om at ulike verdier har ulike <i>type</i>. For eksempel er <code>3</code> av typen <code>int</code>, altså et heltall eller «integer». Vi skal nå se på litt flere typer, blant annet <i>funksjoner</i>.
+</p>
+
+<div class="task">
+<p>
+Skriv av det følgende pythonprogrammet og fyll ut det som står de doble likhetstegnene, lever fila som <code>f"uke42_{fornavn}_typer.py</code>.
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">utregning</span>(x):
+    <span class="org-doc">"""Tar inn et tall x, og gj&#248;r litt matte."""</span>
+    <span class="org-variable-name">dobbel_x</span> = 2 * x
+    <span class="org-variable-name">litt_mindre</span> = dobbel_x - 5
+    <span class="org-keyword">return</span> litt_mindre * dobbel_x
+
+<span class="org-keyword">def</span> <span class="org-function-name">er_stort</span>(testtall, stort_tall):
+    <span class="org-doc">"""Tar inn to tall og returnerer hvorvidt 'testtall'</span>
+<span class="org-doc">    er st&#248;rre enn 'stort_tall'.</span>
+<span class="org-doc">    """</span>
+    <span class="org-variable-name">returverdi</span> = <span class="org-constant">False</span>
+    <span class="org-keyword">if</span> testtall &gt; stort_tall:
+        <span class="org-variable-name">returverdi</span> = <span class="org-constant">True</span>
+    <span class="org-keyword">return</span> returverdi
+
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">I alle linjene under, fyll ut det som st&#229;r i anf&#248;rselstegn</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">n&#229;r du skriver venstre side inn i konsollen.</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Eksempel:</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">type(3.1) == 'float'</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">siden</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">&gt;&gt;&gt; type(3.1)</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">&lt;class 'float'&gt;</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Oppgaver:</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">type(3) == </span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">type(2 + 2) ==</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">type(utregning(5)) ==</span>
+
+<span class="org-variable-name">svar</span> = utregning(5)
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">type(svar) ==</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">type(er_stort(3, 2)) ==</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">type(er_stort(2, 3)) == </span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">type(er_stort) == </span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge96c4d8" class="outline-4">
+<h4 id="orge96c4d8">Derivering av funksjoner</h4>
+<div class="outline-text-4" id="text-orge96c4d8">
+<p>
+Fra matematikken er vi vant til å innføre den deriverte via dens <i>definisjon</i>.
+</p>
+
+<div class="definition">
+<p>
+Den derivert til funksjonen \(f(x)\) ved punktet \(x=a\) finner vi som \[f(x) = \lim_{\Delta x \to 0}\frac{f(x+\Delta x) - f(x)}{\Delta x}\]
+</p>
+
+</div>
+
+<p>
+Vi skal nå bruke denne definisjonen til å regne ut den deriverte for en matematisk funksjon, \(f(x) = 3x^2 \cdot \lg x - 15\).
+</p>
+
+<p>
+Om jeg ønsker å finne verdien til den deriverte av denne funksjonen i, for eksempel, \(x = 4\), kan vi finne et bedre og bedre overslag for dette ved å bruke mindre og mindre verdier for \(\Delta x\).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> math
+
+<span class="org-keyword">def</span> <span class="org-function-name">f</span>(x):
+    <span class="org-keyword">return</span> 3 * x ** 2 * math.log10(x) - 15
+
+<span class="org-variable-name">delta_x</span> = 0.001    <span class="org-comment-delimiter"># </span><span class="org-comment">velger en veldig liten verdi for delta x</span>
+<span class="org-variable-name">eval_x</span> = 4
+<span class="org-variable-name">delta_f</span> = f(eval_x + delta_x) - f(eval_x)
+
+<span class="org-variable-name">derivert</span> = delta_f / delta_x
+
+<span class="org-keyword">print</span>(f<span class="org-string">"Den deriverte av funksjonen ved x = {eval_x} er omtrent {derivert:.2f}."</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">Den deriverte av funksjonen ved <span class="org-variable-name">x</span> = 4 er omtrent 19.66.
+</pre>
+</div>
+
+<p>
+Denne måten å regne ut en derivert på kalles en <i>framoverdifferanse</i>, siden vi finner den deriverte i \(x\) ved å <i>legge til</i> \(\Delta x\).
+</p>
+
+<div class="task">
+<p>
+Utvid tabellen fra forrige oppgave til også å ha en kolonne for den deriverte av funksjonen ved de ulike \(x\)-verdiene. Bruk <i>framoverdifferanse</i> for å finne den deriverte. Lever fila som <code>f"uke42_{fornavn}_framoverdiff.py</code>.
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">x     --     f(x)     --     f<span class="org-string">'(x)</span>
+<span class="org-string">-------------------------------------</span>
+<span class="org-string">20    --    1546.2    --    182.19</span>
+<span class="org-string">21    --    1734.3    --    193.97</span>
+<span class="org-string">22    --    1934.2    --    205.87</span>
+<span class="org-string">23    --    2146.1    --    217.89</span>
+<span class="org-string">24    --    2370.0    --    230.03</span>
+<span class="org-string">25    --    2606.1    --    242.27</span>
+<span class="org-string">26    --    2854.6    --    254.62</span>
+<span class="org-string">27    --    3115.4    --    267.07</span>
+<span class="org-string">28    --    3388.7    --    279.61</span>
+<span class="org-string">29    --    3674.6    --    292.25</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfb7915d" class="outline-4">
+<h4 id="orgfb7915d">Utfordring: Derivasjonsfunksjon</h4>
+<div class="outline-text-4" id="text-orgfb7915d">
+<p>
+Lag en funksjon med følgende spesifikasjon:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">derivert_av_funk_ved_x</span>(funksjon, x):
+    <span class="org-doc">"""Returnerer den numeriske verdien av den deriverte av funksjonen</span>
+<span class="org-doc">    'funksjon' n&#229;r x er 'x'.</span>
+
+<span class="org-doc">    Bruk en 'framoverdifferanse' (se forrige oppgave) med 'delta_x = 0.0001'.</span>
+
+<span class="org-doc">    Eksempel:</span>
+<span class="org-doc">    def f(x):</span>
+<span class="org-doc">        return x ** 2</span>
+
+<span class="org-doc">    &gt;&gt;&gt; derivert_av_funk_ved_x(f, 2)   =&gt;  4.0001000000078335</span>
+
+<span class="org-doc">    """</span>
+
+    <span class="org-comment-delimiter"># </span><span class="org-comment">Her gj&#248;r du utregningene dine</span>
+</pre>
+</div>
+
+<p>
+Merk, her sender vi <i>navnet til en funksjon</i> inn som en parameter til funksjonen.
+</p>
+
+<div class="task">
+<p>
+Lag en funksjon som tar inn navnet på en funksjon og en \(x\)-verdi. Returner et overslag for den deriverte til funksjonen ved denne \(x\)-verdien ved hjelp av framoverdifferanse med en \(Delta x = 0.0001\). Lever fila som <code>f"uke42_{fornavn}_framoverdiffunk.py</code>.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7af71e7" class="outline-2">
+<h2 id="org7af71e7">Introduksjon til funksjoner</h2>
+<div class="outline-text-2" id="text-org7af71e7">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-10-09 Wed&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> :: Abstraksjon som et alternativ til kodenivå</li>
+<li class="on"><code>[X]</code> :: Hvordan lage («definere») en funksjon i Python</li>
+<li class="on"><code>[X]</code> :: Hvordan bruke («kalle») en funksjon i Python</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2b23055" class="outline-2">
+<h2 id="org2b23055">Videre med algoritmer</h2>
+<div class="outline-text-2" id="text-org2b23055">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-09-25 Wed&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Repetisjon fra sist</li>
+<li class="off"><code>[&#xa0;]</code> En tilnærming til likningsløsning</li>
+
+<li><a href="pdf/uke39_innlevering.pdf">Innleveringsoppgaver</a></li>
+<li><a href="pdf/uke39_repetisjon.pdf">Repetisjonsoppgaver</a></li>
+<li><a href="pdf/uke39_innlevering_alternativ.pdf">Alternative innleveringsoppgaver</a> (mer krevende)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org065f7dc" class="outline-2">
+<h2 id="org065f7dc">Algoritmer</h2>
+<div class="outline-text-2" id="text-org065f7dc">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-09-18 Wed&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Repetisjon fra sist</li>
+<li class="off"><code>[&#xa0;]</code> Funksjoner uten «bieffekter»</li>
+<li class="off"><code>[&#xa0;]</code> Funksjoner som enkelt repeterbare kodeblokker</li>
+<li class="off"><code>[&#xa0;]</code> Lister</li>
+<li class="off"><code>[&#xa0;]</code> Et første plot med lister</li>
+</ul>
+
+<p>
+<a href="pdf/uke38_innlevering.pdf">Innleveringsoppgaver</a>
+</p>
+</div>
+
+<div id="outline-container-orgeae47fa" class="outline-3">
+<h3 id="orgeae47fa">Tillegg fra undervisningen</h3>
+<div class="outline-text-3" id="text-orgeae47fa">
+<p>
+Det blei mye knoting rundt kvadrotutregningene denne økta. Her er en gjennomgang gjennomgang av det jeg ønsket å få ut av den initielle delen.
+</p>
+
+<p>
+Dette er for øvrig en algoritme for utregning av kvadratrøtter som kalles <i>babylonsk tilnærming</i>, og den første kjente nedtegnelsen er fra år 60 evt.
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method">Wikipedia</a> for de spesielt interesserte.
+</p>
+</div>
+
+<div id="outline-container-org665327b" class="outline-4">
+<h4 id="org665327b">Motivasjon</h4>
+<div class="outline-text-4" id="text-org665327b">
+<p>
+I en datamaskin er det en del regning som gjøres direkte på maskinvaren. I moderne maskiner er det for eksempel egne kretser som regner ut summen av to tall eller produktet av to tall. Det er dog et utall regneoperasjoner maskinen må kjøre flere ganger gjennom ulike kretser for å komme fram til. Si vi for eksempel ønsker å finne \(\sqrt{13}\), eller \(\sqrt[3]{13}\), eller generelt \(\sqrt[48]{13}\), her må maskinen gjøre en serie med operasjoner, den må følge en <i>algoritme</i>, for å finne svaret.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org926dd2a" class="outline-4">
+<h4 id="org926dd2a">Enkelt implementert i Python</h4>
+<div class="outline-text-4" id="text-org926dd2a">
+<p>
+Vi er heldige, vi skriver ikke koden direkte til maskinen, vi skriver koden i python som så oversettes via en del trinn til kode som kjøres på maskinen. Dette forenkler ting voldsomt. Om vi ønsker å finne løsningene over, er ikke det værre enn å gjøre noe à la følgende:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> math <span class="org-keyword">import</span> sqrt
+<span class="org-variable-name">kvadratrot</span> = sqrt(13)
+<span class="org-variable-name">tredjerot</span>  = 13 ** (1 / 3)
+<span class="org-variable-name">foertiaattenderot</span> = 13 ** (1 / 48)
+
+<span class="org-keyword">print</span>(f<span class="org-string">"Kvadratroten av 13 er {kvadratrot}."</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">"Tredjeroten av 13 er {tredjerot}."</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">"48.-roten av 13 er {foertiaattenderot}."</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-org">Kvadratroten av 13 er 3.605551275463989.
+Tredjeroten av 13 er 2.3513346877207573.
+48.-roten av 13 er 1.0548899460507581.
+</pre>
+</div>
+
+<p>
+Hva skal vi gjøre om vi kun kan opphøye i heltall?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4b2c55" class="outline-4">
+<h4 id="orgb4b2c55">En vanskeligere implementasjon i Python</h4>
+<div class="outline-text-4" id="text-orgb4b2c55">
+<p>
+Om vi skal finne \(\sqrt{S}\), kan vi tenke oss at det vi skal finne er løsningen på likninga \[S = x^2.\] Vi lar fremgangsmåten vår være som følger:
+</p>
+
+<ol class="org-ol">
+<li>Gjør en gjetning for \(x_0\) (\(0\) markerer at dette er utgangspunktet, vi setter her \(x_0 = 1\))</li>
+<li>Sjekk om nåværende gjetning er tilstrekkelig nærme løsningen ved å regne ut \(x_n^2\) og sammenligne dette med \(S\), hvor \(x_n\) er nåværende gjetning.</li>
+<li>Hvis \(x_n\) var tilstrekkelig nærme, du er ferdig; hvis ikke, oppdater til \(x_{n+1}\) ved å bruke \(x_{n+1} = \frac{x_n + \frac{S}{x_n}}{2}\).</li>
+<li>Gå tilbake til punkt 2.</li>
+</ol>
+
+<p>
+Punkt 2 til punkt 4 dekker vi i Python ved å bruke en <code>while</code>-løkke, hvor testen i løkka er hvorvidt gjetningen nå er «tilstrekkelig nære». Hva skal vi sette til å være «tilstrekkelig nære»? Vel &#x2026; det er helt opp til deg. Dersom vi lar forskjellen mellom \(x_n^2\) og \(S\) være «feilen» i gjetningen vår, kan vi si at vi kjører algoritmen til denne feilen har blitt liten nok. Vi bryr oss ikke om feilen er positiv eller negativ, vi er kun interessert i hvor stor den er.
+</p>
+
+<p>
+Om vi skriver inn hele dette programmet i python, kan det se ut som følger:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+<span class="org-variable-name">S</span> = 13            <span class="org-comment-delimiter"># </span><span class="org-comment">verdien vi skal finne kvadratroten av</span>
+<span class="org-variable-name">x</span> = 1             <span class="org-comment-delimiter"># </span><span class="org-comment">v&#229;r initielle gjetning p&#229; l&#248;sningen</span>
+<span class="org-variable-name">epsilon</span> = 0.00001 <span class="org-comment-delimiter"># </span><span class="org-comment">hva vi godkjenner som "n&#230;re nok"</span>
+<span class="org-variable-name">i</span> = 0             <span class="org-comment-delimiter"># </span><span class="org-comment">bruker denne for &#229; holde orden p&#229; antall runder i l&#248;kka</span>
+
+<span class="org-keyword">print</span>(f<span class="org-string">"Starter med gjetningen {x}."</span>)
+<span class="org-keyword">print</span>(<span class="org-string">"--------------------------------------------------------"</span>)
+
+
+<span class="org-keyword">while</span> <span class="org-builtin">abs</span>(S - x**2) &gt; epsilon:      <span class="org-comment-delimiter"># </span><span class="org-comment">Her sjekker vi om n&#229;v&#230;rende gjetning er n&#230;re nok</span>
+    <span class="org-variable-name">i</span> += 1                          <span class="org-comment-delimiter"># </span><span class="org-comment">Merker oss at vi g&#229;r inn i l&#248;kka nok en gang</span>
+    <span class="org-variable-name">x</span> = (x + S/x) / 2               <span class="org-comment-delimiter"># </span><span class="org-comment">Denne linja er kommentert i et eget avsnitt under</span>
+    <span class="org-keyword">print</span>(f<span class="org-string">"Runde nr. {i} gjennom l&#248;kka."</span>)
+    <span class="org-keyword">print</span>(f<span class="org-string">"N&#229;v&#230;rende gjetning er {x}, etter oppdatering."</span>)
+    <span class="org-keyword">print</span>(f<span class="org-string">"Dette er egentlig kvadratroten av {x**2}."</span>)
+    <span class="org-keyword">print</span>(f<span class="org-string">"Feilen v&#229;r er dermed n&#229; {abs(S - x**2)}."</span>)
+    <span class="org-keyword">print</span>(<span class="org-string">"--------------------------------------------------------"</span>)
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Vi har n&#229; kommet oss ut av while-l&#248;kka</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">alts&#229; m&#229; gjetningen ha blitt god nok</span>
+<span class="org-keyword">print</span>(f<span class="org-string">"Kvadratroten av {S} er {x}."</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">"Vi har da f&#229;tt en feil p&#229; {abs(S - x**2)}."</span>)
+<span class="org-keyword">print</span>(f<span class="org-string">"Vi var gjennom l&#248;kka {i} ganger."</span>)
+</pre>
+</div>
+
+<p>
+Starter med gjetningen 1.
+</p>
+<hr />
+<p>
+Runde nr. 1 gjennom løkka.
+Nåværende gjetning er 7.0, etter oppdatering.
+Dette er egentlig kvadratroten av 49.0.
+Feilen vår er dermed nå 36.0.
+</p>
+<hr />
+<p>
+Runde nr. 2 gjennom løkka.
+Nåværende gjetning er 4.428571428571429, etter oppdatering.
+Dette er egentlig kvadratroten av 19.612244897959187.
+Feilen vår er dermed nå 6.612244897959187.
+</p>
+<hr />
+<p>
+Runde nr. 3 gjennom løkka.
+Nåværende gjetning er 3.6820276497695854, etter oppdatering.
+Dette er egentlig kvadratroten av 13.557327613667736.
+Feilen vår er dermed nå 0.5573276136677361.
+</p>
+<hr />
+<p>
+Runde nr. 4 gjennom løkka.
+Nåværende gjetning er 3.6063454894655185, etter oppdatering.
+Dette er egentlig kvadratroten av 13.00572778938829.
+Feilen vår er dermed nå 0.005727789388290105.
+</p>
+<hr />
+<p>
+Runde nr. 5 gjennom løkka.
+Nåværende gjetning er 3.6055513629176015, etter oppdatering.
+Dette er egentlig kvadratroten av 13.000000630636974.
+Feilen vår er dermed nå 6.306369737529849e-07.
+</p>
+<hr />
+<p>
+Kvadratroten av 13 er 3.6055513629176015.
+Vi har da fått en feil på 6.306369737529849e-07.
+Vi var gjennom løkka 5 ganger.
+</p>
+
+
+<p>
+Legg merke til at det aller meste av koden her går til å skrive ut informasjon til brukeren.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc3235f0" class="outline-4">
+<h4 id="orgc3235f0">Hvorfor fungerer oppdateringen?</h4>
+<div class="outline-text-4" id="text-orgc3235f0">
+<p>
+Når vi oppdaterer med \[x_{n+1} = \frac{x_n + \frac{S}{x_n}}{2},\] altså at den oppdaterte gjetningen \(x_{n+1}\) er gjennomsnittet av \(x_n\) og \(\frac{S}{x_n}\) bruker vi følgende argumentasjon:
+</p>
+
+<ul class="org-ul">
+<li>Dersom \(x_n\) er en <i>for lav</i> gjetning, altså at \(x_n^2 < S\), vil \(\frac{S}{x_n}\) være en <i>for høy</i> gjetning. Altså er løsningen et sted mellom de to.</li>
+<li>Dersom \(x_n\) er en <i>for høy</i> gjetning, altså at \(x_n^2 > S\), vil \(\frac{S}{x_n}\) være en <i>for lav</i> gjetning. Altså er løsningen et sted mellom de to.</li>
+</ul>
+
+<p>
+Vi kan dermed komme oss nærmere en faktisk løsning ved å teste ut gjennomsnittet av de to.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org125ad87" class="outline-2">
+<h2 id="org125ad87">Løkker</h2>
+<div class="outline-text-2" id="text-org125ad87">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-09-11 Wed&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Recap fra sist</li>
+<li class="on"><code>[X]</code> <code>While</code>-løkker</li>
+</ul>
+
+<p>
+<a href="pdf/uke37_innlevering.pdf">Innleveringsoppgaver</a>
+</p>
+
+<p>
+Her er et foreslått <a href="/py/uke37_lf.py">løsningsforslag</a> til innleveringsoppgavene.
+</p>
+</div>
+</div>
+<div id="outline-container-org5cb5fe0" class="outline-2">
+<h2 id="org5cb5fe0">Forgreining</h2>
+<div class="outline-text-2" id="text-org5cb5fe0">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-09-04 Wed&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Recap om basisregning</li>
+<li class="on"><code>[X]</code> Input fra bruker</li>
+<li class="on"><code>[X]</code> <code>if</code>-setninger</li>
+<li class="on"><code>[X]</code> Indentering og blokkstruktur</li>
+</ul>
+
+<p>
+<a href="pdf/uke36_innlevering.pdf">Innleveringsoppgaver</a>
+</p>
+</div>
+
+<div id="outline-container-org0349bf1" class="outline-3">
+<h3 id="org0349bf1">Kommentarer fra sist</h3>
+<div class="outline-text-3" id="text-org0349bf1">
+<ul class="org-ul">
+<li>Husk å importere biblioteker i fila du leverer, det du gjør i konsollen følger ikke med leveringa.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org535967f" class="outline-2">
+<h2 id="org535967f">Grunnleggende regning</h2>
+<div class="outline-text-2" id="text-org535967f">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-21 Wed&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Basisregning</li>
+<li class="on"><code>[X]</code> <code>.py</code>-filer</li>
+<li class="on"><code>[X]</code> Typer</li>
+<li class="off"><code>[&#xa0;]</code> Funksjoner og funksjonssignaturer</li>
+</ul>
+
+<p>
+<a href="pdf/uke33_innlevering.pdf">Innleveringsoppgaver</a>
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
