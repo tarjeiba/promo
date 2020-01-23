@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
+<head>
+<!-- 2020-01-23 Thu 12:29 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prosjekter</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Tarjei Bærland" />
+<link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Prosjekter</h1>
+<div id="table-of-contents">
+<h2>Innhold</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org537ac80">1. Tekstbasert eventyrspill</a>
+<ul>
+<li><a href="#org32607cd">1.1. Introduksjon</a></li>
+<li><a href="#org237d466">1.2. Feilhåndtering</a></li>
+<li><a href="#orga71b321">1.3. Fiendekamp med stein-saks-papir</a></li>
+<li><a href="#orgbfa36d8">1.4. En ny struktur</a></li>
+</ul>
+</li>
+<li><a href="#org6eb345d">2. Battleships</a>
+<ul>
+<li><a href="#orga16d952">2.1. Regler</a></li>
+<li><a href="#orga07b0b4">2.2. Din oppgave</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org537ac80" class="outline-2">
+<h2 id="org537ac80"><span class="section-number-2">1</span> Tekstbasert eventyrspill</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org32607cd" class="outline-3">
+<h3 id="org32607cd"><span class="section-number-3">1.1</span> Introduksjon</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Dette kan i enkleste format løses ved å bruke <code>if/elif/else</code>, <code>print</code> og <code>input</code>. 
+</p>
+
+<p>
+Fordelen med et program som dette, er at det fokuserer på et lite antall konsepter, så du kan konsentrere deg om å få disse til å sitte ordentlig.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span>(<span class="org-string">"Du v&#229;kner klokken 5:32 og f&#248;ler deg v&#229;ken, men vurderer &#229; fors&#248;ke &#229; fortsette &#229; sove. Du ..."</span>)
+
+<span class="org-variable-name">valg</span> = <span class="org-builtin">input</span>(<span class="org-string">"'st&#229;r opp' / 'sover videre'"</span>)
+<span class="org-variable-name">error</span> = <span class="org-string">"Det var jommen et ugyldig valg, fysikkens lover er brutt."</span>
+
+<span class="org-keyword">if</span> valg == <span class="org-string">"st&#229;r opp"</span>:
+    <span class="org-keyword">print</span>(<span class="org-string">"... st&#229;r opp og ser en gammel bok i bokhylla. Du ..."</span>)
+    <span class="org-variable-name">valg</span> = <span class="org-builtin">input</span>(<span class="org-string">"'leser' / 'lar v&#230;re'"</span>)
+    <span class="org-keyword">if</span> valg == <span class="org-string">"leser"</span>:
+        <span class="org-keyword">print</span>(<span class="org-string">"... f&#229;r en fin start p&#229; dagen med en spennende bok."</span>)
+    <span class="org-keyword">elif</span> valg == <span class="org-string">"lar v&#230;re"</span>:
+        <span class="org-keyword">print</span>(<span class="org-string">"... kjenner p&#229; en tomhetsf&#248;lelse som f&#248;lger deg gjennom dagen."</span>)
+    <span class="org-keyword">else</span>:
+        <span class="org-keyword">print</span>(error)
+<span class="org-keyword">elif</span> valg ==<span class="org-string">"sover videre"</span>:
+    <span class="org-keyword">print</span>(<span class="org-string">"... sover og dr&#248;mmer om et liv hvor muligheter gripes."</span>)
+<span class="org-keyword">else</span>:
+    <span class="org-keyword">print</span>(error)
+</pre>
+</div>
+
+<p>
+Programmet over kan lastes ned <a href="tekstbasert_intro.py">her (tekstbasert_intro.py)</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org237d466" class="outline-3">
+<h3 id="org237d466"><span class="section-number-3">1.2</span> Feilhåndtering</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Programmet over håndterer feil fra spilleren på en lite grasiøs måte. Spillet tvinger seg videre, uten å la spilleren forsøke å taste inn på nytt.
+</p>
+
+<p>
+Starten på en forbedring vil være å restrukturere koden slik at teksten, selve «historien» vår, kommer foran. Vi kan da forsøke å skille mellom historien, og selve spillmotoren.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">tekst</span> = <span class="org-string">"Du v&#229;kner klokken 5:32 og f&#248;ler deg v&#229;ken, men vurderer &#229; fors&#248;ke &#229; fortsette &#229; sove. Du ..."</span>
+
+<span class="org-variable-name">valg_a</span> = <span class="org-string">"st&#229;r opp"</span>
+<span class="org-variable-name">tekst_a</span> = <span class="org-string">"... st&#229;r opp og ser en gammel bok i bokhylla. Du ..."</span>
+
+<span class="org-variable-name">valg_aa</span> = <span class="org-string">"leser"</span>
+<span class="org-variable-name">tekst_aa</span> = <span class="org-string">"... f&#229;r en fin start p&#229; dagen med en spennende bok."</span>
+<span class="org-variable-name">valg_ab</span> = <span class="org-string">"lar v&#230;re"</span>
+<span class="org-variable-name">tekst_ab</span> = <span class="org-string">"... kjenner p&#229; en tomhetsf&#248;lelse som f&#248;lger deg gjennom dagen."</span>
+
+<span class="org-variable-name">valg_b</span> = <span class="org-string">"sover videre"</span>
+<span class="org-variable-name">tekst_b</span> = <span class="org-string">"... sover og dr&#248;mmer om et liv hvor muligheter gripes."</span>
+
+<span class="org-variable-name">error</span> = <span class="org-string">"Det var jommen et ugyldig valg, fysikkens lover er brutt."</span>
+</pre>
+</div>
+
+<p>
+Når det er gjort kan vi så sette opp spillet på tilsvarende måte som siste, men vi begynner å ta høyde for feil fra brukeren. Legg også merke til at vi nå «pynter» på brukerens input ved først å gjøre alle bokstavene til små bokstaver (<code>"TestStreng".lower() =&gt; "teststreng"</code>) og ved å fjerne eventuelle mellomrom og tomme tegn på starten og slutten av strengen (<code>"  test ".strip() =&gt; "test"</code>).
+</p>
+
+<p>
+Vi kunne da ha «pakket» hver <code>input</code> inn med <code>f-strenger</code> avsluttet med <code>lower</code> og <code>strip</code>, noe à la
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">valg</span> = <span class="org-builtin">input</span>(f<span class="org-string">"'{valg_a}' / '{valg_b}'"</span>).lower().strip()
+</pre>
+</div>
+
+<p>
+men dette ville ikke hjulpet oss med å be brukeren om å taste inn på nytt dersom det ikke fungerte.
+</p>
+
+<p>
+Vi kan heller pakke det inn i en funksjon, hvor vi venter til brukeren har tastet et gyldig alternativ ved å bruke en <code>while</code>-løkke.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">def</span> <span class="org-function-name">be_om_input</span>(alt1, alt2):
+    <span class="org-doc">"""Ber spilleren om &#229; taste inn input til spillet, og gir seg f&#248;rst n&#229;r</span>
+<span class="org-doc">    spilleren har tastet inn noe gyldig.</span>
+<span class="org-doc">    </span>
+<span class="org-doc">    Returnerer valget brukeren tastet inn n&#229;r dette er gyldig.</span>
+
+<span class="org-doc">    Eksempel p&#229; bruk:</span>
+<span class="org-doc">    valg = be_om_input('g&#229;', 'l&#248;p')</span>
+
+<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;r</span>
+<span class="org-doc">    Ugyldig alternativ, pr&#248;v igjen.</span>
+<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;     # valg er n&#229; 'g&#229;'</span>
+<span class="org-doc">    """</span>
+    <span class="org-variable-name">valgt</span> = <span class="org-constant">None</span>
+    <span class="org-keyword">while</span> valgt != alt1 <span class="org-keyword">and</span> valgt != alt2:
+        <span class="org-variable-name">valgt</span> = <span class="org-builtin">input</span>(f<span class="org-string">"'{alt1}' / '{alt2}'"</span>).lower().strip()
+    <span class="org-keyword">return</span> valgt
+    
+
+<span class="org-keyword">print</span>(tekst)
+<span class="org-variable-name">valg</span> = be_om_input(valg_a, valg_b)
+
+<span class="org-keyword">if</span> valg == valg_a:
+    <span class="org-keyword">print</span>(tekst_a)
+    <span class="org-variable-name">valg</span> = be_om_input(valg_aa, valg_ab)
+    <span class="org-keyword">if</span> valg == valg_aa:
+        <span class="org-keyword">print</span>(tekst_aa)
+    <span class="org-keyword">elif</span> valg == valg_ab:
+        <span class="org-keyword">print</span>(tekst_ab)
+    <span class="org-keyword">else</span>:
+        <span class="org-keyword">print</span>(error)
+
+<span class="org-keyword">elif</span> valg == valg_b:
+    <span class="org-keyword">print</span>(tekst_b)
+<span class="org-keyword">else</span>:
+    <span class="org-keyword">print</span>(error)
+</pre>
+</div>
+
+<p>
+Legg merke til at <i>oppførselen</i> til spillet vårt nå er identisk hva den var, men <i>koden</i> har blitt langt mer tydelig og enklere å utvide.
+</p>
+
+<p>
+<b>Utfordring videre</b> Du ser at deler av koden gjentas her, og at vi får mange nivåer om vi skal fortsette forgreiningene ytterligere «innover». Kan du skissere en måte hvor <code>if</code>-setningene og valgene tas i en «hovedløkke», slik at vi klarer oss med en <code>if</code>-setning og utspørring, det er bare teksten og alternativene som byttes ut? Kanskje kan vi plassere tekststrengene i lister, slik at de kan itereres over?
+</p>
+
+<p>
+Programmet over kan lastes ned <a href="tekstbasert_feilhaandtering.py">her (tekstbasert_feilhaandtering.py)</a>.
+</p>
+
+<p>
+Det er mulig å gjøre langt mer med et tekstbasert spill enn det som kommer fram av et skjelett som det over. Fortsett kun med det følgende når du synes feilhåndteringsavsnittet er fullt forståelig og du har jobbet litt med å skrive egne «historier» i det rammeverket.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga71b321" class="outline-3">
+<h3 id="orga71b321"><span class="section-number-3">1.3</span> Fiendekamp med stein-saks-papir</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+La oss begynne med å lage oppsettet for en stein-saks-papir-kamp, før vi i det hele tatt legger det til i eventyret vårt.
+</p>
+
+<p>
+Jeg har valgt å gjøre det her via to funksjoner, <code>avgjoer</code> som tar inn to valg og avgjør om det var det første eller andre valget som vant, samt <code>spill_steinsakspapir</code> som kjører en kamp med stein-saks-papir til enten spilleren eller maskinen har vunnet.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
+
+<span class="org-keyword">def</span> <span class="org-function-name">avgjoer</span>(vaapen1, vaapen2):
+    <span class="org-doc">"""Tar inn to strenger, hver enten 'stein', 'saks', eller 'papir'.</span>
+
+<span class="org-doc">    Returverdier er som f&#248;lger:</span>
+<span class="org-doc">    vaapen1 &gt; vaapen2  =&gt; 1</span>
+<span class="org-doc">    vaapen2 &gt; vaapen1  =&gt; 2</span>
+<span class="org-doc">    vaapen1 == vaapen2 =&gt; 0</span>
+
+<span class="org-doc">    Rangeringen er</span>
+<span class="org-doc">    'stein' &gt; 'saks' &gt; 'papir'</span>
+<span class="org-doc">    og 'papir' &gt; 'stein'</span>
+
+<span class="org-doc">    """</span>
+
+    <span class="org-keyword">if</span> vaapen1 == <span class="org-string">"stein"</span>:
+        <span class="org-keyword">if</span> vaapen2 == <span class="org-string">"stein"</span>:
+            <span class="org-keyword">return</span> 0
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"saks"</span>:
+            <span class="org-keyword">return</span> 1
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"papir"</span>:
+            <span class="org-keyword">return</span> 2
+    <span class="org-keyword">elif</span> vaapen1 == <span class="org-string">"saks"</span>:
+        <span class="org-keyword">if</span> vaapen2 == <span class="org-string">"stein"</span>:
+            <span class="org-keyword">return</span> 2
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"saks"</span>:
+            <span class="org-keyword">return</span> 0
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"papir"</span>:
+            <span class="org-keyword">return</span> 1
+    <span class="org-keyword">elif</span> vaapen1 == <span class="org-string">"papir"</span>:
+        <span class="org-keyword">if</span> vaapen2 == <span class="org-string">"stein"</span>:
+            <span class="org-keyword">return</span> 1
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"saks"</span>:
+            <span class="org-keyword">return</span> 2
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"papir"</span>:
+            <span class="org-keyword">return</span> 0
+    <span class="org-keyword">else</span>:
+        <span class="org-keyword">print</span>(<span class="org-string">"Det skjedde noe feil i avgj&#248;relsen."</span>)
+            
+<span class="org-keyword">def</span> <span class="org-function-name">spill_steinsakspapir</span>():
+    <span class="org-doc">"""En funksjon du kan spille stein-saks-papir mot. Den returner f&#248;lgende:</span>
+<span class="org-doc">    spill_steinsakspapir() =&gt; 1 # spilleren vant</span>
+<span class="org-doc">    spill_steinsakspapir() =&gt; 2 # funksjonen vant</span>
+<span class="org-doc">    </span>
+<span class="org-doc">    Funksjonen fortsetter &#229; spille til det er k&#229;ret en vinner.</span>
+
+<span class="org-doc">    Rangeringen av 'stein', 'saks', og 'papir' gj&#248;res i 'avgjoer'-funksjonen.</span>
+<span class="org-doc">    """</span>
+
+    <span class="org-variable-name">vaapen</span> = [<span class="org-string">"stein"</span>, <span class="org-string">"saks"</span>, <span class="org-string">"papir"</span>]
+    <span class="org-keyword">while</span> <span class="org-constant">True</span>:
+        <span class="org-variable-name">spillers_valg</span> = <span class="org-builtin">input</span>(f<span class="org-string">" '{vaapen[0]}' / '{vaapen[1]}' / '{vaapen[2]}' "</span>)
+        <span class="org-variable-name">spillers_valg</span> = spillers_valg.lower().strip()
+        <span class="org-variable-name">mitt_valg</span> = rnd.choice(vaapen)
+        <span class="org-variable-name">avgjoerelse</span> = avgjoer(spillers_valg, mitt_valg)
+        <span class="org-keyword">if</span> avgjoerelse == 0:
+            <span class="org-keyword">print</span>(<span class="org-string">"Uavgjort, vi pr&#248;ver igjen..."</span>)
+        <span class="org-keyword">elif</span> avgjoerelse == 1:
+            <span class="org-keyword">print</span>(<span class="org-string">"&#198;sj, du vant."</span>)
+            <span class="org-keyword">return</span> 1
+        <span class="org-keyword">elif</span> avgjoerelse == 2:
+            <span class="org-keyword">print</span>(<span class="org-string">"Ha ha, jeg vant!"</span>)
+            <span class="org-keyword">return</span> 2
+        <span class="org-keyword">else</span>:
+            <span class="org-keyword">print</span>(<span class="org-string">"Vi klarte visst ikke helt dette, du og jeg."</span>)
+</pre>
+</div>
+
+<p>
+Dette kan vi så legge inn i eventyret vårt ved å gjøre klart ekstra forgreininger.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+<span class="org-variable-name">tekst</span> = <span class="org-string">"Du v&#229;kner klokken 5:32 og f&#248;ler deg v&#229;ken, men vurderer &#229; fors&#248;ke &#229; fortsette &#229; sove. Du ..."</span>
+
+<span class="org-variable-name">valg_a</span> = <span class="org-string">"st&#229;r opp"</span>
+<span class="org-variable-name">tekst_a</span> = <span class="org-string">"... st&#229;r opp og ser en gammel bok i bokhylla. Du ..."</span>
+
+<span class="org-variable-name">valg_aa</span> = <span class="org-string">"leser"</span>
+<span class="org-variable-name">tekst_aa</span> = <span class="org-string">""""... f&#229;r en fin start p&#229; dagen med en spennende bok.</span>
+
+<span class="org-string">Med ett spretter det en gnom ut av boka og sier "Hei, jeg vil spille stein-saks-papir." Du  ..."""</span>
+<span class="org-variable-name">valg_aaa</span> = <span class="org-string">"godtar"</span>
+<span class="org-variable-name">tekst_aaa</span> = <span class="org-string">"Du gj&#248;r deg klar til kamp, tar fram nevene og velger..."</span>
+<span class="org-variable-name">tekst_aaa1</span> = <span class="org-string">"Du vant kampen, for en lykke, for en glede, for en rus!"</span>
+<span class="org-variable-name">tekst_aaa2</span> = <span class="org-string">"Du tapte kampen, m&#248;rket senker seg over sinnet ditt."</span>
+
+<span class="org-variable-name">valg_aab</span> = <span class="org-string">"avsl&#229;r"</span>
+<span class="org-variable-name">tekst_aab</span>= <span class="org-string">"Du lukker boka, gnomen forsvinner, du fortsetter forundret med dagen din."</span>
+
+<span class="org-variable-name">valg_ab</span> = <span class="org-string">"lar v&#230;re"</span>
+<span class="org-variable-name">tekst_ab</span> = <span class="org-string">"... kjenner p&#229; en tomhetsf&#248;lelse som f&#248;lger deg gjennom dagen."</span>
+
+<span class="org-variable-name">valg_b</span> = <span class="org-string">"sover videre"</span>
+<span class="org-variable-name">tekst_b</span> = <span class="org-string">"... sover og dr&#248;mmer om et liv hvor muligheter gripes."</span>
+
+<span class="org-variable-name">error</span> = <span class="org-string">"Det var jommen et ugyldig valg, fysikkens lover er brutt."</span>
+
+<span class="org-keyword">def</span> <span class="org-function-name">be_om_input</span>(alt1, alt2):
+    <span class="org-doc">"""Ber spilleren om &#229; taste inn input til spillet, og gir seg f&#248;rst n&#229;r</span>
+<span class="org-doc">    spilleren har tastet inn noe gyldig.</span>
+<span class="org-doc">    </span>
+<span class="org-doc">    Returnerer valget brukeren tastet inn n&#229;r dette er gyldig.</span>
+
+<span class="org-doc">    Eksempel p&#229; bruk:</span>
+<span class="org-doc">    valg = be_om_input('g&#229;', 'l&#248;p')</span>
+
+<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;r</span>
+<span class="org-doc">    Ugyldig alternativ, pr&#248;v igjen.</span>
+<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;     # valg er n&#229; 'g&#229;'</span>
+<span class="org-doc">    """</span>
+    <span class="org-variable-name">valgt</span> = <span class="org-constant">None</span>
+    <span class="org-keyword">while</span> valgt != alt1 <span class="org-keyword">and</span> valgt != alt2:
+        <span class="org-variable-name">valgt</span> = <span class="org-builtin">input</span>(f<span class="org-string">"'{alt1}' / '{alt2}'"</span>).lower().strip()
+    <span class="org-keyword">return</span> valgt
+    
+
+<span class="org-keyword">print</span>(tekst)
+<span class="org-variable-name">valg</span> = be_om_input(valg_a, valg_b)
+
+<span class="org-keyword">if</span> valg == valg_a:
+    <span class="org-keyword">print</span>(tekst_a)
+    <span class="org-variable-name">valg</span> = be_om_input(valg_aa, valg_ab)
+    <span class="org-keyword">if</span> valg == valg_aa:
+        <span class="org-keyword">print</span>(tekst_aa)
+        <span class="org-variable-name">valg</span> = be_om_input(valg_aaa, valg_aab)
+        <span class="org-keyword">if</span> valg == valg_aaa:
+            <span class="org-keyword">print</span>(tekst_aaa)
+            <span class="org-variable-name">resultat</span> = spill_steinsakspapir()
+            <span class="org-keyword">if</span> resultat == 1:
+                <span class="org-keyword">print</span>(tekst_aaa1)
+            <span class="org-keyword">elif</span> resultat == 2:
+                <span class="org-keyword">print</span>(tekst_aaa2)
+        <span class="org-keyword">elif</span> valg == valg_aab:
+            <span class="org-keyword">print</span>(tekst_aab)
+    <span class="org-keyword">elif</span> valg == valg_ab:
+        <span class="org-keyword">print</span>(tekst_ab)
+<span class="org-keyword">elif</span> valg == valg_b:
+    <span class="org-keyword">print</span>(tekst_b)
+<span class="org-keyword">else</span>:
+    <span class="org-keyword">print</span>(error)
+</pre>
+</div>
+
+<p>
+Programmet over kan lastes ned <a href="tekstbasert_steinsakspapir.py">her (tekstbasert_steinsakspapir.py)</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbfa36d8" class="outline-3">
+<h3 id="orgbfa36d8"><span class="section-number-3">1.4</span> En ny struktur</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
+
+<span class="org-keyword">def</span> <span class="org-function-name">be_om_input</span>(alternativer):
+    <span class="org-doc">"""Ber spilleren om &#229; taste inn input til spillet, og gir seg f&#248;rst n&#229;r</span>
+<span class="org-doc">    spilleren har tastet inn noe gyldig.</span>
+<span class="org-doc">    </span>
+<span class="org-doc">    Returnerer valget brukeren tastet inn n&#229;r dette er gyldig.</span>
+
+<span class="org-doc">    Eksempel p&#229; bruk:</span>
+<span class="org-doc">    valg = be_om_input('g&#229;', 'l&#248;p')</span>
+
+<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;r</span>
+<span class="org-doc">    Ugyldig alternativ, pr&#248;v igjen.</span>
+<span class="org-doc">    'g&#229;' / 'l&#248;p' &gt;&gt;&gt; g&#229;     # valg er n&#229; 'g&#229;'</span>
+<span class="org-doc">    """</span>
+    <span class="org-variable-name">valgt</span> = <span class="org-constant">None</span>
+    <span class="org-variable-name">alternativstrenger</span> = [f<span class="org-string">" {num+1}) '{alternativ}'"</span> <span class="org-keyword">for</span> num, alternativ <span class="org-keyword">in</span> <span class="org-builtin">enumerate</span>(alternativer)]
+    <span class="org-variable-name">alternativstreng</span> = <span class="org-string">"\n"</span>.join(alternativstrenger)
+    <span class="org-variable-name">idx</span> = -1
+    <span class="org-keyword">while</span> idx == -1:
+        <span class="org-variable-name">valgt</span> = <span class="org-builtin">input</span>(alternativstreng + <span class="org-string">" \n"</span>).lower().strip()
+        <span class="org-keyword">try</span>:
+            <span class="org-variable-name">idx</span> = <span class="org-builtin">int</span>(valgt) - 1
+            <span class="org-keyword">if</span> idx <span class="org-keyword">in</span> <span class="org-builtin">range</span>(<span class="org-builtin">len</span>(alternativer)):
+                <span class="org-keyword">break</span>
+            <span class="org-keyword">else</span>:
+                <span class="org-variable-name">idx</span> = -1
+                <span class="org-keyword">continue</span>
+        <span class="org-keyword">except</span> <span class="org-type">ValueError</span>:
+            <span class="org-keyword">pass</span>
+        <span class="org-keyword">try</span>:
+            <span class="org-variable-name">idx</span> = alternativer.index(valgt)
+        <span class="org-keyword">except</span> <span class="org-type">ValueError</span>:
+            <span class="org-keyword">pass</span>
+    <span class="org-keyword">return</span> idx
+
+<span class="org-keyword">def</span> <span class="org-function-name">hent_valg_idx</span>(scenario):
+    <span class="org-variable-name">idx</span> = be_om_input(scenario[<span class="org-string">'alternativer'</span>])
+    <span class="org-keyword">return</span> idx
+
+<span class="org-keyword">def</span> <span class="org-function-name">ferdig</span>():
+    <span class="org-keyword">print</span>(<span class="org-string">"Du er ferdig."</span>)
+
+<span class="org-keyword">def</span> <span class="org-function-name">avgjoer</span>(vaapen1, vaapen2):
+    <span class="org-doc">"""Tar inn to strenger, hver enten 'stein', 'saks', eller 'papir'.</span>
+
+<span class="org-doc">    Returverdier er som f&#248;lger:</span>
+<span class="org-doc">    vaapen1 &gt; vaapen2  =&gt; 1</span>
+<span class="org-doc">    vaapen2 &gt; vaapen1  =&gt; 2</span>
+<span class="org-doc">    vaapen1 == vaapen2 =&gt; 0</span>
+
+<span class="org-doc">    Rangeringen er</span>
+<span class="org-doc">    'stein' &gt; 'saks' &gt; 'papir'</span>
+<span class="org-doc">    og 'papir' &gt; 'stein'</span>
+
+<span class="org-doc">    """</span>
+
+    <span class="org-keyword">if</span> vaapen1 == <span class="org-string">"stein"</span>:
+        <span class="org-keyword">if</span> vaapen2 == <span class="org-string">"stein"</span>:
+            <span class="org-keyword">return</span> 0
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"saks"</span>:
+            <span class="org-keyword">return</span> 1
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"papir"</span>:
+            <span class="org-keyword">return</span> 2
+    <span class="org-keyword">elif</span> vaapen1 == <span class="org-string">"saks"</span>:
+        <span class="org-keyword">if</span> vaapen2 == <span class="org-string">"stein"</span>:
+            <span class="org-keyword">return</span> 2
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"saks"</span>:
+            <span class="org-keyword">return</span> 0
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"papir"</span>:
+            <span class="org-keyword">return</span> 1
+    <span class="org-keyword">elif</span> vaapen1 == <span class="org-string">"papir"</span>:
+        <span class="org-keyword">if</span> vaapen2 == <span class="org-string">"stein"</span>:
+            <span class="org-keyword">return</span> 1
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"saks"</span>:
+            <span class="org-keyword">return</span> 2
+        <span class="org-keyword">elif</span> vaapen2 == <span class="org-string">"papir"</span>:
+            <span class="org-keyword">return</span> 0
+    <span class="org-keyword">else</span>:
+        <span class="org-keyword">print</span>(<span class="org-string">"Det skjedde noe feil i avgj&#248;relsen."</span>)
+            
+<span class="org-keyword">def</span> <span class="org-function-name">spill_steinsakspapir</span>():
+    <span class="org-doc">"""En funksjon du kan spille stein-saks-papir mot. Den returner f&#248;lgende:</span>
+<span class="org-doc">    spill_steinsakspapir() =&gt; 1 # spilleren vant</span>
+<span class="org-doc">    spill_steinsakspapir() =&gt; 2 # funksjonen vant</span>
+<span class="org-doc">    </span>
+<span class="org-doc">    Funksjonen fortsetter &#229; spille til det er k&#229;ret en vinner.</span>
+
+<span class="org-doc">    Rangeringen av 'stein', 'saks', og 'papir' gj&#248;res i 'avgjoer'-funksjonen.</span>
+<span class="org-doc">    """</span>
+
+    <span class="org-variable-name">vaapen</span> = [<span class="org-string">"stein"</span>, <span class="org-string">"saks"</span>, <span class="org-string">"papir"</span>]
+    <span class="org-keyword">while</span> <span class="org-constant">True</span>:
+        <span class="org-variable-name">spillers_valg</span> = <span class="org-builtin">input</span>(f<span class="org-string">" '{vaapen[0]}' / '{vaapen[1]}' / '{vaapen[2]}' "</span>)
+        <span class="org-variable-name">spillers_valg</span> = spillers_valg.lower().strip()
+        <span class="org-variable-name">mitt_valg</span> = rnd.choice(vaapen)
+        <span class="org-variable-name">avgjoerelse</span> = avgjoer(spillers_valg, mitt_valg)
+        <span class="org-keyword">if</span> avgjoerelse == 0:
+            <span class="org-keyword">print</span>(<span class="org-string">"Uavgjort, vi pr&#248;ver igjen..."</span>)
+        <span class="org-keyword">elif</span> avgjoerelse == 1:
+            <span class="org-keyword">print</span>(<span class="org-string">"&#198;sj, du vant."</span>)
+            <span class="org-keyword">return</span> 1
+        <span class="org-keyword">elif</span> avgjoerelse == 2:
+            <span class="org-keyword">print</span>(<span class="org-string">"Ha ha, jeg vant!"</span>)
+            <span class="org-keyword">return</span> 2
+        <span class="org-keyword">else</span>:
+            <span class="org-keyword">print</span>(<span class="org-string">"Vi klarte visst ikke helt dette, du og jeg."</span>)
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">tekst</span> = <span class="org-string">"Du v&#229;kner klokken 5:32 og f&#248;ler deg v&#229;ken, men vurderer &#229; fors&#248;ke &#229; fortsette &#229; sove. Du ..."</span>
+
+<span class="org-variable-name">valg_a</span> = <span class="org-string">"st&#229;r opp"</span>
+<span class="org-variable-name">tekst_a</span> = <span class="org-string">"... st&#229;r opp og ser en gammel bok i bokhylla. Du ..."</span>
+
+<span class="org-variable-name">valg_aa</span> = <span class="org-string">"leser"</span>
+<span class="org-variable-name">tekst_aa</span> = <span class="org-string">""""... f&#229;r en fin start p&#229; dagen med en spennende bok.</span>
+
+<span class="org-string">Med ett spretter det en gnom ut av boka og sier "Hei, jeg vil spille stein-saks-papir." Du  ..."""</span>
+<span class="org-variable-name">valg_aaa</span> = <span class="org-string">"godtar"</span>
+<span class="org-variable-name">tekst_aaa</span> = <span class="org-string">"Du gj&#248;r deg klar til kamp, tar fram nevene og velger..."</span>
+<span class="org-variable-name">tekst_aaa1</span> = <span class="org-string">"Du vant kampen, for en lykke, for en glede, for en rus!"</span>
+<span class="org-variable-name">tekst_aaa2</span> = <span class="org-string">"Du tapte kampen, m&#248;rket senker seg over sinnet ditt."</span>
+
+<span class="org-variable-name">valg_aab</span> = <span class="org-string">"avsl&#229;r"</span>
+<span class="org-variable-name">tekst_aab</span>= <span class="org-string">"Du lukker boka, gnomen forsvinner, du fortsetter forundret med dagen din."</span>
+
+<span class="org-variable-name">valg_ab</span> = <span class="org-string">"lar v&#230;re"</span>
+<span class="org-variable-name">tekst_ab</span> = <span class="org-string">"... kjenner p&#229; en tomhetsf&#248;lelse som f&#248;lger deg gjennom dagen."</span>
+
+<span class="org-variable-name">valg_b</span> = <span class="org-string">"sover videre"</span>
+<span class="org-variable-name">tekst_b</span> = <span class="org-string">"... sover og dr&#248;mmer om et liv hvor muligheter gripes."</span>
+
+<span class="org-variable-name">error</span> = <span class="org-string">"Det var jommen et ugyldig valg, fysikkens lover er brutt."</span>
+
+<span class="org-variable-name">vaakne</span> = {<span class="org-string">'tekst'</span>: <span class="org-string">"Du v&#229;kner..."</span>,
+          <span class="org-string">'alternativer'</span>: [<span class="org-string">"fortsett &#229; sove"</span>, <span class="org-string">"st&#229; opp"</span>],
+          <span class="org-string">'videre'</span>: [[<span class="org-string">"Du fortsetter &#229; sove, kjedelig dag."</span>, <span class="org-constant">False</span>],
+                     [<span class="org-string">"Du st&#229;r opp og er klar for en ny dag"</span>, 1]],
+          <span class="org-string">'fiende'</span>: <span class="org-constant">False</span>}
+
+<span class="org-variable-name">kjoekken</span> = {<span class="org-string">'tekst'</span>: <span class="org-string">"Du g&#229;r inn p&#229; kj&#248;kkenet, her ser du masse ting."</span>,
+            <span class="org-string">'alternativer'</span>: [<span class="org-string">"fortsett"</span>, <span class="org-string">"ikke"</span>],
+            <span class="org-string">'videre'</span>: [[<span class="org-string">"Du fortsetter"</span>, <span class="org-constant">False</span>],
+                       [<span class="org-string">"Du blir"</span>, <span class="org-constant">False</span>]],
+            <span class="org-string">'fiende'</span>: <span class="org-constant">True</span>}
+
+<span class="org-variable-name">scenarioer</span> = [vaakne, kjoekken]
+<span class="org-variable-name">idx</span> = 0       <span class="org-comment-delimiter"># </span><span class="org-comment">Vi starter i f&#248;rste scenario i sceneriolista</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">TEKSTIDX</span> = 0
+<span class="org-variable-name">NESTEIDX</span> = 1
+
+<span class="org-keyword">while</span> <span class="org-constant">True</span>:
+    <span class="org-variable-name">scenario</span> = scenarioer[idx]
+    <span class="org-keyword">print</span>(scenario[<span class="org-string">'tekst'</span>])
+    <span class="org-variable-name">valgidx</span> = hent_valg_idx(scenario)
+    <span class="org-keyword">print</span>(scenario[<span class="org-string">'videre'</span>][valgidx][TEKSTIDX])
+    <span class="org-variable-name">neste</span> = scenario[<span class="org-string">'videre'</span>][valgidx][NESTEIDX]
+    <span class="org-keyword">if</span> neste:
+        <span class="org-variable-name">idx</span> = neste
+    <span class="org-keyword">else</span>:
+        ferdig()
+        <span class="org-keyword">break</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6eb345d" class="outline-2">
+<h2 id="org6eb345d"><span class="section-number-2">2</span> Battleships</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga16d952" class="outline-3">
+<h3 id="orga16d952"><span class="section-number-3">2.1</span> Regler</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Battleships spilles på et rutenett med ti ganger ti ruter, man navngir kolonnene A til J og radene 1 til 10. Rute "B8" viser da til rute nummer åtte ovenfra, nummer to fra venstre, som i et regneark. Hver spiller setter ut båter på sitt rutenett, hvor størrelsen sier hvor mange ruter båten tar.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Antall</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-right">Størrelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Hangarskip</td>
+<td class="org-right">5</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Jagere</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Fregatter</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Korvetter</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Undervanssbåt</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+To spillere plasserer ut båtene på hvert sitt brett. Spiller 1 begynner så å «skyte» på spiller 2s brett ved å si koordinater, for eksemepel "I5". Spiller 2 forteller så spiller 1 hvorvidt det var treff eller bom, og skyter så sitt eget skudd.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga07b0b4" class="outline-3">
+<h3 id="orga07b0b4"><span class="section-number-3">2.2</span> Din oppgave</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Du skal lage en kunstig intelligens som spiller Battleships. Jeg kommer til å sette opp et «spilleder»-program, hvor dette kommer til å kjøre din kode opp mot en av medelevene dines.
+</p>
+
+<p>
+Mitt program ser ut som følger:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> battleships_spillereksempel <span class="org-keyword">as</span> p1
+<span class="org-keyword">import</span> battleships_spillereksempel <span class="org-keyword">as</span> p2
+
+<span class="org-keyword">import</span> time
+
+<span class="org-variable-name">ANTALL</span> = 15
+<span class="org-variable-name">p1treff</span> = 0
+<span class="org-variable-name">p2treff</span> = 0
+
+<span class="org-keyword">while</span> <span class="org-constant">True</span>:
+    <span class="org-variable-name">p1skudd</span> = p1.skudd()
+    <span class="org-variable-name">p2svar</span> = p2.mottak(p1skudd)
+    <span class="org-keyword">if</span> p2svar:
+        <span class="org-keyword">print</span>(<span class="org-string">"p1 traff"</span>)
+        <span class="org-variable-name">p1treff</span> +=1
+    <span class="org-keyword">else</span>:
+        <span class="org-keyword">print</span>(<span class="org-string">"p1 bomma"</span>)
+    p1.tilbakemelding(p2svar)
+
+    <span class="org-variable-name">p2skudd</span> = p2.skudd()
+    <span class="org-variable-name">p1svar</span> = p1.mottak(p2skudd)
+    <span class="org-keyword">if</span> p1svar:
+        <span class="org-keyword">print</span>(<span class="org-string">"p2 traff"</span>)
+        <span class="org-variable-name">p2treff</span> += 1
+    <span class="org-keyword">else</span>:
+        <span class="org-keyword">print</span>(<span class="org-string">"p2 bomma"</span>)
+    p2.tilbakemelding(p1svar)
+
+    <span class="org-keyword">if</span> p1treff == ANTALL <span class="org-keyword">and</span> p2treff != ANTALL:
+        <span class="org-keyword">print</span>(<span class="org-string">"p1 vant!"</span>)
+        <span class="org-keyword">break</span>
+    <span class="org-keyword">elif</span> p1treff != ANTALL <span class="org-keyword">and</span> p2treff == ANTALL:
+        <span class="org-keyword">print</span>(<span class="org-string">"p2 vant!"</span>)
+        <span class="org-keyword">break</span>
+    <span class="org-keyword">elif</span> p1treff == ANTALL <span class="org-keyword">and</span> p2treff == ANTALL:
+        <span class="org-keyword">print</span>(<span class="org-string">"Uavgjort!"</span>)
+        <span class="org-keyword">break</span>
+    <span class="org-keyword">else</span>:
+        time.sleep(0.3)
+</pre>
+</div>
+
+<p>
+Dette ser altså ut som en slags trespillerutgave, hvor spillederprogrammet fungerer som en megler mellom de to motstanderne. Linjene i programmet over kan oppsummeres omtrent som følger:
+</p>
+
+<dl class="org-dl">
+<dt>megler</dt><dd>Spiller 1 (<code>p1</code>), hvor skyter du?</dd>
+<dt>p1</dt><dd>Jeg skyter i <code>"B4"</code>.</dd>
+<dt>megler</dt><dd>(Lagrer <code>"B4"</code> som <code>p1skudd</code>.)</dd>
+<dt>megler</dt><dd>Spiller 2 (<code>p2</code>), <code>p1</code> skyter i <code>"B4"</code>, hva er ditt svar?</dd>
+<dt>p2</dt><dd>Det var bom (svaret er <code>False</code>).</dd>
+<dt>megler</dt><dd>(Lagrer <code>False</code> som <code>p2svar</code>.)</dd>
+<dt>megler</dt><dd><code>p1</code>, du bomma.</dd>
+<dt>megler</dt><dd><code>p2</code>, hvor skyter du?</dd>
+<dt>p2</dt><dd>jeg skyter i <code>"I9"</code>.</dd>
+<dt>megler</dt><dd>(Lagrer <code>"I9"</code> som <code>p2skudd</code>.)</dd>
+<dt>megler</dt><dd><code>p1</code>, <code>p2</code> skyter i <code>"I9"</code>, hva er ditt svar?</dd>
+<dt>p1</dt><dd>Det var treff (svaret er <code>True</code>).</dd>
+<dt>megler</dt><dd>(Lagrer <code>True</code> som <code>p1svar</code>.)</dd>
+<dt>megler</dt><dd><code>p2</code>, du traff</dd>
+<dt>megler</dt><dd><code>p1</code>, hvor skyter du?</dd>
+</dl>
+
+<p>
+Ditt program kan settes opp på omtrent en måte à la denne:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
+
+<span class="org-variable-name">mitt_spillbrett</span> = [ [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+                    [0, 1, 0, 1, 1, 1, 1, 0, 0, 0],
+                    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 1, 0, 0, 1, 1, 0, 0, 0, 0],
+                    [0, 1, 0, 0, 0, 0, 0, 0, 0, 1],
+                    [0, 0, 0, 0, 1, 1, 0, 0, 0, 1],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0] ]
+
+<span class="org-keyword">def</span> <span class="org-function-name">bokstav_til_kolonne</span>(bokstav):
+    <span class="org-doc">"""Tar inn en bokstavverdi, og returnerer hvilken kolonne det tilsvarer,</span>
+<span class="org-doc">    null-indeksert.</span>
+
+<span class="org-doc">    Eksempler:</span>
+<span class="org-doc">    bokstav_til_kolonne('A') # =&gt; 0</span>
+<span class="org-doc">    bokstav_til_kolonne('D') # =&gt; 3</span>
+<span class="org-doc">    bokstav_til_kolonne('J') # =&gt; 9</span>
+<span class="org-doc">    bokstav_til_kolonne('C') # =&gt; 2</span>
+<span class="org-doc">    """</span>
+    <span class="org-keyword">return</span> <span class="org-string">"ABCDEFGHIJ"</span>.index(bokstav.upper())
+
+<span class="org-keyword">def</span> <span class="org-function-name">finn_verdi</span>(koordinatstreng):
+    <span class="org-doc">"""Tar inn en koordinatstreng p&#229; formen "bokstavtall" og returnerer</span>
+<span class="org-doc">    hvorvidt det er en b&#229;t i den koordinaten.</span>
+<span class="org-doc">    """</span>
+
+    <span class="org-variable-name">bokstav</span> = koordinatstreng[0]
+    <span class="org-variable-name">rad</span> = <span class="org-builtin">int</span>(koordinatstreng[1])
+    <span class="org-variable-name">kol</span> = bokstav_til_kolonne(bokstav)
+    
+    <span class="org-variable-name">verdi</span> = mitt_spillbrett[rad][kol]
+    <span class="org-keyword">return</span> verdi
+
+
+<span class="org-keyword">def</span> <span class="org-function-name">tilbakemelding</span>(koordinatstreng):
+    <span class="org-doc">"""Denne funksjonen kalles n&#229;r jeg f&#229;r tilbakemelding p&#229; skuddet mitt."""</span>
+
+    <span class="org-keyword">return</span> <span class="org-constant">None</span>
+
+<span class="org-keyword">def</span> <span class="org-function-name">skudd</span>():
+    <span class="org-doc">"""Dette er hovedfunksjonen som blir kj&#248;rt n&#229;r jeg skal skyte."""</span>
+    <span class="org-variable-name">bokstav</span> = rnd.choice(<span class="org-string">"ABCDEFGIJ"</span>)
+    <span class="org-variable-name">tall</span> = <span class="org-builtin">str</span>(rnd.randint(0, 9))
+    <span class="org-keyword">return</span> bokstav + tall
+
+<span class="org-keyword">def</span> <span class="org-function-name">mottak</span>(koordinatstreng):
+    <span class="org-doc">"""Denne funksjonen kalles n&#229;r &#171;jeg&#187; skytes p&#229;."""</span>
+
+    <span class="org-keyword">return</span> finn_verdi(koordinatstreng) == 1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
