@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
 <head>
-<!-- 2020-03-03 Tue 13:15 -->
+<!-- 2020-03-03 Tue 14:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Prosjekter</title>
@@ -91,42 +91,42 @@ for the JavaScript code in this tag.
 <h2>Innhold</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org866f7c4">Eksempelrapport: Primtallsfaktorisering</a>
+<li><a href="#org04137fa">Eksempelrapport: Primtallsfaktorisering</a>
 <ul>
-<li><a href="#orgea8360b">Bakgrunn</a></li>
-<li><a href="#org2586166">Algoritme</a></li>
-<li><a href="#orge88b859">Program</a></li>
-<li><a href="#org2fdc9a8">Kommentarer</a></li>
+<li><a href="#org81dea20">Bakgrunn</a></li>
+<li><a href="#org910fe8c">Algoritme</a></li>
+<li><a href="#orge2cd235">Program</a></li>
+<li><a href="#orgd04a675">Kommentarer</a></li>
 </ul>
 </li>
-<li><a href="#orgf4d732a">Tekstbasert eventyrspill</a>
+<li><a href="#orgbc52faa">Tekstbasert eventyrspill</a>
 <ul>
-<li><a href="#org97c3059">Introduksjon</a></li>
-<li><a href="#org058a2de">Feilhåndtering</a></li>
-<li><a href="#orgeb29b20">Fiendekamp med stein-saks-papir</a></li>
-<li><a href="#orgc7fa8d3">En ny struktur</a></li>
+<li><a href="#orgeb9c7c7">Introduksjon</a></li>
+<li><a href="#orgd2075f6">Feilhåndtering</a></li>
+<li><a href="#orgdf413be">Fiendekamp med stein-saks-papir</a></li>
+<li><a href="#orgb849b0e">En ny struktur</a></li>
 </ul>
 </li>
-<li><a href="#org2698c07">Battleships</a>
+<li><a href="#orgb528d51">Battleships</a>
 <ul>
-<li><a href="#org10b12e6">Regler</a></li>
-<li><a href="#orgbb4dec2">Din oppgave</a></li>
+<li><a href="#orgc4505ec">Regler</a></li>
+<li><a href="#orgcd819e6">Din oppgave</a></li>
 </ul>
 </li>
-<li><a href="#org8b14d5f">Droneaksellerasjon</a></li>
+<li><a href="#org9c6606c">Droneaksellerasjon</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org866f7c4" class="outline-2">
-<h2 id="org866f7c4">Eksempelrapport: Primtallsfaktorisering</h2>
-<div class="outline-text-2" id="text-org866f7c4">
+<div id="outline-container-org04137fa" class="outline-2">
+<h2 id="org04137fa">Eksempelrapport: Primtallsfaktorisering</h2>
+<div class="outline-text-2" id="text-org04137fa">
 </div>
 
-<div id="outline-container-orgea8360b" class="outline-3">
-<h3 id="orgea8360b">Bakgrunn</h3>
-<div class="outline-text-3" id="text-orgea8360b">
+<div id="outline-container-org81dea20" class="outline-3">
+<h3 id="org81dea20">Bakgrunn</h3>
+<div class="outline-text-3" id="text-org81dea20">
 <p>
 Ifølge aritmetikkens fundamentalteorem kan ethvert heltall større enn 1 skrives som et produkt av primtall på én og kun én måte. For eksempel er \(28 = 2^{2}\cdot 7\) og \(11 = 11\).
 </p>
@@ -147,9 +147,9 @@ Hva er den største primtallsfaktoren til tallet 600851475143?
 </div>
 </div>
 
-<div id="outline-container-org2586166" class="outline-3">
-<h3 id="org2586166">Algoritme</h3>
-<div class="outline-text-3" id="text-org2586166">
+<div id="outline-container-org910fe8c" class="outline-3">
+<h3 id="org910fe8c">Algoritme</h3>
+<div class="outline-text-3" id="text-org910fe8c">
 <p>
 Merk at oppgaven kun er ute etter den <i>største</i> primtallsfaktoren. Siden det kun er én måte å faktorisere et tall til sine primtallsfaktorer på, kan vi jobbe med mindre og mindre tall ved å «dele bort» faktorene når vi finner dem.
 </p>
@@ -197,9 +197,9 @@ Etter at dette programmet har kjørt, vil <code>TALL</code> være 1 og <code>TES
 </p>
 </div>
 </div>
-<div id="outline-container-orge88b859" class="outline-3">
-<h3 id="orge88b859">Program</h3>
-<div class="outline-text-3" id="text-orge88b859">
+<div id="outline-container-orge2cd235" class="outline-3">
+<h3 id="orge2cd235">Program</h3>
+<div class="outline-text-3" id="text-orge2cd235">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> time
 
@@ -235,9 +235,9 @@ Denne utregningen tok 0.0044 sekunder.
 </div>
 </div>
 
-<div id="outline-container-org2fdc9a8" class="outline-3">
-<h3 id="org2fdc9a8">Kommentarer</h3>
-<div class="outline-text-3" id="text-org2fdc9a8">
+<div id="outline-container-orgd04a675" class="outline-3">
+<h3 id="orgd04a675">Kommentarer</h3>
+<div class="outline-text-3" id="text-orgd04a675">
 <p>
 Programmet har mange mulige optimaliseringerer. Noen eksempler:
 </p>
@@ -250,17 +250,21 @@ Programmet har mange mulige optimaliseringerer. Noen eksempler:
 <p>
 Disse forbedringene ville kunne endret hvor lang tid programmet bruker på å kjøre.
 </p>
+
+<p>
+Du finner kode over <a href="py/rapport_primtallsfaktorisering.py">file:py/rapport_primtallsfaktorisering.py</a>.
+</p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf4d732a" class="outline-2">
-<h2 id="orgf4d732a">Tekstbasert eventyrspill</h2>
-<div class="outline-text-2" id="text-orgf4d732a">
+<div id="outline-container-orgbc52faa" class="outline-2">
+<h2 id="orgbc52faa">Tekstbasert eventyrspill</h2>
+<div class="outline-text-2" id="text-orgbc52faa">
 </div>
-<div id="outline-container-org97c3059" class="outline-3">
-<h3 id="org97c3059">Introduksjon</h3>
-<div class="outline-text-3" id="text-org97c3059">
+<div id="outline-container-orgeb9c7c7" class="outline-3">
+<h3 id="orgeb9c7c7">Introduksjon</h3>
+<div class="outline-text-3" id="text-orgeb9c7c7">
 <p>
 Dette kan i enkleste format løses ved å bruke <code>if/elif/else</code>, <code>print</code> og <code>input</code>. 
 </p>
@@ -297,9 +301,9 @@ Programmet over kan lastes ned <a href="tekstbasert_intro.py">her (tekstbasert_i
 </div>
 </div>
 
-<div id="outline-container-org058a2de" class="outline-3">
-<h3 id="org058a2de">Feilhåndtering</h3>
-<div class="outline-text-3" id="text-org058a2de">
+<div id="outline-container-orgd2075f6" class="outline-3">
+<h3 id="orgd2075f6">Feilhåndtering</h3>
+<div class="outline-text-3" id="text-orgd2075f6">
 <p>
 Programmet over håndterer feil fra spilleren på en lite grasiøs måte. Spillet tvinger seg videre, uten å la spilleren forsøke å taste inn på nytt.
 </p>
@@ -405,9 +409,9 @@ Det er mulig å gjøre langt mer med et tekstbasert spill enn det som kommer fra
 </div>
 </div>
 
-<div id="outline-container-orgeb29b20" class="outline-3">
-<h3 id="orgeb29b20">Fiendekamp med stein-saks-papir</h3>
-<div class="outline-text-3" id="text-orgeb29b20">
+<div id="outline-container-orgdf413be" class="outline-3">
+<h3 id="orgdf413be">Fiendekamp med stein-saks-papir</h3>
+<div class="outline-text-3" id="text-orgdf413be">
 <p>
 La oss begynne med å lage oppsettet for en stein-saks-papir-kamp, før vi i det hele tatt legger det til i eventyret vårt.
 </p>
@@ -569,9 +573,9 @@ Programmet over kan lastes ned <a href="tekstbasert_steinsakspapir.py">her (teks
 </div>
 </div>
 
-<div id="outline-container-orgc7fa8d3" class="outline-3">
-<h3 id="orgc7fa8d3">En ny struktur</h3>
-<div class="outline-text-3" id="text-orgc7fa8d3">
+<div id="outline-container-orgb849b0e" class="outline-3">
+<h3 id="orgb849b0e">En ny struktur</h3>
+<div class="outline-text-3" id="text-orgb849b0e">
 <div class="org-src-container">
 <pre class="src src-python"><span class="org-keyword">import</span> random <span class="org-keyword">as</span> rnd
 
@@ -751,13 +755,13 @@ ferdig()
 </div>
 </div>
 
-<div id="outline-container-org2698c07" class="outline-2">
-<h2 id="org2698c07">Battleships</h2>
-<div class="outline-text-2" id="text-org2698c07">
+<div id="outline-container-orgb528d51" class="outline-2">
+<h2 id="orgb528d51">Battleships</h2>
+<div class="outline-text-2" id="text-orgb528d51">
 </div>
-<div id="outline-container-org10b12e6" class="outline-3">
-<h3 id="org10b12e6">Regler</h3>
-<div class="outline-text-3" id="text-org10b12e6">
+<div id="outline-container-orgc4505ec" class="outline-3">
+<h3 id="orgc4505ec">Regler</h3>
+<div class="outline-text-3" id="text-orgc4505ec">
 <p>
 Battleships spilles på et rutenett med ti ganger ti ruter, man navngir kolonnene A til J og radene 1 til 10. Rute "B8" viser da til rute nummer åtte ovenfra, nummer to fra venstre, som i et regneark. Hver spiller setter ut båter på sitt rutenett, hvor størrelsen sier hvor mange ruter båten tar.
 </p>
@@ -818,9 +822,9 @@ To spillere plasserer ut båtene på hvert sitt brett. Spiller 1 begynner så å
 </div>
 </div>
 
-<div id="outline-container-orgbb4dec2" class="outline-3">
-<h3 id="orgbb4dec2">Din oppgave</h3>
-<div class="outline-text-3" id="text-orgbb4dec2">
+<div id="outline-container-orgcd819e6" class="outline-3">
+<h3 id="orgcd819e6">Din oppgave</h3>
+<div class="outline-text-3" id="text-orgcd819e6">
 <p>
 Du skal lage en kunstig intelligens som spiller Battleships. Jeg kommer til å sette opp et «spilleder»-program, hvor dette kommer til å kjøre din kode opp mot en av medelevene dines.
 </p>
@@ -958,9 +962,9 @@ Ditt program kan settes opp på omtrent en måte à la denne:
 </div>
 </div>
 
-<div id="outline-container-org8b14d5f" class="outline-2">
-<h2 id="org8b14d5f">Droneaksellerasjon</h2>
-<div class="outline-text-2" id="text-org8b14d5f">
+<div id="outline-container-org9c6606c" class="outline-2">
+<h2 id="org9c6606c">Droneaksellerasjon</h2>
+<div class="outline-text-2" id="text-org9c6606c">
 </div>
 </div>
 </div>
