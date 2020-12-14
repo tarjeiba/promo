@@ -78,8 +78,13 @@ $(document).ready(function(){
 	 text: "",
 	 code: "wn = turtle.Screen()\n\nrudolf.fd(50)\n\nwn.onclick(rudolf.goto)\nwn.listen()",
 	 prepends: importCode});
-
-
+    
+    rudolfs.push(
+	{id: "#rudolf9",
+	 tittel: "Du tar kontroll",
+	 text: "Tegn et julekort. Hvil deg litt, Rudolf.",
+	 code: "",
+	 prepends: importCode});
 
     for (let rudolf of rudolfs) {
 	exampleCode(rudolf.id, rudolf.tittel, rudolf.text, rudolf.prepends + rudolf.code);

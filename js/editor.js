@@ -18,6 +18,18 @@ function runit() {
 		   });
 } 
 
+
+function saveit(){
+    let downloadLink = document.createElement('a');
+    downloadLink.setAttribute('download', 'CanvasAsImage.png');
+    let canvas = document.getElementById('mycanvas');
+    canvas.toBlob(function(blob) {
+      let url = URL.createObjectURL(blob);
+      downloadLink.setAttribute('href', url);
+      downloadLink.click();
+    });
+}
+
 $(document).ready(function () { // Dette er en jquery-funksjon -- sjekk den ut
     var output = $('#edoutput');
     var outf = function (text) {
